@@ -37,7 +37,7 @@ export async function fetchGcsRssAdv0() {
       });
     }
 
-    fs.writeFileSync('data/column1.json', JSON.stringify(items, null, 2), 'utf8');
+    fs.writeFileSync('data/fetch_gcs_rss_adv0.json', JSON.stringify(items, null, 2), 'utf8');
     console.log(`[RSS][欄1_adv0] 已更新，共 ${items.length} 則新聞`);
   } catch (err) {
     console.error('[RSS][欄1_adv0] 抓取失敗:', err.message);
