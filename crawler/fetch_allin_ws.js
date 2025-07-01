@@ -2,58 +2,60 @@
 import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
+import * as cheerio from 'cheerio';
 import dayjs from 'dayjs';
 
-const url = 'https://r.jina.ai/https://www.allinmedia.com.hk/category/%E5%8D%9A%E5%BD%A9%E6%96%B0%E8%81%9E/';
-const OUTPUT_PATH = path.resolve('data/fetch_allin_ws.json');
-const TODAY = dayjs().format('YYYY-MM-DD');
+const TARGET_URL = 'https://r.jina.ai/https://www.allinmedia.com.hk/category/%e5%8d%9a%e5%bd%a9%e6%96%b0%e8%81%9e/';
+const OUTPUT_PATH = './data/fetch_allin_ws.json';
+
+console.log('[爬蟲] fetch_allin_ws 啟動');
 
 async function fetchAllinNews() {
-  console.log('[爬蟲] fetch_allin_ws 啟動');
-
   try {
-    const res = await fetch(url);
+    const res = await fetch(TARGET_URL);
     const text = await res.text();
-    const lines = text.split('\n');
+    const $ = cheerio.load(text);
 
-    const items = [];
-    let lastDate = TODAY;
+    const lines = text.split('\n').map(line => line.trim());
 
-    for (let i = 0; i < lines.length - 2; i++) {
-      const line = lines[i].trim();
+    const news = [];
+    let currentDate = '';
+    let allowNext = false;
 
-      // 檢查是否是日期格式，如 "19 6 月, 2025"
-      const dateMatch = line.match(/^(\d{1,2})\s+(\d{1,2})\s+月,\s+(\d{4})$/);
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+
+      // 日期：例如「30 6 月, 2025」=> 2025-06-30
+      const dateMatch = line.match(/(\d{1,2})\s(\d{1,2})\s\u6708,\s(\d{4})/);
       if (dateMatch) {
         const [_, day, month, year] = dateMatch;
-        lastDate = dayjs(`${year}-${month}-${day}`).format('YYYY-MM-DD');
+        currentDate = dayjs(`${year}-${month}-${day}`).format('YYYY-MM-DD');
         continue;
       }
 
-      // 檢查是否是 [博彩新聞] 的標題段
-      if (line === '[博彩新聞]' && lines[i + 1]?.startsWith('### [')) {
-        const nextLine = lines[i + 1].trim();
-        const titleMatch = nextLine.match(/^### \[(.+?)\]\((https:\/\/www\.allinmedia\.com\.hk\/.+?)\)/);
+      // 有效新聞段起始條件：[博彩新聞]
+      if (line.includes('[博彩新聞]')) {
+        allowNext = true;
+        continue;
+      }
 
+      // 標題行處理 ### [標題](連結)
+      if (allowNext && line.startsWith('### [')) {
+        const titleMatch = line.match(/^### \[(.+?)\]\((.+?)\s*\"?.*\"?\)/);
         if (titleMatch) {
-          const title = titleMatch[1].trim();
-          const link = titleMatch[2].trim();
-
-          items.push({
-            title,
-            link,
-            pubDate: lastDate,
-          });
-
-          if (items.length >= 10) break;
+          const [, title, link] = titleMatch;
+          news.push({ title, link, date: currentDate });
+          allowNext = false;
         }
       }
     }
 
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(items, null, 2), 'utf8');
-    console.log(`[爬蟲] fetch_allin_ws 抓取完成，共 ${items.length} 則`);
+    // 儲存結果
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(news, null, 2), 'utf-8');
+    console.log(`[完成] 共儲存 ${news.length} 則新聞`);
+    if (news.length > 0) console.log('[預覽] 第 1 則：', news[0]);
   } catch (err) {
-    console.error('[爬蟲] fetch_allin_ws 錯誤:', err.message);
+    console.error('[錯誤]', err.message);
   }
 }
 
