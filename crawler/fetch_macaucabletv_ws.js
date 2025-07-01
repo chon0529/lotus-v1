@@ -1,43 +1,53 @@
-// fetch_macaucabletv_ws.js
-import fs from 'fs';
-import fetch from 'node-fetch';
-import * as dayjs from 'dayjs';
+// crawler/fetch_macaucabletv_ws.js (ESM 版)
 
-const URL = 'https://r.jina.ai/https://www.macaucabletv.com/video/category/ALL';
-const OUTPUT = './data/fetch_macaucabletv_ws.json';
+import fs from 'fs';
+import path from 'path';
+import axios from 'axios';
+import dayjs from 'dayjs';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 console.log('[爬蟲] fetch_macaucabletv_ws 啟動');
 
-async function fetchNews() {
-  try {
-    const res = await fetch(URL);
-    const html = await res.text();
+// 解決 __dirname 在 ESM 中不可用問題
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-    // 擷取 Markdown Content 段落（從 "Markdown Content:" 開始）
-    const markdownStart = html.indexOf('Markdown Content:');
-    if (markdownStart === -1) throw new Error('找不到 Markdown Content');
-    const markdown = html.slice(markdownStart + 17).trim();
+const SOURCE_URL = 'https://r.jina.ai/https://www.macaucabletv.com/video/category/ALL';
 
-    // 正則：找出所有符合 [![Image](圖片)](連結) 格式
-    const regex = /\[!\[.*?\]\((.*?)\)\s+(.*?)\s+(\d{4}\/\d{2}\/\d{2})\]\((https:\/\/www\.macaucabletv\.com\/[^\s]+)\)/g;
+try {
+  const res = await axios.get(SOURCE_URL);
+  const markdown = res.data;
 
-    const results = [];
-    let match;
-    while ((match = regex.exec(markdown)) !== null) {
-      const [, imageUrl, title, dateStr, url] = match;
-      const date = dayjs(dateStr, 'YYYY/MM/DD').format('YYYY-MM-DD');
-      results.push({
-        title: title.trim(),
-        link: url,
-        date: date,
-      });
-    }
+  const regex = /\[!\[.*?\]\((.*?)\)\s+(.*?)\s+(\d{4}年\d{1,2}月\d{1,2}日).*?\]\((https?:\/\/[^\s)]+)\)/g;
 
-    fs.writeFileSync(OUTPUT, JSON.stringify(results, null, 2), 'utf-8');
-    console.log(`[爬蟲] fetch_macaucabletv_ws 抓取完成，共 ${results.length} 則`);
-  } catch (err) {
-    console.error('[爬蟲] fetch_macaucabletv_ws 錯誤:', err.message);
+  let match;
+  const results = [];
+
+  while ((match = regex.exec(markdown)) !== null) {
+    const [, imageUrl, rawTitle, rawDate, link] = match;
+
+    const cleanedTitle = rawTitle.trim().replace(/^影片\s*/, '').split(' ')[0];
+    const dateMatch = rawDate.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+    if (!dateMatch) continue;
+    const [, year, month, day] = dateMatch;
+    const date = dayjs(`${year}-${month}-${day}`).format('YYYY-MM-DD');
+
+    results.push({
+      title: cleanedTitle,
+      link,
+      date
+    });
   }
-}
 
-fetchNews();
+  const outputPath = path.join(__dirname, '../data/fetch_macaucabletv_ws.json');
+  fs.writeFileSync(outputPath, JSON.stringify(results, null, 2), 'utf-8');
+
+  console.log(`[爬蟲] fetch_macaucabletv_ws 抓取完成，共 ${results.length} 則`);
+  if (results.length > 0) {
+    console.log('[預覽] 第 1 則：', results[0]);
+  }
+
+} catch (error) {
+  console.error('[錯誤] 抓取失敗：', error.message);
+}

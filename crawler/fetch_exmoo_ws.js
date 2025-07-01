@@ -1,48 +1,48 @@
-// fetch_exmoo_ws.js
+// crawler/fetch_exmoo_ws.js
 import fs from 'fs';
-import path from 'path';
 import fetch from 'node-fetch';
+import * as cheerio from 'cheerio';
+import dayjs from 'dayjs';
 
-const url = 'https://r.jina.ai/https://www.exmoo.com/hot';
-const OUTPUT_PATH = path.resolve('data/fetch_exmoo_ws.json');
+console.log('[爬蟲] fetch_exmoo_ws 啟動');
+
+const URL = 'https://r.jina.ai/https://www.exmoo.com/hot';
 
 async function fetchExmooNews() {
-  console.log('[爬蟲] fetch_exmoo_ws 啟動');
-
   try {
-    const res = await fetch(url);
-    const text = await res.text();
-    const lines = text.split('\n');
+    const response = await fetch(URL);
+    const text = await response.text();
 
-    const items = [];
+    const lines = text.split('\n').map(line => line.trim());
+    const news = [];
 
     for (let i = 0; i < lines.length - 2; i++) {
-      const line = lines[i].trim();
+      const imgLine = lines[i];
+      const titleLine = lines[i + 2];
+      const dateLine = lines[i + 4] || '';
 
-      if (line.startsWith('[####') && line.includes('](https://www.exmoo.com/article/')) {
-        const titleMatch = line.match(/\[####(.+?)\]\((https:\/\/www\.exmoo\.com\/article\/\d+\.html)\)/);
+      // 確保三行結構
+      if (
+        imgLine.startsWith('[![') &&
+        (titleLine.startsWith('[###') || titleLine.startsWith('[####')) &&
+        /^\d{2}\/\d{2}\/\d{4}$/.test(dateLine)
+      ) {
+        // 抓標題與連結
+        const titleMatch = titleLine.match(/\[(#+\s?)(.+?)\]\((https:\/\/www\.exmoo\.com\/article\/\d+\.html)\)/);
         if (titleMatch) {
-          const title = titleMatch[1];
-          const link = titleMatch[2];
+          const title = titleMatch[2].trim();
+          const url = titleMatch[3].trim();
+          const date = dayjs(dateLine, 'DD/MM/YYYY').format('YYYY-MM-DD');
 
-          // 跳過空行找日期
-          let j = i + 1;
-          while (j < lines.length && lines[j].trim() === '') {
-            j++;
-          }
-          const pubDate = lines[j] ? lines[j].trim() : '';
-
-          items.push({ title, link, pubDate });
+          news.push({ title, url, date });
         }
       }
-
-      if (items.length >= 10) break;
     }
 
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(items, null, 2), 'utf8');
-    console.log(`[爬蟲] fetch_exmoo_ws 抓取完成，共 ${items.length} 則`);
-  } catch (err) {
-    console.error('[爬蟲] fetch_exmoo_ws 錯誤:', err.message);
+    fs.writeFileSync('./data/fetch_exmoo_ws.json', JSON.stringify(news, null, 2), 'utf8');
+    console.log(`[爬蟲] fetch_exmoo_ws 抓取完成，共 ${news.length} 則`);
+  } catch (error) {
+    console.error('[爬蟲] fetch_exmoo_ws 錯誤:', error);
   }
 }
 
