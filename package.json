@@ -12,6 +12,7 @@
     "dayjs": "^1.11.13",
     "express": "^5.1.0",
     "fast-xml-parser": "^5.2.5",
+    "googleapis": "^150.0.1",
     "node-cron": "^3.0.3",
     "node-fetch": "^3.3.2",
     "puppeteer": "^24.11.2",

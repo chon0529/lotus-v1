@@ -1,43 +1,40 @@
 // fetch_chengpou_ws.js
+// Cheerio 無需，直接處理 Markdown 文字結構
+
 import fetch from 'node-fetch';
-import * as cheerio from 'cheerio';
 import fs from 'fs';
+import dayjs from 'dayjs';
 
-console.log('[爬蟲] fetch_chengpou_ws 啟動');
+console.log("[爬蟲] fetch_chengpou_ws 啟動");
 
-const BASE_URL = 'https://chengpou.com.mo';
-const URL = `${BASE_URL}/newstag/Macao.html`;
+const url = 'https://r.jina.ai/https://chengpou.com.mo/newstag/Macao.html';
 
 try {
-  const res = await fetch(URL);
-  const html = await res.text();
-  const $ = cheerio.load(html);
+  const res = await fetch(url);
+  const text = await res.text();
 
-  const news = [];
+  // 每則新聞 markdown 形式：[![Image](picURL) title abstract date](link)
+  const newsRegex = /\[\!\[.*?\]\((.*?)\)\s+(.*?)【(.*?)】(.*?)\s+(\d{4}-\d{2}-\d{2})\]\((.*?)\)/g;
 
-  $('#news-list-container .news-list-detail').each((_, el) => {
-    const link = $(el).find('a').attr('href');
-    const fullLink = link ? `${BASE_URL}${link}` : null;
+  const results = [];
+  let match;
 
-    // 擷取所有標題段落（可能為一段或兩段）
-    const titleParts = [];
-    $(el).find('p.news-list-tilte').each((_, p) => {
-      const part = $(p).text().trim();
-      if (part) titleParts.push(part);
+  while ((match = newsRegex.exec(text)) !== null && results.length < 15) {
+    const [_, img, title, abstractPrefix, abstractSuffix, date, link] = match;
+    results.push({
+      title: title.trim(),
+      abstract: `【${abstractPrefix.trim()}】${abstractSuffix.trim()}`,
+      date: date.trim(),
+      url: link.startsWith('http') ? link : `https://chengpou.com.mo${link}`,
+      image: img.startsWith('http') ? img : `https://chengpou.com.mo${img}`
     });
-    const title = titleParts.join(' ');
+  }
 
-    const abstract = $(el).find('.news-list-description').text().trim();
-    const date = $(el).find('.news-list-date').text().trim();
+  console.log(`✅ 共擷取 ${results.length} 則新聞`);
 
-    if (title && date && fullLink) {
-      news.push({ title, date, abstract, link: fullLink });
-    }
-  });
-
-  console.log(`✅ 共擷取 ${news.length} 則新聞`);
-  fs.writeFileSync('./data/fetch_chengpou_ws.json', JSON.stringify(news, null, 2), 'utf-8');
-  console.log('💾 已儲存至 ./data/fetch_chengpou_ws.json');
+  const outputPath = './data/fetch_chengpou_ws.json';
+  fs.writeFileSync(outputPath, JSON.stringify(results, null, 2), 'utf-8');
+  console.log(`💾 已儲存至 ${outputPath}`);
 } catch (err) {
-  console.error('❌ 發生錯誤：', err);
+  console.error('❌ 錯誤:', err.message);
 }
