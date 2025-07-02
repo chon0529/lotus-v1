@@ -14,7 +14,7 @@
     "fast-xml-parser": "^5.2.5",
     "node-cron": "^3.0.3",
     "node-fetch": "^3.3.2",
-    "puppeteer": "^24.11.1",
+    "puppeteer": "^24.11.2",
     "rss-parser": "^3.13.0",
     "xml2js": "^0.6.2"
   }
