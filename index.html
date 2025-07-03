@@ -2,25 +2,50 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>新聞卡片範例 — 澳門日報</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Lotus 新聞展示系統</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 字型 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+
+  <!-- 卡片樣式 -->
+  <link rel="stylesheet" href="./css/macaodaily_card.css">
+
+  <!-- 全域背景色設定 -->
+  <style>
+    body {
+      background-color: #f4f7fb;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: flex-start;
+    }
+  </style>
 </head>
 <body>
-  <div id="macaodaily-card" class="card macaodaily-card">
+
+  <!-- ✅ 卡片：澳門日報 -->
+  <div class="macaodaily-card" id="macaodaily-card">
     <div class="card-header">
-      <div class="card-title-section">
-        <a href="http://www.macaodaily.com/" target="_blank" class="card-title">澳門日報</a>
-        <span class="card-tags">#澳門 #即時</span>
+      <div class="card-name-row">
+        澳門日報
+        <div class="news-count-icon">0</div>
+        <button class="card-refresh">🔄</button>
       </div>
-      <div class="card-meta">
-        <span id="new-count" class="new-count">0</span>
-        <button id="refresh-btn" class="refresh-btn" title="更新">🔄</button>
-      </div>
-      <div id="last-updated" class="last-updated">— 前更新</div>
+      <div class="card-last-update">-- 分鐘前更新</div>
+      <div class="macau-tag">#澳門 #即時</div>
     </div>
-    <ul id="news-list" class="news-list"></ul>
+    <div class="news-list-area">
+      <ul class="news-list">
+        <li>載入中...</li>
+      </ul>
+    </div>
   </div>
 
-  <script type="module" src="main.js"></script>
+  <!-- JavaScript：模組化邏輯 -->
+  <script type="module" src="./cards/macaodaily_card.js"></script>
+
 </body>
 </html>

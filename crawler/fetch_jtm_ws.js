@@ -16,7 +16,7 @@ console.log('[爬蟲] fetch_jtm_ws 啟動');
 
 const SOURCE_URL = 'https://r.jina.ai/https://jtm.com.mo/';
 const OUTPUT_PATH = path.join(__dirname, '../data/fetch_jtm_ws.json');
-const MAX_NEWS = 10;
+const MAX_NEWS = 15;
 
 function extractFromMarkdown(markdown) {
   const results = [];

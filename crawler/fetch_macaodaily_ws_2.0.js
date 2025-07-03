@@ -1,64 +1,50 @@
-// crawler/fetch_macaodaily_ws_2.0.js
-import axios from 'axios';
+// fetch_macaodaily_ws_2.0_index.js
+// ✅ M&S 版本：專供 index.html 結合使用（即時更新卡片）
+
 import * as cheerio from 'cheerio';
-import { logStart, logSuccess, logError } from './logger.js';
+import fs from 'fs';
+import fetch from 'node-fetch';
+import dayjs from 'dayjs';
+import { logInfo, logSuccess, logError } from './logger.js';
 
-const TARGET_URL = 'http://www.modaily.cn/amucsite/web/index.html#/home'; // 若为 SPA，可换成真实的 API endpoint
+const URL = 'https://www.modaily.cn/amucsite/web/index.html#/home';
+const OUTPUT_PATH = './data/fetch_macaodaily_ws_2.0_index.json';
 
-/**
- * 抓取「澳門日報」最新新闻列表
- * @returns {Promise<Array<{ title: string, date: string, url: string }>>}
- */
-export default async function fetchMacDaily() {
-  logStart('fetch_macaodaily_ws_2.0');
+export default async function fetchMacauDailyIndex() {
+  logInfo('fetch_macaodaily_ws_2.0_index 啟動');
 
   try {
-    // 1. 发请求
-    const { data: html } = await axios.get(TARGET_URL, {
-      timeout: 15000,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; MacDailyBot/1.0)',
-      },
-    });
+    const response = await fetch(URL);
+    const html = await response.text();
 
-    // 2. 载入并解析
-    const $ = cheerio.load(html);
-    const articles = [];
+    const newsRegex = /<div ng-repeat="item in Hdata" class="ng-scope">([\s\S]*?)<\/div>/g;
+    const items = html.match(newsRegex);
 
-    // 3. 根据实际页面结构调整 selector —— 下面是示例
-    //    假设新闻条目在 <div class="news-list"> 下的 .news-item 元素里
-    $('.news-list .news-item').each((i, el) => {
-      if (articles.length >= 22) return false; // 最多抓 22 条
-      const $el = $(el);
-
-      const title = $el.find('.news-title').text().trim();
-      const date  = $el.find('.news-date').text().trim();  // e.g. "2025/07/02"
-
-      let href = $el.find('a').attr('href') || '';
-      // 如果链接不是完整 URL，就补全
-      if (href && !href.startsWith('http')) {
-        href = new URL(href, TARGET_URL).href;
-      }
-
-      articles.push({ title, date, url: href });
-    });
-
-    logSuccess('fetch_macaodaily_ws_2.0', `共抓到 ${articles.length} 条新闻`);
-    return articles;
-  } catch (err) {
-    logError('fetch_macaodaily_ws_2.0', err.message);
-    throw err;
-  }
-}
-
-// 如果直接用 `node fetch_macaodaily_ws_2.0.js` 执行，则打印结果
-if (import.meta.url === `file://${process.argv[1]}`) {
-  (async () => {
-    try {
-      const list = await fetchMacDaily();
-      console.log(JSON.stringify(list, null, 2));
-    } catch {
-      process.exit(1);
+    if (!items || items.length === 0) {
+      logError('❌ 未擷取到任何新聞區塊。');
+      return [];
     }
-  })();
+
+    const newsList = [];
+    for (const block of items.slice(0, 22)) {
+      const titleMatch = block.match(/<h3[^>]*?>(.*?)<\/h3>/);
+      const timeMatch = block.match(/<li class="ng-binding">(.*?)<\/li>/);
+      const idMatch = block.match(/img[^>]+ng-src=".*?(\d{7,8})/);
+
+      if (titleMatch && timeMatch && idMatch) {
+        newsList.push({
+          title: titleMatch[1].trim(),
+          date: dayjs(timeMatch[1].trim()).format('YYYY-MM-DD'),
+          url: `https://www.modaily.cn/amucsite/web/index.html#/detail/${idMatch[1]}`,
+        });
+      }
+    }
+
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(newsList, null, 2), 'utf8');
+    logSuccess(`✅ 共擷取 ${newsList.length} 則新聞，已儲存至 ${OUTPUT_PATH}`);
+    return newsList;
+  } catch (err) {
+    logError('❌ 抓取或解析新聞時發生錯誤：' + err.message);
+    return [];
+  }
 }

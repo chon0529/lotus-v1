@@ -1,31 +1,32 @@
+// server.js
 import express from 'express';
-import fs from 'fs';
+import cors from 'cors';
+import { exec } from 'child_process';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { runColumnTask } from './crawler/spider.js';
 
 const app = express();
 const PORT = 3000;
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+app.use(express.static(path.resolve('./')));
 
-app.get('/data/:col.json', (req, res) => {
-  const file = path.join(__dirname, 'data', `${req.params.col}.json`);
-  if (fs.existsSync(file)) {
-    res.sendFile(file);
-  } else {
-    res.status(404).json([]);
-  }
+// 提供 API 來執行特定爬蟲
+app.get('/run-fetch', (req, res) => {
+  const target = req.query.target;
+  if (!target) return res.status(400).send('Missing target');
+  
+  const scriptPath = `./crawler/fetch_${target}_ws_cb.js`;
+  exec(`node ${scriptPath}`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`[SERVER] ❌ 爬蟲失敗: ${target}`, error);
+      return res.status(500).send('爬蟲執行失敗');
+    }
+    console.log(`[SERVER] ✅ 爬蟲成功: ${target}`);
+    res.send('Fetch completed');
+  });
 });
 
-app.get('/trigger/:col', async (req, res) => {
-  const colId = req.params.col;
-  console.log(`[手動觸發] ${colId}`);
-  await runColumnTask(colId);
-  res.json({ success: true });
-});
-
+// 啟動伺服器
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`[SERVER] ✅ Server started on http://localhost:${PORT}`);
 });

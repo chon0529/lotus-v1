@@ -1,0 +1,10 @@
+[
+  {
+    "date": "2025-07-03",
+    "fetch": "fetch_macaodaily_ws_cb.js",
+    "works": [
+      "[2025-07-03 14:09:46] [啟動] 🚀 fetch_macaodaily_ws_cb.js：啟動",
+      "[2025-07-03 14:09:49] [成功] ✅ fetch_macaodaily_ws_cb.js：✅ 共擷取 0 則新聞，已儲存至 ./data/fetch_macaodaily_ws_cb.json"
+    ]
+  }
+]

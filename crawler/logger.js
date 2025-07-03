@@ -1,54 +1,30 @@
 // logger.js
-// [中英文說明] 統一的爬蟲提示訊息模組，含時間戳、狀態標籤與顏色
 
-import chalk from 'chalk'; // 顏色化輸出，請先執行：npm i chalk
+const logger = {
+  log: (status, action, desc) => {
+    const now = new Date();
+    const date =
+      now.getFullYear() + '-' +
+      String(now.getMonth() + 1).padStart(2, '0') + '-' +
+      String(now.getDate()).padStart(2, '0');
+    const time =
+      String(now.getHours()).padStart(2, '0') + ':' +
+      String(now.getMinutes()).padStart(2, '0') + ':' +
+      String(now.getSeconds()).padStart(2, '0');
+    console.log(`[${date} ${time}] [${status}] [${action}] ${desc}`);
+  },
 
-/**
- * 取得目前時間字串
- * @returns {string} 例如 [2025-07-02 22:45:03]
- */
-function getTime() {
-  const now = new Date();
-  const pad = (n) => n.toString().padStart(2, '0');
-  return `[${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}]`;
-}
+  info: (desc)    => logger.log('啟動', '🚀', desc),
+  success: (desc) => logger.log('成功', '✅', desc),
+  error: (desc)   => logger.log('錯誤', '❌', desc),
+  preview: (desc) => logger.log('預覽', '🔎', desc),
 
-/**
- * 顯示爬蟲啟動訊息
- * @param {string} name - 爬蟲名稱
- */
-export function logStart(name) {
-  console.log(chalk.blueBright(`\n${getTime()} [啟動] 🚀 ${name} 開始執行...\n`));
-}
+  savedMain: (scriptName, total, filename) => {
+    console.log(`${scriptName} 的結果，共 ${total} 條新聞已存至於 ${filename}`);
+  },
+  savedHis: (scriptName, filename, newCount) => {
+    console.log(`${scriptName} 的結果已存至於 ${filename}，共新增 ${newCount} 條新聞`);
+  }
+};
 
-/**
- * 顯示成功訊息
- * @param {string} message - 成功說明內容
- */
-export function logSuccess(message) {
-  console.log(chalk.green(`${getTime()} [成功] ✅ ${message}`));
-}
-
-/**
- * 顯示錯誤訊息
- * @param {string} message - 錯誤說明內容
- */
-export function logError(message) {
-  console.error(chalk.red(`${getTime()} [錯誤] ❌ ${message}`));
-}
-
-/**
- * 顯示警告訊息
- * @param {string} message - 警告說明內容
- */
-export function logWarning(message) {
-  console.warn(chalk.yellow(`${getTime()} [警告] ⚠️ ${message}`));
-}
-
-/**
- * 顯示一般訊息
- * @param {string} message - 說明內容
- */
-export function logInfo(message) {
-  console.log(chalk.cyan(`${getTime()} [訊息] ℹ️ ${message}`));
-}
+export { logger };
