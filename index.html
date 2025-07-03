@@ -1,60 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <title>Lotus 新聞系統</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 2rem; }
-    .column { background: white; border-radius: 10px; padding: 1rem; margin-bottom: 2rem; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
-    .column h2 { margin-top: 0; font-size: 1.25rem; display: flex; justify-content: space-between; align-items: center; }
-    .news-list { list-style: none; padding-left: 0; }
-    .news-list li { margin: 0.5rem 0; }
-    .small { font-size: 0.85rem; color: #555; }
-    button { padding: 0.25rem 0.5rem; cursor: pointer; }
-  </style>
+  <meta charset="UTF-8">
+  <title>新聞卡片範例 — 澳門日報</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="columns"></div>
+  <div id="macaodaily-card" class="card macaodaily-card">
+    <div class="card-header">
+      <div class="card-title-section">
+        <a href="http://www.macaodaily.com/" target="_blank" class="card-title">澳門日報</a>
+        <span class="card-tags">#澳門 #即時</span>
+      </div>
+      <div class="card-meta">
+        <span id="new-count" class="new-count">0</span>
+        <button id="refresh-btn" class="refresh-btn" title="更新">🔄</button>
+      </div>
+      <div id="last-updated" class="last-updated">— 前更新</div>
+    </div>
+    <ul id="news-list" class="news-list"></ul>
+  </div>
 
-  <script>
-    const columns = [
-      { id: 'column1', title: '澳門即時新聞（RSS）' },
-      { id: 'column2', title: '澳門建築工程/城規新聞' },
-      { id: 'column3', title: '粵港澳大灣區新聞' },
-      { id: 'column4', title: '澳門政府入口新聞' },
-    ];
-
-    const GMT8 = dateStr => {
-      const d = new Date(dateStr);
-      return d.toLocaleString('zh-Hant-HK', { timeZone: 'Asia/Macau' });
-    };
-
-    const loadColumn = async (col) => {
-      const res = await fetch(`data/${col.id}.json?_=${Date.now()}`);
-      const news = await res.json();
-      const updated = GMT8(news[0]?.pubDate || new Date());
-
-      const el = document.createElement('div');
-      el.className = 'column';
-      el.innerHTML = `
-        <h2>${col.title}｜${updated}
-          <button onclick="updateColumn('${col.id}')">立即抓取</button>
-        </h2>
-        <ul class="news-list">
-          ${news.map(item => `<li><a href="${item.link}" target="_blank">${item.title}</a><br><span class="small">${GMT8(item.pubDate)}</span></li>`).join('')}
-        </ul>
-      `;
-      document.getElementById('columns').appendChild(el);
-    };
-
-    async function updateColumn(colId) {
-      await fetch(`/trigger/${colId}`);
-      document.getElementById('columns').innerHTML = '';
-      for (const col of columns) loadColumn(col);
-    }
-
-    for (const col of columns) loadColumn(col);
-  </script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

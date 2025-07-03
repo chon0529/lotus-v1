@@ -1,56 +1,64 @@
-// fetch_macaodaily_ws_2.0.js
-import puppeteer from 'puppeteer';
-import fs from 'fs';
-import path from 'path';
+// crawler/fetch_macaodaily_ws_2.0.js
+import axios from 'axios';
+import * as cheerio from 'cheerio';
+import { logStart, logSuccess, logError } from './logger.js';
 
-const OUTPUT_FILE = './data/fetch_macaodaily_ws_2.0.json';
-const URL = 'https://www.modaily.cn/amucsite/web/index.html';
+const TARGET_URL = 'http://www.modaily.cn/amucsite/web/index.html#/home'; // 若为 SPA，可换成真实的 API endpoint
 
-async function fetchMacaoDailyNews() {
-  console.log('[爬蟲] fetch_macaodaily_ws_2.0 啟動');
+/**
+ * 抓取「澳門日報」最新新闻列表
+ * @returns {Promise<Array<{ title: string, date: string, url: string }>>}
+ */
+export default async function fetchMacDaily() {
+  logStart('fetch_macaodaily_ws_2.0');
 
-  const browser = await puppeteer.launch({ headless: 'new' });
-  const page = await browser.newPage();
-  await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
-  await page.setViewport({ width: 1280, height: 800 });
+  try {
+    // 1. 发请求
+    const { data: html } = await axios.get(TARGET_URL, {
+      timeout: 15000,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; MacDailyBot/1.0)',
+      },
+    });
 
-  await page.waitForSelector('#mainContents div.conWidth.mianConLeft > div:nth-child(1)');
+    // 2. 载入并解析
+    const $ = cheerio.load(html);
+    const articles = [];
 
-  const news = await page.evaluate(() => {
-    const items = [];
-    const newsBlocks = document.querySelectorAll('#mainContents div.conWidth.mianConLeft > div');
-    for (let i = 0; i < newsBlocks.length && items.length < 10; i++) {
-      try {
-        const block = newsBlocks[i];
-        const titleEl = block.querySelector('h3');
-        const timeEl = block.querySelector('ul > li:nth-child(2)');
-        const imgEl = block.querySelector('img');
+    // 3. 根据实际页面结构调整 selector —— 下面是示例
+    //    假设新闻条目在 <div class="news-list"> 下的 .news-item 元素里
+    $('.news-list .news-item').each((i, el) => {
+      if (articles.length >= 22) return false; // 最多抓 22 条
+      const $el = $(el);
 
-        if (!titleEl || !timeEl || !imgEl) continue;
+      const title = $el.find('.news-title').text().trim();
+      const date  = $el.find('.news-date').text().trim();  // e.g. "2025/07/02"
 
-        const title = titleEl.innerText.trim();
-        const pubDate = timeEl.innerText.trim();
-        const imgSrc = imgEl.getAttribute('src');
-        const match = imgSrc.match(/\/(\d{7,})_/);
-        const fileId = match ? match[1] : null;
-        const link = fileId
-          ? `https://www.modaily.cn/amucsite/web/index.html#/detail/${fileId}`
-          : '#';
-
-        items.push({ title, pubDate, link });
-      } catch (_) {
-        continue;
+      let href = $el.find('a').attr('href') || '';
+      // 如果链接不是完整 URL，就补全
+      if (href && !href.startsWith('http')) {
+        href = new URL(href, TARGET_URL).href;
       }
-    }
-    return items;
-  });
 
-  await browser.close();
+      articles.push({ title, date, url: href });
+    });
 
-  fs.writeFileSync(path.resolve(OUTPUT_FILE), JSON.stringify(news, null, 2));
-  console.log(`[爬蟲] fetch_macaodaily_ws_2.0 抓取完成，共 ${news.length} 則`);
+    logSuccess('fetch_macaodaily_ws_2.0', `共抓到 ${articles.length} 条新闻`);
+    return articles;
+  } catch (err) {
+    logError('fetch_macaodaily_ws_2.0', err.message);
+    throw err;
+  }
 }
 
-fetchMacaoDailyNews().catch(err => {
-  console.error('[爬蟲] fetch_macaodaily_ws_2.0 錯誤:', err);
-});
+// 如果直接用 `node fetch_macaodaily_ws_2.0.js` 执行，则打印结果
+if (import.meta.url === `file://${process.argv[1]}`) {
+  (async () => {
+    try {
+      const list = await fetchMacDaily();
+      console.log(JSON.stringify(list, null, 2));
+    } catch {
+      process.exit(1);
+    }
+  })();
+}

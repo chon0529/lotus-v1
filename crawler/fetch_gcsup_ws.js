@@ -1,51 +1,55 @@
-import puppeteer from 'puppeteer';  // Make sure to install puppeteer
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import puppeteer from 'puppeteer';
+import dayjs from 'dayjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const outputPath = path.join(__dirname, '../data/fetch_gcsup_ws.json');
+const url = 'https://www.gcs.gov.mo/list/zh-hant/news/%E5%9F%8E%E8%A6%8F%E5%9F%BA%E5%BB%BA?8';
 
 async function fetchGCSNews() {
-    // Launch Puppeteer browser
-    const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
+  console.log('🟡 [爬蟲] fetch_gcsup_ws 啟動...');
+  console.log(`🔗 正在前往網址：${url}`);
 
-    // Set the URL
-    const url = 'https://www.gcs.gov.mo/list/zh-hant/news/%E5%9F%8E%E8%A6%8F%E5%9F%BA%E5%BB%BA?8';
-    await page.goto(url, { waitUntil: 'domcontentloaded' });
+  const browser = await puppeteer.launch({ headless: 'new' });
+  const page = await browser.newPage();
 
-    // Extract data
+  try {
+    await page.goto(url, { waitUntil: 'networkidle0', timeout: 0 });
+    console.log('✅ 網頁加載完成，開始擷取資料...');
+
     const newsData = await page.evaluate(() => {
-        const newsItems = [];
-        const newsElements = document.querySelectorAll('table#id2e9 .infiniteItem');
-        
-        newsElements.forEach(item => {
-            const title = item.querySelector('.txt')?.textContent.trim() || '';
-            const author = item.querySelector('.dept')?.textContent.trim() || '';
-            const date = item.querySelector('.render_timeago_css')?.getAttribute('datetime') || '';
-            const abstract = item.querySelector('.line2Truncate.baseSize')?.textContent.trim() || '';
-            const link = item.querySelector('a')?.href || '';
-            
-            if (title && author && date && abstract && link) {
-                newsItems.push({
-                    title,
-                    author,
-                    date,
-                    abstract,
-                    link
-                });
-            }
-        });
+      const rows = Array.from(document.querySelectorAll('tr.infiniteItem'));
+      return rows.map(row => {
+        const titleEl = row.querySelector('span.txt');
+        const authorEl = row.querySelector('.dept');
+        const dateEl = row.querySelector('time');
+        const abstractEl = row.querySelector('.line2Truncate');
 
-        return newsItems;
+        const title = titleEl?.textContent.trim() || '';
+        const author = authorEl?.textContent.trim() || '';
+        const abstract = abstractEl?.textContent.trim() || '';
+        const rawDate = dateEl?.getAttribute('datetime') || '';
+        const date = rawDate ? rawDate.slice(0, 10) : '';
+        const relativeLink = row.querySelector('a')?.getAttribute('href') || '';
+        const address = relativeLink ? 'https://www.gcs.gov.mo' + relativeLink.replace('..', '') : '';
+
+        return { title, author, abstract, date, address };
+      }).filter(n => n.title && n.address);
     });
 
-    // Close the browser
     await browser.close();
 
-    // Output the data
-    console.log(newsData);
-
-    // Optional: Save the data to a file
-    const fs = require('fs');
-    fs.writeFileSync('gcs_news.json', JSON.stringify(newsData, null, 2));
-
-    return newsData;
+    console.log(`📦 共擷取 ${newsData.length} 則新聞，準備寫入檔案...`);
+    fs.writeFileSync(outputPath, JSON.stringify(newsData, null, 2), 'utf-8');
+    console.log(`💾 已成功儲存至 ${outputPath}`);
+    console.log('✅ [完成] fetch_gcsup_ws.js 任務結束');
+  } catch (err) {
+    console.error('❌ 錯誤：無法擷取 GCS 城規新聞資料');
+    console.error(err);
+    await browser.close();
+  }
 }
 
-fetchGCSNews().catch(error => console.error('Error fetching GCS news:', error));
+fetchGCSNews();

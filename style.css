@@ -1,0 +1,103 @@
+/* Reset 少量 */
+body, ul, li, h1, a, button {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  background: #f2f2f2; font-family: sans-serif; display: flex;
+  justify-content: center; align-items: flex-start; padding: 2rem;
+}
+
+/* 卡片基底 */
+.card {
+  width: 360px;
+  background: #B7274D;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 標頭區 */
+.card-header {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.card-title-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+.card-title:hover { text-decoration: underline; }
+.card-tags {
+  background: rgba(255,255,255,0.2);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* 更新元件 */
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.new-count {
+  display: inline-block;
+  background: rgba(255,255,255,0.3);
+  width: 1.6rem; height: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.refresh-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.refresh-btn:hover { opacity: 0.8; }
+
+/* 最後更新時間 */
+.last-updated {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* 新聞列表 */
+.news-list {
+  list-style: none;
+  max-height: 480px; /* 約 22 條左右 */
+  overflow-y: auto;
+}
+.news-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 0.95rem;
+  transition: font-size 0.1s;
+}
+.news-list li:hover {
+  font-size: 1.05rem;
+}
+
+/* 滾動條微調 */
+.news-list::-webkit-scrollbar {
+  width: 6px;
+}
+.news-list::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 3px;
+}
