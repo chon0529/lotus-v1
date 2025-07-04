@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+  
 <head>
   <meta charset="UTF-8">
   <title>Lotus 新聞展示系統</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 字型 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
   <!-- 卡片樣式 -->
   <link rel="stylesheet" href="./css/macaodaily_card.css">
-
-  <!-- 全域背景色設定 -->
+  <!-- 可以複製多份 css，例如 ./css/jtm_card.css ... -->
   <style>
     body {
       background-color: #f4f7fb;
-      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      font-family: "HanaMin", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
       padding: 40px;
       display: flex;
       flex-wrap: wrap;
@@ -23,19 +19,66 @@
       justify-content: flex-start;
     }
   </style>
+
+  <style>
+.macaodaily-card { 
+  background: #DB4D6D !important;
+  border-radius: 24px !important;
+  color: #fff !important;
+  padding: 32px !important;
+}
+.news-title {
+  font-size: 34px !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.news-rank {
+  font-size: 28px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+}
+.date {
+  color: #fff !important;
+  font-size: 17px !important;
+  text-align: right !important;
+}
+</style>
 </head>
 <body>
+  <!-- 澳門日報卡片 -->
+<div class="macaodaily-card" id="macaodaily-card">
+  <div class="card-header">
+    <div class="card-title-row">
+      <span class="card-title">澳門日報</span>
+      <button class="card-refresh" title="手動刷新">🔄</button>
+      <span class="news-count-icon">19</span>
+    </div>
+    <div class="card-last-update">0 分鐘前更新</div>
+    <div class="macau-tag">#澳門 #即時</div>
+  </div>
+  <div class="news-list-area">
+    <ul class="news-list">
+      <li>
+        <span class="news-rank">1</span>
+        <a class="news-title" href="...">新聞標題</a>
+        <span class="date">2小時前</span>
+      </li>
+      <!-- ... -->
+    </ul>
+  </div>
+</div>
 
-  <!-- ✅ 卡片：澳門日報 -->
-  <div class="macaodaily-card" id="macaodaily-card">
+  <!-- 新增第二張卡片，只要複製並改 ID、標題、路徑即可 -->
+  <div class="macaodaily-card" id="jtm-card">
     <div class="card-header">
-      <div class="card-name-row">
-        澳門日報
-        <div class="news-count-icon">0</div>
-        <button class="card-refresh">🔄</button>
+      <div class="card-title-row">
+        <span class="card-title">Jornal Tribuna</span>
+        <button class="card-refresh" title="手動刷新">🔄</button>
+        <span class="news-count-icon">0</span>
       </div>
       <div class="card-last-update">-- 分鐘前更新</div>
-      <div class="macau-tag">#澳門 #即時</div>
+      <div class="macau-tag">#葡文 #澳門</div>
     </div>
     <div class="news-list-area">
       <ul class="news-list">
@@ -44,8 +87,28 @@
     </div>
   </div>
 
-  <!-- JavaScript：模組化邏輯 -->
-  <script type="module" src="./cards/macaodaily_card.js"></script>
+  <script type="module">
+    import { cardInit } from './cardjs/_card_core.js';
 
+    // 卡片參數
+    cardInit({
+      cardId: 'macaodaily-card',
+      jsonPath: './data/fetch_macaodaily_ws_cb.json',
+      show: 10,
+      max: 19,
+      autoRefresh: 5,  // 分鐘
+      tag: '#澳門 #即時'
+    });
+
+    cardInit({
+      cardId: 'jtm-card',
+      jsonPath: './data/fetch_jtm_ws_cb.json',
+      show: 8,
+      max: 13,
+      autoRefresh: 5,  // 分鐘（如要不同也可改10等）
+      tag: '#葡文 #澳門'
+    });
+    // 之後要加第三張、第四張直接複製即可
+  </script>
 </body>
 </html>
