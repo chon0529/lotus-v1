@@ -1,83 +1,126 @@
-const CARD_ID = 'macaodaily-card';
-const DATA_URL = './data/fetch_macaodaily_ws_cb.json';
-const DEFAULT_SHOW = 10;
-const MAX_SHOW = 22;
-let newsData = [];
-let lastUpdateTime = null;
-let autoRefreshTimer = null;
-const AUTO_REFRESH_MINUTES = 5; // 自動每5分鐘刷新
+// cardjs/macaodaily_card.js
 
-async function fetchNews() {
+const dayjs = window.dayjs;
+
+const cardId = 'macaodaily-card';
+const jsonPath = './data/fetch_macaodaily_ws_cb.json';
+const autoRefreshMinutes = 5;
+
+const card = document.getElementById(cardId);
+const newsListEl = card.querySelector('.news-list');
+const newsCountEl = card.querySelector('.news-count-icon');
+const lastUpdateEl = card.querySelector('.card-last-update');
+const refreshBtn = card.querySelector('.card-refresh');
+const statusEl = card.querySelector('.card-status');
+
+let lastUpdateTime = null;
+let nextRefreshCountdown = autoRefreshMinutes * 60;
+let autoRefreshTimer = null;
+
+async function fetchNewsData() {
   try {
-    const resp = await fetch(DATA_URL + '?_t=' + Date.now());
-    if (!resp.ok) throw new Error('載入失敗');
-    const json = await resp.json();
-    if (!Array.isArray(json)) throw new Error('資料格式錯誤');
-    newsData = json;
-    lastUpdateTime = Date.now();
-    renderCard();
-  } catch (e) {
-    renderError('⚠️ 無法讀取新聞資料');
-    console.error('[MACAODAILY][ERROR]', e);
+    statusEl.textContent = '現正抓取新聞中...';
+    const res = await fetch(jsonPath + '?t=' + Date.now());
+    if (!res.ok) throw new Error('讀取失敗');
+    const data = await res.json();
+    statusEl.textContent = '新聞載入完成';
+    return data;
+  } catch (err) {
+    statusEl.textContent = '讀取新聞失敗';
+    console.error('Fetch error:', err);
+    return null;
   }
 }
 
-function renderCard() {
-  const card = document.getElementById(CARD_ID);
-  if (!card) return;
-  const countIcon = card.querySelector('.news-count-icon');
-  countIcon.textContent = Math.min(newsData.length, MAX_SHOW);
+function renderNewsList(news) {
+  if (!news || news.length === 0) {
+    newsListEl.innerHTML = '<li>無新聞資料</li>';
+    newsCountEl.textContent = '0';
+    return;
+  }
+  newsCountEl.textContent = news.length;
 
-  updateLastUpdate();
-  const newsList = card.querySelector('.news-list');
-  newsList.innerHTML = '';
-  newsData.slice(0, DEFAULT_SHOW).forEach((item, idx) => {
-    let li = document.createElement('li');
-    li.innerHTML = `
+  let html = '';
+  news.slice(0, 22).forEach((item, idx) => {
+    html += `<li>
       <span class="news-rank">${idx + 1}</span>
       <a class="news-title" href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
       <span class="date">${item.pubDate}</span>
-    `;
-    newsList.appendChild(li);
+    </li>`;
   });
+  newsListEl.innerHTML = html;
 }
 
-function renderError(msg) {
-  const card = document.getElementById(CARD_ID);
-  if (!card) return;
-  card.querySelector('.news-count-icon').textContent = '0';
-  card.querySelector('.card-last-update').textContent = '-- 分鐘前更新';
-  card.querySelector('.news-list').innerHTML = `<li>${msg}</li>`;
-}
-
-function updateLastUpdate() {
-  const card = document.getElementById(CARD_ID);
-  if (!card) return;
+function updateLastUpdateTimeDisplay() {
   if (!lastUpdateTime) {
-    card.querySelector('.card-last-update').textContent = '-- 分鐘前更新';
+    lastUpdateEl.textContent = '-- 分鐘前更新';
     return;
   }
-  let mins = Math.floor((Date.now() - lastUpdateTime) / 60000);
-  if (mins < 1) mins = 0;
-  card.querySelector('.card-last-update').textContent = `${mins} 分鐘前更新`;
+  const diffMins = Math.floor((Date.now() - lastUpdateTime) / 60000);
+  lastUpdateEl.textContent = diffMins > 0 ? `${diffMins} 分鐘前更新` : '剛剛更新';
 }
 
-async function macaodailyCardInit() {
-  const card = document.getElementById(CARD_ID);
-  if (!card) return;
-  card.querySelector('.news-count-icon').textContent = '0';
-  card.querySelector('.news-list').innerHTML = '<li>載入中...</li>';
-  card.querySelector('.card-last-update').textContent = '-- 分鐘前更新';
-  await fetchNews();
-  card.querySelector('.card-refresh').onclick = async function(){
-    await fetchNews();
-  };
+function updateNextRefreshCountdownDisplay() {
+  if (nextRefreshCountdown <= 0) {
+    statusEl.textContent = '即將自動更新...';
+    return;
+  }
+  const mins = Math.floor(nextRefreshCountdown / 60);
+  const secs = nextRefreshCountdown % 60;
+  statusEl.textContent = `還剩約 ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')} 將更新`;
+}
+
+async function refreshNews(force = false) {
+  // 檢查是否超過自動更新間隔
+  const now = Date.now();
+  if (!force && lastUpdateTime && (now - lastUpdateTime) < autoRefreshMinutes * 60 * 1000) {
+    // 不重抓，直接更新顯示時間與倒數
+    updateLastUpdateTimeDisplay();
+    nextRefreshCountdown = Math.floor((autoRefreshMinutes * 60) - (now - lastUpdateTime) / 1000);
+    updateNextRefreshCountdownDisplay();
+    return;
+  }
+  
+  // 強制抓取資料
+  statusEl.textContent = '現正抓取新聞中...';
+  const news = await fetchNewsData();
+  if (news) {
+    renderNewsList(news);
+    lastUpdateTime = Date.now();
+    updateLastUpdateTimeDisplay();
+    nextRefreshCountdown = autoRefreshMinutes * 60;
+    updateNextRefreshCountdownDisplay();
+  } else {
+    statusEl.textContent = '抓取新聞失敗，請稍後重試';
+  }
+}
+
+function startAutoRefreshTimer() {
   if (autoRefreshTimer) clearInterval(autoRefreshTimer);
   autoRefreshTimer = setInterval(() => {
-    updateLastUpdate();
-    if (lastUpdateTime && (Date.now() - lastUpdateTime > AUTO_REFRESH_MINUTES*60*1000)) {
-      fetchNews();
+    if (nextRefreshCountdown > 0) {
+      nextRefreshCountdown--;
+      updateNextRefreshCountdownDisplay();
+      updateLastUpdateTimeDisplay();
+    } else {
+      refreshNews(false);
     }
-  }, 15000);
+  }, 1000);
 }
-window.addEventListener('DOMContentLoaded', macaodailyCardInit);
+
+// 監聽刷新按鈕，強制刷新並重置倒數
+refreshBtn.addEventListener('click', async () => {
+  statusEl.textContent = '手動刷新中...';
+  await refreshNews(true);
+  nextRefreshCountdown = autoRefreshMinutes * 60;
+  updateNextRefreshCountdownDisplay();
+});
+
+// 初始化卡片
+async function init() {
+  await refreshNews(false);
+  startAutoRefreshTimer();
+}
+
+// 啟動
+init();

@@ -12,6 +12,7 @@
     "cheerio": "^1.1.0",
     "cors": "^2.8.5",
     "dayjs": "^1.11.13",
+    "dayjs-plugin-utc": "^0.1.2",
     "express": "^5.1.0",
     "fast-xml-parser": "^5.2.5",
     "googleapis": "^150.0.1",
@@ -19,6 +20,8 @@
     "node-fetch": "^3.3.2",
     "puppeteer": "^24.11.2",
     "rss-parser": "^3.13.0",
+    "timezone": "^1.0.23",
+    "utc": "^0.1.0",
     "xml2js": "^0.6.2"
   }
 }

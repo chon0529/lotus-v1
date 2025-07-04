@@ -1,10 +1,464 @@
 [
   {
-    "date": "2025-07-03",
-    "fetch": "fetch_macaodaily_ws_cb.js",
-    "works": [
-      "[2025-07-03 14:09:46] [啟動] 🚀 fetch_macaodaily_ws_cb.js：啟動",
-      "[2025-07-03 14:09:49] [成功] ✅ fetch_macaodaily_ws_cb.js：✅ 共擷取 0 則新聞，已儲存至 ./data/fetch_macaodaily_ws_cb.json"
-    ]
+    "action": "自動更新",
+    "actionTime": "2025-07-04 16:00:43",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "16:00:43",
+    "status": "成功-本次寫入 19 條，新增 3 條"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 16:00:27",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "16:00:27",
+    "status": "開始抓"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:40:07",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:40:27",
+    "desc": "成功-本次寫入 19 條，新增 2 條"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:40:07",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:40:07",
+    "desc": "開始抓"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:23:56",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:24:12",
+    "desc": "成功-本次寫入 19 條，新增 1 條"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:23:56",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:23:56",
+    "desc": "開始抓"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:22:13",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:22:27",
+    "desc": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:22:13",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:22:13",
+    "desc": "開始抓"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:21:16",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:21:33",
+    "desc": "成功-本次寫入 19 條，新增 2 條"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:21:16",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:21:16",
+    "desc": "開始抓"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:14:15",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:14:30",
+    "desc": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "2025-07-04 23:14:15",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "23:14:15",
+    "desc": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 15:06:29",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "15:06:44",
+    "statusText": "成功-本次寫入 19 條，新增 1 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 15:06:29",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "15:06:29",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:59:01",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:59:16",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:59:01",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:59:01",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:51:29",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:51:45",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:51:29",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:51:29",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:48:42",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:48:58",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:48:42",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:48:42",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:46:25",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:46:46",
+    "statusText": "成功-本次寫入 19 條，新增 1 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:46:25",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:46:25",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:39:03",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:39:17",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:39:03",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:39:03",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:36:54",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:37:08",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:36:54",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:36:54",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:35:54",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:36:09",
+    "statusText": "成功-本次寫入 19 條，新增 1 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:35:54",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:35:55",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:29:44",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:29:59",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:29:44",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:29:44",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:28:04",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:28:19",
+    "statusText": "成功-本次寫入 19 條，新增 1 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:28:04",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:28:04",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:21:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:21:29",
+    "statusText": "成功-本次寫入 19 條，新增 6 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:21:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:21:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:16:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:16:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:11:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:11:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:06:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:06:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 14:01:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "14:01:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:56:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:56:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:51:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:51:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:46:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:46:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:41:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:41:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:36:18",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:36:18",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:30:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:30:53",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:25:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:25:53",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:20:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:20:53",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:15:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:15:53",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:10:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:10:53",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:00:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:01:10",
+    "statusText": "成功-本次寫入 19 條，新增 1 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 13:00:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:00:53",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:59:49",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "13:00:04",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:59:49",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:59:49",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:58:51",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:59:18",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:58:49",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:59:10",
+    "statusText": "成功-本次寫入 19 條，新增 1 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:58:51",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:58:51",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:58:49",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:58:49",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:52:31",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:52:51",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:52:31",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:52:31",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:42:31",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:42:52",
+    "statusText": "成功-本次寫入 19 條，新增 2 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:42:31",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:42:31",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:34:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:35:08",
+    "statusText": "成功-本次寫入 19 條，新增 0 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:34:53",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:34:53",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:32:31",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:32:46",
+    "statusText": "成功-本次寫入 19 條，新增 11 條"
+  },
+  {
+    "action": "手動更新",
+    "startTime": "2025-07-04 12:32:31",
+    "script": "fetch_macaodaily_ws_cb.js",
+    "statusTime": "12:32:31",
+    "statusText": "開始抓"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "fetch_macaodaily_ws_cb.js",
+    "script": "2025-07-04 17:17:27",
+    "statusTime": "2025-07-04 17:17:27",
+    "message": "開始抓"
+  },
+  {
+    "action": "自動更新",
+    "actionTime": "fetch_macaodaily_ws_cb.js",
+    "script": "2025-07-04 17:17:27",
+    "statusTime": "2025-07-04 17:17:27",
+    "message": "成功-本次寫入 19 條，新增 17 條"
   }
 ]

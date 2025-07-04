@@ -1,14 +1,8 @@
 {
-  "fetch_macaodaily_ws_cb": {
-    "last_run": "2025-07-03 15:03:45",
-    "last_added": "2025-07-03 15:03:18"
-  },
-  "fetch_jtm_ws_cb": {
-    "last_run": "2025-07-03 15:26:02",
-    "last_added": "2025-07-03 15:26:02"
-  },
   "macaodaily": {
-    "lastRun": "2025-07-03T15:29:22.672Z",
-    "lastSuccess": "2025-07-03T15:29:22.672Z"
+    "lastAuto": "2025-07-04 16:00:43",
+    "lastRun": "2025-07-04 17:17:57",
+    "lastSuccess": "2025-07-04 17:17:57",
+    "lastManual": "2025-07-04 17:17:57"
   }
 }

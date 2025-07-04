@@ -1,32 +1,35 @@
-// server.js
 import express from 'express';
 import cors from 'cors';
-import { exec } from 'child_process';
+import fs from 'fs';
 import path from 'path';
-
 const app = express();
 const PORT = 3000;
 
 app.use(cors());
-app.use(express.static(path.resolve('./')));
+app.use(express.static('./'));
 
-// 提供 API 來執行特定爬蟲
-app.get('/run-fetch', (req, res) => {
-  const target = req.query.target;
-  if (!target) return res.status(400).send('Missing target');
-  
-  const scriptPath = `./crawler/fetch_${target}_ws_cb.js`;
-  exec(`node ${scriptPath}`, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`[SERVER] ❌ 爬蟲失敗: ${target}`, error);
-      return res.status(500).send('爬蟲執行失敗');
-    }
-    console.log(`[SERVER] ✅ 爬蟲成功: ${target}`);
-    res.send('Fetch completed');
-  });
+app.get('/run-fetch', async (req, res) => {
+  const { script, force } = req.query;
+  const scriptPath = path.join('crawler', script || '');
+  if (!fs.existsSync(scriptPath)) {
+    res.status(404).json({ ok: false, msg: 'Script not found' });
+    return;
+  }
+  try {
+    const exec = (await import('child_process')).exec;
+    exec(`node ${scriptPath}`, (err, stdout, stderr) => {
+      if (err) {
+        res.json({ ok: false, error: err.toString() });
+      } else {
+        res.json({ ok: true, msg: 'Fetch done.' });
+      }
+    });
+  } catch (e) {
+    res.json({ ok: false, error: e.toString() });
+  }
 });
 
-// 啟動伺服器
 app.listen(PORT, () => {
   console.log(`[SERVER] ✅ Server started on http://localhost:${PORT}`);
 });
+///// the end of server.js
