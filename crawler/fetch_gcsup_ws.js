@@ -1,23 +1,25 @@
+// fetch_gcsup_ws.js - 增加歷史存檔---202507061900
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
 import dayjs from 'dayjs';
+import { logInfo, logSuccess, logError } from './modules/logger.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const outputPath = path.join(__dirname, '../data/fetch_gcsup_ws.json');
-const url = 'https://www.gcs.gov.mo/list/zh-hant/news/%E5%9F%8E%E8%A6%8F%E5%9F%BA%E5%BB%BA?8';
+const OUTPUT_PATH = path.join(__dirname, '../data/fetch_gcsup_ws.json');
+const HIS_PATH = path.join(__dirname, '../data/his_fetch_gcsup.json');
+const url = 'https://www.gcs.gov.mo/list/zh-hant/news/%E5%9F%8E%E8%A6%8F%E5%9F%BA%E5%BB%BA';
 
 async function fetchGCSNews() {
-  console.log('🟡 [爬蟲] fetch_gcsup_ws 啟動...');
-  console.log(`🔗 正在前往網址：${url}`);
+  logInfo('[爬蟲] fetch_gcsup_ws 啟動', url);
 
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
 
   try {
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 0 });
-    console.log('✅ 網頁加載完成，開始擷取資料...');
+    logInfo('fetch_gcsup_ws', '網頁加載完成，開始擷取資料');
 
     const newsData = await page.evaluate(() => {
       const rows = Array.from(document.querySelectorAll('tr.infiniteItem'));
@@ -41,13 +43,28 @@ async function fetchGCSNews() {
 
     await browser.close();
 
-    console.log(`📦 共擷取 ${newsData.length} 則新聞，準備寫入檔案...`);
-    fs.writeFileSync(outputPath, JSON.stringify(newsData, null, 2), 'utf-8');
-    console.log(`💾 已成功儲存至 ${outputPath}`);
-    console.log('✅ [完成] fetch_gcsup_ws.js 任務結束');
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(newsData, null, 2), 'utf-8');
+    logSuccess('fetch_gcsup_ws', `主檔已成功儲存 ${newsData.length} 則至 ${OUTPUT_PATH}`);
+
+    // ========== 歷史去重寫入 ==========
+    let his = [];
+    try {
+      his = JSON.parse(fs.readFileSync(HIS_PATH, 'utf-8').trim());
+      if (!Array.isArray(his)) his = [];
+    } catch { his = []; }
+
+    const oldKeys = new Set(his.map(n => `${n.title}|${n.date}`));
+    const toAdd = newsData.filter(n => !oldKeys.has(`${n.title}|${n.date}`));
+    if (toAdd.length) {
+      his = toAdd.concat(his).slice(0, 1000);
+      fs.writeFileSync(HIS_PATH, JSON.stringify(his, null, 2), 'utf-8');
+      logSuccess('fetch_gcsup_ws', `新增 ${toAdd.length} 條至歷史檔 ${HIS_PATH}`);
+    } else {
+      logInfo('fetch_gcsup_ws', '沒有新增歷史新聞');
+    }
+
   } catch (err) {
-    console.error('❌ 錯誤：無法擷取 GCS 城規新聞資料');
-    console.error(err);
+    logError('fetch_gcsup_ws', `錯誤：${err.message}`);
     await browser.close();
   }
 }

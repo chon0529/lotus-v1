@@ -1,14 +1,18 @@
-// fetch_cpu_ws.js
 import fs from 'fs';
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
-import { logStart, logSuccess, logError } from './logger.js';
+import {
+  logInfo,
+  logSuccess,
+  logError,
+  logPreview
+} from './modules/logger.js';
 
 const URL = 'https://r.jina.ai/https://www.cpu.gov.mo/zh/news/press-release';
 const SAVE_PATH = './data/fetch_cpu_ws.json';
 const FIXED_ADDRESS = 'https://www.cpu.gov.mo/zh/news/press-release';
 
-logStart('fetch_cpu_ws');
+logInfo('fetch_cpu_ws', '啟動');
 
 try {
   const res = await fetch(URL);
@@ -30,7 +34,7 @@ try {
   }
 
   fs.writeFileSync(SAVE_PATH, JSON.stringify(results, null, 2), 'utf-8');
-  logSuccess('fetch_cpu_ws');
+  logSuccess('fetch_cpu_ws', `共擷取 ${results.length} 則新聞，儲存至 ${SAVE_PATH}`);
 } catch (err) {
-  logError('fetch_cpu_ws', err);
+  logError('fetch_cpu_ws', err.message);
 }

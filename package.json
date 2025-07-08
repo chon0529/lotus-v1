@@ -1,27 +1,15 @@
 {
-  "name": "lotus-news",
+  "name": "lotus-v1",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node tasks/scheduler.js",
-    "rss": "node crawler/rss.js"
+    "start": "node server.js"
   },
   "dependencies": {
-    "axios": "^1.10.0",
-    "chalk": "^5.4.1",
-    "cheerio": "^1.1.0",
-    "cors": "^2.8.5",
-    "dayjs": "^1.11.13",
-    "dayjs-plugin-utc": "^0.1.2",
-    "express": "^5.1.0",
-    "fast-xml-parser": "^5.2.5",
-    "googleapis": "^150.0.1",
-    "node-cron": "^3.0.3",
-    "node-fetch": "^3.3.2",
-    "puppeteer": "^24.11.2",
-    "rss-parser": "^3.13.0",
-    "timezone": "^1.0.23",
-    "utc": "^0.1.0",
-    "xml2js": "^0.6.2"
+    "express": "^4.18.2",
+    "node-fetch": "^3.4.0",
+    "dayjs": "^1.11.9",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.3.8"
   }
 }

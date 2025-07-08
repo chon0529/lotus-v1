@@ -10,6 +10,7 @@ console.log('[爬蟲] fetch_dsop_ws 啟動');
 
 const url = 'https://r.jina.ai/https://www.dsop.gov.mo/newslist/';
 const outputPath = './data/fetch_dsop_ws.json';
+const hisPath = './data/his_fetch_dsop.json';
 
 try {
   const res = await fetch(url);
@@ -38,9 +39,27 @@ try {
     });
   }
 
-  console.log(`✅ 共擷取 ${results.length} 則新聞`);
+  // 寫入主檔
   fs.writeFileSync(outputPath, JSON.stringify(results, null, 2), 'utf-8');
-  console.log(`💾 已儲存至 ${outputPath}`);
+  console.log(`✅ 共擷取 ${results.length} 則新聞，已儲存至 ${outputPath}`);
+
+  // ========== 寫入歷史檔（去重、只保留新資料於最前）=========
+  let his = [];
+  try {
+    his = JSON.parse(fs.readFileSync(hisPath, 'utf-8').trim());
+    if (!Array.isArray(his)) his = [];
+  } catch { his = []; }
+
+  const oldKeys = new Set(his.map(n => `${n.title}|${n.date}`));
+  const toAdd = results.filter(n => !oldKeys.has(`${n.title}|${n.date}`));
+  if (toAdd.length) {
+    his = toAdd.concat(his).slice(0, 1000);
+    fs.writeFileSync(hisPath, JSON.stringify(his, null, 2), 'utf-8');
+    console.log(`🗂️  新增 ${toAdd.length} 條至歷史檔 ${hisPath}`);
+  } else {
+    console.log('🟡 沒有新增歷史新聞');
+  }
+
 } catch (err) {
   console.error('❌ 錯誤:', err.message);
 }

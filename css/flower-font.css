@@ -1,0 +1,8 @@
+/* 如果無法找到花園明朝，讓瀏覽器 fallback */
+@font-face {
+  font-family: 'HanaMin';
+  src: local('HanaMin'), local('Noto Sans TC'), local('Noto Sans'), sans-serif;
+}
+body, .card, h2, li, span, a {
+  font-family: 'HanaMin', 'Noto Sans TC', 'Noto Sans', sans-serif;
+}

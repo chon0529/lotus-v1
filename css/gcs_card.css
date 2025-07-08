@@ -1,0 +1,45 @@
+/* gcs_card.css -GPT-1.1.1-0708-1200 */
+.gcs-card {
+  background: #FFB11B; border-radius:20px; width:430px;
+  color:#fff; position:relative; display:flex;flex-direction:column;
+  box-shadow:0 4px 24px rgba(255,177,27,0.2);
+}
+.gcs-card .card-header { padding:24px 32px 16px; }
+.gcs-card .card-title-row {
+  display:flex; align-items:center; gap:12px;
+  font-size:24px; font-weight:bold;
+}
+.gcs-card .card-refresh {
+  background:rgba(255,255,255,0.2);border:none;border-radius:12px;
+  padding:4px 8px;cursor:pointer;font-size:18px;color:#fff;
+}
+.gcs-card .news-count-icon {
+  background:rgba(255,255,255,0.3);width:32px;height:32px;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:bold;
+}
+.gcs-card .card-last-update { margin-top:8px;font-size:14px;opacity:0.9; }
+.gcs-card .macau-tag {
+  margin-top:4px;background:rgba(255,255,255,0.2);
+  padding:2px 8px;border-radius:8px;font-size:13px;
+}
+.gcs-card .news-list-area {
+  flex:1; overflow-y:auto; max-height:350px; padding:0 16px;
+}
+.gcs-card .news-list {
+  list-style:none;margin:0;padding:0;font-size:16px;
+}
+.gcs-card .news-list li {
+  display:flex;justify-content:space-between;padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+}
+.gcs-card .news-title,
+.gcs-card .news-rank { font-weight: normal; color:#fff; }
+.gcs-card .date { opacity:0.8; font-size:14px; }
+.gcs-card .card-status {
+  padding:8px;text-align:center;font-size:14px;
+  background:rgba(0,0,0,0.2);border-radius:0 0 20px 20px;
+}
+.gcs-card .news-list-area::-webkit-scrollbar { width:6px; }
+.gcs-card .news-list-area::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.3);border-radius:3px; }
+/* ///// the end of gcs_card.css -GPT-1.1.1-0708-1200 */

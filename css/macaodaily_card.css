@@ -1,182 +1,48 @@
-body {
-  background: #f4f7fb;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  padding: 40px;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: flex-start;
-}
-
+/* macaodaily_card.css -GPT-1.1.1-0708-1200 */
 .macaodaily-card {
-  background: #DB4D6D;
-  border-radius: 20px;
-  width: 430px;
-  color: #fff;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  box-shadow: 0 4px 24px #b02e4220;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  min-height: 520px;
+  background: #B5495B; border-radius: 20px; width: 430px;
+  color: #fff; position: relative; display: flex; flex-direction: column;
+  box-shadow: 0 4px 24px rgba(176,46,66,0.13);
 }
-
-.macaodaily-card .card-header {
-  padding: 28px 32px 16px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
+.macaodaily-card .card-header { padding: 24px 32px 16px; }
 .macaodaily-card .card-title-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 28px;
-  font-weight: 900;
-  line-height: 1.22;
-  letter-spacing: 1.2px;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 24px; font-weight: bold;
 }
-
-.macaodaily-card .card-title {
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: 1.3px;
-  margin-right: 7px;
-}
-
-.macaodaily-card .news-count-icon {
-  background: #fff2;
-  color: #fff;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 9px;
-  box-shadow: 0 2px 7px #a0284222;
-  letter-spacing: 0;
-}
-
+.macaodaily-card .card-title { text-decoration: none; color: #fff; }
 .macaodaily-card .card-refresh {
-  background: rgba(255,255,255,0.13);
-  border: none;
-  border-radius: 16px;
-  color: #fff;
-  font-size: 20px;
-  padding: 6px 16px 5px 13px;
-  cursor: pointer;
-  font-weight: 900;
-  transition: background .13s, transform .13s;
-  outline: none;
-  margin-left: 6px;
-  z-index: 3;
+  background: rgba(255,255,255,0.2); border:none; border-radius:12px;
+  padding:4px 8px; cursor:pointer; font-size:18px; color:#fff;
 }
-.macaodaily-card .card-refresh:hover {
-  background: rgba(255,255,255,0.26);
-  transform: scale(1.12);
+.macaodaily-card .news-count-icon {
+  background: rgba(255,255,255,0.3);
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:bold;
 }
-.macaodaily-card .card-last-update {
-  font-size: 15px;
-  margin-top: 4px;
-  color: #fff;
-  letter-spacing: 1px;
-  opacity: 0.95;
-}
+.macaodaily-card .card-last-update { margin-top:8px; font-size:14px; opacity:0.9; }
 .macaodaily-card .macau-tag {
-  background: rgba(255,255,255,0.17);
-  color: #fff;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 1px 15px 2px 10px;
-  letter-spacing: 1.2px;
-  display: inline-block;
-  margin-top: 2px;
+  margin-top:4px; background: rgba(255,255,255,0.2);
+  padding:2px 8px; border-radius:8px; font-size:13px;
 }
 .macaodaily-card .news-list-area {
-  flex: 1 1 auto;
-  overflow-y: auto;
-  max-height: 390px;
-  margin: 0 0 10px 0;
-  padding: 0 22px 0 32px;
+  flex:1; overflow-y:auto; max-height:350px; padding:0 16px;
 }
 .macaodaily-card .news-list {
-  list-style: none;
-  margin: 0; padding: 0;
-  color: #fff;
-  font-size: 17px;
+  list-style:none; margin:0; padding:0; font-size:16px;
 }
 .macaodaily-card .news-list li {
-  margin-bottom: 8px;
-  padding: 3px 0 2px 0;
-  display: flex;
-  align-items: center;
-  border-radius: 7px;
-  font-weight: 400;
-  font-size: 18px;
-  transition: font-size .13s, background .13s;
+  display:flex; justify-content:space-between; padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.2);
 }
-.macaodaily-card .news-list li:hover {
-  font-size: 22px;
-  background: rgba(255,255,255,0.12);
-  font-weight: 700;
-}
-.macaodaily-card .news-rank {
-  color: #fff;
-  font-weight: 800;
-  font-size: 20px;
-  margin-right: 11px;
-  width: 28px;
-  display: inline-block;
-  text-align: right;
-}
-.macaodaily-card .news-title {
-  color: #fff;
-  font-size: 19px;
-  font-weight: 700;
-  margin-right: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: text-decoration .15s;
-}
-.macaodaily-card .news-title:hover {
-  text-decoration: underline;
-  color: #fff6ad;
-}
-.macaodaily-card .date {
-  color: #fff;
-  opacity: 0.76;
-  font-size: 15px;
-  margin-left: auto;
-  font-weight: 400;
-  text-align: right;
-  width: 90px;
-  flex-shrink: 0;
-}
+.macaodaily-card .news-title,
+.macaodaily-card .news-rank { font-weight: normal; color:#fff; }
+.macaodaily-card .date { opacity:0.8; font-size:14px; }
 .macaodaily-card .card-status {
-  background: rgba(0,0,0,0.11);
-  color: #fff;
-  border-radius: 0 0 16px 16px;
-  font-size: 16px;
-  min-height: 28px;
-  margin: 0 0 0 0;
-  text-align: center;
-  letter-spacing: 1.1px;
-  padding-bottom: 6px;
-  padding-top: 3px;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  font-weight: 600;
+  padding:8px; text-align:center; font-size:14px;
+  background: rgba(0,0,0,0.2); border-radius:0 0 20px 20px;
 }
-.macaodaily-card .news-list-area::-webkit-scrollbar { width: 8px; background: rgba(255,255,255,0.11);}
-.macaodaily-card .news-list-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.23); border-radius: 6px;}
-@media (max-width: 600px) {
-  .macaodaily-card { width: 98vw; min-width: unset; }
-  .macaodaily-card .card-header { padding-left: 12px; padding-right: 10px;}
-  .macaodaily-card .news-list-area { padding: 0 8px 0 12px; }
-}
-///// the end of macaodaily_card.css
+/* 垂直滾動條 */
+.macaodaily-card .news-list-area::-webkit-scrollbar { width:6px; }
+.macaodaily-card .news-list-area::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.3); border-radius:3px; }
+/* ///// the end of macaodaily_card.css -GPT-1.1.1-0708-1200 */

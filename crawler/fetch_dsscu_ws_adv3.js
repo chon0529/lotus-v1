@@ -8,7 +8,8 @@ import dayjs from 'dayjs';
 
 // 設定常數
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUTPUT_PATH = path.join(__dirname, '../data/fetch_dsscu_ws_adv3.json');
+const OUTPUT_PATH = path.join(__dirname, '../data/fetch_dsscu_ws.json');  //normal output
+const HIS_PATH = path.join(__dirname, '../data/his_fetch_dsscu.json'); // ★歷史檔
 const ADD_JSON_PATH = path.join(__dirname, '../data/dsscu_ws_add.json');
 
 // Google API 設定
@@ -62,7 +63,6 @@ while ((match = regex.exec(content)) !== null) {
 
 console.log(`✅ 共擷取 ${newsList.length} 則新聞，開始搜尋連結`);
 
-// 查詢網址
 const finalList = [];
 
 for (const item of newsList) {
@@ -125,6 +125,24 @@ for (const item of newsList) {
   console.log(`[${title}] [${date}] [${source}]`);
   finalList.push({ title, date, url });
 }
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 新增歷史檔功能
+let his = [];
+try {
+  his = JSON.parse(fs.readFileSync(HIS_PATH, 'utf-8').trim());
+  if (!Array.isArray(his)) his = [];
+} catch { his = []; }
+const hisKeySet = new Set(his.map(n => `${n.title}|${n.date}`));
+const newHis = finalList.filter(n => !hisKeySet.has(`${n.title}|${n.date}`));
+if (newHis.length) {
+  his = newHis.concat(his).slice(0, 1000);
+  fs.writeFileSync(HIS_PATH, JSON.stringify(his, null, 2), 'utf-8');
+  console.log(`🗂️  新增 ${newHis.length} 條至歷史檔 ${HIS_PATH}`);
+} else {
+  console.log('🟡 沒有新增歷史新聞');
+}
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
 // 儲存兩個檔案
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalList, null, 2), 'utf-8');

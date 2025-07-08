@@ -1,0 +1,59 @@
+/* ==== _common_card.css v20240708 ==== */
+.card {
+  --card-bg-color: #333;
+  min-height: 570px;
+  max-height: 570px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.22), rgba(0,0,0,0.10)), var(--card-bg-color);
+  border: 1.5px solid rgba(255,255,255,0.13);
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+  margin: 24px auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  min-width: 300px;
+  transition: box-shadow 0.19s, background 0.14s;
+}
+.card:hover {
+  box-shadow: 0 4px 22px rgba(0,0,0,0.17);
+  background: linear-gradient(135deg, rgba(0,0,0,0.28), rgba(0,0,0,0.14)), var(--card-bg-color);
+}
+.card-header { position: relative; padding: 8px 14px 2px 18px;  min-height: 22px; display: flex; justify-content: space-between; align-items: center; }
+.card-header h2 { margin: 0; font-size: 1.5rem; font-weight: 800; color: #fff; }
+.card-header .refresh-btn { background: transparent; border: none; font-size: 22px; color: #fff; cursor: pointer; border-radius: 50%; padding: 7px; margin-left: 10px; transition: background 0.15s; }
+.card-header .refresh-btn:hover { background: rgba(255,255,255,0.19); }
+.card-header .card-count-badge { display: inline-block; margin-left: 8px; background: #fff; color: var(--card-bg-color, #B5495B); width: 26px; height: 26px; line-height: 26px; text-align: center; border-radius: 50%; font-size: 14px; font-weight: bold; position: relative; top: 2px; }
+.card-meta { padding: 0 18px 10px 18px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #fff;}
+.card-meta .tags { background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 6px; font-weight: 500; font-size: 13px;}
+.card-meta .last-update { font-size: 14px; color: #fff; }
+
+/* news-list（預設內容一定顯示）*/
+.news-list {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  position: relative;
+  max-height: 480px;     /* 15 條新聞最佳，22 條約需 704px, 自行調整 */
+  min-height: 480px;
+  background: transparent;
+  --scroll-thumb: #F2C7C7;
+  --scroll-track: #B5495B;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  transition: box-shadow 0.16s;
+}
+.news-list::-webkit-scrollbar { width: 8px; background: transparent;}
+.news-list::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 7px; opacity: 0; transition: opacity 0.3s;}
+.news-list.show-scroll::-webkit-scrollbar-thumb { opacity: 1; }
+.news-list::-webkit-scrollbar-track { background: var(--scroll-track); border-radius: 7px; }
+.news-list::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 26px; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.16)); pointer-events: none;}
+.news-list li { display: flex; justify-content: space-between; align-items: center; padding: 9px 18px; border-bottom: 1px solid rgba(255,255,255,0.11); font-size: 1.09rem; color: #fff; background: transparent; cursor: pointer; font-weight: 400; font-family: "Noto Sans TC", "HanaMin", "PingFang TC", "Microsoft JhengHei", sans-serif; transition: background 0.14s; animation: fadein 0.65s;}
+.news-list li:hover { background: rgba(255,255,255,0.13);}
+.news-list a { text-decoration: none; color: #fff; font-weight: 400; flex: 1; font-size: 1.02em;}
+.news-list span { margin-left: 16px; font-size: 0.98em; color: rgba(255,255,255,0.80); min-width: 60px; text-align: right;}
+@keyframes fadein { from { opacity: 0; transform: translateY(12px);} to   { opacity: 1; transform: translateY(0);}}
+.card-status { padding: 10px 18px 13px 18px; background: rgba(0,0,0,0.12); color: #fff; font-size: 10px; text-align: left; border-radius: 0 0 20px 20px; font-family: "Noto Sans TC", "HanaMin", sans-serif;}

@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <title>Lotus 新聞展示系統 - 澳門日報</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- dayjs 使用 UMD 版本，暴露 window.dayjs -->
-  <script src="./lib/dayjs.min.js"></script>
-
-  <!-- 卡片樣式 -->
-  <link rel="stylesheet" href="./css/macaodaily_card.css" />
+  <meta charset="UTF-8">
+  <title>新聞聚合看板</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Day.js 與插件，所有卡片共用 -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+  <script>
+    window.dayjs_plugin_utc = dayjs_plugin_utc;
+    window.dayjs_plugin_timezone = dayjs_plugin_timezone;
+    dayjs.extend(window.dayjs_plugin_utc);
+    dayjs.extend(window.dayjs_plugin_timezone);
+    dayjs.tz.setDefault('Asia/Macau');
+  </script>
+  <link rel="stylesheet" href="./css/_common_card.css">
+  <style>
+    body { margin:0; padding:16px; background:#111; }
+    .cards-row { display:flex; flex-wrap:wrap; margin:0 -8px; }
+    .card-wrapper { padding:8px; box-sizing:border-box; }
+    .row-two .card-wrapper { width:calc(50% - 16px); }
+    .row-four .card-wrapper { width:calc(25% - 16px); }
+  </style>
 </head>
 <body>
-
-  <!-- 澳門日報新聞卡 -->
-  <div class="macaodaily-card" id="macaodaily-card">
-    <div class="card-header">
-      <div class="card-title-row">
-        <span class="card-title">澳門日報</span>
-        <button class="card-refresh" title="手動刷新">🔄</button>
-        <span class="news-count-icon">0</span>
-      </div>
-      <div class="card-last-update">-- 分鐘前更新</div>
-      <div class="macau-tag">#澳門 #即時</div>
-    </div>
-    <div class="news-list-area">
-      <ul class="news-list">
-        <li>載入中...</li>
-      </ul>
-    </div>
-    <div class="card-status">等待更新...</div>
+  <!-- 第一排：兩欄 -->
+  <div class="cards-row row-two">
+    <div class="card-wrapper"><div id="macaodaily-card"></div></div>
+    <div class="card-wrapper"><div id="gcs-card"></div></div>
   </div>
-
-  <!-- 你的卡片腳本，使用 ES Module -->
+  <!-- 第二排：四欄 -->
+  <div class="cards-row row-four">
+    <div class="card-wrapper"><div id="aamacau-card"></div></div>
+    <div class="card-wrapper"><div id="exmoo-card"></div></div>
+    <div class="card-wrapper"><div id="allin-card"></div></div>
+    <div class="card-wrapper"><div id="chengpou-card"></div></div>
+  </div>
+  <!-- 第三排：四欄 -->
+  <div class="cards-row row-four">
+    <div class="card-wrapper"><div id="hojemacau-card"></div></div>
+    <div class="card-wrapper"><div id="jtm-card"></div></div>
+    <div class="card-wrapper"><div id="macaudailytimes-card"></div></div>
+    <div class="card-wrapper"><div id="mopostd-card"></div></div>
+  </div>
+  <!-- 注意：下面全部 type="module"，且順序需先載入 _card_core.js -->
+  <script type="module" src="./cardjs/_card_core.js"></script>
   <script type="module" src="./cardjs/macaodaily_card.js"></script>
+  <script type="module" src="./cardjs/gcs_card.js"></script>
+  <script type="module" src="./cardjs/aamacau_card.js"></script>
+  <script type="module" src="./cardjs/exmoo_card.js"></script>
+  <script type="module" src="./cardjs/allin_card.js"></script>
+  <script type="module" src="./cardjs/chengpou_card.js"></script>
+  <script type="module" src="./cardjs/hojemacau_card.js"></script>
+  <script type="module" src="./cardjs/jtm_card.js"></script>
+  <script type="module" src="./cardjs/macaudailytimes_card.js"></script>
+  <script type="module" src="./cardjs/mopostd_card.js"></script>
 </body>
 </html>

@@ -1,42 +1,50 @@
-// fetch_cru_ws.js
+// fetch_cru_ws.js - Lotus v1.0.1-0710
 import * as cheerio from 'cheerio';
 import fetch from 'node-fetch';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { logStart, logSuccess, logError } from './logger.js';
+import {
+  logInfo,
+  logSuccess,
+  logError,
+  logPreview
+} from './modules/logger.js';
+import {
+  saveHistoryAndUpdateLast,
+  saveToHisAll,
+  updateLastAddedAll
+} from './modules/historyManager.js';
 
-// ⬇️ 取得 __dirname（ESM 模式下的寫法）
+// 取得 __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ⬇️ 目標網址
-const url = 'https://www.cru.gov.mo/news/';
+const SCRIPT      = 'fetch_cru_ws.js';
+const URL         = 'https://www.cru.gov.mo/news/';
+const OUTPUT_PATH = path.join(__dirname, '../data/fetch_cru.json');
+const HISTORY     = path.join(__dirname, '../data/his_fetch_cru.json');
+const HIS_ALL     = path.join(__dirname, '../data/HIS_ALL.json');
+const LASTUPDATED = path.join(__dirname, '../data/last_updated.json');
 
-// ⬇️ 儲存路徑
-const savePath = path.join(__dirname, '../data/fetch_cru_ws.json');
-
-// ⬇️ 啟動提示
-logStart('fetch_cru_ws');
-
-// ⬇️ 主函式
-async function fetchNews() {
+(async () => {
+  logInfo(SCRIPT, '啟動');
   try {
-    const response = await fetch(url);
-    const body = await response.text();
+    const res = await fetch(URL);
+    const body = await res.text();
     const $ = cheerio.load(body);
 
     const newsList = [];
     const baseURL = 'https://www.cru.gov.mo/news/';
 
-    // ⬇️ 擷取每一則新聞項目
     $('div.container.news_list > ul > li').each((_, li) => {
       const titleEl = $(li).find('li.title a');
       const title = titleEl.text().trim();
       const relativeLink = titleEl.attr('href')?.trim().replace(/\s/g, '');
-      const address = relativeLink ? baseURL + relativeLink : null;
-
-      const rawDate = $(li).find('span.news_date1').text().trim(); // 2025/07/02
+      const address = relativeLink
+        ? baseURL + (relativeLink.startsWith('/') ? relativeLink.slice(1) : relativeLink)
+        : null;
+      const rawDate = $(li).find('span.news_date1').text().trim(); // 例：2025/07/02
       const date = rawDate.replace(/\//g, '-'); // → 2025-07-02
 
       if (title && address && date) {
@@ -44,13 +52,19 @@ async function fetchNews() {
       }
     });
 
-    // ⬇️ 儲存 JSON
-    fs.writeFileSync(savePath, JSON.stringify(newsList, null, 2), 'utf-8');
-    logSuccess(`共擷取 ${newsList.length} 則新聞，儲存至 ${savePath}`);
-  } catch (err) {
-    logError('抓取或解析失敗：' + err.message);
-  }
-}
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(newsList, null, 2), 'utf-8');
+    logSuccess(SCRIPT, `共擷取 ${newsList.length} 則新聞，儲存至 ${OUTPUT_PATH}`);
 
-// ⬇️ 執行主程式
-fetchNews();
+    // 歷史存檔、last_updated 更新
+    const { newCount, newItems } = await saveHistoryAndUpdateLast(
+      newsList, 'cru', HISTORY, LASTUPDATED, 'scheduled'
+    );
+    if (newCount > 0) await saveToHisAll(newItems, 'cru', HIS_ALL);
+
+    logSuccess(SCRIPT, `共新增 ${newCount} 條，已寫入 ${HISTORY}`);
+    if (newsList.length) logPreview(SCRIPT, newsList[0]);
+    else logPreview(SCRIPT, '無法顯示新聞');
+  } catch (err) {
+    logError(SCRIPT, `抓取或解析失敗：${err.message}`);
+  }
+})();

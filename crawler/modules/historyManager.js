@@ -1,134 +1,78 @@
+// modules/historyManager.js - Lotus v1.6.0-0710（Big5 註解）
 import fs from 'fs';
-import path from 'path';
 import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc.js';
-import timezone from 'dayjs/plugin/timezone.js';
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
-dayjs.tz.setDefault("Asia/Macau");
+function nowStr(full = false) {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  const H = String(now.getHours()).padStart(2, '0');
+  const M = String(now.getMinutes()).padStart(2, '0');
+  const S = String(now.getSeconds()).padStart(2, '0');
+  return full
+    ? `${y}-${m}-${d} ${H}:${M}:${S}`
+    : `${y}-${m}-${d} ${H}:${M}`;
+}
 
-// 儲存歷史資料到 *_his.json
-function saveHistory(currentList, fileBase) {
-  const hisPath = path.resolve(`./data/${fileBase}_his.json`);
+// === 主函數，呼叫格式：saveHistoryAndUpdateLast(news, key, hisFile, lastFile, operation)
+export function saveHistoryAndUpdateLast(news, key, hisPath, lastPath, operation = 'scheduled') {
   let history = [];
-
+  let newCount = 0;
+  // 1. 讀取歷史
   if (fs.existsSync(hisPath)) {
-    try {
-      const raw = fs.readFileSync(hisPath, 'utf-8');
-      history = JSON.parse(raw);
-    } catch (e) {
-      console.warn(`[警告] 無法讀取 ${fileBase}_his.json，將重新建立`);
-    }
+    try { history = JSON.parse(fs.readFileSync(hisPath, 'utf8').trim()); }
+    catch { history = []; }
+  }
+  const oldLinks = new Set(history.map(n => n.link));
+  const toAdd = news.filter(n => n.link && !oldLinks.has(n.link));
+  // 2. 合併寫入歷史
+  if (toAdd.length) {
+    history = [...toAdd, ...history].slice(0, 1000);
+    fs.writeFileSync(hisPath, JSON.stringify(history, null, 2), 'utf8');
+    newCount = toAdd.length;
   }
 
-  if (!Array.isArray(currentList)) {
-    console.warn(`[錯誤] 傳入的 currentList 不是陣列`);
-    currentList = [];
-  }
-
-  const existingLinks = new Set(history.map(item => item.link));
-  const newItems = currentList.filter(item => !existingLinks.has(item.link));
-  const updatedHistory = [...newItems, ...history].slice(0, 1000); // 最多保留 1000 筆
-
-  fs.writeFileSync(hisPath, JSON.stringify(updatedHistory, null, 2), 'utf-8');
-
-  return {
-    newCount: newItems.length,
-    newItems
-  };
-}
-
-// 更新 last_updated.json，並區分手動/自動
-function saveLastUpdated(fileBase, isManual = false) {
-  const lastPath = path.resolve('./data/last_updated.json');
-  let lastMap = {};
-
+  // 3. 更新 last_updated.json
+  let lastAll = {};
   if (fs.existsSync(lastPath)) {
-    try {
-      const raw = fs.readFileSync(lastPath, 'utf-8');
-      lastMap = JSON.parse(raw);
-    } catch (e) {
-      console.warn(`[警告] 無法讀取 last_updated.json，將重新建立`);
+    try { lastAll = JSON.parse(fs.readFileSync(lastPath, 'utf8').trim()); }
+    catch { lastAll = {}; }
+  }
+  if (!lastAll[key]) lastAll[key] = {};
+  const now = nowStr(true);
+  lastAll[key].lastRun = now;
+  lastAll[key].lastSuccess = now;
+  lastAll[key].lastManual = null; // 如有手動操作再補
+  lastAll[key].fetch = key;
+  lastAll[key].lastAdded = now;
+  lastAll[key].lastOperation = operation; // scheduled/manual/auto
+  fs.writeFileSync(lastPath, JSON.stringify(lastAll, null, 2), 'utf8');
+
+  return { newCount };
+}
+
+// 只寫入歷史，不動 last_updated
+export function saveToHisAll(hisPath, arr) {
+  try {
+    fs.writeFileSync(hisPath, JSON.stringify(arr, null, 2), 'utf8');
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// 批次重建所有 last_updated.json（保留用）
+export function updateLastAddedAll(map, lastPath = './data/last_updated.json') {
+  try {
+    let data = {};
+    if (fs.existsSync(lastPath)) {
+      try { data = JSON.parse(fs.readFileSync(lastPath, 'utf8').trim()); } catch { data = {}; }
     }
-  }
-
-  const now = dayjs().format('YYYY-MM-DD HH:mm:ss');
-
-  if (!lastMap[fileBase]) {
-    lastMap[fileBase] = {};
-  }
-
-  lastMap[fileBase].lastRun = now;
-  if (isManual) {
-    lastMap[fileBase].lastManual = now;
-  } else {
-    lastMap[fileBase].lastAuto = now;
-  }
-  lastMap[fileBase].lastSuccess = now;
-
-  fs.writeFileSync(lastPath, JSON.stringify(lastMap, null, 2), 'utf-8');
+    Object.keys(map).forEach(k => {
+      data[k] = { lastSuccess: map[k] };
+    });
+    fs.writeFileSync(lastPath, JSON.stringify(data, null, 2), 'utf8');
+    return true;
+  } catch { return false; }
 }
-
-// 新增 overalllog 記錄
-function appendOverallLog(actionType, fileBase, actionTime, statusTime, message) {
-  const overallPath = path.resolve('./data/overalllog.json');
-  let logs = [];
-
-  if (fs.existsSync(overallPath)) {
-    try {
-      const raw = fs.readFileSync(overallPath, 'utf-8');
-      logs = JSON.parse(raw);
-    } catch (e) {
-      console.warn(`[警告] 無法讀取 overalllog.json，將重新建立`);
-    }
-  }
-
-  const logEntry = {
-    action: actionType,           // 如 "手動更新" 或 "自動更新"
-    actionTime,                   // 格式 YYYY-MM-DD HH:mm:ss
-    script: fileBase,             // 例如 "fetch_macaodaily_ws_cb.js"
-    statusTime,                   // 格式 HH:mm:ss
-    message                      // 狀態描述
-  };
-
-  logs.push(logEntry);
-
-  // 保留最近1000筆
-  if (logs.length > 1000) {
-    logs = logs.slice(logs.length - 1000);
-  }
-
-  fs.writeFileSync(overallPath, JSON.stringify(logs, null, 2), 'utf-8');
-}
-
-// 綜合儲存歷史、last_updated 和記錄 overalllog
-function saveHistoryAndUpdateLast(currentList, fileBase, isManual = false) {
-  const { newCount, newItems } = saveHistory(currentList, fileBase);
-  saveLastUpdated(fileBase, isManual);
-
-  const nowFull = dayjs().format('YYYY-MM-DD HH:mm:ss');
-  const nowShort = dayjs().format('HH:mm:ss');
-
-  appendOverallLog(
-    isManual ? '手動更新' : '自動更新',
-    fileBase,
-    nowFull,
-    nowShort,
-    `成功-本次寫入 ${currentList.length} 條，新增 ${newCount} 條`
-  );
-
-  return {
-    newCount,
-    newItems
-  };
-}
-
-export {
-  saveHistory,
-  saveLastUpdated,
-  appendOverallLog,
-  saveHistoryAndUpdateLast
-};
-
-///// the end of historyManager.js
