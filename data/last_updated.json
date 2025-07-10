@@ -1,87 +1,111 @@
 {
   "0": {
-    "lastSuccess": "cepa"
+    "lastSuccess": "j"
+  },
+  "1": {
+    "lastSuccess": "t"
+  },
+  "2": {
+    "lastSuccess": "m"
+  },
+  "3": {
+    "lastSuccess": "_"
+  },
+  "4": {
+    "lastSuccess": "w"
+  },
+  "5": {
+    "lastSuccess": "s"
+  },
+  "6": {
+    "lastSuccess": "_"
+  },
+  "7": {
+    "lastSuccess": "c"
+  },
+  "8": {
+    "lastSuccess": "b"
   },
   "macaodaily": {
-    "lastRun": "2025-07-07 14:01:05",
-    "lastSuccess": "2025-07-07 14:01:05",
+    "lastRun": "2025-07-10 15:29:16",
+    "lastSuccess": "2025-07-10 15:29:16",
     "lastManual": null,
     "fetch": "macaodaily",
-    "lastAdded": "2025-07-07 14:01:05",
+    "lastAdded": "2025-07-10 15:29:16",
     "lastOperation": "scheduled"
   },
   "gcs": {
-    "lastSuccess": "2025-07-07 13:50:10",
-    "lastRun": "2025-07-07 13:50:10",
+    "lastSuccess": "2025-07-10 16:03:40",
+    "lastRun": "2025-07-10 16:03:40",
     "lastManual": null,
     "fetch": "gcs",
-    "lastAdded": "2025-07-07 13:50:10",
+    "lastAdded": "2025-07-10 16:03:40",
     "lastOperation": "scheduled"
   },
   "exmoo": {
     "fetch": "exmoo",
-    "lastRun": "2025-07-07 13:57:22",
-    "lastSuccess": "2025-07-07 13:57:22",
-    "lastAdded": "2025-07-07 13:57:22",
+    "lastRun": "2025-07-10 16:03:13",
+    "lastSuccess": "2025-07-10 16:03:13",
+    "lastAdded": "2025-07-10 16:03:13",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "allin": {
     "fetch": "allin",
-    "lastRun": "2025-07-07 13:54:33",
-    "lastSuccess": "2025-07-07 13:54:33",
-    "lastAdded": "2025-07-07 13:54:33",
+    "lastRun": "2025-07-10 15:51:15",
+    "lastSuccess": "2025-07-10 15:51:15",
+    "lastAdded": "2025-07-10 15:51:15",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "aamacau": {
     "fetch": "aamacau",
-    "lastRun": "2025-07-07 13:54:48",
-    "lastSuccess": "2025-07-07 13:54:48",
-    "lastAdded": "2025-07-07 13:54:48",
+    "lastRun": "2025-07-10 15:51:12",
+    "lastSuccess": "2025-07-10 15:51:12",
+    "lastAdded": "2025-07-10 15:51:12",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "chengpou": {
     "fetch": "chengpou",
-    "lastRun": "2025-07-07 13:51:43",
-    "lastSuccess": "2025-07-07 13:51:43",
-    "lastAdded": "2025-07-07 13:51:43",
+    "lastRun": "2025-07-10 15:51:26",
+    "lastSuccess": "2025-07-10 15:51:26",
+    "lastAdded": "2025-07-10 15:51:26",
     "lastOperation": "scheduled",
     "lastManual": null,
     "lastAddedAll": "2025-07-06 00:15:07"
   },
   "jtm": {
-    "lastRun": "2025-07-07 14:00:42",
-    "lastSuccess": "2025-07-07 14:00:42",
+    "lastRun": "2025-07-10 16:07:00",
+    "lastSuccess": "2025-07-10 16:07:00",
     "lastManual": null,
     "fetch": "jtm",
-    "lastAdded": "2025-07-07 14:00:42",
+    "lastAdded": "2025-07-10 16:07:00",
     "lastOperation": "scheduled",
     "lastAddedAll": "2025-07-06 09:38:57"
   },
   "macaudailytimes": {
-    "lastRun": "2025-07-08 23:29:39",
-    "lastSuccess": "2025-07-08 23:29:39",
+    "lastRun": "2025-07-10 16:05:53",
+    "lastSuccess": "2025-07-10 16:05:53",
     "lastManual": null,
     "fetch": "macaudailytimes",
-    "lastAdded": "2025-07-08 23:29:39",
+    "lastAdded": "2025-07-10 16:05:53",
     "lastOperation": "scheduled"
   },
   "mopostd": {
-    "lastRun": "2025-07-07 14:04:17",
-    "lastSuccess": "2025-07-07 14:04:17",
+    "lastRun": "2025-07-10 15:20:45",
+    "lastSuccess": "2025-07-10 15:20:45",
     "lastManual": null,
     "fetch": "mopostd",
-    "lastAdded": "2025-07-07 14:04:17",
+    "lastAdded": "2025-07-10 15:20:45",
     "lastOperation": "scheduled"
   },
   "hojemacau": {
-    "lastRun": "2025-07-07 14:00:28",
-    "lastSuccess": "2025-07-07 14:00:28",
+    "lastRun": "2025-07-10 15:52:47",
+    "lastSuccess": "2025-07-10 15:52:47",
     "lastManual": null,
     "fetch": "hojemacau",
-    "lastAdded": "2025-07-07 14:00:28",
+    "lastAdded": "2025-07-10 15:52:47",
     "lastOperation": "scheduled"
   },
   "committees": {
@@ -158,9 +182,9 @@
   },
   "tdm_ws_cb": {
     "fetch": "tdm_ws_cb",
-    "lastRun": "2025-07-07 14:04:45",
-    "lastSuccess": "2025-07-07 14:04:45",
-    "lastAdded": "2025-07-07 14:04:45",
+    "lastRun": "2025-07-10 14:34:26",
+    "lastSuccess": "2025-07-10 14:34:26",
+    "lastAdded": "2025-07-10 14:34:26",
     "lastOperation": "scheduled",
     "lastManual": null
   },
@@ -197,11 +221,11 @@
     "lastManual": null
   },
   "cepa": {
-    "lastRun": "2025-07-08 23:34:21",
-    "lastSuccess": "2025-07-08 23:34:21",
+    "lastRun": "2025-07-09 10:38:06",
+    "lastSuccess": "2025-07-09 10:38:06",
     "lastManual": null,
     "fetch": "cepa",
-    "lastAdded": "2025-07-08 23:34:21",
+    "lastAdded": "2025-07-09 10:38:06",
     "lastOperation": "scheduled"
   }
 }
