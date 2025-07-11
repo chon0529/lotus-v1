@@ -1,0 +1,129 @@
+/* ==== common.css - v20240712-1 ==== */
+
+/* 全域變數（可集中切換主題）*/
+:root {
+  --page-bg: #f3f6fb;
+  --card-radius: 16px;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --card-width: 360px;
+  --card-min-height: 330px;
+  --fs-news-title: 1em;
+  --fs-news-meta: 0.7em;
+  --fs-card-title: 1.6em;
+  --fs-footer-meta: 0.8em;
+  --icon-size: 1.2em;
+}
+
+/* 卡片核心結構 */
+.card {
+  width: var(--card-width);
+  min-width: var(--card-width);
+  min-height: var(--card-min-height);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 8px auto;
+}
+
+/* 新聞列表外層容器 */
+.news-list-area {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+/* 新聞列表本體 */
+.news-list {
+  margin: 0;
+  padding: 0 4px;
+  list-style: none;
+  max-height: calc(var(--card-min-height) - 120px);
+  overflow-y: auto;
+}
+.news-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 4px 6px;
+  border-bottom: 1px solid #e4e2e2;
+  transition: background 0.13s, font-weight 0.13s;
+}
+.news-list li:hover {
+  background: #f6e8ea;
+  font-weight: 600;
+}
+.news-list a {
+  flex: 1;
+  font-size: var(--fs-news-title);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news-list span {
+  margin-left: 8px;
+  font-size: var(--fs-news-meta);
+  min-width: 56px;
+  text-align: right;
+}
+
+/* 滾動條：只有滾動時顯示 */
+.news-list::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.news-list::-webkit-scrollbar-thumb {
+  background: #e3b5c0;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.news-list.show-scroll::-webkit-scrollbar,
+.news-list.show-scroll::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+/* Footer 框架 */
+.card-footer {
+  display: flex;
+  flex-direction: column;
+}
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px 0 12px;
+}
+.footer-title {
+  font-size: var(--fs-card-title);
+  font-weight: 700;
+  color: #fff;
+}
+.footer-btns {
+  display: flex;
+  gap: 6px;
+}
+.footer-btns button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: var(--icon-size);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.footer-btns button:hover {
+  color: #ffeeee;
+}
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px 6px 12px;
+  font-size: var(--fs-footer-meta);
+}
+.footer-tags,
+.footer-status {
+  color: #fff;
+}

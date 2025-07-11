@@ -1,45 +1,18 @@
 {
-  "0": {
-    "lastSuccess": "j"
-  },
-  "1": {
-    "lastSuccess": "t"
-  },
-  "2": {
-    "lastSuccess": "m"
-  },
-  "3": {
-    "lastSuccess": "_"
-  },
-  "4": {
-    "lastSuccess": "w"
-  },
-  "5": {
-    "lastSuccess": "s"
-  },
-  "6": {
-    "lastSuccess": "_"
-  },
-  "7": {
-    "lastSuccess": "c"
-  },
-  "8": {
-    "lastSuccess": "b"
-  },
   "macaodaily": {
-    "lastRun": "2025-07-10 15:29:16",
-    "lastSuccess": "2025-07-10 15:29:16",
+    "lastRun": "2025-07-11 16:40:05",
+    "lastSuccess": "2025-07-11 16:40:05",
     "lastManual": null,
     "fetch": "macaodaily",
-    "lastAdded": "2025-07-10 15:29:16",
+    "lastAdded": "2025-07-11 16:40:05",
     "lastOperation": "scheduled"
   },
   "gcs": {
-    "lastSuccess": "2025-07-10 16:03:40",
-    "lastRun": "2025-07-10 16:03:40",
+    "lastSuccess": "2025-07-11 17:13:07",
+    "lastRun": "2025-07-11 17:13:07",
     "lastManual": null,
     "fetch": "gcs",
-    "lastAdded": "2025-07-10 16:03:40",
+    "lastAdded": "2025-07-11 17:13:07",
     "lastOperation": "scheduled"
   },
   "exmoo": {

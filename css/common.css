@@ -1,0 +1,169 @@
+/* ==== common.css v20240712-3 ==== */
+/* 全局基础样式，所有卡片共用
+   - 通过 CSS 变量集中管理圆角、阴影、滚动条尺寸等，便于主题切换
+*/
+
+:root {
+  /* 卡片通用变量 */
+  --card-radius:       16px;                      /* 卡片圆角 */
+  --card-shadow:       0 3px 14px rgba(0,0,0,0.15);/* 卡片阴影 */
+  --scrollbar-width:   7px;                       /* 滚动条宽度 */
+  --scrollbar-thumb:   rgba(0,0,0,0.2);           /* 滚动条滑块颜色 */
+}
+
+/* 页面整体 */
+body {
+  margin:   0;
+  padding:  8px 18px 8px 42px; 
+  background: #f3f6fb;
+  font-family: 'Noto Sans TC','HanaMin',sans-serif;
+  font-size: 1em;
+}
+
+/* ========== 卡片容器 ========== */
+.card,
+.card-live,
+.card-conclude {
+  display:        flex;
+  flex-direction: column;
+  position:       relative;
+  overflow:       hidden;
+  border-radius:  var(--card-radius);
+  box-shadow:     var(--card-shadow);
+  background:     var(--card-bg-color,#333);
+  border:         none;        /* 由主题覆盖 */
+  min-height:     380px;
+}
+
+/* ========== 新闻列表外层（白底、不承载滚动） ========== */
+.news-list-area {
+  flex:      1 1 auto;
+  background: var(--newslist-bg, #fff);      
+  position:  relative;
+  /* overflow-y / max-height 的控制，放到 .news-list 上 */
+}
+
+/* ========== 真正滚动的列表 ========== */
+.news-list {
+  list-style:     none;
+  margin:         0;
+  padding:        0 4px;
+  overflow-y:     auto;         /* 滚动放这里 */
+  max-height:     384px;        /* 12 行 × ~32px，与你的 show 值对应 */
+  scrollbar-width: none;        /* Firefox 默认隐藏 */
+}
+
+/* --- WebKit 浏览器滚动条：默认隐藏 --- */
+.news-list::-webkit-scrollbar {
+  width:            var(--scrollbar-width);
+  background:       transparent;
+}
+.news-list::-webkit-scrollbar-thumb {
+  background:       var(--scrollbar-thumb);
+  border-radius:    4px;
+  opacity:          0;           /* 默认透明 */
+  transition:       opacity 0.2s;
+}
+/* JS 在“真实滚动”时给 <ul> 加 .show-scroll */
+.news-list.show-scroll::-webkit-scrollbar-thumb,
+.news-list:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+/* ========== 条目紧凑排版 ========== */
+.news-list li {
+  display:        flex;          /* 水平排列标题+时间 */
+  justify-content:flex-start;    
+  align-items:    center;
+  padding:        4px 6px;       /* 紧凑行距 */
+  transition:     background 0.2s;
+  cursor:         pointer;
+  background: transparent;
+
+}
+.news-list li:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* 标题 1em，黑色 */
+.news-list a {
+  flex: none;                      /* 不要自动撑满 */
+  margin-right: 2px;               /* 和时间之间留点空 */
+  font-size:       1em;
+  color:           var(--newslist-font-title, #000);
+  text-decoration: none;
+  white-space:     nowrap;
+  overflow:        hidden;
+  text-overflow:   ellipsis;
+  margin-right:    4px;
+}
+
+/* 时间 0.8em，灰色 */
+.news-list span {
+  flex: none;
+  color: var(--newslist-font-date, #666);
+  font-size: 0.7em;
+  white-space: nowrap;
+
+}
+
+/* ========== 卡片底部 Footer ========== */
+.card-footer {
+  display:        flex;
+  flex-direction: column;
+}
+/* Footer 两行共用 */
+.footer-row1,
+.footer-row2 {
+  display:        flex;
+  align-items:    center;
+  justify-content:space-between;
+  padding:        4px 8px;
+}
+/* 第一行：大标题 + 按钮 */
+.footer-row1 .card-title {
+  font-size: 1.6em;
+  font-weight: 800;
+}
+.footer-btns {
+  display: flex;
+  gap:     8px;
+}
+.footer-btns .footer-btn {
+  background: transparent;
+  border:     none;
+  cursor:     pointer;
+  font-size:  1.2em;
+  color:      inherit;
+}
+
+/* 第二行：标签 + 状态 */
+.footer-row2 {
+  font-size: 0.8em;
+}
+
+/* 强制 Footer 内文字为白色 */
+.card-footer,
+.card-footer .card-title,
+.card-footer .footer-btn,
+.card-footer .card-tags,
+.card-footer .card-last-update {
+  color: #fff !important;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 600px) {
+  .card,
+  .card-live,
+  .card-conclude {
+    width:     98vw;
+    min-width: 98vw;
+    max-width: 100vw;
+  }
+  .news-list { padding: 0 5px; }
+  .footer-row1,
+  .footer-row2 {
+    padding-left:  10px;
+    padding-right: 10px;
+  }
+}

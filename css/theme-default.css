@@ -1,0 +1,108 @@
+/* ==== theme-default.css – v20240712-4 ==== */
+
+/* 卡片整体：从白→主色的向上渐变 */
+.card.theme-default {
+  background: linear-gradient(
+    to top,
+    var(--card-bg-to)   0%,
+    var(--card-bg-from) 100%
+  );
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.2);
+  border: 3px solid var(--card-bg-from) ;
+}
+
+/* 新闻列表区域白底 */
+.news-list-area {
+  background: var(--newslist-bg);
+  flex: 1 1 auto;
+  overflow-y: hidden;
+}
+
+/* 新闻列表 UL：固定高度，超出滚动 */
+.news-list {
+  list-style: none;
+  margin: 0; 
+  padding: 0 2px;
+  position: relative;
+  /* max-height: calc(var(--show) * 1.5em); /* 或者直接写像 12*1.5em */
+  overflow-y: auto;
+  /* max-height/min-height 由 JS 动态写入 inline-style */ 
+}
+
+
+ 隐藏 WebKit 默认滚动条 
+.news-list::-webkit-scrollbar { width: 0; }
+.news-list::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, rgba(0,0,0,0.2));
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+} 
+
+.news-list.show-scroll::-webkit-scrollbar { width: var(--scrollbar-width); }
+.news-list.show-scroll::-webkit-scrollbar-thumb {
+   opacity: 1;
+} 
+
+ Firefox 
+.news-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb, rgba(0,0,0,0.2)) transparent;
+} 
+
+
+  /* 鼠标 hover 显示滚动条   */
+.news-list:hover,
+.news-list.show-scroll { scrollbar-width: thin; } 
+
+ /* 列表项：紧凑一行排版  */
+.news-list li {
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 4px 6px; 
+  cursor: pointer;
+  background: transparent;
+  transition: background .2s;
+}
+.news-list li:hover { 
+  background: rgba(0,0,0,0.04); 
+}
+
+
+ /*  标题（黑，1em）  */
+.news-list a {
+  flex: none;
+  margin-right: 2px; 
+  color: var(--newslist-font-title, #000);
+  font-size: 1em;
+  text-decoration: none;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+  /*  日期（灰，0.7em，前面带 “– ”）  */
+.news-list span {
+  flex: none;
+  color: var(--newslist-font-date, #666);
+  font-size: 0.7em;
+  white-space: nowrap;
+} 
+
+/* Footer */
+.card-footer { display: flex; flex-direction: column; }
+.footer-row1, .footer-row2 {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4px 8px;
+}
+.footer-row1 .card-title {
+  font-size: 1.6em; font-weight: 800; color: #fff;
+}
+.footer-row2 {
+  font-size: .8em; color: #fff;
+}
+.footer-btns .footer-btn {
+  background: transparent; border: none; color: #fff; font-size: 1.2em;
+}

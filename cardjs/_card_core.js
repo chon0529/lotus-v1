@@ -1,169 +1,209 @@
-// cardjs/_card_core.js - Lotus v1.3.0（2024-07-10，重構UI/結構）
-// 說明：所有新聞卡片皆呼叫 cardInit()。支援 .card-live/.card-conclude，header 完全分層，標題/標籤/更新/刷新按鈕分配明確。
-
+// cardjs/_card_core.js – Lotus v1.3.6（2025-07-12， 修正滚动 & 渐变 & 标题/时间分色 ）
 export function cardInit({
   cardId,
   key,
   title,
   jsonPath,
   fetchScript,
-  show = 15,
-  max = 22,
-  autoRefresh = 5,
+  show = 12,            // 可视条数
+  max = 35,             // 最多加载条数（含历史补充）
+  autoRefresh = 5,      // 分钟
   tag,
-  backgroundColor = '#333',
-  scrollThumb = '#F2C7C7',
-  scrollTrack = '#B5495B'
+  theme = 'default',
+
+  /* 下面 5 个变量可在单卡脚本里传入覆盖 */
+  backgroundColor = '#333',    // 渐变起始色
+  backgroundTo    = '#fff',    // 渐变结束色
+  newsListBg      = '#fff',    // 列表背景色
+  newsListFontTitle = '#000',  // 标题文字色
+  newsListFontDate  = '#666',  // 时间文字色
+
+  /* 滚动条颜色 */
+  scrollThumb = '#666',
+  scrollTrack = '#ddd'
 }) {
   const wrap = document.getElementById(cardId);
-  // --- HTML 結構全重寫：header 主行、副行分離 ---
   wrap.innerHTML = `
-    <div class="card card-live" style="--card-bg-color:${backgroundColor}">
-      <div class="card-header">
-        <div class="header-main">
+    <div class="card card-live theme-${theme}"
+         style="
+           --card-bg-from: ${backgroundColor};
+           --card-bg-to:   ${backgroundTo};
+           --newslist-bg:        ${newsListBg};
+           --newslist-font-title:${newsListFontTitle};
+           --newslist-font-date: ${newsListFontDate};
+           --scroll-thumb: ${scrollThumb};
+           --scroll-track: ${scrollTrack};
+         ">
+      <div class="news-list-area">
+        <ul class="news-list"></ul>
+      </div>
+      <div class="card-footer">
+        <div class="footer-row1">
           <span class="card-title">${title}</span>
-          <span class="card-tags">${tag}</span>
-          <button class="refresh-btn" title="手動刷新">⭮</button>
+          <span class="footer-btns">
+            <button class="footer-btn btn-refresh" title="刷新">⭮</button>
+            <button class="footer-btn btn-move"    title="移动">✥</button>
+          </span>
         </div>
-        <div class="header-sub">
+        <div class="footer-row2">
+          <span class="card-tags">${tag}</span>
           <span class="card-last-update"></span>
         </div>
       </div>
-      <ul class="news-list"></ul>
-      <div class="card-status"></div>
     </div>
   `;
 
-  const now = () => dayjs().tz('Asia/Macau');
-  let countdownId = null;
+  const area = wrap.querySelector('.news-list-area');
+  const ul   = wrap.querySelector('.news-list');
+  const now  = () => dayjs().tz('Asia/Macau');
+  let countdownTimer = null;
 
-  // 套用滾動條顏色/高度
-  setTimeout(() => {
-    const ul = wrap.querySelector('.news-list');
-    if (!ul) return;
-    ul.style.setProperty('--scroll-thumb', scrollThumb);
-    ul.style.setProperty('--scroll-track', scrollTrack);
-    ul.style.maxHeight = `${max * 32}px`;
-    ul.style.minHeight = `${show * 32}px`;
-  }, 0);
-
-  // 狀態欄（footer）
+  // 设置底部文字
   function setStatus(txt) {
-    wrap.querySelector('.card-status').textContent = txt;
+    wrap.querySelector('.card-last-update').textContent = txt;
   }
 
-  // 更新「幾分鐘前」顯示
+  // 更新「几分钟前」
   async function updateLast() {
     try {
       const data = await fetch('/data/last_updated.json').then(r=>r.json());
       const info = data[key] || {};
       let txt = '尚未更新';
       if (info.lastSuccess) {
-        const m = now().diff(dayjs(info.lastSuccess), 'minute');
-        txt = m < 1 ? '剛剛更新' : `${m} 分鐘前更新`;
+        const m = now().diff(dayjs(info.lastSuccess),'minute');
+        txt = m<1?'剛剛更新':`${m} 分鐘前更新`;
       }
-      wrap.querySelector('.card-last-update').textContent = txt;
+      setStatus(txt);
     } catch {
-      wrap.querySelector('.card-last-update').textContent = '';
+      setStatus('');
     }
   }
 
-  // 顯示新聞資料
+  // 渲染新闻条目
   async function showData() {
     let mainList = [];
-    const hisPath = jsonPath.replace('fetch_', 'his_fetch_');
+    const hisPath = jsonPath.replace('fetch_','his_fetch_');
     try { mainList = await fetch(jsonPath).then(r=>r.json()); } catch{}
     if (mainList.length < max) {
       let hisList = [];
       try { hisList = await fetch(hisPath).then(r=>r.json()); } catch{}
-      const seen = new Set(mainList.map(i=>i.link));
-      const extra = hisList.filter(i=>!seen.has(i.link)).slice(0, max - mainList.length);
-      mainList = mainList.concat(extra);
+      const seen = new Set(mainList.map(n=>n.link));
+      mainList = mainList.concat(
+        hisList.filter(n=>!seen.has(n.link)).slice(0, max-mainList.length)
+      );
     }
-    const ul = wrap.querySelector('.news-list');
+
     ul.innerHTML = '';
     mainList.slice(0, max).forEach((item, idx) => {
       const li = document.createElement('li');
       const a  = document.createElement('a');
-      const s  = document.createElement('span');
+      const sp = document.createElement('span');
+
+      // 标题
       a.href = item.link;
+      a.target = '_blank';
+      a.rel    = 'noopener';
       a.textContent = `${idx+1}. ${item.title}`;
-      a.target = '_blank'; a.rel = 'noopener';
-      let p = String(item.pubDate || item.date || '');
-      if (/^\d{1,2}:\d{2}$/.test(p))         s.textContent = p;
-      else if (/^\d{4}-\d{2}-\d{2}/.test(p)) s.textContent = p.slice(5,10);
-      else                                   s.textContent = p || '--';
-      li.append(a, s);
+
+      // 日期
+      let p = String(item.pubDate||item.date||'');
+      if (/^\d{1,2}:\d{2}$/.test(p)) { /* 保持 */ }
+      else if (/^\d{4}-\d{2}-\d{2}/.test(p)) p = p.slice(5,10);
+      else p = p||'--';
+      sp.textContent = `– ${p}`;
+
+      li.append(a, sp);
       ul.append(li);
     });
-    if (!wrap.querySelector('.news-list').children.length) {
+
+    if (!ul.children.length) {
       setStatus('暫無新聞');
+    }
+    // 渲染完毕后，重新计算高度并开启滚动
+    await applyListHeight();
+  }
+
+  // 根据第一行高度动态设置列表区 max/min height
+  async function applyListHeight() {
+    await Promise.resolve();  // 等待DOM刷新
+    const firstLi = ul.querySelector('li');
+    if (!firstLi) return;
+    const rowH = firstLi.getBoundingClientRect().height;
+    area.style.maxHeight = `${max*rowH}px`;
+    area.style.minHeight = `${show*rowH}px`;
+    area.style.overflowY  = 'auto';
+    // 确保 scroll 监听只绑定一次
+    if (!area._scrollInited) {
+      area._scrollInited = true;
+      enableScrollThumb(area);
     }
   }
 
-  // 倒數計時並顯示在狀態欄
+  // 给指定容器绑定「滚动时显示滚动条、静止后隐藏」
+  function enableScrollThumb(el) {
+    let t = null;
+    el.addEventListener('scroll', () => {
+      el.classList.add('show-scroll');
+      clearTimeout(t);
+      t = setTimeout(() => el.classList.remove('show-scroll'), 1200);
+    });
+    // 初始化隐藏
+    el.classList.remove('show-scroll');
+  }
+
+  // 倒计时并自动刷新
   function startCountdown(sec) {
-    clearInterval(countdownId);
+    clearInterval(countdownTimer);
     let s = sec;
-    countdownId = setInterval(() => {
+    countdownTimer = setInterval(() => {
       if (s <= 0) {
-        clearInterval(countdownId);
+        clearInterval(countdownTimer);
         fetchAndUpdate(true);
       } else {
-        const m = String(Math.floor(s/60)).padStart(2,'0');
-        const ss = String(s%60).padStart(2,'0');
-        setStatus(`還剩約 ${m}:${ss} 將更新`);
+        const m  = String(Math.floor(s/60)).padStart(2,'0'),
+              ss = String(s%60).padStart(2,'0');
+        setStatus(`下次自動更新 ${m}:${ss}`);
         s--;
       }
     }, 1000);
   }
 
-  // 主要 fetch + UI 更新
-  async function fetchAndUpdate(force=false) {
-    setStatus(force ? '手動刷新中...' : '正在更新中...');
+  // 请求数据并更新
+  async function fetchAndUpdate(force = false) {
+    setStatus(force?'手動刷新中...':'正在更新中...');
     try {
-      const res = await fetch(`/run-fetch?script=${fetchScript}&force=${force?1:0}&interval=${autoRefresh}`);
+      const res = await fetch(
+        `/run-fetch?script=${fetchScript}&force=${force?1:0}&interval=${autoRefresh}`
+      );
       const ret = await res.json();
-      if (!ret.success) throw new Error(ret.stderr||'未知錯誤');
+      if (!ret.success) throw new Error(ret.stderr||'錯誤');
     } catch {
       setStatus('DNS 失敗，5 分鐘後重試');
-      return startCountdown(5*60);
+      return startCountdown(300);
     }
     await showData();
     await updateLast();
     startCountdown(autoRefresh*60);
   }
 
-  // 初始化流程
-  (async () => {
+  // —— 初始化 —— //
+  (async ()=>{
     await showData();
     await updateLast();
+    // 启动倒计时或立即更新
     let diff = Infinity;
     try {
-      const data = await fetch('/data/last_updated.json').then(r=>r.json());
-      const info = data[key] || {};
-      diff = now().diff(dayjs(info.lastSuccess), 'minute');
-    } catch{}
-    if (diff >= autoRefresh) fetchAndUpdate(true);
-    else startCountdown((autoRefresh - diff)*60);
-    wrap.querySelector('.refresh-btn').addEventListener('click', ()=>fetchAndUpdate(true));
+      const info = (await fetch('/data/last_updated.json').then(r=>r.json()))[key]||{};
+      diff = now().diff(dayjs(info.lastSuccess),'minute');
+    } catch {}
+    if (diff >= autoRefresh) {
+      fetchAndUpdate(true);
+    } else {
+      startCountdown((autoRefresh - diff)*60);
+    }
+    // 绑定刷新按钮
+    wrap.querySelectorAll('.btn-refresh').forEach(btn =>
+      btn.addEventListener('click', ()=>fetchAndUpdate(true))
+    );
   })();
 }
- 
-//只要在滑鼠有「實際滾動」新聞列表時才顯示滾動條，平常（靜止、未滾動、未 hover）完全不顯示。
-function enableScrollbarOnScroll() {
-  document.querySelectorAll('.news-list').forEach(el => {
-    let scrollTimer = null;
-    el.addEventListener('scroll', () => {
-      el.classList.add('show-scroll');
-      if (scrollTimer) clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => {
-        el.classList.remove('show-scroll');
-      }, 1200); // 1.2秒後隱藏
-    });
-    // 初始化時確保沒顯示
-    el.classList.remove('show-scroll');
-  });
-}
-// 請在所有卡片載入/渲染好之後執行一次（通常加在 _card_core.js 末尾）
-setTimeout(enableScrollbarOnScroll, 700);
