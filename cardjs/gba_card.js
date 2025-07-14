@@ -1,32 +1,23 @@
 import { cardInit } from './_card_core.js';
 
-async function gbaCardInit() {
-  const res = await fetch('./data/fetch_gba.json?_=' + Date.now());
-  const newsList = await res.json();
-  const wrap = document.getElementById('gba_card');
-  if (!wrap) return;
-
-  wrap.style.backgroundColor = '#B5495B';
-  wrap.style.color = '#fff';
-
-  if (!newsList.length) {
-    wrap.innerHTML = '<div>無最新新聞</div>';
-    return;
+cardInit({
+  cardId:    'gba-card',
+  key:       'gba',
+  title:     '大灣區新聞',
+  jsonPath:  '/data/fetch_gba.json',
+  show:      10,
+  max:       20,
+  autoRefresh: 60, // 每小時
+  backgroundColor: '#B5495B',
+  backgroundTo:    '#B5495B',
+  tag: '#GBA #灣區',
+  theme: 'default',
+  onRefresh: async function() {
+    const res = await fetch('/run-gba', { method: 'POST' });
+    const ret = await res.json();
+    if (ret.status !== 'OK') {
+      alert('GBA 新聞刷新失敗！');
+      throw new Error(ret.stderr || 'GBA batch error');
+    }
   }
-
-  const ul = document.createElement('ul');
-  ul.style.listStyle = 'none';
-  ul.style.padding = 0;
-
-  newsList.forEach(({ title, link, pubDate, source }, idx) => {
-    const li = document.createElement('li');
-    li.style.marginBottom = '6px';
-    li.innerHTML = `<strong>[${source}]</strong> <a href="${link}" target="_blank" rel="noopener">${title}</a> <small>${pubDate.slice(5)}</small>`;
-    ul.appendChild(li);
-  });
-
-  wrap.innerHTML = '';
-  wrap.appendChild(ul);
-}
-
-cardInit(gbaCardInit, 'gba_card');
+});

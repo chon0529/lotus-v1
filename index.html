@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <meta charset="UTF-8" />
   <title>新聞聚合看板</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,22 +46,92 @@
       margin: 0 -8px;
     }
     .card-wrapper {
+      flex: 1 1 0;
+      min-width: 320px;   /* 防止過窄 */
+      max-width: 100%;
       padding: 8px;
       box-sizing: border-box;
     }
-    .row-two .card-wrapper { width: calc(50% - 16px); }
-    .row-four .card-wrapper { width: calc(25% - 16px); }
+    .row-four .card-wrapper {
+  width: 25%;
+}
+.row-three .card-wrapper {
+  width: 33.3333%;
+}
+
+.row-two .card-wrapper {
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  .row-four .card-wrapper { width: 50%; }
+}
+@media (max-width: 600px) {
+  .row-four .card-wrapper,
+  .row-three .card-wrapper,
+  .row-two .card-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+}
+    
   </style>
 </head>
 <body>
+  <script>
+  document.querySelectorAll('.news-list-area').forEach(area => {
+    let hideTimer;
+    area.addEventListener('scroll', () => {
+      area.classList.add('show-scroll');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(()=>area.classList.remove('show-scroll'), 800);
+    });
+  });
+</script>
+
   <div class="main-wrap">
 
     <!-- 第一排：兩欄 -->
     <div class="cards-row row-three">
       <div class="card-wrapper"><div id="macaodaily-card"></div></div>
       <div class="card-wrapper"><div id="gcs-card"></div></div>
-    </div>
+      <div class="card-wrapper"><div id="empty-card"></div></div>
 
+    </div>
+    <!-- 第二排：3欄 -->
+    <div class="cards-row row-four">
+      <div class="card-wrapper"><div id="dssopt-card"></div></div>
+      <div class="card-wrapper"><div id="committees-card"></div></div>
+      <div class="card-wrapper"><div id="al-ws-card"></div></div>
+      <div class="card-wrapper"><div id="empty-card"></div></div>
+    </div>
+        <!-- 第三排：4欄 -->
+    <div class="cards-row row-four">
+      <div class="card-wrapper"><div id="gba-card"></div></div>
+      <div class="card-wrapper"><div id="hengqingov-card"></div></div>
+      <div class="card-wrapper"><div id="gcsgba-card"></div></div>
+      <div class="card-wrapper"><div id="cepa-card"></div></div>
+    </div>
+            <!-- 第四排：4欄 -->
+    <div class="cards-row row-four">
+      <div class="card-wrapper"><div id="tdm-card"></div></div>
+      <div class="card-wrapper"><div id="macaucabletv-card"></div></div>
+      <div class="card-wrapper"><div id="aamacau-card"></div></div>
+      <div class="card-wrapper"><div id="exmoo-card"></div></div>
+    </div>
+            <!-- 第五排：4欄 -->
+    <div class="cards-row row-four">
+      <div class="card-wrapper"><div id="chengpou-card"></div></div>
+      <div class="card-wrapper"><div id="allin-card"></div></div>
+      <div class="card-wrapper"><div id="macaubusiness-card"></div></div>
+      <div class="card-wrapper"><div id="plataformm-card"></div></div>
+    </div>
+            <!-- 第六排：4欄 -->
+    <div class="cards-row row-four">
+      <div class="card-wrapper"><div id="hojemacau-card"></div></div>
+      <div class="card-wrapper"><div id="jtm-card"></div></div>
+      <div class="card-wrapper"><div id="macaudailytimes-card"></div></div>
+      <div class="card-wrapper"><div id="mopostd-card"></div></div>
+    </div>
 </div>
 
     <!-- （可依需求繼續追加更多排） -->
@@ -71,6 +143,28 @@
   <!-- 各新聞卡片初始化腳本 -->
   <script type="module" src="./cardjs/macaodaily_card.js"></script>
   <script type="module" src="./cardjs/gcs_card.js"></script>
+  <script type="module" src="./cardjs/dssopt_card.js"></script>
+  <script type="module" src="./cardjs/committees_card.js"></script>
+  <script type="module" src="./cardjs/al_ws_card.js"></script>
+  <script type="module" src="./cardjs/cepa_card.js"></script>
+  <script type="module" src="./cardjs/hengqingov_card.js"></script>
+  <script type="module" src="./cardjs/gba_card.js"></script>
+  <script type="module" src="./cardjs/gcsgba_card.js"></script>
+
+  <script type="module" src="./cardjs/tdm_card.js"></script>
+  <script type="module" src="./cardjs/macaucabletv_card.js"></script>
+  <script type="module" src="./cardjs/aamacau_card.js"></script>
+  <script type="module" src="./cardjs/exmoo_card.js"></script>
+  <script type="module" src="./cardjs/chengpou_card.js"></script>
+  <script type="module" src="./cardjs/allin_card.js"></script>
+  <script type="module" src="./cardjs/macaubusiness_card.js"></script>
+  <script type="module" src="./cardjs/plataformm_card.js"></script>
+  <script type="module" src="./cardjs/hojemacau_card.js"></script>
+  <script type="module" src="./cardjs/jtm_card.js"></script>
+  <script type="module" src="./cardjs/macaudailytimes_card.js"></script>
+  <script type="module" src="./cardjs/mopostd_card.js"></script>
+  
+  <script type="module" src="./cardjs/empty_card.js"></script>
   <!-- …其餘 card.js -->
 </body>
 </html>

@@ -10,12 +10,12 @@ cardInit({
   max: 35,
   autoRefresh: 5,
   tag: '#澳門 #即時',
-
-  backgroundColor: '#DB4D6D',  // 渐变起点色
-  backgroundTo:    '#DB4D6D',     // 渐变终点色
-  newsListBg:        '#fff',
-  newsListFontTitle:'#000',
-  newsListFontDate: '#666',
-  scrollThumb:     '#F2C7C7',
-  scrollTrack:     '#B5495B'
+  theme: 'default',
+  backgroundColor: '#DB4D6D',  
+  backgroundTo:    '#DB4D6D',
+  newsListBg:      '#fff',
+  newsListFontTitle: '#000',
+  newsListFontDate:  '#666',
+  scrollThumb: '#F2C7C7',
+  scrollTrack: '#B5495B'
 });

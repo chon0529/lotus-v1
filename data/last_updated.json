@@ -1,108 +1,135 @@
 {
+  "0": {
+    "lastSuccess": "g"
+  },
+  "1": {
+    "lastSuccess": "b"
+  },
+  "2": {
+    "lastSuccess": "a"
+  },
+  "3": {
+    "lastSuccess": "o"
+  },
+  "4": {
+    "lastSuccess": "p"
+  },
+  "5": {
+    "lastSuccess": "t"
+  },
+  "6": {
+    "lastSuccess": "_"
+  },
+  "7": {
+    "lastSuccess": "c"
+  },
+  "8": {
+    "lastSuccess": "b"
+  },
   "macaodaily": {
-    "lastRun": "2025-07-11 16:40:05",
-    "lastSuccess": "2025-07-11 16:40:05",
+    "lastRun": "2025-07-12 20:19:53",
+    "lastSuccess": "2025-07-12 20:19:53",
     "lastManual": null,
     "fetch": "macaodaily",
-    "lastAdded": "2025-07-11 16:40:05",
+    "lastAdded": "2025-07-12 20:19:53",
     "lastOperation": "scheduled"
   },
   "gcs": {
-    "lastSuccess": "2025-07-11 17:13:07",
-    "lastRun": "2025-07-11 17:13:07",
+    "lastSuccess": "2025-07-12 20:19:55",
+    "lastRun": "2025-07-12 20:19:55",
     "lastManual": null,
     "fetch": "gcs",
-    "lastAdded": "2025-07-11 17:13:07",
+    "lastAdded": "2025-07-12 20:19:55",
     "lastOperation": "scheduled"
   },
   "exmoo": {
     "fetch": "exmoo",
-    "lastRun": "2025-07-10 16:03:13",
-    "lastSuccess": "2025-07-10 16:03:13",
-    "lastAdded": "2025-07-10 16:03:13",
+    "lastRun": "2025-07-12 20:20:25",
+    "lastSuccess": "2025-07-12 20:20:25",
+    "lastAdded": "2025-07-12 20:20:25",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "allin": {
     "fetch": "allin",
-    "lastRun": "2025-07-10 15:51:15",
-    "lastSuccess": "2025-07-10 15:51:15",
-    "lastAdded": "2025-07-10 15:51:15",
+    "lastRun": "2025-07-12 20:20:10",
+    "lastSuccess": "2025-07-12 20:20:10",
+    "lastAdded": "2025-07-12 20:20:10",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "aamacau": {
     "fetch": "aamacau",
-    "lastRun": "2025-07-10 15:51:12",
-    "lastSuccess": "2025-07-10 15:51:12",
-    "lastAdded": "2025-07-10 15:51:12",
+    "lastRun": "2025-07-12 20:20:07",
+    "lastSuccess": "2025-07-12 20:20:07",
+    "lastAdded": "2025-07-12 20:20:07",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "chengpou": {
     "fetch": "chengpou",
-    "lastRun": "2025-07-10 15:51:26",
-    "lastSuccess": "2025-07-10 15:51:26",
-    "lastAdded": "2025-07-10 15:51:26",
+    "lastRun": "2025-07-12 20:19:46",
+    "lastSuccess": "2025-07-12 20:19:46",
+    "lastAdded": "2025-07-12 20:19:46",
     "lastOperation": "scheduled",
     "lastManual": null,
     "lastAddedAll": "2025-07-06 00:15:07"
   },
   "jtm": {
-    "lastRun": "2025-07-10 16:07:00",
-    "lastSuccess": "2025-07-10 16:07:00",
+    "lastRun": "2025-07-12 20:20:10",
+    "lastSuccess": "2025-07-12 20:20:10",
     "lastManual": null,
     "fetch": "jtm",
-    "lastAdded": "2025-07-10 16:07:00",
+    "lastAdded": "2025-07-12 20:20:10",
     "lastOperation": "scheduled",
     "lastAddedAll": "2025-07-06 09:38:57"
   },
   "macaudailytimes": {
-    "lastRun": "2025-07-10 16:05:53",
-    "lastSuccess": "2025-07-10 16:05:53",
+    "lastRun": "2025-07-12 20:20:09",
+    "lastSuccess": "2025-07-12 20:20:09",
     "lastManual": null,
     "fetch": "macaudailytimes",
-    "lastAdded": "2025-07-10 16:05:53",
+    "lastAdded": "2025-07-12 20:20:09",
     "lastOperation": "scheduled"
   },
   "mopostd": {
-    "lastRun": "2025-07-10 15:20:45",
-    "lastSuccess": "2025-07-10 15:20:45",
+    "lastRun": "2025-07-12 20:20:09",
+    "lastSuccess": "2025-07-12 20:20:09",
     "lastManual": null,
     "fetch": "mopostd",
-    "lastAdded": "2025-07-10 15:20:45",
+    "lastAdded": "2025-07-12 20:20:09",
     "lastOperation": "scheduled"
   },
   "hojemacau": {
-    "lastRun": "2025-07-10 15:52:47",
-    "lastSuccess": "2025-07-10 15:52:47",
+    "lastRun": "2025-07-12 20:19:43",
+    "lastSuccess": "2025-07-12 20:19:43",
     "lastManual": null,
     "fetch": "hojemacau",
-    "lastAdded": "2025-07-10 15:52:47",
+    "lastAdded": "2025-07-12 20:19:43",
     "lastOperation": "scheduled"
   },
   "committees": {
     "fetch": "committees",
-    "lastRun": "2025-07-07 14:01:45",
-    "lastSuccess": "2025-07-07 14:01:45",
-    "lastAdded": "2025-07-07 14:01:45",
+    "lastRun": "2025-07-12 20:21:07",
+    "lastSuccess": "2025-07-12 20:21:07",
+    "lastAdded": "2025-07-12 20:21:07",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "caeu": {
-    "lastRun": "2025-07-07 13:51:08",
-    "lastSuccess": "2025-07-07 13:51:08",
+    "lastRun": "2025-07-12 20:21:04",
+    "lastSuccess": "2025-07-12 20:21:04",
     "lastManual": null,
     "fetch": "caeu",
-    "lastAdded": "2025-07-07 13:51:08",
+    "lastAdded": "2025-07-12 20:21:04",
     "lastOperation": "scheduled"
   },
   "cru": {
-    "lastRun": "2025-07-07 13:51:23",
-    "lastSuccess": "2025-07-07 13:51:23",
+    "lastRun": "2025-07-12 20:21:06",
+    "lastSuccess": "2025-07-12 20:21:06",
     "lastManual": null,
     "fetch": "cru",
-    "lastAdded": "2025-07-07 13:51:23",
+    "lastAdded": "2025-07-12 20:21:06",
     "lastOperation": "scheduled"
   },
   "cpu": {
@@ -115,33 +142,33 @@
   },
   "gba": {
     "fetch": "gba",
-    "lastRun": "2025-07-07 14:00:12",
-    "lastSuccess": "2025-07-07 14:00:12",
-    "lastAdded": "2025-07-07 14:00:12",
+    "lastRun": "2025-07-12 20:21:06",
+    "lastSuccess": "2025-07-12 20:21:06",
+    "lastAdded": "2025-07-12 20:21:06",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "gcsgba": {
     "fetch": "gcsgba",
-    "lastRun": "2025-07-07 13:44:59",
-    "lastSuccess": "2025-07-07 13:44:59",
-    "lastAdded": "2025-07-07 13:44:59",
+    "lastRun": "2025-07-12 20:20:32",
+    "lastSuccess": "2025-07-12 20:20:32",
+    "lastAdded": "2025-07-12 20:20:32",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "dssopt": {
     "fetch": "dssopt",
-    "lastRun": "2025-07-07 13:43:49",
-    "lastSuccess": "2025-07-07 13:43:49",
-    "lastAdded": "2025-07-07 13:43:49",
+    "lastRun": "2025-07-12 20:20:35",
+    "lastSuccess": "2025-07-12 20:20:35",
+    "lastAdded": "2025-07-12 20:20:35",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "al_ws": {
     "fetch": "al_ws",
-    "lastRun": "2025-07-07 13:43:03",
-    "lastSuccess": "2025-07-07 13:43:03",
-    "lastAdded": "2025-07-07 13:43:03",
+    "lastRun": "2025-07-12 20:19:41",
+    "lastSuccess": "2025-07-12 20:19:41",
+    "lastAdded": "2025-07-12 20:19:41",
     "lastOperation": "scheduled",
     "lastManual": null
   },
@@ -155,9 +182,9 @@
   },
   "tdm_ws_cb": {
     "fetch": "tdm_ws_cb",
-    "lastRun": "2025-07-10 14:34:26",
-    "lastSuccess": "2025-07-10 14:34:26",
-    "lastAdded": "2025-07-10 14:34:26",
+    "lastRun": "2025-07-12 20:19:55",
+    "lastSuccess": "2025-07-12 20:19:55",
+    "lastAdded": "2025-07-12 20:19:55",
     "lastOperation": "scheduled",
     "lastManual": null
   },
@@ -171,18 +198,18 @@
   },
   "plataformm": {
     "fetch": "plataformm",
-    "lastRun": "2025-07-07 13:41:13",
-    "lastSuccess": "2025-07-07 13:41:13",
-    "lastAdded": "2025-07-07 13:41:13",
+    "lastRun": "2025-07-12 20:22:33",
+    "lastSuccess": "2025-07-12 20:22:33",
+    "lastAdded": "2025-07-12 20:22:33",
     "lastOperation": "scheduled",
     "lastManual": null
   },
   "hengqingov": {
-    "lastRun": "2025-07-07 13:40:08",
-    "lastSuccess": "2025-07-07 13:40:08",
+    "lastRun": "2025-07-12 20:20:27",
+    "lastSuccess": "2025-07-12 20:20:27",
     "lastManual": null,
     "fetch": "hengqingov",
-    "lastAdded": "2025-07-07 13:40:08",
+    "lastAdded": "2025-07-12 20:20:27",
     "lastOperation": "scheduled"
   },
   "macaubusiness_ws": {
@@ -194,11 +221,11 @@
     "lastManual": null
   },
   "cepa": {
-    "lastRun": "2025-07-09 10:38:06",
-    "lastSuccess": "2025-07-09 10:38:06",
+    "lastRun": "2025-07-12 20:20:06",
+    "lastSuccess": "2025-07-12 20:20:06",
     "lastManual": null,
     "fetch": "cepa",
-    "lastAdded": "2025-07-09 10:38:06",
+    "lastAdded": "2025-07-12 20:20:06",
     "lastOperation": "scheduled"
   }
 }

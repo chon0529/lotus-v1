@@ -16,7 +16,7 @@ import {
 
 const SCRIPT = 'fetch_hengqingov_ws_cb.js';
 const OUTPUT = './data/fetch_hengqingov_ws_cb.json';
-const HISTORY = './data/his_fetch_hengqingov.json';
+const HISTORY = './data/his_fetch_hengqingov_ws_cb.json';
 const HIS_ALL = './data/HIS_ALL.json';
 const LASTUPDATED = './data/last_updated.json';
 const MAX_NEWS = 22;

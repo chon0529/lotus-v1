@@ -1,37 +1,31 @@
-// hengqingov_card.js  for Lotus v1
-import { cardInit, fmtDate, timeDiffText } from './cardjs_common.js';
+// cardjs/hengqingov_card.js - Lotus v1 標準版
+import { cardInit } from './_card_core.js';
 
-const CARD_ID = 'hengqingov_card';
-const FETCH_KEY = 'hengqingov';
-const DATA_PATH = './data/fetch_hengqingov_ws_cb.json';
-const REFRESH_MINUTES = 60;     // 自動刷新 60 分鐘
-const BG_COLOR = '#33A6B8';
-
-// 卡片初始化
 cardInit({
-  cardId: CARD_ID,
-  fetchKey: FETCH_KEY,
-  dataPath: DATA_PATH,
-  bgColor: BG_COLOR,
-  refreshMinutes: REFRESH_MINUTES,
-  title: '橫琴官網新聞',
-  render(news, { lastSuccess, nextUpdate }) {
-    if (!news || !news.length) return '<div class="empty">暫無新聞</div>';
-    return `
-      <ul class="news-list">
-        ${news.map(item => `
-          <li class="news-item">
-            <a href="${item.link}" target="_blank" class="news-link">
-              <span class="news-title">${item.title}</span>
-              <span class="news-date">${fmtDate(item.pubDate)}</span>
-            </a>
-          </li>
-        `).join('')}
-      </ul>
-      <div class="status-bar">
-        <span>上次更新：${timeDiffText(lastSuccess)}</span>
-        <span>下次：${timeDiffText(nextUpdate, true)}</span>
-      </div>
-    `;
+  cardId:    'hengqingov-card',
+  key:       'hengqingov',
+  title:     '橫琴官方新聞',
+  jsonPath:  '/data/fetch_hengqingov_ws_cb.json',
+  show:      10,
+  max:       30,
+  autoRefresh: 60, // 每 60 分鐘自動刷新
+  backgroundColor: '#33A6B8',
+  backgroundTo:    '#33A6B8',
+  newsListBg:      '#fff',
+  newsListFontTitle: '#000',
+  newsListFontDate:  '#666',
+  scrollThumb:      '#A8D8B9',
+  scrollTrack:      '#33A6B8',
+  tag: '#橫琴 #官方',
+  theme: 'default',
+
+  // 刷新按鈕和自動刷新時都會跑這段
+  onRefresh: async function() {
+    const res = await fetch('/run-fetch?script=fetch_hengqingov_ws_cb.js');
+    const ret = await res.json();
+    if (!ret.success) {
+      alert('橫琴新聞刷新失敗！');
+      throw new Error(ret.stderr || 'Hengqin batch error');
+    }
   }
 });

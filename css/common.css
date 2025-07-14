@@ -1,169 +1,179 @@
-/* ==== common.css v20240712-3 ==== */
-/* 全局基础样式，所有卡片共用
-   - 通过 CSS 变量集中管理圆角、阴影、滚动条尺寸等，便于主题切换
+/* ==== common.css v20240712-4+ ==== */
+/* 全局基礎樣式，所有卡片共用
+   - 卡片樣式、新聞列表區域固定高度 384px
+   - 滾動條僅在實際滾動時顯示
 */
 
 :root {
-  /* 卡片通用变量 */
-  --card-radius:       16px;                      /* 卡片圆角 */
-  --card-shadow:       0 3px 14px rgba(0,0,0,0.15);/* 卡片阴影 */
-  --scrollbar-width:   7px;                       /* 滚动条宽度 */
-  --scrollbar-thumb:   rgba(0,0,0,0.2);           /* 滚动条滑块颜色 */
+  --card-radius:       16px;
+  --card-shadow:       0 3px 14px rgba(0,0,0,0.15);
+  --scrollbar-width:   7px;
+  --scrollbar-thumb:   rgba(0,0,0,0.2);
+    --glass-bg: rgba(255,255,255,0.3);
+  --glass-blur: 10px;
 }
 
-/* 页面整体 */
 body {
-  margin:   0;
-  padding:  8px 18px 8px 42px; 
+  margin: 0;
+  padding: 8px 18px 8px 42px;
   background: #f3f6fb;
   font-family: 'Noto Sans TC','HanaMin',sans-serif;
   font-size: 1em;
 }
 
-/* ========== 卡片容器 ========== */
+/* 卡片容器 */
 .card,
 .card-live,
 .card-conclude {
-  display:        flex;
+  display: flex;
   flex-direction: column;
-  position:       relative;
-  overflow:       hidden;
-  border-radius:  var(--card-radius);
-  box-shadow:     var(--card-shadow);
-  background:     var(--card-bg-color,#333);
-  border:         none;        /* 由主题覆盖 */
-  min-height:     380px;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+
+  min-height: 380px;
+    background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  /* 保留原有漸層或純色 */
+  border: 1px solid rgba(255,255,255,0.4);
+  
 }
 
-/* ========== 新闻列表外层（白底、不承载滚动） ========== */
+/* 新聞列表外層：固定高度 384px */
 .news-list-area {
-  flex:      1 1 auto;
-  background: var(--newslist-bg, #fff);      
-  position:  relative;
-  /* overflow-y / max-height 的控制，放到 .news-list 上 */
+  flex: 1 1 auto;
+  background: rgba(255,255,255,0.8);    /* 半透明，透出底色同時保留可讀性 */
+  height: 384px;                        /* 固定高度，可視 12 條新聞 */
+  overflow: hidden;          /* 隱藏溢出，交由內層 .news-list 處理 */
+  position: relative;
+    border-radius: 12px;                  /* 適度圓角 */
+
 }
 
-/* ========== 真正滚动的列表 ========== */
+/* 真正滾動的 UL */
 .news-list {
-  list-style:     none;
-  margin:         0;
-  padding:        0 4px;
-  overflow-y:     auto;         /* 滚动放这里 */
-  max-height:     384px;        /* 12 行 × ~32px，与你的 show 值对应 */
-  scrollbar-width: none;        /* Firefox 默认隐藏 */
+  list-style: none;
+  margin: 0; padding: 0 4px;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;     /* Firefox 預設隱藏 */
 }
 
-/* --- WebKit 浏览器滚动条：默认隐藏 --- */
+/* WebKit 滾動條：預設隱藏 */
 .news-list::-webkit-scrollbar {
-  width:            var(--scrollbar-width);
-  background:       transparent;
+  width: var(--scrollbar-width);
+  background: transparent;
 }
 .news-list::-webkit-scrollbar-thumb {
-  background:       var(--scrollbar-thumb);
-  border-radius:    4px;
-  opacity:          0;           /* 默认透明 */
-  transition:       opacity 0.2s;
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
-/* JS 在“真实滚动”时给 <ul> 加 .show-scroll */
-.news-list.show-scroll::-webkit-scrollbar-thumb,
-.news-list:hover::-webkit-scrollbar-thumb {
+/* JS 加 .show-scroll 時才顯示 */
+.news-list-area.show-scroll .news-list::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+.news-list-area.show-scroll .news-list::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-/* ========== 条目紧凑排版 ========== */
+/* 列表條目：緊湊但可換行 */
 .news-list li {
-  display:        flex;          /* 水平排列标题+时间 */
-  justify-content:flex-start;    
-  align-items:    center;
-  padding:        4px 6px;       /* 紧凑行距 */
-  transition:     background 0.2s;
-  cursor:         pointer;
-  background: transparent;
-
+  display: flex;
+  flex-wrap: wrap;           /* 長標題自動換行 */
+  align-items: center;
+  justify-content: flex-start;   /* 左对齐，紧跟在一起 */
+  padding: 4px 6px;
+  transition: background 0.2s;
+  cursor: pointer;
 }
 .news-list li:hover {
   background: rgba(0,0,0,0.04);
 }
 
-/* 标题 1em，黑色 */
+/* 標題 1em，黑色 */
 .news-list a {
-  flex: none;                      /* 不要自动撑满 */
-  margin-right: 2px;               /* 和时间之间留点空 */
-  font-size:       1em;
-  color:           var(--newslist-font-title, #000);
+  flex: none;            /* 關鍵！不要 flex: 1 */
+  min-width: 0;           /* 防止因 flex 造成橫向溢出 */
+  margin-right: 4px;
+  font-size: 1em;
+  color: var(--newslist-font-title, #000);
   text-decoration: none;
-  white-space:     nowrap;
-  overflow:        hidden;
-  text-overflow:   ellipsis;
-  margin-right:    4px;
+    word-break: break-all;  /* 保證過長單字也能斷開 */
+    white-space: normal;   /* 允许换行 */
+
 }
 
-/* 时间 0.8em，灰色 */
+/* 日期 0.7em，灰色 */
 .news-list span {
   flex: none;
-  color: var(--newslist-font-date, #666);
   font-size: 0.7em;
-  white-space: nowrap;
-
+  color: var(--newslist-font-date, #666);
+    white-space: nowrap;   /* 日期不换行 */
+  margin: 0;             /* 去掉任何自动外边距 */
 }
 
-/* ========== 卡片底部 Footer ========== */
+
+
+
+/* Footer 基礎 */
 .card-footer {
-  display:        flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
 }
-/* Footer 两行共用 */
-.footer-row1,
+.footer-row1
+{
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4px 8px;
+}
 .footer-row2 {
-  display:        flex;
-  align-items:    center;
-  justify-content:space-between;
-  padding:        4px 8px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4px 8px;
 }
-/* 第一行：大标题 + 按钮 */
 .footer-row1 .card-title {
-  font-size: 1.6em;
-  font-weight: 800;
-}
-.footer-btns {
-  display: flex;
-  gap:     8px;
+  font-size: 1.6em; font-weight: 800; color: #fff;
 }
 .footer-btns .footer-btn {
-  background: transparent;
-  border:     none;
-  cursor:     pointer;
-  font-size:  1.2em;
-  color:      inherit;
+  background: transparent; border: none; cursor: pointer;
+  font-size: 1.2em; color: #fff;
 }
-
-/* 第二行：标签 + 状态 */
 .footer-row2 {
-  font-size: 0.8em;
+  font-size: 0.8em; color: #fff;
 }
 
-/* 强制 Footer 内文字为白色 */
-.card-footer,
-.card-footer .card-title,
-.card-footer .footer-btn,
-.card-footer .card-tags,
-.card-footer .card-last-update {
-  color: #fff !important;
-}
-
-/* ========== 响应式 ========== */
+/* 手機響應 */
 @media (max-width: 600px) {
   .card,
   .card-live,
   .card-conclude {
-    width:     98vw;
-    min-width: 98vw;
-    max-width: 100vw;
+    width: 98vw; min-width: 98vw; max-width: 100vw;
   }
   .news-list { padding: 0 5px; }
   .footer-row1,
-  .footer-row2 {
-    padding-left:  10px;
-    padding-right: 10px;
+  .footer-row2 { padding: 4px 10px; }
+}
+
+
+/* 手機響應 */
+
+.card-wrapper {
+  flex: 1 1 0;
+  min-width: 280px;
+  max-width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.row-four .card-wrapper   { width: 25%; }
+.row-three .card-wrapper { width: 33.3333%; }
+.row-two .card-wrapper   { width: 50%; }
+@media (max-width: 1024px) {
+  .row-four .card-wrapper,
+  .row-three .card-wrapper { width: 50%; }
+}
+@media (max-width: 600px) {
+  .row-four .card-wrapper,
+  .row-three .card-wrapper,
+  .row-two .card-wrapper {
+    width: 100%; min-width: 0;
   }
 }
