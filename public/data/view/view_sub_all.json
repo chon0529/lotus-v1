@@ -1,0 +1,409 @@
+{
+  "schema": "lotus.view.sub_all.v1",
+  "generatedAt": "2026-05-16T14:50:00+08:00",
+  "timezone": "Asia/Macau",
+  "domains": [
+    {
+      "domain": "A",
+      "title": "政府政策",
+      "sources": [
+        {
+          "sourceKey": "a_gcs",
+          "label": "GCS",
+          "badge": "GCS",
+          "newsBoxIds": ["A1"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "政府主源與官方公布，對應政府政策主線。",
+          "items": [
+            {"title": "政府新聞局發布今日政策摘要", "source": "GCS", "time": "10 分鐘前", "newsBox": "A1"},
+            {"title": "跨部門民生措施更新", "source": "GCS", "time": "26 分鐘前", "newsBox": "A1"},
+            {"title": "公共服務安排公布", "source": "GCS", "time": "44 分鐘前", "newsBox": "A1"}
+          ]
+        },
+        {
+          "sourceKey": "a_tdm",
+          "label": "TDM",
+          "badge": "TDM",
+          "newsBoxIds": ["A2"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "澳廣視本地中文新聞，跟進政策與社會議題。",
+          "items": [
+            {"title": "TDM 跟進公共服務最新安排", "source": "TDM", "time": "12 分鐘前", "newsBox": "A2"},
+            {"title": "本地交通及民生消息整理", "source": "TDM", "time": "33 分鐘前", "newsBox": "A2"},
+            {"title": "社會新聞焦點更新", "source": "TDM", "time": "52 分鐘前", "newsBox": "A2"}
+          ]
+        },
+        {
+          "sourceKey": "a_macau_daily",
+          "label": "澳門日報",
+          "badge": "澳",
+          "newsBoxIds": ["A2"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "本地中文媒體，提供政策與民生新聞整理。",
+          "items": [
+            {"title": "澳門日報整理今日政策焦點", "source": "澳門日報", "time": "18 分鐘前", "newsBox": "A2"},
+            {"title": "社區服務消息更新", "source": "澳門日報", "time": "41 分鐘前", "newsBox": "A2"},
+            {"title": "城市治理相關新聞摘要", "source": "澳門日報", "time": "1 小時前", "newsBox": "A2"}
+          ]
+        },
+        {
+          "sourceKey": "a_exmoo",
+          "label": "力報",
+          "badge": "力",
+          "newsBoxIds": ["A2"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "力報本地新聞來源，先以假資料占位。",
+          "items": [
+            {"title": "力報關注本地民生議題", "source": "力報", "time": "21 分鐘前", "newsBox": "A2"},
+            {"title": "政策回應與社會討論摘要", "source": "力報", "time": "47 分鐘前", "newsBox": "A2"},
+            {"title": "本地新聞列表預留", "source": "力報", "time": "1 小時前", "newsBox": "A2"}
+          ]
+        },
+        {
+          "sourceKey": "a_macaucabletv",
+          "label": "澳門有線",
+          "badge": "有",
+          "newsBoxIds": ["A2"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "澳門有線本地新聞與影片新聞占位。",
+          "items": [
+            {"title": "澳門有線更新本地新聞", "source": "澳門有線", "time": "24 分鐘前", "newsBox": "A2"},
+            {"title": "公共事務影片新聞預留", "source": "澳門有線", "time": "50 分鐘前", "newsBox": "A2"},
+            {"title": "社區消息列表準備接入", "source": "澳門有線", "time": "1 小時前", "newsBox": "A2"}
+          ]
+        },
+        {
+          "sourceKey": "a_macaubusiness",
+          "label": "Macao Business",
+          "badge": "MB",
+          "newsBoxIds": ["A3"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "英文商業媒體，觀察澳門政策與經濟環境。",
+          "items": [
+            {"title": "英文媒體關注本地經濟政策", "source": "Macao Business", "time": "18 分鐘前", "newsBox": "A3"},
+            {"title": "商業新聞摘要占位", "source": "Macao Business", "time": "42 分鐘前", "newsBox": "A3"},
+            {"title": "外語新聞列表準備接入", "source": "Macao Business", "time": "1 小時前", "newsBox": "A3"}
+          ]
+        },
+        {
+          "sourceKey": "a_macaupostdaily",
+          "label": "Macau Post Daily",
+          "badge": "MP",
+          "newsBoxIds": ["A3"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "英文媒體來源，用於外語新聞視角。",
+          "items": [
+            {"title": "Macau Post Daily 更新澳門消息", "source": "Macau Post Daily", "time": "27 分鐘前", "newsBox": "A3"},
+            {"title": "英文社會新聞摘要", "source": "Macau Post Daily", "time": "48 分鐘前", "newsBox": "A3"},
+            {"title": "外語新聞占位資料", "source": "Macau Post Daily", "time": "1 小時前", "newsBox": "A3"}
+          ]
+        },
+        {
+          "sourceKey": "a_hojemacau",
+          "label": "Hoje Macau",
+          "badge": "HM",
+          "newsBoxIds": ["A3"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "葡文媒體來源，補足外語新聞版面。",
+          "items": [
+            {"title": "Hoje Macau 整理社會新聞", "source": "Hoje Macau", "time": "29 分鐘前", "newsBox": "A3"},
+            {"title": "葡文政策新聞摘要", "source": "Hoje Macau", "time": "54 分鐘前", "newsBox": "A3"},
+            {"title": "外語新聞分類占位", "source": "Hoje Macau", "time": "1 小時前", "newsBox": "A3"}
+          ]
+        },
+        {
+          "sourceKey": "a_allinmedia",
+          "label": "AllinMedia",
+          "badge": "AI",
+          "newsBoxIds": ["A2"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "本地中文及博彩新聞來源，先以假資料放入中文新聞。",
+          "items": [
+            {"title": "AllinMedia 本地新聞占位", "source": "AllinMedia", "time": "34 分鐘前", "newsBox": "A2"},
+            {"title": "產業與民生消息摘要", "source": "AllinMedia", "time": "59 分鐘前", "newsBox": "A2"},
+            {"title": "新聞列表準備接入", "source": "AllinMedia", "time": "1 小時前", "newsBox": "A2"}
+          ]
+        },
+        {
+          "sourceKey": "a_hengqin_gov",
+          "label": "橫琴官網",
+          "badge": "橫",
+          "newsBoxIds": ["A4"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "橫琴粵澳深度合作區官方消息。",
+          "items": [
+            {"title": "橫琴合作區發布最新通知", "source": "橫琴官網", "time": "37 分鐘前", "newsBox": "A4"},
+            {"title": "合作區政策消息占位", "source": "橫琴官網", "time": "1 小時前", "newsBox": "A4"},
+            {"title": "區域合作新聞預留", "source": "橫琴官網", "time": "1 小時前", "newsBox": "A4"}
+          ]
+        },
+        {
+          "sourceKey": "a_cbaoverall",
+          "label": "灣區總覽",
+          "badge": "GBA",
+          "newsBoxIds": ["A4"],
+          "sourceType": "source_group",
+          "status": "success",
+          "sourceCount": 3,
+          "disabled": false,
+          "description": "整合高層關注、最新動態、最新政策三個內部分類。",
+          "items": [
+            {"title": "大灣區高層關注消息整理", "source": "灣區總覽", "time": "39 分鐘前", "newsBox": "A4"},
+            {"title": "大灣區最新動態占位", "source": "灣區總覽", "time": "1 小時前", "newsBox": "A4"},
+            {"title": "大灣區最新政策摘要", "source": "灣區總覽", "time": "1 小時前", "newsBox": "A4"}
+          ]
+        },
+        {
+          "sourceKey": "a_caeu",
+          "label": "CAEU",
+          "badge": "CE",
+          "newsBoxIds": ["A5"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "城市規劃委員會消息，歸入委員會工作。",
+          "items": [
+            {"title": "城市規劃委員會公布會議消息", "source": "CAEU", "time": "35 分鐘前", "newsBox": "A5"},
+            {"title": "城規議程摘要占位", "source": "CAEU", "time": "57 分鐘前", "newsBox": "A5"},
+            {"title": "委員會工作列表預留", "source": "CAEU", "time": "1 小時前", "newsBox": "A5"}
+          ]
+        },
+        {
+          "sourceKey": "a_cru",
+          "label": "CRU",
+          "badge": "CR",
+          "newsBoxIds": ["A5"],
+          "sourceType": "source",
+          "status": "success",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "都市更新股份有限公司消息，補足城市建設追蹤。",
+          "items": [
+            {"title": "都市更新項目發布工作進度", "source": "CRU", "time": "49 分鐘前", "newsBox": "A5"},
+            {"title": "都更項目摘要占位", "source": "CRU", "time": "1 小時前", "newsBox": "A5"},
+            {"title": "城市建設消息預留", "source": "CRU", "time": "1 小時前", "newsBox": "A5"}
+          ]
+        },
+        {
+          "sourceKey": "a_dsop",
+          "label": "公共建設局",
+          "badge": "DS",
+          "newsBoxIds": ["A5"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "公共建設局工程與公共建設消息。",
+          "items": [
+            {"title": "公共建設局更新工程消息", "source": "公共建設局", "time": "1 小時前", "newsBox": "A5"},
+            {"title": "公共工程新聞摘要占位", "source": "公共建設局", "time": "1 小時前", "newsBox": "A5"},
+            {"title": "建設進度列表準備接入", "source": "公共建設局", "time": "2 小時前", "newsBox": "A5"}
+          ]
+        },
+        {
+          "sourceKey": "a_al",
+          "label": "立法會",
+          "badge": "AL",
+          "newsBoxIds": ["A1"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "立法會口頭及書面質詢消息。",
+          "items": [
+            {"title": "立法會書面質詢回覆更新", "source": "立法會", "time": "28 分鐘前", "newsBox": "A1"},
+            {"title": "口頭質詢資料占位", "source": "立法會", "time": "1 小時前", "newsBox": "A1"},
+            {"title": "議事消息準備接入", "source": "立法會", "time": "2 小時前", "newsBox": "A1"}
+          ]
+        }
+      ]
+    },
+    {
+      "domain": "B",
+      "title": "AS Roma",
+      "sources": [
+        {
+          "sourceKey": "b_laroma24",
+          "label": "LaRoma24",
+          "badge": "LR",
+          "newsBoxIds": ["B2"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "意媒 AS Roma 新聞來源占位。",
+          "items": [
+            {"title": "LaRoma24 更新球隊新聞", "source": "LaRoma24", "time": "42 分鐘前", "newsBox": "B2"},
+            {"title": "訓練與傷病消息占位", "source": "LaRoma24", "time": "1 小時前", "newsBox": "B2"},
+            {"title": "轉會市場摘要預留", "source": "LaRoma24", "time": "2 小時前", "newsBox": "B2"}
+          ]
+        },
+        {
+          "sourceKey": "b_forzaroma",
+          "label": "ForzaRoma",
+          "badge": "FR",
+          "newsBoxIds": ["B2"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "ForzaRoma 新聞來源，暫以本地假資料呈現。",
+          "items": [
+            {"title": "ForzaRoma 球隊消息占位", "source": "ForzaRoma", "time": "47 分鐘前", "newsBox": "B2"},
+            {"title": "賽前觀察摘要預留", "source": "ForzaRoma", "time": "1 小時前", "newsBox": "B2"},
+            {"title": "意媒新聞列表準備接入", "source": "ForzaRoma", "time": "2 小時前", "newsBox": "B2"}
+          ]
+        },
+        {
+          "sourceKey": "b_ilromanista",
+          "label": "Il Romanista",
+          "badge": "IR",
+          "newsBoxIds": ["B2"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "Il Romanista 球隊新聞與觀點占位。",
+          "items": [
+            {"title": "Il Romanista 新聞摘要占位", "source": "Il Romanista", "time": "51 分鐘前", "newsBox": "B2"},
+            {"title": "球員動態預留", "source": "Il Romanista", "time": "1 小時前", "newsBox": "B2"},
+            {"title": "Roma 專題列表準備接入", "source": "Il Romanista", "time": "2 小時前", "newsBox": "B2"}
+          ]
+        },
+        {
+          "sourceKey": "b_asroma_official",
+          "label": "AS Roma Official",
+          "badge": "AS",
+          "newsBoxIds": ["B3"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "AS Roma 官方消息與球會公告。",
+          "items": [
+            {"title": "Roma 官方發布最新訓練消息", "source": "AS Roma Official", "time": "18 分鐘前", "newsBox": "B3"},
+            {"title": "球會公告模組準備接入", "source": "AS Roma Official", "time": "39 分鐘前", "newsBox": "B3"},
+            {"title": "比賽日前發布會摘要預留", "source": "AS Roma Official", "time": "1 小時前", "newsBox": "B3"}
+          ]
+        },
+        {
+          "sourceKey": "b_fixture",
+          "label": "比賽列表",
+          "badge": "賽",
+          "newsBoxIds": ["B4"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "賽程、比分與比賽日提醒的本地假資料占位。",
+          "items": [
+            {"title": "比賽列表模組準備接入", "source": "比賽列表", "time": "55 分鐘前", "newsBox": "B4"},
+            {"title": "下一場比賽時間待填入", "source": "比賽列表", "time": "1 小時前", "newsBox": "B4"},
+            {"title": "賽後結果卡片保留位置", "source": "比賽列表", "time": "1 小時前", "newsBox": "B4"}
+          ]
+        },
+        {
+          "sourceKey": "b_x_reporters",
+          "label": "X 記者消息",
+          "badge": "X",
+          "newsBoxIds": ["B1"],
+          "sourceType": "source",
+          "status": "disabled",
+          "sourceCount": 0,
+          "disabled": true,
+          "description": "X 記者消息暫不實作。",
+          "items": [
+            {"title": "X 記者列表尚未啟用", "source": "X 記者消息", "time": "未啟用", "newsBox": "B1"},
+            {"title": "不抓取真實網站與社群資料", "source": "本地假資料", "time": "未啟用", "newsBox": "B1"},
+            {"title": "後續版本再定義 Source", "source": "Registry pending", "time": "未啟用", "newsBox": "B1"}
+          ]
+        }
+      ]
+    },
+    {
+      "domain": "C",
+      "title": "財經市場",
+      "sources": [
+        {
+          "sourceKey": "c_watchlist",
+          "label": "股價 Watchlist",
+          "badge": "WL",
+          "newsBoxIds": ["C1"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "長期 WatchItem 與自選股票價格觀察。",
+          "items": [
+            {"title": "NOK / NVDA Watchlist 準備中", "source": "股價 Watchlist", "time": "5 分鐘前", "newsBox": "C1"},
+            {"title": "AMD 觀察項保留", "source": "股價 Watchlist", "time": "26 分鐘前", "newsBox": "C1"},
+            {"title": "價格更新仍使用假資料", "source": "股價 Watchlist", "time": "44 分鐘前", "newsBox": "C1"}
+          ]
+        },
+        {
+          "sourceKey": "c_finance_news",
+          "label": "財經新聞",
+          "badge": "財",
+          "newsBoxIds": ["C2"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "市場新聞、宏觀事件與公司消息的本地占位。",
+          "items": [
+            {"title": "財經新聞模組準備接入", "source": "財經新聞", "time": "21 分鐘前", "newsBox": "C2"},
+            {"title": "美股市場摘要占位", "source": "財經新聞", "time": "48 分鐘前", "newsBox": "C2"},
+            {"title": "港股焦點新聞占位", "source": "財經新聞", "time": "1 小時前", "newsBox": "C2"}
+          ]
+        },
+        {
+          "sourceKey": "c_ai_semiconductor",
+          "label": "AI 半導體",
+          "badge": "AI",
+          "newsBoxIds": ["C3"],
+          "sourceType": "source",
+          "status": "planned",
+          "sourceCount": 1,
+          "disabled": false,
+          "description": "AI、半導體與科技股主題消息。",
+          "items": [
+            {"title": "AI 與半導體新聞聚合準備中", "source": "AI 半導體", "time": "28 分鐘前", "newsBox": "C3"},
+            {"title": "NVDA 主題新聞保留", "source": "AI 半導體", "time": "46 分鐘前", "newsBox": "C3"},
+            {"title": "科技股 WatchItem 後續接入", "source": "AI 半導體", "time": "1 小時前", "newsBox": "C3"}
+          ]
+        }
+      ]
+    }
+  ]
+}

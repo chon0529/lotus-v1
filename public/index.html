@@ -9,10 +9,13 @@
 </head>
 <body>
   <aside class="sidebar">
-    <div class="brand">Nova-Lotus</div>
-    <button data-page="sub_main" class="nav active">總覽</button>
-    <button data-page="sub_all" class="nav">全部新聞</button>
-    <button data-page="sub_health" class="nav">來源健康</button>
+    <div class="side-head">
+      <div class="brand"><span class="brand-full">Nova-Lotus</span><span class="brand-short">NL</span></div>
+      <button id="sidebarToggle" class="icon-btn" type="button" aria-label="收合側欄">‹</button>
+    </div>
+    <button data-page="sub_main" class="nav active"><span class="nav-full">總覽</span><span class="nav-short">總</span></button>
+    <button data-page="sub_all" class="nav"><span class="nav-full">全部新聞</span><span class="nav-short">全</span></button>
+    <button data-page="sub_health" class="nav"><span class="nav-full">來源健康</span><span class="nav-short">健</span></button>
   </aside>
   <main class="main">
     <header class="topbar">
@@ -20,7 +23,10 @@
         <h1 id="pageTitle">總覽</h1>
         <p>Local-first personal news station</p>
       </div>
-      <button id="refreshBtn">刷新</button>
+      <div class="topbar-actions">
+        <button id="themeToggle" type="button">明亮</button>
+        <button id="refreshBtn" type="button">刷新</button>
+      </div>
     </header>
     <section id="app"></section>
   </main>
