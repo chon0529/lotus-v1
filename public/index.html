@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nova-Lotus</title>
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/layout.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">Nova-Lotus</div>
+    <button data-page="sub_main" class="nav active">總覽</button>
+    <button data-page="sub_all" class="nav">全部新聞</button>
+    <button data-page="sub_health" class="nav">來源健康</button>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1 id="pageTitle">總覽</h1>
+        <p>Local-first personal news station</p>
+      </div>
+      <button id="refreshBtn">刷新</button>
+    </header>
+    <section id="app"></section>
+  </main>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

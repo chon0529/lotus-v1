@@ -1,0 +1,36 @@
+﻿*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);display:flex;min-height:100vh}
+.sidebar{width:220px;background:#0b0f14;border-right:1px solid var(--line);padding:18px;position:fixed;inset:0 auto 0 0}
+.brand{font-size:22px;font-weight:700;margin-bottom:24px}
+.nav{display:block;width:100%;margin:8px 0;padding:11px 12px;border:1px solid var(--line);background:transparent;color:var(--text);border-radius:12px;text-align:left;cursor:pointer}
+.nav.active{background:var(--panel2)}
+.main{margin-left:220px;width:calc(100% - 220px);padding:24px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.topbar h1{margin:0;font-size:28px}
+.topbar p{margin:4px 0 0;color:var(--muted)}
+#refreshBtn{padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;min-height:180px}
+.card h2{margin:0 0 12px;font-size:20px}
+.item{padding:10px 0;border-top:1px solid var(--line)}
+.item:first-of-type{border-top:0}
+.meta{color:var(--muted);font-size:13px;margin-top:4px}
+.a{border-top:3px solid var(--a)}
+.b{border-top:3px solid var(--b)}
+.c{border-top:3px solid var(--c)}
+.statusbar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}
+.tile b{display:block;font-size:22px}
+.tile span{color:var(--muted);font-size:13px}
+.table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:16px;overflow:hidden}
+.table th,.table td{border-bottom:1px solid var(--line);padding:12px;text-align:left}
+.table th{color:var(--muted);font-weight:500}
+@media(max-width:800px){
+  body{display:block}
+  .sidebar{position:fixed;bottom:0;top:auto;width:100%;height:64px;display:flex;gap:8px;padding:8px;z-index:5}
+  .brand{display:none}
+  .nav{margin:0;text-align:center}
+  .main{margin-left:0;width:100%;padding:16px 16px 84px}
+  .grid{grid-template-columns:1fr}
+  .statusbar{grid-template-columns:repeat(2,1fr)}
+}
