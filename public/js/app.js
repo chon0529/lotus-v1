@@ -5,6 +5,7 @@ const refreshBtn=document.querySelector('#refreshBtn');
 const themeToggle=document.querySelector('#themeToggle');
 const sidebarToggle=document.querySelector('#sidebarToggle');
 const expandedSources={};
+const homeTabs={A:'all',B:'all',C:'all'};
 
 const statusLabels={success:'正常',normal:'正常',planned:'待接入',disabled:'暫停',failed:'異常',stale:'過期',fallback:'備援',empty:'無資料'};
 const pageTitles={sub_main:'總覽',sub_all:'全部新聞',sub_health:'來源健康',sub_settings:'設定'};
@@ -25,6 +26,7 @@ const getExpanded=domain=>expandedSources[domain]??[];
 const sourceCountText=count=>`${count??1} 個來源`;
 const statusText=status=>statusLabels[status]??status??'待接入';
 const badgeText=source=>(source.badge??source.label?.slice(0,2)??'?').toUpperCase();
+const isLocalIconPath=path=>typeof path==='string'&&/^(?:\.\/)?assets\/source-icons\/[A-Za-z0-9._/-]+$/.test(path);
 const boolText=value=>value===true?'是':value===false?'否':'-';
 const themeLabel=value=>value==='dark'?'深色':value==='light'?'明亮':value;
 const sidebarLabel=value=>value===true?'已收合':value===false?'已展開':'-';
@@ -50,7 +52,21 @@ setTheme(localStorage.getItem('novaLotusTheme')==='light'?'light':'dark');
 setSidebar(localStorage.getItem('novaLotusSidebar')==='collapsed');
 
 const domainBadge=domain=>`<span class="domain-badge ${h(domainClass(domain))}">${h(domain)}</span>`;
-const itemMeta=item=>`${h(item.source)} · ${h(item.time)}`;
+const newsItemLine=(item,{showDomain=false,index=0}={})=>`
+  <div class="news-row ${showDomain?'has-domain':''}">
+    <span class="news-row-no">${h(String(index+1).padStart(2,'0'))}</span>
+    ${showDomain?domainBadge(item.domain):''}
+    <div class="news-row-body">
+      <span class="news-row-title">${h(item.title)}</span>
+      <span class="news-row-sep">-</span>
+      <span class="news-row-meta">${h(item.source)} · ${h(item.time)}</span>
+    </div>
+  </div>
+`;
+const refreshText=minutes=>`下次刷新：${h(minutes??'-')} 分鐘後`;
+const sourceIconInner=source=>isLocalIconPath(source.iconPath)
+  ? `<img src="${h(source.iconPath)}" alt="" loading="lazy">`
+  : `<span>${h(badgeText(source))}</span>`;
 const fakeItemsForSource=source=>fakeTitles.map((text,index)=>({
   title:`${source.label} ${text}`,
   source:source.label,
@@ -69,6 +85,7 @@ const mapRegistrySource=source=>({
   sourceKey:source.sourceKey,
   label:source.label,
   badge:source.badge,
+  iconPath:source.iconPath??null,
   newsBoxIds:source.newsBoxIds??[],
   sourceType:source.sourceType,
   status:source.status,
@@ -95,76 +112,129 @@ const loadARegistry=async()=>{
 
 const renderMain=async()=>{
   const data=await getJson('./data/view/view_sub_main.json');
-  const focusItems=(data.focusItems?.length?data.focusItems:data.domains.flatMap(domain=>
-    domain.items.map(item=>({...item,domain:domain.domain}))
-  )).slice(0,8);
   const hero=data.hero??{
     title:'今日情報',
     subtitle:'本地政策、AS Roma、財經市場的個人情報站',
     status:['Fake JSON mode','A registry ready','crawler not started']
   };
+  const tabs=data.focusGrid?.tabs??{};
+  const refreshMap=data.focusGrid?.nextRefreshMin??{};
+  const domains=(data.domains??[]).map(domain=>({
+    ...domain,
+    items:(domain.items??[]).map(item=>({...item,domain:domain.domain}))
+  }));
+  const hotItems=(data.hotItems?.length?data.hotItems:domains.flatMap(domain=>domain.items))
+    .map(item=>({...item,domain:item.domain??''}));
+
+  const tabButton=(domain,tab)=>`
+    <button
+      type="button"
+      class="news-tab ${homeTabs[domain]===tab.id?'active':''}"
+      data-domain="${h(domain)}"
+      data-tab="${h(tab.id)}"
+      ${tab.disabled?'disabled aria-disabled="true"':''}
+    >${h(tab.label)}</button>
+  `;
+
+  const nextRefreshFor=(domain,tab)=>{
+    const map=refreshMap[domain]??{};
+    if(tab==='all'){
+      const values=Object.entries(map).filter(([key])=>key!=='all').map(([,value])=>value).filter(Number.isFinite);
+      return map.all??(values.length?Math.min(...values):'-');
+    }
+    return map[tab]??map.all??'-';
+  };
+
+  const newsBox=domain=>{
+    const activeTab=homeTabs[domain.domain]??'all';
+    const items=activeTab==='all'
+      ? domain.items
+      : domain.items.filter(item=>item.newsBox===activeTab);
+    return `
+      <article class="newsbox-card ${h(domainClass(domain.domain))} newsbox-${h(domain.domain.toLowerCase())}">
+        <div class="newsbox-head">
+          <div>
+            <p class="eyebrow">${h(domain.domain)} NewsBox</p>
+            <h2>${h(domain.title)}</h2>
+          </div>
+          <div class="newsbox-tools">
+            ${domainBadge(domain.domain)}
+            <span>${refreshText(nextRefreshFor(domain.domain,activeTab))}</span>
+            <button type="button" class="newsbox-refresh" aria-label="${h(domain.title)} 立即刷新">⭮</button>
+          </div>
+        </div>
+        <div class="news-tabs" aria-label="${h(domain.title)} 分類">
+          ${(tabs[domain.domain]??[{id:'all',label:'全部'}]).filter(tab=>!tab.disabled).map(tab=>tabButton(domain.domain,tab)).join('')}
+        </div>
+        <div class="newsbox-list soft-scroll">
+          ${items.map((item,index)=>newsItemLine(item,{index})).join('')||'<p class="news-empty">暫無此分類消息</p>'}
+        </div>
+      </article>
+    `;
+  };
 
   app.innerHTML=`
     <div class="home-dashboard">
-      <section class="home-hero">
-        <div>
-          <p class="eyebrow">Nova-Lotus</p>
-          <h2>${h(hero.title)}</h2>
-          <p>${h(hero.subtitle)}</p>
-        </div>
-        <div class="home-status">
-          ${(hero.status??[]).map(text=>`<span>${h(text)}</span>`).join('')}
-        </div>
-      </section>
-
-      <section class="statusbar home-stats">
-        <div class="tile"><b>${h(data.stats.sources)}</b><span>所有來源</span></div>
-        <div class="tile"><b>${h(data.stats.todayNew)}</b><span>今日新增</span></div>
-        <div class="tile"><b>${h(data.stats.within15)}</b><span>15 分鐘內</span></div>
-        <div class="tile"><b>${h(data.stats.normal)}</b><span>正常來源</span></div>
-      </section>
-
-      <section class="home-editorial">
-        <article class="focus-panel">
-          <div class="section-head">
-            <h2>今日焦點</h2>
-            <p>三個主域混合排序的假資料摘要。</p>
+      <section class="home-top-grid">
+        <section class="home-hero">
+          <div>
+            <p class="eyebrow">Nova-Lotus</p>
+            <h2>${h(hero.title)}</h2>
+            <p>${h(hero.subtitle)}</p>
           </div>
-          <div class="focus-list">
-            ${focusItems.map((item,index)=>`
-              <div class="focus-item ${index===0?'lead':''}">
-                <div class="focus-rank">${index+1}</div>
-                <div>
-                  <div class="focus-title">${domainBadge(item.domain)}<span>${h(item.title)}</span></div>
-                  <div class="meta">${itemMeta(item)}</div>
-                </div>
-              </div>
-            `).join('')}
+          <div class="home-status">
+            ${(hero.status??[]).map(text=>`<span>${h(text)}</span>`).join('')}
+          </div>
+        </section>
+
+        <section class="home-stats-grid" aria-label="今日摘要">
+          <div class="tile"><b>${h(data.stats.sources)}</b><span>所有來源</span></div>
+          <div class="tile"><b>${h(data.stats.todayNew)}</b><span>今日新增</span></div>
+          <div class="tile"><b>${h(data.stats.within15)}</b><span>15 分鐘內</span></div>
+          <div class="tile"><b>${h(data.stats.normal)}</b><span>正常來源</span></div>
+        </section>
+      </section>
+
+      <section class="focus-grid">
+        <div class="focus-left">
+          ${newsBox(domains.find(domain=>domain.domain==='A')??{domain:'A',title:'政府政策',items:[]})}
+          <div class="focus-lower">
+            ${newsBox(domains.find(domain=>domain.domain==='B')??{domain:'B',title:'AS Roma',items:[]})}
+            ${newsBox(domains.find(domain=>domain.domain==='C')??{domain:'C',title:'財經市場',items:[]})}
+          </div>
+        </div>
+        <article class="newsbox-card hot-news-card">
+          <div class="newsbox-head">
+            <div>
+              <p class="eyebrow">FocusGrid</p>
+              <h2>熱點新聞</h2>
+            </div>
+            <div class="newsbox-tools">
+              <span>${refreshText(refreshMap.hot??5)}</span>
+              <button type="button" class="newsbox-refresh" aria-label="熱點新聞立即刷新">⭮</button>
+            </div>
+          </div>
+          <div class="newsbox-list soft-scroll">
+            ${hotItems.map((item,index)=>newsItemLine(item,{showDomain:true,index})).join('')||'<p class="news-empty">暫無熱點消息</p>'}
           </div>
         </article>
-
-        <aside class="domain-digest">
-          ${data.domains.map(domain=>`
-            <article class="digest-card ${h(domainClass(domain.domain))}">
-              <div class="digest-head">
-                ${domainBadge(domain.domain)}
-                <h3>${h(domain.domain)} ${h(domain.title)} Top 5</h3>
-              </div>
-              ${domain.items.slice(0,5).map((item,index)=>`
-                <div class="digest-item ${index>=3?'mobile-extra':''}">
-                  <span>${index+1}</span>
-                  <div>
-                    <b>${h(item.title)}</b>
-                    <div class="meta">${itemMeta(item)}</div>
-                  </div>
-                </div>
-              `).join('')}
-            </article>
-          `).join('')}
-        </aside>
       </section>
     </div>
   `;
+
+  app.querySelectorAll('.news-tab:not(:disabled)').forEach(button=>{
+    button.onclick=()=>{
+      homeTabs[button.dataset.domain]=button.dataset.tab;
+      renderMain();
+    };
+  });
+  app.querySelectorAll('.newsbox-refresh').forEach(button=>{
+    button.onclick=()=>{
+      button.classList.add('refreshing');
+      button.textContent='更新中';
+      setTimeout(()=>renderMain(),800);
+    };
+  });
 };
 
 const renderAll=async()=>{
@@ -185,18 +255,20 @@ const renderAll=async()=>{
             <section class="card ${h(domain.domain.toLowerCase())} ${h(domainClass(domain.domain))} sourcewall-domain">
               <h2>${h(domain.domain)}. ${h(domain.title)}</h2>
               <div class="sourcewall-layout">
-                <div class="source-list">
+                <div class="source-icon-grid" aria-label="${h(domain.title)} 來源">
                   ${domain.registryError?`<p class="meta">${h(domain.registryError)}</p>`:''}
                   ${!domain.registryError&&!sources.length?'<p class="meta">目前沒有可顯示的來源。</p>':''}
                   ${sources.map(source=>`
                     <button
-                      class="source-button ${activeKeys.includes(source.sourceKey)?'active':''}"
+                      type="button"
+                      class="source-icon ${activeKeys.includes(source.sourceKey)?'active':''}"
                       data-domain="${h(domain.domain)}"
                       data-source-key="${h(source.sourceKey)}"
+                      title="${h(source.label)}"
+                      aria-label="${h(source.label)}"
                       ${source.disabled?'disabled aria-disabled="true"':''}
                     >
-                      <span class="source-badge">${h(badgeText(source))}</span>
-                      <span class="source-label">${h(source.label)}</span>
+                      ${sourceIconInner(source)}
                     </button>
                   `).join('')}
                 </div>
@@ -225,7 +297,7 @@ const renderAll=async()=>{
       </div>
     `;
 
-    app.querySelectorAll('.source-button:not(:disabled)').forEach(button=>{
+    app.querySelectorAll('.source-icon:not(:disabled)').forEach(button=>{
       button.onclick=()=>{
         const domain=button.dataset.domain;
         const sourceKey=button.dataset.sourceKey;
