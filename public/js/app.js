@@ -18,6 +18,8 @@ const getExpanded=domain=>expandedSources[domain]??[];
 const sourceCountText=count=>`${count} 個來源`;
 const statusText=status=>statusLabels[status]??status;
 const badgeText=source=>source.badge??source.label.slice(0,2).toUpperCase();
+const fakeTimes=['10 分鐘前','28 分鐘前','45 分鐘前'];
+const fakeTitles=['最新消息一','最新消息二','最新消息三'];
 
 const setTheme=theme=>{
   document.body.dataset.theme=theme;
@@ -34,6 +36,47 @@ const setSidebar=collapsed=>{
 
 setTheme(localStorage.getItem('novaLotusTheme')==='light'?'light':'dark');
 setSidebar(localStorage.getItem('novaLotusSidebar')==='collapsed');
+
+const fakeItemsForSource=source=>fakeTitles.map((text,index)=>({
+  title:`${source.label} ${text}`,
+  source:source.label,
+  time:fakeTimes[index],
+  newsBox:(source.newsBoxIds??[])[0]??''
+}));
+
+const registrySourceCount=source=>{
+  if(source.sourceType!=='source_group')return 1;
+  const subSources=source.endpoints.filter(endpoint=>endpoint.kind==='subsource');
+  return subSources.length||source.endpoints.length||1;
+};
+
+const mapRegistrySource=source=>({
+  sourceKey:source.sourceKey,
+  label:source.label,
+  badge:source.badge,
+  newsBoxIds:source.newsBoxIds??[],
+  sourceType:source.sourceType,
+  status:source.status,
+  sourceCount:registrySourceCount(source),
+  disabled:source.disabled===true,
+  description:source.description,
+  items:fakeItemsForSource(source)
+});
+
+const getRegistrySources=registry=>registry.sources
+  .filter(source=>source.enabled===true)
+  .filter(source=>source.uiVisible===true)
+  .filter(source=>source.sourceRole!=='backup')
+  .filter(source=>source.sourceKey&&source.label)
+  .map(mapRegistrySource);
+
+const loadARegistry=async()=>{
+  try{
+    return {sources:getRegistrySources(await getJson('./data/registry/source_registry_a.json'))};
+  }catch(error){
+    return {sources:[],error:'A 來源設定暫時無法載入，B / C 仍可使用。'};
+  }
+};
 
 const renderMain=async()=>{
   title.textContent='總覽';
@@ -64,10 +107,14 @@ const renderMain=async()=>{
 const renderAll=async()=>{
   title.textContent='全部新聞';
   const d=await getJson('./data/view/view_sub_all.json');
+  const aRegistry=await loadARegistry();
+  const domains=d.domains.map(domain=>domain.domain==='A'
+    ? {...domain,sources:aRegistry.sources,registryError:aRegistry.error}
+    : domain);
   const draw=()=>{
     app.innerHTML=`
       <div class="sourcewall">
-        ${d.domains.map(domain=>{
+        ${domains.map(domain=>{
           const activeKeys=getExpanded(domain.domain);
           const activeSources=activeKeys.map(key=>domain.sources.find(source=>source.sourceKey===key)).filter(Boolean);
           return `
@@ -75,6 +122,8 @@ const renderAll=async()=>{
               <h2>${domain.domain}. ${domain.title}</h2>
               <div class="sourcewall-layout">
                 <div class="source-list">
+                  ${domain.registryError?`<p class="meta">${domain.registryError}</p>`:''}
+                  ${!domain.registryError&&!domain.sources.length?`<p class="meta">A registry 目前沒有可顯示來源，請檢查 enabled / uiVisible 設定。</p>`:''}
                   ${domain.sources.map(source=>`
                     <button
                       class="source-button ${activeKeys.includes(source.sourceKey)?'active':''}"
