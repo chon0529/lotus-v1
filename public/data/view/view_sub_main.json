@@ -1,39 +1,60 @@
-﻿{
-  "schema":"lotus.view.sub_main.v1",
-  "generatedAt":"2026-05-16T10:00:00+08:00",
-  "timezone":"Asia/Macau",
-  "stats":{
-    "sources":36,
-    "todayNew":128,
-    "within15":15,
-    "normal":33
+{
+  "schema": "lotus.view.sub_main.v1",
+  "generatedAt": "2026-05-16T10:00:00+08:00",
+  "timezone": "Asia/Macau",
+  "hero": {
+    "title": "今日情報",
+    "subtitle": "本地政策、AS Roma、財經市場的個人情報站",
+    "status": ["Fake JSON mode", "A registry ready", "crawler not started"]
   },
-  "domains":[
+  "stats": {
+    "sources": 36,
+    "todayNew": 128,
+    "within15": 15,
+    "normal": 33
+  },
+  "focusItems": [
+    {"domain": "A", "title": "GCS 發布政府最新新聞，涉及公共服務與民生安排", "source": "GCS", "time": "10 分鐘前", "newsBox": "A1"},
+    {"domain": "C", "title": "NOK / NVDA Watchlist 準備中，科技股觀察清單更新", "source": "Watchlist", "time": "15 分鐘前", "newsBox": "C1"},
+    {"domain": "B", "title": "Roma 官方發布最新訓練消息，賽前備戰節奏穩定", "source": "AS Roma Official", "time": "18 分鐘前", "newsBox": "B3"},
+    {"domain": "A", "title": "gov.mo CEPA 搜尋結果更新：服務貿易相關消息", "source": "gov.mo", "time": "22 分鐘前", "newsBox": "A4"},
+    {"domain": "C", "title": "AI 與半導體新聞聚合準備中，聚焦大型科技股", "source": "C3", "time": "28 分鐘前", "newsBox": "C3"},
+    {"domain": "A", "title": "城市規劃委員會公布最新會議消息", "source": "CAEU", "time": "35 分鐘前", "newsBox": "A5"},
+    {"domain": "B", "title": "LaRoma24 更新球隊新聞，轉會與陣容消息持續追蹤", "source": "LaRoma24", "time": "42 分鐘前", "newsBox": "B2"},
+    {"domain": "C", "title": "財經新聞 RSS 模組準備接入，市場摘要維持假資料模式", "source": "C2", "time": "48 分鐘前", "newsBox": "C2"}
+  ],
+  "domains": [
     {
-      "domain":"A",
-      "title":"政府政策",
-      "items":[
-        {"title":"GCS 發布政府最新新聞","source":"GCS","time":"10 分鐘前","newsBox":"A1"},
-        {"title":"gov.mo CEPA 搜尋結果更新：服務貿易相關消息","source":"gov.mo","time":"22 分鐘前","newsBox":"A4"},
-        {"title":"城市規劃委員會公布最新會議消息","source":"CAEU","time":"35 分鐘前","newsBox":"A5"}
+      "domain": "A",
+      "title": "政府政策",
+      "items": [
+        {"title": "GCS 發布政府最新新聞", "source": "GCS", "time": "10 分鐘前", "newsBox": "A1"},
+        {"title": "gov.mo CEPA 搜尋結果更新：服務貿易相關消息", "source": "gov.mo", "time": "22 分鐘前", "newsBox": "A4"},
+        {"title": "城市規劃委員會公布最新會議消息", "source": "CAEU", "time": "35 分鐘前", "newsBox": "A5"},
+        {"title": "立法會口頭及書面質詢消息整理", "source": "立法會", "time": "46 分鐘前", "newsBox": "A1"},
+        {"title": "橫琴粵澳深度合作區官方消息更新", "source": "橫琴官網", "time": "1 小時前", "newsBox": "A4"}
       ]
     },
     {
-      "domain":"B",
-      "title":"AS Roma",
-      "items":[
-        {"title":"Roma 官方發布最新訓練消息","source":"AS Roma Official","time":"18 分鐘前","newsBox":"B3"},
-        {"title":"LaRoma24 更新球隊新聞","source":"LaRoma24","time":"42 分鐘前","newsBox":"B2"},
-        {"title":"比賽列表模組準備接入","source":"Fixture","time":"55 分鐘前","newsBox":"B4"}
+      "domain": "B",
+      "title": "AS Roma",
+      "items": [
+        {"title": "Roma 官方發布最新訓練消息", "source": "AS Roma Official", "time": "18 分鐘前", "newsBox": "B3"},
+        {"title": "LaRoma24 更新球隊新聞", "source": "LaRoma24", "time": "42 分鐘前", "newsBox": "B2"},
+        {"title": "比賽列表模組準備接入", "source": "Fixture", "time": "55 分鐘前", "newsBox": "B4"},
+        {"title": "ForzaRoma 追蹤賽前陣容與傷病消息", "source": "ForzaRoma", "time": "1 小時前", "newsBox": "B2"},
+        {"title": "Il Romanista 關注球隊訓練與媒體聲音", "source": "Il Romanista", "time": "2 小時前", "newsBox": "B2"}
       ]
     },
     {
-      "domain":"C",
-      "title":"財經市場",
-      "items":[
-        {"title":"NOK / NVDA Watchlist 準備中","source":"Watchlist","time":"5 分鐘前","newsBox":"C1"},
-        {"title":"財經新聞 RSS 模組準備接入","source":"C2","time":"21 分鐘前","newsBox":"C2"},
-        {"title":"AI 與半導體新聞聚合準備中","source":"C3","time":"28 分鐘前","newsBox":"C3"}
+      "domain": "C",
+      "title": "財經市場",
+      "items": [
+        {"title": "NOK / NVDA Watchlist 準備中", "source": "Watchlist", "time": "15 分鐘前", "newsBox": "C1"},
+        {"title": "AI 與半導體新聞聚合準備中", "source": "C3", "time": "28 分鐘前", "newsBox": "C3"},
+        {"title": "財經新聞 RSS 模組準備接入", "source": "C2", "time": "48 分鐘前", "newsBox": "C2"},
+        {"title": "科技股觀察清單加入盤前提醒欄位", "source": "Watchlist", "time": "1 小時前", "newsBox": "C1"},
+        {"title": "市場摘要維持假資料模式，等待 M2 接入", "source": "C2", "time": "2 小時前", "newsBox": "C2"}
       ]
     }
   ]
