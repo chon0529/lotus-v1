@@ -5,7 +5,6 @@ const refreshBtn=document.querySelector('#refreshBtn');
 const themeToggle=document.querySelector('#themeToggle');
 const sidebarToggle=document.querySelector('#sidebarToggle');
 const expandedSources={};
-const maxExpandedSources=3;
 
 const statusLabels={
   success:'正常',
@@ -24,6 +23,9 @@ const pageTitles={
   sub_health:'來源健康',
   sub_settings:'設定'
 };
+
+const domainTitles={A:'政府政策',B:'AS Roma',C:'財經市場'};
+const domainClass=domain=>`domain-${String(domain).toLowerCase()}`;
 
 const getJson=async path=>{
   const response=await fetch(path,{cache:'no-store'});
@@ -47,7 +49,10 @@ const sourceCountText=count=>`${count??1} 個來源`;
 const statusText=status=>statusLabels[status]??status??'待接入';
 const badgeText=source=>(source.badge??source.label?.slice(0,2)??'?').toUpperCase();
 const boolText=value=>value===true?'是':value===false?'否':'-';
-const settingText=value=>typeof value==='boolean'?boolText(value):h(value);
+const themeLabel=value=>value==='dark'?'深色':value==='light'?'明亮':value;
+const sidebarLabel=value=>value===true?'已收合':value===false?'已展開':'-';
+const densityLabel=value=>value==='compact'?'緊湊':value??'-';
+const fontScaleLabel=value=>value==='normal'?'標準':value??'-';
 const fakeTimes=['10 分鐘前','28 分鐘前','45 分鐘前'];
 const fakeTitles=['最新消息一','最新消息二','最新消息三'];
 
@@ -120,7 +125,7 @@ const renderMain=async()=>{
     </div>
     <div class="grid">
       ${data.domains.map(domain=>`
-        <section class="card ${h(domain.domain.toLowerCase())}">
+        <section class="card ${h(domain.domain.toLowerCase())} ${h(domainClass(domain.domain))}">
           <h2>${h(domain.domain)}. ${h(domain.title)}</h2>
           ${domain.items.map((item,index)=>`
             <div class="item">
@@ -139,7 +144,7 @@ const renderAll=async()=>{
   const aRegistry=await loadARegistry();
   const domains=data.domains.map(domain=>domain.domain==='A'
     ? {...domain,title:'政府政策',sources:aRegistry.sources,registryError:aRegistry.error}
-    : domain);
+    : {...domain,title:domainTitles[domain.domain]??domain.title});
 
   const draw=()=>{
     app.innerHTML=`
@@ -149,7 +154,7 @@ const renderAll=async()=>{
           const activeKeys=getExpanded(domain.domain);
           const activeSources=activeKeys.map(key=>sources.find(source=>source.sourceKey===key)).filter(Boolean);
           return `
-            <section class="card ${h(domain.domain.toLowerCase())} sourcewall-domain">
+            <section class="card ${h(domain.domain.toLowerCase())} ${h(domainClass(domain.domain))} sourcewall-domain">
               <h2>${h(domain.domain)}. ${h(domain.title)}</h2>
               <div class="sourcewall-layout">
                 <div class="source-list">
@@ -199,7 +204,7 @@ const renderAll=async()=>{
         const expanded=getExpanded(domain);
         expandedSources[domain]=expanded.includes(sourceKey)
           ? expanded.filter(key=>key!==sourceKey)
-          : [sourceKey,...expanded.filter(key=>key!==sourceKey)].slice(0,maxExpandedSources);
+          : [sourceKey,...expanded.filter(key=>key!==sourceKey)].slice(0,3);
         draw();
       };
     });
@@ -238,16 +243,43 @@ const renderHealth=async()=>{
   `;
 };
 
-const renderKeyValue=(entries)=>`
-  <div class="settings-kv">
-    ${entries.map(([key,value])=>`
-      <div>
-        <span>${h(key)}</span>
-        <b>${settingText(value)}</b>
-      </div>
-    `).join('')}
+const renderSettingRow=(label,value,tech='')=>`
+  <div>
+    <span>${h(label)}${tech?`<small>${h(tech)}</small>`:''}</span>
+    <b>${h(value)}</b>
   </div>
 `;
+
+const renderDomainCard=([domain,config])=>{
+  const special=[
+    config.translateTitle!==undefined&&['翻譯標題',boolText(config.translateTitle)],
+    config.keepOriginalTitle!==undefined&&['保留原題',boolText(config.keepOriginalTitle)],
+    config.blockOnTranslationFail!==undefined&&['翻譯失敗阻擋',boolText(config.blockOnTranslationFail)],
+    config.priceRefreshMinOpen!==undefined&&['開市價格刷新',`${config.priceRefreshMinOpen} 分鐘`],
+    config.priceRefreshMinClosed!==undefined&&['休市價格刷新',`${config.priceRefreshMinClosed} 分鐘`]
+  ].filter(Boolean);
+
+  return `
+    <article class="domain-setting-card ${h(domainClass(domain))}">
+      <div class="domain-setting-head">
+        <span class="color-swatch" style="--swatch:${h(config.color)}"></span>
+        <div>
+          <h3>${h(domain)} ${h(config.title)}</h3>
+          <p>預設刷新 ${h(config.defaultRefreshMin)} 分鐘</p>
+        </div>
+      </div>
+      <div class="domain-setting-metrics">
+        <span><b>${h(config.desktopTopLimit)}</b>桌面顯示</span>
+        <span><b>${h(config.mobileTopLimit)}</b>手機顯示</span>
+      </div>
+      ${special.length?`
+        <div class="domain-specials">
+          ${special.map(([label,value])=>`<span>${h(label)}：${h(value)}</span>`).join('')}
+        </div>
+      `:''}
+    </article>
+  `;
+};
 
 const renderSettings=async()=>{
   let settings;
@@ -263,7 +295,7 @@ const renderSettings=async()=>{
   try{
     registry=await getJson('./data/registry/source_registry_a.json');
   }catch(error){
-    registryError=`A Registry 暫時無法載入：${error.message}`;
+    registryError=`A 登記檔暫時無法載入：${error.message}`;
   }
 
   const domains=Object.entries(settings.domains??{});
@@ -272,17 +304,10 @@ const renderSettings=async()=>{
   const enabledSources=sources.filter(source=>source.enabled===true);
   const visibleSources=sources.filter(source=>source.uiVisible===true);
   const sourceGroups=sources.filter(source=>source.sourceType==='source_group');
-  const visibleChips=visibleSources.slice(0,8);
-  const domainRows=domains.map(([domain,config])=>`
-    <tr>
-      <td>${h(domain)}</td>
-      <td>${h(config.title)}</td>
-      <td><span class="color-swatch" style="--swatch:${h(config.color)}"></span>${h(config.color)}</td>
-      <td>${h(config.desktopTopLimit)}</td>
-      <td>${h(config.mobileTopLimit)}</td>
-      <td>${h(config.defaultRefreshMin)}</td>
-    </tr>
-  `).join('');
+  const visibleChips=visibleSources.slice(0,10);
+  const maxExpanded=settings.ui?.maxExpandedSourcesPerDomain??3;
+  const refreshValues=domains.map(([,config])=>config.defaultRefreshMin).filter(Boolean);
+  const minRefresh=refreshValues.length?Math.min(...refreshValues):'-';
   const overrideRows=overrides.map(([sourceKey,config])=>`
     <tr>
       <td>${h(sourceKey)}</td>
@@ -294,77 +319,87 @@ const renderSettings=async()=>{
   `).join('');
 
   app.innerHTML=`
-    <div class="settings-grid">
-      <section class="settings-card">
-        <h2>UI 設定</h2>
-        ${renderKeyValue([
-          ['theme',settings.ui?.theme],
-          ['sidebarCollapsed',settings.ui?.sidebarCollapsed],
-          ['fontScale',settings.ui?.fontScale],
-          ['layoutDensity',settings.ui?.layoutDensity],
-          ['maxExpandedSourcesPerDomain',settings.ui?.maxExpandedSourcesPerDomain]
-        ])}
+    <div class="settings-dashboard">
+      <section class="settings-hero">
+        <div>
+          <p class="eyebrow">只讀控制中心</p>
+          <h2>設定儀表板</h2>
+        </div>
+        <span>本階段只讀，不寫入設定檔。</span>
       </section>
 
-      <section class="settings-card settings-wide">
+      <section class="summary-row">
+        <article class="summary-card">
+          <span>介面模式</span>
+          <b>${h(themeLabel(settings.ui?.theme))}</b>
+          <small>目前預設</small>
+        </article>
+        <article class="summary-card">
+          <span>展開來源上限</span>
+          <b>${h(maxExpanded)}</b>
+          <small>每個主域</small>
+        </article>
+        <article class="summary-card">
+          <span>A 登記檔</span>
+          <b>${registryError?'--':h(sources.length)}</b>
+          <small>${registryError?'讀取失敗':'已登記來源'}</small>
+        </article>
+        <article class="summary-card">
+          <span>刷新策略</span>
+          <b>${h(minRefresh)}</b>
+          <small>最快預設分鐘</small>
+        </article>
+      </section>
+
+      <section class="settings-card">
+        <h2>介面設定</h2>
+        <div class="settings-kv">
+          ${renderSettingRow('介面模式',themeLabel(settings.ui?.theme),'theme')}
+          ${renderSettingRow('側欄狀態',sidebarLabel(settings.ui?.sidebarCollapsed),'sidebarCollapsed')}
+          ${renderSettingRow('字體大小',fontScaleLabel(settings.ui?.fontScale),'fontScale')}
+          ${renderSettingRow('版面密度',densityLabel(settings.ui?.layoutDensity),'layoutDensity')}
+          ${renderSettingRow('每區最多展開來源',maxExpanded,'maxExpandedSourcesPerDomain')}
+        </div>
+      </section>
+
+      <section class="settings-card">
         <h2>主域設定</h2>
-        <table class="settings-table">
-          <thead>
-            <tr>
-              <th>domain</th>
-              <th>title</th>
-              <th>color</th>
-              <th>desktopTopLimit</th>
-              <th>mobileTopLimit</th>
-              <th>defaultRefreshMin</th>
-            </tr>
-          </thead>
-          <tbody>${domainRows}</tbody>
-        </table>
+        <div class="domain-settings-grid">
+          ${domains.map(renderDomainCard).join('')}
+        </div>
       </section>
 
       <section class="settings-card">
-        <h2>特殊設定</h2>
-        ${renderKeyValue([
-          ['B translateTitle',settings.domains?.B?.translateTitle],
-          ['B keepOriginalTitle',settings.domains?.B?.keepOriginalTitle],
-          ['B blockOnTranslationFail',settings.domains?.B?.blockOnTranslationFail],
-          ['C priceRefreshMinOpen',settings.domains?.C?.priceRefreshMinOpen],
-          ['C priceRefreshMinClosed',settings.domains?.C?.priceRefreshMinClosed]
-        ])}
-      </section>
-
-      <section class="settings-card settings-wide">
-        <h2>來源覆寫</h2>
-        <table class="settings-table">
-          <thead>
-            <tr>
-              <th>sourceKey</th>
-              <th>refreshMin</th>
-              <th>priority</th>
-              <th>enabled</th>
-              <th>uiVisible</th>
-            </tr>
-          </thead>
-          <tbody>${overrideRows}</tbody>
-        </table>
-      </section>
-
-      <section class="settings-card settings-wide">
-        <h2>A Registry 摘要</h2>
+        <h2>登記檔摘要</h2>
         ${registryError
           ? `<p class="error-text">${h(registryError)}</p>`
           : `
             <div class="settings-stats">
-              <div class="stat-tile"><b>${sources.length}</b><span>total sources</span></div>
-              <div class="stat-tile"><b>${enabledSources.length}</b><span>enabled sources</span></div>
-              <div class="stat-tile"><b>${visibleSources.length}</b><span>uiVisible sources</span></div>
-              <div class="stat-tile"><b>${sourceGroups.length}</b><span>source groups</span></div>
+              <div class="stat-tile"><b>${sources.length}</b><span>全部來源</span></div>
+              <div class="stat-tile"><b>${enabledSources.length}</b><span>啟用</span></div>
+              <div class="stat-tile"><b>${visibleSources.length}</b><span>顯示</span></div>
+              <div class="stat-tile"><b>${sourceGroups.length}</b><span>來源組</span></div>
             </div>
             <div class="source-chips">
               ${visibleChips.map(source=>`<span>${h(source.badge??'')} ${h(source.label)}</span>`).join('')}
             </div>
           `}
+      </section>
+
+      <section class="settings-card settings-secondary">
+        <h2>來源覆寫</h2>
+        <table class="settings-table">
+          <thead>
+            <tr>
+              <th>來源</th>
+              <th>刷新分鐘</th>
+              <th>優先級</th>
+              <th>啟用</th>
+              <th>顯示</th>
+            </tr>
+          </thead>
+          <tbody>${overrideRows}</tbody>
+        </table>
       </section>
     </div>
   `;

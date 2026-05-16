@@ -11,14 +11,14 @@
   "domains": {
     "A": {
       "title": "政府政策",
-      "color": "#5eead4",
+      "color": "#2f6f5e",
       "desktopTopLimit": 15,
       "mobileTopLimit": 3,
       "defaultRefreshMin": 30
     },
     "B": {
       "title": "AS Roma",
-      "color": "#fb7185",
+      "color": "#8f3f46",
       "desktopTopLimit": 15,
       "mobileTopLimit": 3,
       "defaultRefreshMin": 15,
@@ -28,7 +28,7 @@
     },
     "C": {
       "title": "財經市場",
-      "color": "#60a5fa",
+      "color": "#3f5f8f",
       "desktopTopLimit": 15,
       "mobileTopLimit": 3,
       "defaultRefreshMin": 30,
