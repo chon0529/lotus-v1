@@ -1,0 +1,977 @@
+{
+  "schema": "lotus.registry.source.a.v1",
+  "domain": "A",
+  "domainName": "????",
+  "timezone": "Asia/Macau",
+  "generatedFrom": "docs/A_source_registry_v0_4_updated.tsv",
+  "sources": [
+    {
+      "sourceKey": "a_gcs",
+      "label": "GCS",
+      "badge": "GCS",
+      "name": "GCS",
+      "domain": "A",
+      "newsBoxIds": [
+        "A1"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "????????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "rss",
+          "kind": "endpoint",
+          "label": "rss",
+          "sourceRole": "backup",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_gcseng",
+      "label": "GCS ????",
+      "badge": "?",
+      "name": "GCS ????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A1"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "???????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_dsscu",
+      "label": "DSSCU",
+      "badge": "?",
+      "name": "DSSCU",
+      "domain": "A",
+      "newsBoxIds": [
+        "A1"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "????????????",
+      "endpoints": [
+        {
+          "key": "web_or_jina",
+          "kind": "endpoint",
+          "label": "web_or_jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_al",
+      "label": "???",
+      "badge": "AL",
+      "name": "???",
+      "domain": "A",
+      "newsBoxIds": [
+        "A1"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????????",
+      "endpoints": [
+        {
+          "key": "written",
+          "kind": "endpoint",
+          "label": "written",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "oral",
+          "kind": "endpoint",
+          "label": "oral",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_tdm",
+      "label": "TDM",
+      "badge": "TDM",
+      "name": "TDM",
+      "domain": "A",
+      "newsBoxIds": [
+        "A2"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "??????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "backup",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_macau_daily",
+      "label": "????",
+      "badge": "?",
+      "name": "????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A2"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "???????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "backup",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_exmoo",
+      "label": "??",
+      "badge": "?",
+      "name": "??",
+      "domain": "A",
+      "newsBoxIds": [
+        "A2"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_macaucabletv",
+      "label": "????",
+      "badge": "?",
+      "name": "????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A2"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "??????????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_chengpou",
+      "label": "??",
+      "badge": "?",
+      "name": "??",
+      "domain": "A",
+      "newsBoxIds": [
+        "A2"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "backup",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_aamacau",
+      "label": "????",
+      "badge": "?",
+      "name": "????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A2"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_allinmedia",
+      "label": "AllinMedia",
+      "badge": "AI",
+      "name": "AllinMedia",
+      "domain": "A",
+      "newsBoxIds": [
+        "A2"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "AllinMedia ????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_macaubusiness",
+      "label": "Macao Business",
+      "badge": "MB",
+      "name": "Macao Business",
+      "domain": "A",
+      "newsBoxIds": [
+        "A3"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "Macao Business ??????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_macaudailytimes",
+      "label": "Macao Daily Times",
+      "badge": "MD",
+      "name": "Macao Daily Times",
+      "domain": "A",
+      "newsBoxIds": [
+        "A3"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "Macao Daily Times ???????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_macaupostdaily",
+      "label": "Macau Post Daily",
+      "badge": "MP",
+      "name": "Macau Post Daily",
+      "domain": "A",
+      "newsBoxIds": [
+        "A3"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "Macau Post Daily ???????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_hojemacau",
+      "label": "Hoje Macau",
+      "badge": "HM",
+      "name": "Hoje Macau",
+      "domain": "A",
+      "newsBoxIds": [
+        "A3"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "Hoje Macau ???????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_jtm",
+      "label": "JTM",
+      "badge": "JT",
+      "name": "JTM",
+      "domain": "A",
+      "newsBoxIds": [
+        "A3"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "Jornal Tribuna de Macau ???????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_plataforma",
+      "label": "Plataforma",
+      "badge": "PL",
+      "name": "Plataforma",
+      "domain": "A",
+      "newsBoxIds": [
+        "A3"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "Plataforma ?????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_gcsgba",
+      "label": "GCS ???",
+      "badge": "?",
+      "name": "GCS ???",
+      "domain": "A",
+      "newsBoxIds": [
+        "A4"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_gcshq",
+      "label": "GCS ??",
+      "badge": "?",
+      "name": "GCS ??",
+      "domain": "A",
+      "newsBoxIds": [
+        "A4"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "???????????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_hengqin_gov",
+      "label": "????",
+      "badge": "?",
+      "name": "????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A4"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "??????????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_cbaaction",
+      "label": "????",
+      "badge": "?",
+      "name": "????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A4"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_cbaoverall",
+      "label": "????",
+      "badge": "GBA",
+      "name": "????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A4"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source_group",
+      "sourceRole": "aggregate",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "??????????????????????",
+      "endpoints": [
+        {
+          "key": "aggregate",
+          "kind": "aggregate",
+          "label": "aggregate",
+          "sourceRole": "aggregate",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "highlevel",
+          "kind": "subsource",
+          "label": "highlevel",
+          "sourceRole": "subsource",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "dynamic",
+          "kind": "subsource",
+          "label": "dynamic",
+          "sourceRole": "subsource",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        },
+        {
+          "key": "policy",
+          "kind": "subsource",
+          "label": "policy",
+          "sourceRole": "subsource",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_govmo_cepa_search",
+      "label": "gov.mo CEPA",
+      "badge": "CEPA",
+      "name": "gov.mo CEPA",
+      "domain": "A",
+      "newsBoxIds": [
+        "A4"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "search",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "gov.mo CEPA ???????",
+      "endpoints": [
+        {
+          "key": "search",
+          "kind": "search",
+          "label": "search",
+          "sourceRole": "search",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_caeu",
+      "label": "CAEU",
+      "badge": "CE",
+      "name": "CAEU",
+      "domain": "A",
+      "newsBoxIds": [
+        "A5"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "??????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_cpu",
+      "label": "CPU",
+      "badge": "CPU",
+      "name": "CPU",
+      "domain": "A",
+      "newsBoxIds": [
+        "A5"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_cru",
+      "label": "CRU",
+      "badge": "CR",
+      "name": "CRU",
+      "domain": "A",
+      "newsBoxIds": [
+        "A5"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "?????????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_gcsup",
+      "label": "GCS ????",
+      "badge": "?",
+      "name": "GCS ????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A5"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "???????????",
+      "endpoints": [
+        {
+          "key": "web",
+          "kind": "endpoint",
+          "label": "web",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    },
+    {
+      "sourceKey": "a_dsop",
+      "label": "?????",
+      "badge": "DS",
+      "name": "?????",
+      "domain": "A",
+      "newsBoxIds": [
+        "A5"
+      ],
+      "newsBoxNames": [],
+      "sourceType": "source",
+      "sourceRole": "primary",
+      "uiVisible": false,
+      "enabled": false,
+      "firstVersion": false,
+      "status": "planned",
+      "refreshMin": 0,
+      "description": "???????????????",
+      "endpoints": [
+        {
+          "key": "jina",
+          "kind": "endpoint",
+          "label": "jina",
+          "sourceRole": "primary",
+          "uiVisible": false,
+          "firstVersion": false,
+          "refreshMin": 0
+        }
+      ],
+      "oldFetchFiles": [],
+      "notes": []
+    }
+  ]
+}
