@@ -56,9 +56,30 @@ body[data-theme="light"] .expanded-source-card{background:#f8fafc}
 .newsbox-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
 .newsbox-tags span{border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:var(--muted);font-size:12px;background:#111820}
 body[data-theme="light"] .newsbox-tags span{background:#eef3f8}
+.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.settings-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px}
+.settings-card h2{margin:0 0 12px;font-size:19px}
+.settings-wide{grid-column:1/-1}
+.settings-kv{display:grid;gap:8px}
+.settings-kv div{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:9px 0}
+.settings-kv div:first-child{border-top:0}
+.settings-kv span,.settings-table th,.stat-tile span{color:var(--muted);font-size:13px;font-weight:500}
+.settings-kv b{font-size:14px;font-weight:600;text-align:right}
+.settings-table{width:100%;border-collapse:collapse}
+.settings-table th,.settings-table td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:middle}
+.settings-table th{white-space:nowrap}
+.color-swatch{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--swatch);border:1px solid var(--line);margin-right:8px;vertical-align:-1px}
+.settings-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.stat-tile{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px}
+.stat-tile b{display:block;font-size:20px}
+.source-chips{display:flex;flex-wrap:wrap;gap:8px}
+.source-chips span{border:1px solid var(--line);border-radius:999px;padding:5px 9px;background:#111820;font-size:13px}
+body[data-theme="light"] .source-chips span{background:#eef3f8}
+.error-text{color:#fb7185;margin:8px 0 0}
 @media(max-width:1000px){
   .sourcewall-layout{grid-template-columns:180px minmax(0,1fr)}
   .expanded-source-grid{grid-template-columns:1fr}
+  .settings-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:800px){
   body{display:block}
@@ -75,4 +96,6 @@ body[data-theme="light"] .newsbox-tags span{background:#eef3f8}
   .statusbar{grid-template-columns:repeat(2,1fr)}
   .sourcewall-layout{grid-template-columns:1fr}
   .source-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .settings-grid{grid-template-columns:1fr}
+  .settings-card{overflow-x:auto}
 }
