@@ -3,9 +3,10 @@
   "generatedAt":"2026-05-16T10:00:00+08:00",
   "timezone":"Asia/Macau",
   "sources":[
-    {"sourceKey":"a_gcs","name":"GCS 新聞局","domain":"A","status":"normal","lastSuccess":"10 分鐘前","nextRefresh":"20 分鐘"},
-    {"sourceKey":"a_caeu","name":"CAEU 城市規劃委員會","domain":"A","status":"normal","lastSuccess":"22 分鐘前","nextRefresh":"38 分鐘"},
-    {"sourceKey":"b_laroma24","name":"LaRoma24","domain":"B","status":"planned","lastSuccess":"-","nextRefresh":"-"},
-    {"sourceKey":"c_watchlist","name":"股價 Watchlist","domain":"C","status":"planned","lastSuccess":"-","nextRefresh":"-"}
+    {"sourceKey":"a_gcs","name":"GCS 新聞局","domain":"A","newsBox":"A1","status":"normal","lastSuccess":"10 分鐘前","nextRefresh":"20 分鐘"},
+    {"sourceKey":"a_caeu","name":"CAEU 城市規劃委員會","domain":"A","newsBox":"A5","status":"normal","lastSuccess":"35 分鐘前","nextRefresh":"25 分鐘"},
+    {"sourceKey":"b_laroma24","name":"LaRoma24","domain":"B","newsBox":"B2","status":"planned","lastSuccess":"-","nextRefresh":"-"},
+    {"sourceKey":"b_asroma_official","name":"AS Roma Official","domain":"B","newsBox":"B3","status":"planned","lastSuccess":"-","nextRefresh":"-"},
+    {"sourceKey":"c_watchlist","name":"股價 Watchlist","domain":"C","newsBox":"C1","status":"planned","lastSuccess":"-","nextRefresh":"-"}
   ]
 }

@@ -13,9 +13,9 @@
       "domain":"A",
       "title":"政府政策",
       "items":[
-        {"title":"gov.mo CEPA 搜尋結果更新：服務貿易相關消息","source":"gov.mo","time":"10 分鐘前","newsBox":"A4"},
-        {"title":"城市規劃委員會公布最新會議消息","source":"CAEU","time":"22 分鐘前","newsBox":"A5"},
-        {"title":"GCS 發布政府最新新聞","source":"GCS","time":"35 分鐘前","newsBox":"A1"}
+        {"title":"GCS 發布政府最新新聞","source":"GCS","time":"10 分鐘前","newsBox":"A1"},
+        {"title":"gov.mo CEPA 搜尋結果更新：服務貿易相關消息","source":"gov.mo","time":"22 分鐘前","newsBox":"A4"},
+        {"title":"城市規劃委員會公布最新會議消息","source":"CAEU","time":"35 分鐘前","newsBox":"A5"}
       ]
     },
     {
@@ -23,14 +23,16 @@
       "title":"AS Roma",
       "items":[
         {"title":"Roma 官方發布最新訓練消息","source":"AS Roma Official","time":"18 分鐘前","newsBox":"B3"},
-        {"title":"LaRoma24 更新球隊新聞","source":"LaRoma24","time":"42 分鐘前","newsBox":"B2"}
+        {"title":"LaRoma24 更新球隊新聞","source":"LaRoma24","time":"42 分鐘前","newsBox":"B2"},
+        {"title":"比賽列表模組準備接入","source":"Fixture","time":"55 分鐘前","newsBox":"B4"}
       ]
     },
     {
       "domain":"C",
       "title":"財經市場",
       "items":[
-        {"title":"NOK / NVDA watchlist 等待價格更新","source":"Watchlist","time":"5 分鐘前","newsBox":"C1"},
+        {"title":"NOK / NVDA Watchlist 準備中","source":"Watchlist","time":"5 分鐘前","newsBox":"C1"},
+        {"title":"財經新聞 RSS 模組準備接入","source":"C2","time":"21 分鐘前","newsBox":"C2"},
         {"title":"AI 與半導體新聞聚合準備中","source":"C3","time":"28 分鐘前","newsBox":"C3"}
       ]
     }

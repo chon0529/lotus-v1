@@ -34,3 +34,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);dis
   .grid{grid-template-columns:1fr}
   .statusbar{grid-template-columns:repeat(2,1fr)}
 }
+.table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:16px;overflow:hidden}
+.table th,.table td{border-bottom:1px solid var(--line);padding:12px;text-align:left}
+.table th{color:var(--muted);font-weight:500}
