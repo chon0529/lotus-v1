@@ -1,7 +1,7 @@
 {
   "schema": "lotus.registry.source.a.v1",
   "domain": "A",
-  "domainName": "????",
+  "domainName": "政府政策",
   "timezone": "Asia/Macau",
   "generatedFrom": "docs/A_source_registry_v0_4_updated.tsv",
   "sources": [
@@ -9,28 +9,30 @@
       "sourceKey": "a_gcs",
       "label": "GCS",
       "badge": "GCS",
-      "name": "GCS",
+      "name": "GCS 新聞局 / 澳門特區政府新聞局",
       "domain": "A",
       "newsBoxIds": [
         "A1"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "政府公布"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "????????????",
+      "description": "澳門特區政府新聞局官方新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -39,7 +41,7 @@
           "label": "rss",
           "sourceRole": "backup",
           "uiVisible": false,
-          "firstVersion": false,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -48,30 +50,32 @@
     },
     {
       "sourceKey": "a_gcseng",
-      "label": "GCS ????",
-      "badge": "?",
-      "name": "GCS ????",
+      "label": "GCS 工程房屋",
+      "badge": "工",
+      "name": "GCS 工程房屋類新聞",
       "domain": "A",
       "newsBoxIds": [
         "A1"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "政府公布"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "???????????",
+      "description": "政府新聞局工程房屋分類新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -81,29 +85,31 @@
     {
       "sourceKey": "a_dsscu",
       "label": "DSSCU",
-      "badge": "?",
-      "name": "DSSCU",
+      "badge": "DS",
+      "name": "DSSCU 數字安全 / 網安中心",
       "domain": "A",
       "newsBoxIds": [
         "A1"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "政府公布"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "????????????",
+      "description": "網絡安全及數字安全相關官方消息。",
       "endpoints": [
         {
           "key": "web_or_jina",
           "kind": "endpoint",
           "label": "web_or_jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -112,30 +118,32 @@
     },
     {
       "sourceKey": "a_al",
-      "label": "???",
+      "label": "立法會",
       "badge": "AL",
-      "name": "???",
+      "name": "澳門立法會",
       "domain": "A",
       "newsBoxIds": [
         "A1"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "政府公布"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????????",
+      "description": "立法會口頭及書面質詢消息。",
       "endpoints": [
         {
           "key": "written",
           "kind": "endpoint",
           "label": "written",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -143,8 +151,8 @@
           "kind": "endpoint",
           "label": "oral",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -155,28 +163,30 @@
       "sourceKey": "a_tdm",
       "label": "TDM",
       "badge": "TDM",
-      "name": "TDM",
+      "name": "澳廣視",
       "domain": "A",
       "newsBoxIds": [
         "A2"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "中文新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "??????????",
+      "description": "澳廣視本地新聞。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -185,7 +195,7 @@
           "label": "web",
           "sourceRole": "backup",
           "uiVisible": false,
-          "firstVersion": false,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -194,30 +204,32 @@
     },
     {
       "sourceKey": "a_macau_daily",
-      "label": "????",
-      "badge": "?",
-      "name": "????",
+      "label": "澳門日報",
+      "badge": "澳",
+      "name": "澳門日報",
       "domain": "A",
       "newsBoxIds": [
         "A2"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "中文新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "???????????",
+      "description": "本地中文媒體，提供政策與民生新聞整理。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -226,7 +238,7 @@
           "label": "jina",
           "sourceRole": "backup",
           "uiVisible": false,
-          "firstVersion": false,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -235,30 +247,32 @@
     },
     {
       "sourceKey": "a_exmoo",
-      "label": "??",
-      "badge": "?",
-      "name": "??",
+      "label": "力報",
+      "badge": "力",
+      "name": "力報 / Exmoo",
       "domain": "A",
       "newsBoxIds": [
         "A2"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "中文新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????",
+      "description": "本地即時新聞與社會消息。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -267,30 +281,32 @@
     },
     {
       "sourceKey": "a_macaucabletv",
-      "label": "????",
-      "badge": "?",
-      "name": "????",
+      "label": "澳門有線",
+      "badge": "有",
+      "name": "澳門有線電視",
       "domain": "A",
       "newsBoxIds": [
         "A2"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "中文新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "??????????????",
+      "description": "澳門有線電視本地新聞。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -299,30 +315,32 @@
     },
     {
       "sourceKey": "a_chengpou",
-      "label": "??",
-      "badge": "?",
-      "name": "??",
+      "label": "正報",
+      "badge": "正",
+      "name": "正報 / Cheng Pou",
       "domain": "A",
       "newsBoxIds": [
         "A2"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "中文新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????",
+      "description": "本地中文媒體新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -331,7 +349,7 @@
           "label": "jina",
           "sourceRole": "backup",
           "uiVisible": false,
-          "firstVersion": false,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -340,30 +358,32 @@
     },
     {
       "sourceKey": "a_aamacau",
-      "label": "????",
-      "badge": "?",
-      "name": "????",
+      "label": "論盡媒體",
+      "badge": "論",
+      "name": "論盡媒體 / All About Macau",
       "domain": "A",
       "newsBoxIds": [
         "A2"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "中文新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????",
+      "description": "本地公共議題及政策評論消息。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -379,23 +399,25 @@
       "newsBoxIds": [
         "A2"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "中文新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "AllinMedia ????????",
+      "description": "博彩及本地產業新聞。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -411,23 +433,25 @@
       "newsBoxIds": [
         "A3"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "外語新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "Macao Business ??????????",
+      "description": "英文商業與政策新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -443,23 +467,25 @@
       "newsBoxIds": [
         "A3"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "外語新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "Macao Daily Times ???????",
+      "description": "英文澳門新聞。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -475,23 +501,25 @@
       "newsBoxIds": [
         "A3"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "外語新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "Macau Post Daily ???????",
+      "description": "英文澳門本地新聞。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -507,23 +535,25 @@
       "newsBoxIds": [
         "A3"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "外語新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "Hoje Macau ???????",
+      "description": "葡文澳門新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -534,28 +564,30 @@
       "sourceKey": "a_jtm",
       "label": "JTM",
       "badge": "JT",
-      "name": "JTM",
+      "name": "Jornal Tribuna de Macau / JTM",
       "domain": "A",
       "newsBoxIds": [
         "A3"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "外語新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "Jornal Tribuna de Macau ???????",
+      "description": "葡文澳門新聞。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -571,23 +603,25 @@
       "newsBoxIds": [
         "A3"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "外語新聞"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "Plataforma ?????????",
+      "description": "葡文及中葡媒體新聞。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -596,30 +630,32 @@
     },
     {
       "sourceKey": "a_gcsgba",
-      "label": "GCS ???",
-      "badge": "?",
-      "name": "GCS ???",
+      "label": "GCS 大灣區",
+      "badge": "GBA",
+      "name": "GCS 大灣區新聞",
       "domain": "A",
       "newsBoxIds": [
         "A4"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "區域合作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????????",
+      "description": "政府新聞局大灣區相關新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -628,30 +664,32 @@
     },
     {
       "sourceKey": "a_gcshq",
-      "label": "GCS ??",
-      "badge": "?",
-      "name": "GCS ??",
+      "label": "GCS 橫琴",
+      "badge": "橫",
+      "name": "GCS 橫琴新聞",
       "domain": "A",
       "newsBoxIds": [
         "A4"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "區域合作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "???????????????",
+      "description": "政府新聞局橫琴相關新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -660,30 +698,32 @@
     },
     {
       "sourceKey": "a_hengqin_gov",
-      "label": "????",
-      "badge": "?",
-      "name": "????",
+      "label": "橫琴官網",
+      "badge": "橫",
+      "name": "橫琴粵澳深度合作區官網",
       "domain": "A",
       "newsBoxIds": [
         "A4"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "區域合作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "??????????????",
+      "description": "橫琴粵澳深度合作區官方消息。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -692,30 +732,32 @@
     },
     {
       "sourceKey": "a_cbaaction",
-      "label": "????",
-      "badge": "?",
-      "name": "????",
+      "label": "灣區行動",
+      "badge": "行",
+      "name": "CBA 灣區行動",
       "domain": "A",
       "newsBoxIds": [
         "A4"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "區域合作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????",
+      "description": "大灣區行動相關消息。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -724,30 +766,32 @@
     },
     {
       "sourceKey": "a_cbaoverall",
-      "label": "????",
+      "label": "灣區總覽",
       "badge": "GBA",
-      "name": "????",
+      "name": "CBA 灣區總覽",
       "domain": "A",
       "newsBoxIds": [
         "A4"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "區域合作"
+      ],
       "sourceType": "source_group",
-      "sourceRole": "aggregate",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "sourceRole": "source_group",
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "??????????????????????",
+      "description": "大灣區高層關注、最新動態、最新政策整合。",
       "endpoints": [
         {
           "key": "aggregate",
           "kind": "aggregate",
           "label": "aggregate",
           "sourceRole": "aggregate",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -755,8 +799,8 @@
           "kind": "subsource",
           "label": "highlevel",
           "sourceRole": "subsource",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -764,8 +808,8 @@
           "kind": "subsource",
           "label": "dynamic",
           "sourceRole": "subsource",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         },
         {
@@ -773,8 +817,8 @@
           "kind": "subsource",
           "label": "policy",
           "sourceRole": "subsource",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -785,28 +829,30 @@
       "sourceKey": "a_govmo_cepa_search",
       "label": "gov.mo CEPA",
       "badge": "CEPA",
-      "name": "gov.mo CEPA",
+      "name": "gov.mo CEPA 搜尋",
       "domain": "A",
       "newsBoxIds": [
         "A4"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "區域合作"
+      ],
       "sourceType": "source",
       "sourceRole": "search",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "gov.mo CEPA ???????",
+      "description": "gov.mo CEPA 搜尋結果及相關消息。",
       "endpoints": [
         {
           "key": "search",
           "kind": "search",
           "label": "search",
           "sourceRole": "search",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -817,28 +863,30 @@
       "sourceKey": "a_caeu",
       "label": "CAEU",
       "badge": "CE",
-      "name": "CAEU",
+      "name": "CAEU 城市規劃委員會",
       "domain": "A",
       "newsBoxIds": [
         "A5"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "委員會工作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "??????????",
+      "description": "城市規劃委員會消息。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -849,28 +897,30 @@
       "sourceKey": "a_cpu",
       "label": "CPU",
       "badge": "CPU",
-      "name": "CPU",
+      "name": "CPU 城市規劃 / 城規相關",
       "domain": "A",
       "newsBoxIds": [
         "A5"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "委員會工作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????",
+      "description": "城市規劃及城規相關消息。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -881,28 +931,30 @@
       "sourceKey": "a_cru",
       "label": "CRU",
       "badge": "CR",
-      "name": "CRU",
+      "name": "CRU 都市更新股份有限公司",
       "domain": "A",
       "newsBoxIds": [
         "A5"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "委員會工作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "?????????????",
+      "description": "都市更新相關消息。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -911,30 +963,32 @@
     },
     {
       "sourceKey": "a_gcsup",
-      "label": "GCS ????",
-      "badge": "?",
-      "name": "GCS ????",
+      "label": "GCS 都更",
+      "badge": "更",
+      "name": "GCS 都市更新新聞",
       "domain": "A",
       "newsBoxIds": [
         "A5"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "委員會工作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "???????????",
+      "description": "政府新聞局都市更新相關新聞。",
       "endpoints": [
         {
           "key": "web",
           "kind": "endpoint",
           "label": "web",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
@@ -943,30 +997,32 @@
     },
     {
       "sourceKey": "a_dsop",
-      "label": "?????",
+      "label": "公共建設局",
       "badge": "DS",
-      "name": "?????",
+      "name": "公共建設局 / DSOP",
       "domain": "A",
       "newsBoxIds": [
         "A5"
       ],
-      "newsBoxNames": [],
+      "newsBoxNames": [
+        "委員會工作"
+      ],
       "sourceType": "source",
       "sourceRole": "primary",
-      "uiVisible": false,
-      "enabled": false,
-      "firstVersion": false,
+      "uiVisible": true,
+      "enabled": true,
+      "firstVersion": true,
       "status": "planned",
       "refreshMin": 0,
-      "description": "???????????????",
+      "description": "公共建設工程與公共建設消息。",
       "endpoints": [
         {
           "key": "jina",
           "kind": "endpoint",
           "label": "jina",
           "sourceRole": "primary",
-          "uiVisible": false,
-          "firstVersion": false,
+          "uiVisible": true,
+          "firstVersion": true,
           "refreshMin": 0
         }
       ],
