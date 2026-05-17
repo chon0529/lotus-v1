@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-05-17T16:20:14+08:00",
+  "scope": "current repo + GitHub lotus-v1 read-only audit",
+  "currentRepo": "C:\\Users\\wings\\Nova-Lotus",
+  "githubRepo": "https://github.com/chon0529/lotus-v1.git",
+  "githubClonePath": "C:\\Users\\wings\\_nova_audit\\lotus-v1-github",
+  "totalScripts": 61,
+  "ready": 15,
+  "needsFix": 34,
+  "deprecated": 0,
+  "duplicate": 4,
+  "unknown": 8,
+  "highRisk": 1,
+  "currentRepoScriptCount": 0,
+  "githubRepoScriptCount": 61,
+  "recommendedNextBatch": [
+    {
+      "sourceId": "a_gcs",
+      "sourceName": "GCS",
+      "file": "crawler/fetch_gcs_rss_adv0.js",
+      "status": "NEEDS_FIX",
+      "reason": "Close candidate after standardization."
+    },
+    {
+      "sourceId": "a_tdm",
+      "sourceName": "TDM",
+      "file": "crawler/fetch_tdm_ws_cb.js",
+      "status": "READY",
+      "reason": "Reusable now with schema adapter."
+    },
+    {
+      "sourceId": "a_macaupostdaily",
+      "sourceName": "Macau Post Daily",
+      "file": "crawler/fetch_mopostd_ws_cb.js",
+      "status": "READY",
+      "reason": "Reusable now with schema adapter."
+    },
+    {
+      "sourceId": "a_macaubusiness",
+      "sourceName": "Macao Business",
+      "file": "crawler/fetch_macaubusiness_ws_cb.js",
+      "status": "READY",
+      "reason": "Reusable now with schema adapter."
+    }
+  ],
+  "blockers": [
+    "Most fetch scripts need logger/historyManager standardization before M2 integration.",
+    "Some fetchers need failure-safe writes to avoid overwriting good data.",
+    "Hardcoded secret risk found; redact and move to environment before reuse."
+  ],
+  "notes": [
+    "Nova-Lotus current repo contains no fetch_*.js or run_all_*.js files under the audited patterns.",
+    "lotus-v1-github contains historical A-domain crawler scripts, batch runners, logger modules, existing fetch JSON, history JSON, last_updated.json, and overalllog.json.",
+    "No old fetch code was copied into Nova-Lotus; this audit only generated report artifacts."
+  ]
+}
