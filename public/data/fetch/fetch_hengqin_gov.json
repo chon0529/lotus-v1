@@ -4,293 +4,488 @@
   "sourceName": "橫琴官網",
   "domain": "A",
   "category": "A4",
-  "generatedAt": "2026-05-17T21:00:27+08:00",
-  "fetchedAt": "2026-05-17T21:00:27+08:00",
+  "generatedAt": "2026-05-17T23:06:51+08:00",
+  "fetchedAt": "2026-05-17T23:06:51+08:00",
   "status": "normal",
-  "count": 19,
+  "count": 30,
   "items": [
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4895212-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390686",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "2026年横琴粤澳深度合作区公办中小学（幼儿园）教职工招聘（第一批）面试成绩、体检及签约等有关事项公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3906865.html",
+      "publishedAt": "2026-05-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390592",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "横琴粤澳深度合作区经济发展局关于组织申报2025年度科技计划项目配套资助的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3905927.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390588",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "关于开展2026年第一季度横琴粤澳深度合作区澳门青年创业企业及澳门青年创新创业基地相关扶持申报工作的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3905884.html",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390406",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "2026年横琴粤澳深度合作区公办中小学（幼儿园）教职工招聘（第一批）线上面谈成绩、线下资格复审及面试有关事项公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3904067.html",
+      "publishedAt": "2026-05-12T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390366",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
       "title": "关于公布交通技术监控设备设置地点及查处的违法行为的通告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4895212.html",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3903664.html",
       "publishedAt": "2026-05-11T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4894565-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390336",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "横琴粤澳深度合作区2026年法律援助律师库入库名单公示",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4894565.html",
+      "title": "关于明确家庭医生签约个性化服务包收费有关事项的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3903368.html",
       "publishedAt": "2026-05-09T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4875065-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390267",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "行政复议决定书送达公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4875065.html",
-      "publishedAt": "2026-03-26T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "2026年横琴粤澳深度合作区公办中小学（幼儿园）教职工招聘（第一批）笔试成绩及线上面谈相关事项公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3902674.html",
+      "publishedAt": "2026-05-07T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4873968-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390156",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于对GAITAN JESSA等4人所持居留许可宣布作废的公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4873968.html",
-      "publishedAt": "2026-03-24T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于印发2026年秋季横琴粤澳深度合作区义务教育阶段学校和公办幼儿园招生工作实施细则的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901566.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4865483-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390171",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于对TEJAS CHARMAINE等3人所持居留许可宣布作废的公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4865483.html",
-      "publishedAt": "2026-03-10T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于征集2026年珠澳琴职业技能大赛暨“深合杯”职业技能竞赛项目的通告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901716.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4864475-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390150",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于公开征集横琴粤澳深度合作区社会组织专家库专家的通告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4864475.html",
-      "publishedAt": "2026-03-09T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "横琴粤澳深度合作区经济发展局关于组织申报2025年度促进与葡语系国家科技交流合作扶持补贴的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901507.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4862998-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390151",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "行政复议决定书送达公告（粤横办行复〔2026〕5号）",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4862998.html",
-      "publishedAt": "2026-03-04T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于开展2025年度促进金融产业高质量发展扶持资金申报工作的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901513.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4861797-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390151",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "广东省2026年度选调优秀大学毕业生省委横琴工委职位体检有关事项公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4861797.html",
-      "publishedAt": "2026-03-02T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "横琴粤澳深度合作区商事服务局关于启用新版经营主体登记文书表格和提交材料清单的通告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901518.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4859893-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390136",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于开展横琴粤澳深度合作区社会团体和民办非企业单位2025年度年检工作的通知",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4859893.html",
-      "publishedAt": "2026-02-25T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于临时延长合作区十字门隧道“二线”通道通行时间的通告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901366.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4852233-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390135",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于招募2026年法律援助律师的公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4852233.html",
-      "publishedAt": "2026-02-03T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于开展横琴粤澳深度合作区博士后专项扶持补贴（2026年度第一批）申报工作的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901353.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4850313-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390129",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "列入社会组织活动异常名录公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4850313.html",
-      "publishedAt": "2026-01-29T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于停止新开办企业免费刻制印章服务的通告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901291.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4842750-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390100",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于横琴粤澳深度合作区“6·30”资金2025年帮扶援建项目（第四批）的信息公示",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4842750.html",
-      "publishedAt": "2026-01-13T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "横琴粤澳深度合作区经济发展局关于组织申报2025年度澳门关联公司资助的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3901001.html",
+      "publishedAt": "2026-04-29T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4834960-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390026",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "《列入活动异常名录事先告知书》送达公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4834960.html",
-      "publishedAt": "2025-12-25T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于延长横琴粤澳深度合作区2025年下半年支持澳资企业发展扶持申报时间的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3900263.html",
+      "publishedAt": "2026-04-27T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4835123-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390025",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于横琴粤澳深度合作区“6·30”资金2025年帮扶援建项目（第三批）的信息公示",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4835123.html",
-      "publishedAt": "2025-12-25T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "横琴粤澳深度合作区经济发展局转发广东省工业和信息化厅关于开展2026年专精特新“小巨人”企业奖补资金申报的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3900254.html",
+      "publishedAt": "2026-04-27T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4832058-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-390005",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于横琴粤澳深度合作区工会拟命名2025年劳模和职工创新工作室的公示",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4832058.html",
-      "publishedAt": "2025-12-19T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "规范五一及端午期间市场价格行为提醒告诫函",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3900059.html",
+      "publishedAt": "2026-04-27T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4829472-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389992",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "行政执法证件遗失公告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4829472.html",
-      "publishedAt": "2025-12-15T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "横琴粤澳深度合作区首都师范大学实验中学2026年招生方案",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3899929.html",
+      "publishedAt": "2026-04-26T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4809390-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389997",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于启用横琴粤澳深度合作区公安局机动车驾驶人理论考场的通告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4809390.html",
-      "publishedAt": "2025-12-05T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "2026年横琴粤澳深度合作区公办中小学（幼儿园）教职工招聘（第一批）面试成绩、体检及签约等有关事项公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3899978.html",
+      "publishedAt": "2026-04-26T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4806311-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389969",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于横琴粤澳深度合作区2025年社会组织评估等级的通告",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4806311.html",
-      "publishedAt": "2025-11-28T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于横琴粤澳深度合作区公办中小学学位申请房锁定制度的通告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3899693.html",
+      "publishedAt": "2026-04-24T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     },
     {
-      "id": "a_hengqin_gov_http-hengqin-gd-gov-cn-zwgk-tzgg-content-post-4801824-html",
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389963",
       "sourceId": "a_hengqin_gov",
       "sourceName": "橫琴官網",
       "domain": "A",
       "category": "A4",
-      "title": "关于珠海市第十一届劳动模范、先进工作者和先进集体推荐对象（横琴粤澳深度合作区）的公示",
-      "url": "http://hengqin.gd.gov.cn/zwgk/tzgg/content/post_4801824.html",
-      "publishedAt": "2025-11-18T09:00:00+08:00",
-      "fetchedAt": "2026-05-17T21:00:29+08:00",
+      "title": "关于注销珠海中立财财税服务有限公司《代理记账许可证书》的公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3899633.html",
+      "publishedAt": "2026-04-24T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
       "tags": [
-        "橫琴"
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389918",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "2026年横琴粤澳深度合作区公办中小学（幼儿园）教职工招聘（第一批）线上面谈成绩、线下资格复审及面试有关事项公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3899184.html",
+      "publishedAt": "2026-04-23T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389761",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "横琴粤澳深度合作区经济发展局关于组织申报2025年度企业研发费用补贴和独角兽企业研发费补贴的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3897617.html",
+      "publishedAt": "2026-04-21T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389824",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "2026年横琴粤澳深度合作区公办中小学（幼儿园）教职工招聘（第一批）笔试有关事项公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3898243.html",
+      "publishedAt": "2026-04-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389778",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "横琴粤澳深度合作区公开招聘公办小学筹建人员面试成绩、体检等有关事项的公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3897780.html",
+      "publishedAt": "2026-04-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389773",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "关于横琴粤澳深度合作区劳务派遣单位有关情况的通告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3897737.html",
+      "publishedAt": "2026-04-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389766",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "关于横琴赛尔医疗美容诊所的备案公告",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3897661.html",
+      "publishedAt": "2026-04-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hengqin_gov_http-www-hengqin-gov-cn-macao-zh-hans-zwgk-tzgg-gg-content-post-389748",
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "title": "横琴粤澳深度合作区经济发展局关于组织申报2025年度支持澳门高校产学研示范基地建设的通知",
+      "url": "http://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3897487.html",
+      "publishedAt": "2026-04-16T09:00:00+08:00",
+      "fetchedAt": "2026-05-17T23:06:55+08:00",
+      "tags": [
+        "橫琴",
+        "通知公告"
       ],
       "status": "normal"
     }

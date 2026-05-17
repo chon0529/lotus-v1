@@ -581,3 +581,240 @@ body[data-font-scale="4"] .recent-list{--recent-row-h:44px}
 @media(max-width:420px){
   .source-icon-grid{--source-icon-cols:4}
 }
+
+/* M2.0C Health Monitor compact quality line */
+.source-monitor-card small,
+.source-card small,
+.source-card-meta,
+.source-health-meta,
+.source-status-line{
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+  line-height:1.35;
+}
+
+.source-monitor-card .source-card-head,
+.source-card .source-card-head{
+  align-items:flex-start;
+}
+
+/* M2.0C Health quality line final: one-line, no clipping */
+.health-quality-line{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  min-height:18px !important;
+  margin:4px 0 10px !important;
+  padding:0 !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  line-height:18px !important;
+  font-size:11px !important;
+  color:var(--muted,#66766f) !important;
+}
+
+.health-quality-line span{
+  display:inline !important;
+}
+
+.source-monitor-card,
+.source-card{
+  overflow:visible;
+}
+
+.source-monitor-card .source-card-body,
+.source-card .source-card-body{
+  overflow:visible;
+}
+
+.source-monitor-card .source-card-list,
+.source-card .source-card-list{
+  margin-top:6px !important;
+}
+
+/* M2.0C final health card stat row: keep in normal flow */
+.health-quality-line{
+  display:block !important;
+  position:relative !important;
+  clear:both !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:18px !important;
+  min-height:18px !important;
+  margin:6px 0 10px 0 !important;
+  padding:0 !important;
+  line-height:18px !important;
+  font-size:11px !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  color:var(--muted,#66766f) !important;
+  background:transparent !important;
+  z-index:3 !important;
+}
+
+.health-quality-line + *,
+.health-quality-line ~ .source-card-list,
+.health-quality-line ~ .source-news-list,
+.health-quality-line ~ .monitor-rows,
+.health-quality-line ~ .health-news-list{
+  margin-top:8px !important;
+}
+
+.source-monitor-card article,
+.source-monitor-card,
+.health-source-card,
+.source-card{
+  overflow:visible !important;
+}
+
+.source-monitor-card .source-card-body,
+.health-source-card .source-card-body,
+.source-card .source-card-body{
+  display:block !important;
+  overflow:visible !important;
+}
+
+.source-monitor-card .source-row:first-child,
+.health-source-card .source-row:first-child,
+.source-card .source-row:first-child{
+  margin-top:8px !important;
+}
+
+/* M2.0C Health card fixed header + scrollable news list */
+#app .health-source-grid .source-card,
+#app .health-monitor-grid .source-card,
+#app .source-monitor-card{
+  display:flex !important;
+  flex-direction:column !important;
+  min-height:360px !important;
+  max-height:360px !important;
+  overflow:hidden !important;
+}
+
+#app .health-source-grid .source-card > *,
+#app .health-monitor-grid .source-card > *,
+#app .source-monitor-card > *{
+  flex:0 0 auto !important;
+}
+
+#app .health-quality-line{
+  flex:0 0 auto !important;
+  display:block !important;
+  height:18px !important;
+  min-height:18px !important;
+  margin:4px 0 8px !important;
+  line-height:18px !important;
+  font-size:11px !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  color:var(--muted,#66766f) !important;
+}
+
+/* news rows area: takes remaining card space, scrolls when >=9 rows */
+#app .source-monitor-card .source-list,
+#app .source-monitor-card .source-card-list,
+#app .source-monitor-card .monitor-rows,
+#app .source-monitor-card .health-news-list,
+#app .source-card .source-list,
+#app .source-card .source-card-list,
+#app .source-card .monitor-rows,
+#app .source-card .health-news-list{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  margin-top:4px !important;
+  padding-right:3px !important;
+}
+
+/* keep rows compact in health cards */
+#app .source-monitor-card .source-row,
+#app .source-card .source-row{
+  min-height:31px !important;
+  padding-top:6px !important;
+  padding-bottom:6px !important;
+}
+
+/* M2.0C FINAL: hide per-card quality line; stats stay in Health summary table */
+#app .health-quality-line{
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+
+/* keep health card content clean */
+#app .source-monitor-card,
+#app .health-source-card,
+#app .source-card{
+  overflow:hidden !important;
+}
+
+#app .source-monitor-card .source-row,
+#app .health-source-card .source-row,
+#app .source-card .source-row{
+  min-height:32px !important;
+}
+
+/* M2.0C HARD FIX: source cards show news only; quality stats stay in summary table */
+#app .health-quality-line,
+#app .health-quality-line:empty,
+#app .source-card p:empty,
+#app .source-monitor-card p:empty,
+#app .health-source-card p:empty{
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+
+/* remove broken fixed-scroll card behavior */
+#app .source-monitor-card,
+#app .health-source-card,
+#app .source-card{
+  height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+
+/* health page source card lists should start from item 01 and flow normally */
+#app .source-monitor-card .source-list,
+#app .source-monitor-card .source-card-list,
+#app .source-monitor-card .monitor-rows,
+#app .source-monitor-card .health-news-list,
+#app .health-source-card .source-list,
+#app .health-source-card .source-card-list,
+#app .health-source-card .monitor-rows,
+#app .health-source-card .health-news-list,
+#app .source-card .source-list,
+#app .source-card .source-card-list,
+#app .source-card .monitor-rows,
+#app .source-card .health-news-list{
+  height:auto !important;
+  max-height:none !important;
+  min-height:0 !important;
+  overflow:visible !important;
+  margin-top:8px !important;
+  padding-right:0 !important;
+}
+
+/* keep rows readable but compact */
+#app .source-monitor-card .source-row,
+#app .health-source-card .source-row,
+#app .source-card .source-row{
+  min-height:30px !important;
+  padding-top:6px !important;
+  padding-bottom:6px !important;
+}

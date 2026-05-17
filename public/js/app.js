@@ -794,10 +794,30 @@ const renderHealth=async()=>{
     return [key,await getOptionalJson(`./data/fetch/fetch_${sourceShortId(key)}.json`,null)];
   }));
   const fetchOutputMap=new Map(fetchOutputEntries);
+  const macauDateKey=date=>{
+    const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Macau',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date);
+    const data=Object.fromEntries(parts.map(part=>[part.type,part.value]));
+    return `${data.year}-${data.month}-${data.day}`;
+  };
+  const dayDistance=(fromKey,toKey)=>{
+    const f=Date.UTC(Number(fromKey.slice(0,4)),Number(fromKey.slice(5,7))-1,Number(fromKey.slice(8,10)));
+    const t=Date.UTC(Number(toKey.slice(0,4)),Number(toKey.slice(5,7))-1,Number(toKey.slice(8,10)));
+    return Math.floor((t-f)/86400000);
+  };
+  const dateOnlyDisplayTime=publishedAt=>{
+    const text=String(publishedAt??'');
+    const match=text.match(/^(\d{4}-\d{2}-\d{2})T(00:00|09:00)(?::00)?(?:\.\d+)?(?:\+08:00|Z)?$/);
+    if(!match)return '';
+    const days=dayDistance(match[1],macauDateKey(new Date(nowIso)));
+    if(days<=0)return '今日';
+    if(days<=6)return `${days} 日前`;
+    return match[1];
+  };
+  const healthDisplayTime=item=>item.timeText||dateOnlyDisplayTime(item.publishedAt)||(item.publishedAt?timeText(item.publishedAt):'');
   const rowsFromFetchOutput=output=>Array.isArray(output?.items)
     ? output.items.map(item=>({
       ...item,
-      time:item.timeText??(item.publishedAt?timeText(item.publishedAt):''),
+      time:healthDisplayTime(item),
       newsBox:item.category??''
     }))
     : [];
@@ -882,11 +902,12 @@ const renderHealth=async()=>{
     .sort((a,b)=>(statusOrder[a.status]??9)-(statusOrder[b.status]??9)
       ||(Date.parse(a.lastUpdatedAt??'')||0)-(Date.parse(b.lastUpdatedAt??'')||0)
       ||String(a.sourceKey).localeCompare(String(b.sourceKey)));
-  const sourceStatusLine=source=>{
+  const sourceStatusLine=source=>'';
+  const sourceStatusLineDisabled=source=>{
     if(source.status==='planned')return '待接入｜等待 real fetch';
     const info=source.healthInfo??{};
     if(Number.isFinite(Number(info.latestCount))){
-      return `${info.latestCount} 條｜重複 ${info.duplicateCount??0}｜缺日期 ${info.missingDateCount??0}｜空標題 ${info.emptyTitleCount??0}｜最舊 ${info.oldestItemAgeText??'—'}`;
+      return `${info.latestCount}條｜重${info.duplicateCount??0}｜缺${info.missingDateCount??0}｜空${info.emptyTitleCount??0}｜最舊${info.oldestItemAgeText??'—'}`;
     }
     const rows=source.items??[];
     const titles=rows.map(item=>String(item.title??'').trim()).filter(Boolean);

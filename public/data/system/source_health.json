@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-17T21:53:35+08:00",
+  "generatedAt": "2026-05-17T23:10:45+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -17,20 +17,20 @@
       "name": "CAEU",
       "domain": "A",
       "newsBox": "A5",
-      "status": "stale",
-      "lastSuccess": "2026-05-17T21:00:23+08:00",
-      "nextRefresh": "2026-05-17T21:38:40+08:00",
+      "status": "normal",
+      "lastSuccess": "2026-05-17T23:10:45+08:00",
+      "nextRefresh": "2026-05-17T23:40:45+08:00",
       "sourceId": "a_caeu",
-      "lastRun": "2026-05-17T21:08:40+08:00",
-      "failCount": 1,
+      "lastRun": "2026-05-17T23:10:45+08:00",
+      "failCount": 0,
       "latestCount": 8,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
       "oldestItemAgeText": "159 日前",
-      "lastError": "relevance unchecked",
+      "lastError": null,
       "newestItemAgeText": "5 日前",
-      "relevanceStatus": "unchecked"
+      "relevanceStatus": "matched"
     },
     {
       "sourceKey": "b_laroma24",
@@ -139,19 +139,19 @@
       "name": "橫琴官網",
       "domain": "A",
       "newsBox": "A4",
-      "status": "stale",
-      "lastRun": "2026-05-17T21:00:27+08:00",
-      "lastSuccess": "2026-05-17T21:00:27+08:00",
-      "nextRefresh": "2026-05-17T21:30:27+08:00",
+      "status": "normal",
+      "lastRun": "2026-05-17T23:06:51+08:00",
+      "lastSuccess": "2026-05-17T23:06:51+08:00",
+      "nextRefresh": "2026-05-17T23:36:51+08:00",
       "failCount": 0,
-      "latestCount": 19,
-      "duplicateCount": 0,
+      "latestCount": 30,
+      "duplicateCount": 2,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
-      "oldestItemAgeText": "181 日前",
-      "lastError": "manual Hengqin parser verification pending",
-      "newestItemAgeText": "7 日前",
-      "relevanceStatus": "unchecked"
+      "oldestItemAgeText": "32 日前",
+      "lastError": null,
+      "newestItemAgeText": "14 小時前",
+      "relevanceStatus": "matched"
     }
   ]
 }
