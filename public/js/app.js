@@ -1,5 +1,22 @@
 const app=document.querySelector('#app');
 const title=document.querySelector('#pageTitle');
+const sidebar=document.querySelector('.sidebar');
+const ensureNavigation=()=>{
+  const subAll=sidebar?.querySelector('[data-page="sub_all"]');
+  if(subAll&&!sidebar.querySelector('[data-page="sub_72h"]')){
+    const button=document.createElement('button');
+    button.type='button';
+    button.dataset.page='sub_72h';
+    button.className='nav';
+    button.innerHTML='<span class="nav-full">72 小時</span><span class="nav-short">72</span>';
+    sidebar.insertBefore(button,subAll);
+  }
+  const all=sidebar?.querySelector('[data-page="sub_all"]');
+  if(all)all.innerHTML='<span class="nav-full">全部來源</span><span class="nav-short">源</span>';
+  const health=sidebar?.querySelector('[data-page="sub_health"]');
+  if(health)health.innerHTML='<span class="nav-full">來源監控</span><span class="nav-short">監</span>';
+};
+ensureNavigation();
 const navs=[...document.querySelectorAll('.nav')];
 const refreshBtn=document.querySelector('#refreshBtn');
 const themeToggle=document.querySelector('#themeToggle');
@@ -10,14 +27,18 @@ const homeTabs={A:'all',B:'all',C:'all'};
 const HOME_ITEM_CAP=50;
 const HOME_DOMAIN_CAPS={A:50,B:35,C:35};
 const RECENT_72H_MAX=50;
+const RECENT_WINDOW_HOURS=73;
+const HEALTH_SOURCE_CARD_CAP=22;
 let currentPage='sub_main';
 let recentFilter='all';
 let recentSort='priority';
 let recentCategory='all';
 let recentTag='all';
+let healthStatusFilter='all';
+let healthDomainFilter='all';
 
 const statusLabels={success:'正常',normal:'正常',planned:'待接入',disabled:'暫停',failed:'異常',stale:'過期',fallback:'備援',empty:'無資料'};
-const pageTitles={sub_main:'總覽',sub_all:'全部新聞',sub_health:'來源健康',sub_settings:'設定',recent_72h:'72 小時新聞'};
+const pageTitles={sub_main:'總覽',sub_72h:'72 小時新聞',sub_all:'全部來源',sub_health:'來源監控',sub_settings:'設定',recent_72h:'72 小時新聞'};
 const domainTitles={A:'政府政策',B:'AS Roma',C:'財經市場'};
 const domainClass=domain=>`domain-${String(domain).toLowerCase()}`;
 
@@ -27,9 +48,14 @@ const getJson=async path=>{
   const text=await response.text();
   return JSON.parse(text.replace(/^\uFEFF/,''));
 };
+const getOptionalJson=async(path,fallback)=>{
+  try{return await getJson(path)}
+  catch{return fallback}
+};
 
 const h=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-const setActive=page=>navs.forEach(nav=>nav.classList.toggle('active',nav.dataset.page===page));
+const normalizePage=page=>page==='recent_72h'?'sub_72h':page;
+const setActive=page=>navs.forEach(nav=>nav.classList.toggle('active',nav.dataset.page===normalizePage(page)));
 const getActivePage=()=>currentPage;
 const getExpanded=domain=>expandedSources[domain]??[];
 const sourceCountText=count=>`${count??1} 個來源`;
@@ -416,7 +442,7 @@ const renderMain=async()=>{
       recentCategory='all';
       recentTag='all';
       recentSort='priority';
-      runRoute('recent_72h');
+      runRoute('sub_72h');
     };
   });
 };
@@ -570,12 +596,17 @@ const renderRecent72h=async()=>{
     topicTags:item.topicTags??[],
     hot:item.hot===true||item.priority>=88
   }));
+  const recentCutoff=Date.now()-(RECENT_WINDOW_HOURS*60*60*1000);
+  const allNews=allItems.filter(item=>{
+    const value=Date.parse(item.publishedAt??'');
+    return !Number.isFinite(value)||value===0||value>=recentCutoff;
+  });
   const counts={
-    all:allItems.length,
-    A:allItems.filter(item=>item.domain==='A').length,
-    B:allItems.filter(item=>item.domain==='B').length,
-    C:allItems.filter(item=>item.domain==='C').length,
-    hot:allItems.filter(item=>item.hot).length
+    all:allNews.length,
+    A:allNews.filter(item=>item.domain==='A').length,
+    B:allNews.filter(item=>item.domain==='B').length,
+    C:allNews.filter(item=>item.domain==='C').length,
+    hot:allNews.filter(item=>item.hot).length
   };
   const filters=[
     ['all',recentMeta.filters?.[0]??'全部'],
@@ -597,10 +628,10 @@ const renderRecent72h=async()=>{
     hot:[['all','全部'],['重點','重點'],['新','新'],['追蹤','追蹤'],['異常','異常']]
   };
   const baseFiltered=recentFilter==='hot'
-    ? allItems.filter(item=>item.hot)
+    ? allNews.filter(item=>item.hot)
     : recentFilter==='all'
-      ? allItems
-      : allItems.filter(item=>item.domain===recentFilter);
+      ? allNews
+      : allNews.filter(item=>item.domain===recentFilter);
   const categoryFiltered=recentCategory==='all'
     ? baseFiltered
     : recentFilter==='hot'
@@ -634,9 +665,7 @@ const renderRecent72h=async()=>{
     : Math.min(Math.max(filtered.length,1),RECENT_72H_MAX);
   const recentEndMarker=filtered.length===0
     ? '<p class="recent-list-empty">沒有資料</p>'
-    : filtered.length<RECENT_72H_MAX
-      ? '<p class="recent-list-end">沒有更多了</p>'
-      : '';
+    : '<p class="recent-list-end">沒有更多了</p>';
   const topicBase=topicPool.slice(0,6);
   const visibleTopicPool=recentTag!=='all'&&!topicBase.includes(recentTag)
     ? [...topicBase,recentTag]
@@ -653,7 +682,7 @@ const renderRecent72h=async()=>{
     <div class="recent-page">
       <section class="recent-head">
         <p class="recent-summary-line">
-          最近 72 小時：<b>${h(counts.all)}</b> 條｜政府政策 <b>${h(counts.A)}</b>｜AS Roma <b>${h(counts.B)}</b>｜財經市場 <b>${h(counts.C)}</b>｜熱點 <b>${h(counts.hot)}</b>
+          最近 73 小時：<b>${h(counts.all)}</b> 條｜政府政策 <b>${h(counts.A)}</b>｜AS Roma <b>${h(counts.B)}</b>｜財經市場 <b>${h(counts.C)}</b>｜熱點 <b>${h(counts.hot)}</b>
         </p>
       </section>
       <section class="recent-panel">
@@ -738,33 +767,214 @@ const renderRecent72h=async()=>{
 };
 
 const renderHealth=async()=>{
-  const data=await getJson('./data/system/source_health.json');
-  app.innerHTML=`
-    <table class="table">
-      <thead>
-        <tr>
-          <th>來源</th>
-          <th>主域</th>
-          <th>分類</th>
-          <th>狀態</th>
-          <th>上次成功</th>
-          <th>下次刷新</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${data.sources.map(source=>`
-          <tr>
-            <td>${h(source.name)}</td>
-            <td>${h(source.domain)}</td>
-            <td>${h(source.newsBox)}</td>
-            <td>${h(statusText(source.status))}</td>
-            <td>${h(source.lastSuccess)}</td>
-            <td>${h(source.nextRefresh)}</td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>
+  const [registry,health,auditSummary,auditDetail,viewAll]=await Promise.all([
+    getOptionalJson('./data/registry/source_registry_a.json',{sources:[]}),
+    getOptionalJson('./data/system/source_health.json',{sources:[],generatedAt:null}),
+    getOptionalJson('./data/audit/fetch_audit_summary.json',{}),
+    getOptionalJson('./data/audit/fetch_audit_detail.json',[]),
+    getOptionalJson('./data/view/view_sub_all.json',{domains:[],generatedAt:null})
+  ]);
+  const nowIso=new Date().toISOString();
+  const addMinutes=(value,minutes)=>{
+    const base=new Date(value||health.generatedAt||viewAll.generatedAt||nowIso);
+    base.setMinutes(base.getMinutes()+(Number(minutes)||30));
+    return base.toISOString();
+  };
+  const healthMap=Object.fromEntries((health.sources??[]).map(source=>[source.sourceKey,source]));
+  const sourceRowsFromView=new Map();
+  (viewAll.domains??[]).forEach(domain=>{
+    (domain.sources??[]).forEach(source=>{
+      if(source.sourceKey)sourceRowsFromView.set(source.sourceKey,source.items??[]);
+    });
+  });
+  const normalizeHealthStatus=source=>{
+    const status=source.status??'planned';
+    if(status==='normal')return 'success';
+    return status;
+  };
+  const statusOrder={failed:0,stale:1,empty:2,fallback:3,planned:4,disabled:5,success:6,normal:6};
+  const statusGroups=[
+    ['success','正常'],
+    ['failed','異常'],
+    ['stale','過期'],
+    ['empty','無資料'],
+    ['planned','待接入'],
+    ['fallback','備援'],
+    ['disabled','暫停']
+  ];
+  const healthSources=(registry.sources??[]).map(source=>{
+    const healthInfo=healthMap[source.sourceKey]??{};
+    const status=normalizeHealthStatus({
+      status:healthInfo.status??(source.enabled===false?'disabled':source.status??'planned')
+    });
+    const rows=sourceRowsFromView.get(source.sourceKey)??fakeItemsForSource(source);
+    const lastUpdatedAt=healthInfo.lastUpdatedAt??source.lastUpdatedAt??health.generatedAt??viewAll.generatedAt??nowIso;
+    return {
+      ...source,
+      domain:source.domain??'A',
+      label:source.label??source.name??source.sourceKey,
+      status,
+      newsBoxIds:source.newsBoxIds?.length?source.newsBoxIds:(healthInfo.newsBox?[healthInfo.newsBox]:[]),
+      lastUpdatedAt,
+      nextRefreshAt:healthInfo.nextRefreshAt??source.nextRefreshAt??addMinutes(lastUpdatedAt,source.refreshMin),
+      items:rows
+    };
+  });
+  (health.sources??[]).forEach(source=>{
+    if(!healthSources.some(item=>item.sourceKey===source.sourceKey)){
+      healthSources.push({
+        sourceKey:source.sourceKey,
+        label:source.name??source.sourceKey,
+        badge:String(source.domain??'?'),
+        domain:source.domain??'unknown',
+        newsBoxIds:source.newsBox?[source.newsBox]:[],
+        status:normalizeHealthStatus(source),
+        enabled:source.status!=='disabled',
+        uiVisible:true,
+        description:'待接入 real fetch。',
+        lastUpdatedAt:health.generatedAt??nowIso,
+        nextRefreshAt:addMinutes(health.generatedAt??nowIso,30),
+        items:sourceRowsFromView.get(source.sourceKey)??[]
+      });
+    }
+  });
+  const statusCount=status=>healthSources.filter(source=>source.status===status||(status==='success'&&source.status==='normal')).length;
+  const total=healthSources.length;
+  const enabled=healthSources.filter(source=>source.enabled!==false).length;
+  const latestSuccess=health.generatedAt??auditSummary.generatedAt??'';
+  const nextRefresh=addMinutes(latestSuccess||nowIso,30);
+  const statTiles=[
+    ['異常',statusCount('failed')],
+    ['過期',statusCount('stale')],
+    ['無資料',statusCount('empty')],
+    ['待接入',statusCount('planned')],
+    ['正常',statusCount('success')],
+    ['備援中',statusCount('fallback')],
+    ['來源總數',total],
+    ['已啟用',enabled],
+    ['最後全局成功',latestSuccess?timeText(latestSuccess):'待接入'],
+    ['下一輪刷新',nextRefresh?timeText(nextRefresh):'—']
+  ];
+  const healthRows=statusGroups.map(([status,label])=>{
+    const members=healthSources.filter(source=>source.status===status||(status==='success'&&source.status==='normal'));
+    const recent=members[0];
+    return {status,label,members,representative:recent?.label??'—'};
+  });
+  const filteredSources=healthSources
+    .filter(source=>healthDomainFilter==='all'||source.domain===healthDomainFilter)
+    .filter(source=>healthStatusFilter==='all'||source.status===healthStatusFilter||(healthStatusFilter==='success'&&source.status==='normal'))
+    .sort((a,b)=>(statusOrder[a.status]??9)-(statusOrder[b.status]??9)
+      ||(Date.parse(a.lastUpdatedAt??'')||0)-(Date.parse(b.lastUpdatedAt??'')||0)
+      ||String(a.sourceKey).localeCompare(String(b.sourceKey)));
+  const sourceStatusLine=source=>{
+    if(source.status==='planned')return '待接入｜等待 real fetch';
+    const rows=source.items??[];
+    const titles=rows.map(item=>String(item.title??'').trim()).filter(Boolean);
+    const duplicateCount=titles.length-new Set(titles).size;
+    const missingDate=rows.filter(item=>!item.time&&!item.publishedAt).length;
+    const emptyTitle=rows.filter(item=>!String(item.title??'').trim()).length;
+    const oldest=rows.reduce((max,item)=>Math.max(max,ageMinutes(item.time)),0);
+    return `${rows.length} 條｜重複 ${duplicateCount}｜缺日期 ${missingDate}｜空標題 ${emptyTitle}｜最舊 ${oldest>=9999?'—':`${Math.max(1,Math.round(oldest/60))} 小時前`}`;
+  };
+  const sourceListMarker=(rows,cap)=>rows.length===0
+    ? '<p class="monitor-list-empty">沒有資料</p>'
+    : rows.length<cap
+      ? '<p class="monitor-list-end">沒有更多了</p>'
+      : '';
+  const stripSourceTitle=(source,title)=>{
+    const raw=String(title??'');
+    const label=String(source.label??'').trim();
+    return label&&raw.startsWith(`${label} `)?raw.slice(label.length+1):raw;
+  };
+  const monitorRows=source=>{
+    const rows=(source.items??[]).slice(0,HEALTH_SOURCE_CARD_CAP);
+    return `${rows.map((item,index)=>`
+      <div class="monitor-news-row">
+        <span>${h(String(index+1).padStart(2,'0'))}.</span>
+        <strong>${h(stripSourceTitle(source,item.title))}</strong>
+        <small> - ${h(item.time??item.timeText??'待接入')}</small>
+      </div>
+    `).join('')}${sourceListMarker(rows,HEALTH_SOURCE_CARD_CAP)}`;
+  };
+  const monitorCard=source=>`
+    <article class="monitor-card status-${h(source.status)} ${h(domainClass(source.domain))}">
+      <div class="monitor-card-head">
+        <div class="monitor-title">
+          ${renderSourceIcon(source,{size:'sm'})}
+          <h3>${h(source.label)}</h3>
+          <div class="source-card-tags">${(source.newsBoxIds??[]).slice(0,2).map(id=>`<span>${h(id)}</span>`).join('')}</div>
+        </div>
+        <div class="monitor-tools">
+          <span class="monitor-status">${h(statusText(source.status))}</span>
+          <span>${refreshMeta(source)}</span>
+          <button type="button" class="source-card-refresh" aria-label="${h(source.label)} 刷新">⟳</button>
+        </div>
+      </div>
+      <p class="monitor-quality">${h(sourceStatusLine(source))}</p>
+      <div class="monitor-news-list soft-scroll">${monitorRows(source)}</div>
+    </article>
   `;
+  app.innerHTML=`
+    <div class="health-monitor">
+      <section class="health-hero">
+        <div>
+          <h2>健康總覽</h2>
+          <p>Source Health Monitor</p>
+          <small>目前狀態以 registry / audit / fake health data 推算；real fetch 接入後將由 last_updated 與 fetch output 驅動。</small>
+        </div>
+        <span>Audit READY ${h(auditSummary.ready??'—')}｜High risk ${h(auditSummary.highRisk??'—')}</span>
+      </section>
+      <section class="health-stats">
+        ${statTiles.map(([label,value])=>`<div><span>${h(label)}</span><b>${h(value)}</b></div>`).join('')}
+      </section>
+      <section class="health-table-card">
+        <table class="health-summary-table">
+          <thead><tr><th>狀態</th><th>數量</th><th>佔比</th><th>最近成功</th><th>最近錯誤</th><th>代表 source</th><th>操作</th></tr></thead>
+          <tbody>${healthRows.map(row=>`
+            <tr>
+              <td><span class="monitor-status status-${h(row.status)}">${h(row.label)}</span></td>
+              <td>${h(row.members.length)}</td>
+              <td>${h(total?`${Math.round(row.members.length/total*100)}%`:'—')}</td>
+              <td>${h(row.status==='success'&&latestSuccess?timeText(latestSuccess):'—')}</td>
+              <td>${h(row.status==='failed'?'待接入':'—')}</td>
+              <td>${h(row.representative)}</td>
+              <td>檢視</td>
+            </tr>
+          `).join('')}</tbody>
+        </table>
+      </section>
+      <section class="health-controls">
+        <div>${[['all','全部'],['failed','異常'],['stale','過期'],['empty','無資料'],['fallback','備援'],['planned','待接入'],['success','正常'],['disabled','暫停']].map(([key,label])=>`
+          <button type="button" class="health-filter ${healthStatusFilter===key?'active':''}" data-health-status="${h(key)}">${h(label)}</button>
+        `).join('')}</div>
+        <div>${[['all','全部'],['A','A'],['B','B'],['C','C']].map(([key,label])=>`
+          <button type="button" class="health-filter ${healthDomainFilter===key?'active':''}" data-health-domain="${h(key)}">${h(label)}</button>
+        `).join('')}</div>
+      </section>
+      <section class="monitor-grid">
+        ${filteredSources.map(monitorCard).join('')||'<p class="news-empty">沒有資料</p>'}
+      </section>
+    </div>
+  `;
+  app.querySelectorAll('[data-health-status]').forEach(button=>{
+    button.onclick=()=>{
+      healthStatusFilter=button.dataset.healthStatus??'all';
+      renderHealth();
+    };
+  });
+  app.querySelectorAll('[data-health-domain]').forEach(button=>{
+    button.onclick=()=>{
+      healthDomainFilter=button.dataset.healthDomain??'all';
+      renderHealth();
+    };
+  });
+  app.querySelectorAll('.monitor-card .source-card-refresh').forEach(button=>{
+    button.onclick=()=>{
+      button.classList.add('refreshing');
+      button.textContent='更新中';
+      setTimeout(renderHealth,800);
+    };
+  });
 };
 
 const renderSettingRow=(label,value,note='')=>`
@@ -915,9 +1125,10 @@ const renderSettings=async()=>{
   `;
 };
 
-const routes={sub_main:renderMain,sub_all:renderAll,sub_health:renderHealth,sub_settings:renderSettings,recent_72h:renderRecent72h};
+const routes={sub_main:renderMain,sub_72h:renderRecent72h,sub_all:renderAll,sub_health:renderHealth,sub_settings:renderSettings,recent_72h:renderRecent72h};
 
 const runRoute=async page=>{
+  page=normalizePage(page);
   currentPage=page;
   setActive(page);
   title.textContent=pageTitles[page]??'Nova-Lotus';
@@ -937,5 +1148,4 @@ fontPlus.onclick=()=>setFontScale(getFontScale()+1);
 fontSteps.forEach(step=>{
   step.onclick=()=>setFontScale(step.dataset.level);
 });
-
 runRoute('sub_main');
