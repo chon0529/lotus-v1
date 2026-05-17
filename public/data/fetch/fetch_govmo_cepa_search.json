@@ -1,0 +1,109 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_govmo_cepa_search",
+  "sourceName": "gov.mo CEPA",
+  "domain": "A",
+  "category": "A4",
+  "generatedAt": "2026-05-17T21:53:35+08:00",
+  "fetchedAt": "2026-05-17T21:53:35+08:00",
+  "status": "normal",
+  "count": 6,
+  "items": [
+    {
+      "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n26cdugywe",
+      "sourceId": "a_govmo_cepa_search",
+      "sourceName": "gov.mo CEPA",
+      "domain": "A",
+      "category": "A4",
+      "title": "經科局代表出席京港澳科技創新論壇",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26CdUGyWE",
+      "publishedAt": "2026-05-17T21:53:37+08:00",
+      "fetchedAt": "2026-05-17T21:53:37+08:00",
+      "tags": [
+        "CEPA",
+        "DSEDT"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n26cwpfmpl",
+      "sourceId": "a_govmo_cepa_search",
+      "sourceName": "gov.mo CEPA",
+      "domain": "A",
+      "category": "A4",
+      "title": "中國科協與澳門特區政府科技交流合作委員會第七次會議在澳召開",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26CWPFMpL",
+      "publishedAt": "2026-05-17T21:53:37+08:00",
+      "fetchedAt": "2026-05-17T21:53:37+08:00",
+      "tags": [
+        "CEPA",
+        "DSEDT"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_govmo_cepa_search_http-www-dsedt-gov-mo-zh-mo-web-public-pg-cepa-news-refresh-true",
+      "sourceId": "a_govmo_cepa_search",
+      "sourceName": "gov.mo CEPA",
+      "domain": "A",
+      "category": "A4",
+      "title": "2026中國科技峰會@澳門",
+      "url": "http://www.dsedt.gov.mo/zh_MO/web/public/pg_cepa_news?_refresh=true#",
+      "publishedAt": "2026-05-17T21:53:37+08:00",
+      "fetchedAt": "2026-05-17T21:53:37+08:00",
+      "tags": [
+        "CEPA",
+        "DSEDT"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-news-detail-zh-hant-n26bdkftrq",
+      "sourceId": "a_govmo_cepa_search",
+      "sourceName": "gov.mo CEPA",
+      "domain": "A",
+      "category": "A4",
+      "title": "粵澳貨物“一單兩報”功能服務今起實現雙向通行",
+      "url": "https://www.gcs.gov.mo/news/detail/zh-hant/N26BDKftrQ",
+      "publishedAt": "2026-05-17T21:53:37+08:00",
+      "fetchedAt": "2026-05-17T21:53:37+08:00",
+      "tags": [
+        "CEPA",
+        "DSEDT"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n26at2cbni",
+      "sourceId": "a_govmo_cepa_search",
+      "sourceName": "gov.mo CEPA",
+      "domain": "A",
+      "category": "A4",
+      "title": "2025灣高賽圓滿收官 澳門團隊喜獲兩項佳績",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26AT2Cbni",
+      "publishedAt": "2026-05-17T21:53:37+08:00",
+      "fetchedAt": "2026-05-17T21:53:37+08:00",
+      "tags": [
+        "CEPA",
+        "DSEDT"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n25lzpxgbp",
+      "sourceId": "a_govmo_cepa_search",
+      "sourceName": "gov.mo CEPA",
+      "domain": "A",
+      "category": "A4",
+      "title": "澳門與穗、珠簽署《加強低空經濟合作備忘錄》",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N25LZpXgBP",
+      "publishedAt": "2026-05-17T21:53:37+08:00",
+      "fetchedAt": "2026-05-17T21:53:37+08:00",
+      "tags": [
+        "CEPA",
+        "DSEDT"
+      ],
+      "status": "normal"
+    }
+  ]
+}

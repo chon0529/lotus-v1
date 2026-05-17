@@ -787,6 +787,20 @@ const renderHealth=async()=>{
       if(source.sourceKey)sourceRowsFromView.set(source.sourceKey,source.items??[]);
     });
   });
+  const sourceShortId=sourceKey=>String(sourceKey??'').replace(/^[abc]_?/,'');
+  const fetchOutputEntries=await Promise.all((registry.sources??[]).map(async source=>{
+    const key=source.sourceKey;
+    if(!key)return [key,null];
+    return [key,await getOptionalJson(`./data/fetch/fetch_${sourceShortId(key)}.json`,null)];
+  }));
+  const fetchOutputMap=new Map(fetchOutputEntries);
+  const rowsFromFetchOutput=output=>Array.isArray(output?.items)
+    ? output.items.map(item=>({
+      ...item,
+      time:item.timeText??(item.publishedAt?timeText(item.publishedAt):''),
+      newsBox:item.category??''
+    }))
+    : [];
   const normalizeHealthStatus=source=>{
     const status=source.status??'planned';
     if(status==='normal')return 'success';
@@ -807,16 +821,18 @@ const renderHealth=async()=>{
     const status=normalizeHealthStatus({
       status:healthInfo.status??(source.enabled===false?'disabled':source.status??'planned')
     });
-    const rows=sourceRowsFromView.get(source.sourceKey)??fakeItemsForSource(source);
-    const lastUpdatedAt=healthInfo.lastUpdatedAt??source.lastUpdatedAt??health.generatedAt??viewAll.generatedAt??nowIso;
+    const fetchRows=rowsFromFetchOutput(fetchOutputMap.get(source.sourceKey));
+    const rows=fetchRows.length?fetchRows:(sourceRowsFromView.get(source.sourceKey)??fakeItemsForSource(source));
+    const lastUpdatedAt=healthInfo.lastSuccess??healthInfo.lastUpdatedAt??source.lastUpdatedAt??health.generatedAt??viewAll.generatedAt??nowIso;
     return {
       ...source,
       domain:source.domain??'A',
       label:source.label??source.name??source.sourceKey,
       status,
+      healthInfo,
       newsBoxIds:source.newsBoxIds?.length?source.newsBoxIds:(healthInfo.newsBox?[healthInfo.newsBox]:[]),
       lastUpdatedAt,
-      nextRefreshAt:healthInfo.nextRefreshAt??source.nextRefreshAt??addMinutes(lastUpdatedAt,source.refreshMin),
+      nextRefreshAt:healthInfo.nextRefresh??healthInfo.nextRefreshAt??source.nextRefreshAt??addMinutes(lastUpdatedAt,source.refreshMin),
       items:rows
     };
   });
@@ -868,6 +884,10 @@ const renderHealth=async()=>{
       ||String(a.sourceKey).localeCompare(String(b.sourceKey)));
   const sourceStatusLine=source=>{
     if(source.status==='planned')return '待接入｜等待 real fetch';
+    const info=source.healthInfo??{};
+    if(Number.isFinite(Number(info.latestCount))){
+      return `${info.latestCount} 條｜重複 ${info.duplicateCount??0}｜缺日期 ${info.missingDateCount??0}｜空標題 ${info.emptyTitleCount??0}｜最舊 ${info.oldestItemAgeText??'—'}`;
+    }
     const rows=source.items??[];
     const titles=rows.map(item=>String(item.title??'').trim()).filter(Boolean);
     const duplicateCount=titles.length-new Set(titles).size;

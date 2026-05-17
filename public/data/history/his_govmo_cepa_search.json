@@ -1,0 +1,398 @@
+[
+  {
+    "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n26cdugywe",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "經科局代表出席京港澳科技創新論壇",
+    "url": "https://www.gcs.gov.mo/detail/zh-hant/N26CdUGyWE",
+    "publishedAt": "2026-05-17T21:53:37+08:00",
+    "fetchedAt": "2026-05-17T21:53:37+08:00",
+    "tags": [
+      "CEPA",
+      "DSEDT"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n26cwpfmpl",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "中國科協與澳門特區政府科技交流合作委員會第七次會議在澳召開",
+    "url": "https://www.gcs.gov.mo/detail/zh-hant/N26CWPFMpL",
+    "publishedAt": "2026-05-17T21:53:37+08:00",
+    "fetchedAt": "2026-05-17T21:53:37+08:00",
+    "tags": [
+      "CEPA",
+      "DSEDT"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_http-www-dsedt-gov-mo-zh-mo-web-public-pg-cepa-news-refresh-true",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "2026中國科技峰會@澳門",
+    "url": "http://www.dsedt.gov.mo/zh_MO/web/public/pg_cepa_news?_refresh=true#",
+    "publishedAt": "2026-05-17T21:53:37+08:00",
+    "fetchedAt": "2026-05-17T21:53:37+08:00",
+    "tags": [
+      "CEPA",
+      "DSEDT"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-news-detail-zh-hant-n26bdkftrq",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "粵澳貨物“一單兩報”功能服務今起實現雙向通行",
+    "url": "https://www.gcs.gov.mo/news/detail/zh-hant/N26BDKftrQ",
+    "publishedAt": "2026-05-17T21:53:37+08:00",
+    "fetchedAt": "2026-05-17T21:53:37+08:00",
+    "tags": [
+      "CEPA",
+      "DSEDT"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n26at2cbni",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "2025灣高賽圓滿收官 澳門團隊喜獲兩項佳績",
+    "url": "https://www.gcs.gov.mo/detail/zh-hant/N26AT2Cbni",
+    "publishedAt": "2026-05-17T21:53:37+08:00",
+    "fetchedAt": "2026-05-17T21:53:37+08:00",
+    "tags": [
+      "CEPA",
+      "DSEDT"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gcs-gov-mo-detail-zh-hant-n25lzpxgbp",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "澳門與穗、珠簽署《加強低空經濟合作備忘錄》",
+    "url": "https://www.gcs.gov.mo/detail/zh-hant/N25LZpXgBP",
+    "publishedAt": "2026-05-17T21:53:37+08:00",
+    "fetchedAt": "2026-05-17T21:53:37+08:00",
+    "tags": [
+      "CEPA",
+      "DSEDT"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1124668",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "《關於修訂〈**CEPA**服務貿易協議〉的協議二》宣講會今（18）日舉行",
+    "url": "https://www.gov.mo/zh-hant/news/1124668/",
+    "publishedAt": "2026-03-05T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T21:00:27+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1124220",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "《關於修訂〈**CEPA**服務貿易協議〉的協議二》宣講會將於本月18日舉行",
+    "url": "https://www.gov.mo/zh-hant/news/1124220/",
+    "publishedAt": "2025-02-18T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T21:00:27+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1018042",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "**CEPA**簽署20周年圖片展今（17）日開幕",
+    "url": "https://www.gov.mo/zh-hant/news/1018042/",
+    "publishedAt": "2024-10-10T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T21:00:27+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1017792",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "**CEPA**簽署20周年兩地經貿合作不斷深化 持續豐富協議內容助業界拓展內地市場",
+    "url": "https://www.gov.mo/zh-hant/news/1017792/",
+    "publishedAt": "2023-10-16T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T21:00:27+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-954022",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "**CEPA**證明書網上申請服務今（ 3）日正式推出",
+    "url": "https://www.gov.mo/zh-hant/news/954022/",
+    "publishedAt": "2023-08-02T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T21:00:27+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-503619",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "優化**CEPA**貨物原產地標準，助力業界拓展零關稅業務",
+    "url": "https://www.gov.mo/zh-hant/news/503619/",
+    "publishedAt": "2023-01-03T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T21:00:27+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-videos-post-1017803",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "**CEPA**簽署20周年宣傳片",
+    "url": "https://www.gov.mo/zh-hant/videos-post/1017803/",
+    "publishedAt": "2023-10-17T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T21:00:27+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1219329",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "醫務委員會舉行第六屆第19次全體會議",
+    "url": "https://www.gov.mo/zh-hant/news/1219329/",
+    "publishedAt": "2026-05-17T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1219329",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/1219329/",
+    "url": "https://www.gov.mo/zh-hant/news/1219329/",
+    "publishedAt": "2026-05-17T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1124668",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/1124668/",
+    "url": "https://www.gov.mo/zh-hant/news/1124668/",
+    "publishedAt": "2026-03-05T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1124220",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/1124220/",
+    "url": "https://www.gov.mo/zh-hant/news/1124220/",
+    "publishedAt": "2025-02-18T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1097720",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "行政長官與商務部國際貿易談判副代表李詠箑會面",
+    "url": "https://www.gov.mo/zh-hant/news/1097720/",
+    "publishedAt": "2025-02-14T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1097720",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/1097720/",
+    "url": "https://www.gov.mo/zh-hant/news/1097720/",
+    "publishedAt": "2025-02-14T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1018042",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/1018042/",
+    "url": "https://www.gov.mo/zh-hant/news/1018042/",
+    "publishedAt": "2024-10-10T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-videos-post-1017803",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/videos-post/1017803/",
+    "url": "https://www.gov.mo/zh-hant/videos-post/1017803/",
+    "publishedAt": "2023-10-17T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1017792",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/1017792/",
+    "url": "https://www.gov.mo/zh-hant/news/1017792/",
+    "publishedAt": "2023-10-16T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1002674",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "醫務委員會舉行本屆第12次全體會議",
+    "url": "https://www.gov.mo/zh-hant/news/1002674/",
+    "publishedAt": "2023-10-16T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-1002674",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/1002674/",
+    "url": "https://www.gov.mo/zh-hant/news/1002674/",
+    "publishedAt": "2023-10-16T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-954022",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/954022/",
+    "url": "https://www.gov.mo/zh-hant/news/954022/",
+    "publishedAt": "2023-08-02T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  },
+  {
+    "id": "a_govmo_cepa_search_https-www-gov-mo-zh-hant-news-503619",
+    "sourceId": "a_govmo_cepa_search",
+    "sourceName": "gov.mo CEPA",
+    "domain": "A",
+    "category": "A4",
+    "title": "https://www.gov.mo/zh-hant/news/503619/",
+    "url": "https://www.gov.mo/zh-hant/news/503619/",
+    "publishedAt": "2023-01-03T09:00:00+08:00",
+    "fetchedAt": "2026-05-17T20:42:03+08:00",
+    "tags": [
+      "CEPA"
+    ],
+    "status": "normal"
+  }
+]

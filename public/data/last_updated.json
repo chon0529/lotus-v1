@@ -1,0 +1,79 @@
+{
+  "schema": "nova.last_updated.v1",
+  "timezone": "Asia/Macau",
+  "sources": {
+    "a_tdm": {
+      "sourceId": "a_tdm",
+      "sourceName": "TDM",
+      "domain": "A",
+      "category": "A2",
+      "lastRun": "2026-05-17T20:41:58+08:00",
+      "lastSuccess": "2026-05-17T20:41:58+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-17T20:56:58+08:00",
+      "status": "normal",
+      "message": "30 items fetched"
+    },
+    "a_macaupostdaily": {
+      "sourceId": "a_macaupostdaily",
+      "sourceName": "Macau Post Daily",
+      "domain": "A",
+      "category": "A3",
+      "lastRun": "2026-05-17T20:42:00+08:00",
+      "lastSuccess": "2026-05-17T20:42:00+08:00",
+      "lastFailure": "2026-05-17T20:28:02+08:00",
+      "nextRun": "2026-05-17T21:12:00+08:00",
+      "status": "normal",
+      "message": "14 items fetched"
+    },
+    "a_macaubusiness": {
+      "sourceId": "a_macaubusiness",
+      "sourceName": "Macao Business",
+      "domain": "A",
+      "category": "A3",
+      "lastRun": "2026-05-17T20:42:01+08:00",
+      "lastSuccess": "2026-05-17T20:42:01+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-17T21:12:01+08:00",
+      "status": "normal",
+      "message": "9 items fetched"
+    },
+    "a_caeu": {
+      "sourceId": "a_caeu",
+      "sourceName": "CAEU",
+      "domain": "A",
+      "category": "A5",
+      "lastRun": "2026-05-17T21:08:40+08:00",
+      "lastSuccess": "2026-05-17T21:00:23+08:00",
+      "lastFailure": "2026-05-17T21:08:40+08:00",
+      "nextRun": "2026-05-17T21:38:40+08:00",
+      "status": "stale",
+      "message": "relevance unchecked"
+    },
+    "a_govmo_cepa_search": {
+      "sourceId": "a_govmo_cepa_search",
+      "sourceName": "gov.mo CEPA",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-17T21:53:35+08:00",
+      "lastSuccess": "2026-05-17T21:53:35+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-17T22:23:35+08:00",
+      "status": "normal",
+      "message": "6 items fetched"
+    },
+    "a_hengqin_gov": {
+      "sourceId": "a_hengqin_gov",
+      "sourceName": "橫琴官網",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-17T21:00:27+08:00",
+      "lastSuccess": "2026-05-17T21:00:27+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-17T21:30:27+08:00",
+      "status": "normal",
+      "message": "19 items fetched"
+    }
+  },
+  "generatedAt": "2026-05-17T21:53:35+08:00"
+}
