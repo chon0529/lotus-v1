@@ -1,0 +1,242 @@
+[
+  {
+    "sourceId": "gcs",
+    "file": "/assets/icons/sources/gcs.webp",
+    "type": "webp",
+    "alt": "GCS",
+    "fallbackText": "GCS",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "gcs-engineering",
+    "file": "/assets/icons/sources/gcs-engineering.webp",
+    "type": "webp",
+    "alt": "GCS 工程房屋",
+    "fallbackText": "工",
+    "status": "derived-from-gcs"
+  },
+  {
+    "sourceId": "dsscu",
+    "file": "/assets/icons/sources/dsscu.webp",
+    "type": "webp",
+    "alt": "DSSCU",
+    "fallbackText": "DS",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "al",
+    "file": "/assets/icons/sources/al.webp",
+    "type": "webp",
+    "alt": "立法會",
+    "fallbackText": "AL",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "gba",
+    "file": "/assets/icons/sources/gba.webp",
+    "type": "webp",
+    "alt": "GBA",
+    "fallbackText": "GBA",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "hengqin",
+    "file": "/assets/icons/sources/hengqin.webp",
+    "type": "webp",
+    "alt": "橫琴",
+    "fallbackText": "橫",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "hengqin-cooperation-zone",
+    "file": "/assets/icons/sources/hengqin-cooperation-zone.webp",
+    "type": "webp",
+    "alt": "橫琴粵澳深合區",
+    "fallbackText": "深",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "gba-action",
+    "file": "/assets/icons/sources/gba-action.webp",
+    "type": "webp",
+    "alt": "灣區行動",
+    "fallbackText": "行",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "cepa",
+    "file": "/assets/icons/sources/cepa.webp",
+    "type": "webp",
+    "alt": "CEPA",
+    "fallbackText": "CEPA",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "ce",
+    "file": "/assets/icons/sources/ce.webp",
+    "type": "webp",
+    "alt": "CE",
+    "fallbackText": "CE",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "cpu",
+    "file": "/assets/icons/sources/cpu.webp",
+    "type": "webp",
+    "alt": "CPU",
+    "fallbackText": "CPU",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "cr",
+    "file": "/assets/icons/sources/cr.webp",
+    "type": "webp",
+    "alt": "CR",
+    "fallbackText": "CR",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "urban-renewal",
+    "file": "/assets/icons/sources/urban-renewal.webp",
+    "type": "webp",
+    "alt": "都更",
+    "fallbackText": "更",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "caeu",
+    "file": "/assets/icons/sources/caeu.webp",
+    "type": "webp",
+    "alt": "CAEU",
+    "fallbackText": "CA",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "tdm",
+    "file": "/assets/icons/sources/tdm.webp",
+    "type": "webp",
+    "alt": "TDM",
+    "fallbackText": "TDM",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "macau-daily-news",
+    "file": "/assets/icons/sources/macau-daily-news.webp",
+    "type": "webp",
+    "alt": "澳門日報",
+    "fallbackText": "澳",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "exmoo-news",
+    "file": "/assets/icons/sources/exmoo-news.webp",
+    "type": "webp",
+    "alt": "力報",
+    "fallbackText": "力",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "macau-cable-tv",
+    "file": "/assets/icons/sources/macau-cable-tv.webp",
+    "type": "webp",
+    "alt": "澳門有線",
+    "fallbackText": "有",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "cheng-pou",
+    "file": "/assets/icons/sources/cheng-pou.webp",
+    "type": "webp",
+    "alt": "正報",
+    "fallbackText": "正",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "all-about-macau",
+    "file": "/assets/icons/sources/all-about-macau.webp",
+    "type": "webp",
+    "alt": "論盡媒體",
+    "fallbackText": "論",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "allinmedia",
+    "file": "/assets/icons/sources/allinmedia.webp",
+    "type": "webp",
+    "alt": "AllinMedia",
+    "fallbackText": "AI",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "macao-business",
+    "file": "/assets/icons/sources/macao-business.webp",
+    "type": "webp",
+    "alt": "Macao Business",
+    "fallbackText": "MB",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "macau-daily-times",
+    "file": "/assets/icons/sources/macau-daily-times.webp",
+    "type": "webp",
+    "alt": "Macau Daily Times",
+    "fallbackText": "MD",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "macau-post-daily",
+    "file": "/assets/icons/sources/macau-post-daily.webp",
+    "type": "webp",
+    "alt": "Macau Post Daily",
+    "fallbackText": "MP",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "hoje-macau",
+    "file": "/assets/icons/sources/hoje-macau.webp",
+    "type": "webp",
+    "alt": "Hoje Macau",
+    "fallbackText": "HM",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "jtm",
+    "file": "/assets/icons/sources/jtm.webp",
+    "type": "webp",
+    "alt": "JTM",
+    "fallbackText": "JT",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "plataforma",
+    "file": "/assets/icons/sources/plataforma.webp",
+    "type": "webp",
+    "alt": "Plataforma",
+    "fallbackText": "PL",
+    "status": "verified-user-supplied"
+  },
+  {
+    "sourceId": "watchlist",
+    "file": "/assets/icons/sources/watchlist.webp",
+    "type": "webp",
+    "alt": "Watchlist",
+    "fallbackText": "WL",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "finance-news",
+    "file": "/assets/icons/sources/finance-news.webp",
+    "type": "webp",
+    "alt": "財經新聞",
+    "fallbackText": "財",
+    "status": "generated-text-icon"
+  },
+  {
+    "sourceId": "ai-semiconductor",
+    "file": "/assets/icons/sources/ai-semiconductor.webp",
+    "type": "webp",
+    "alt": "AI / 半導體",
+    "fallbackText": "AI",
+    "status": "generated-text-icon"
+  }
+]

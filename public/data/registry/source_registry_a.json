@@ -48,8 +48,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/gcs.webp",
         "alt": "GCS",
         "fallbackText": "GCS"
       }
@@ -88,8 +88,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/gcs-engineering.webp",
         "alt": "GCS 工程房屋",
         "fallbackText": "工"
       }
@@ -128,8 +128,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/dsscu.webp",
         "alt": "DSSCU",
         "fallbackText": "DS"
       }
@@ -177,8 +177,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/al.webp",
         "alt": "立法會",
         "fallbackText": "AL"
       }
@@ -226,8 +226,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/tdm.webp",
         "alt": "TDM",
         "fallbackText": "TDM"
       }
@@ -275,8 +275,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/macau-daily-news.webp",
         "alt": "澳門日報",
         "fallbackText": "澳"
       }
@@ -315,8 +315,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/exmoo-news.webp",
         "alt": "力報",
         "fallbackText": "力"
       }
@@ -355,8 +355,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/macau-cable-tv.webp",
         "alt": "澳門有線",
         "fallbackText": "有"
       }
@@ -404,8 +404,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/cheng-pou.webp",
         "alt": "正報",
         "fallbackText": "正"
       }
@@ -444,8 +444,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/all-about-macau.webp",
         "alt": "論盡媒體",
         "fallbackText": "論"
       }
@@ -484,8 +484,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/allinmedia.webp",
         "alt": "AllinMedia",
         "fallbackText": "AI"
       }
@@ -524,8 +524,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/macao-business.webp",
         "alt": "Macao Business",
         "fallbackText": "MB"
       }
@@ -564,9 +564,9 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
-        "alt": "Macao Daily Times",
+        "type": "webp",
+        "src": "/assets/icons/sources/macau-daily-times.webp",
+        "alt": "Macau Daily Times",
         "fallbackText": "MD"
       }
     },
@@ -604,8 +604,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/macau-post-daily.webp",
         "alt": "Macau Post Daily",
         "fallbackText": "MP"
       }
@@ -644,8 +644,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/hoje-macau.webp",
         "alt": "Hoje Macau",
         "fallbackText": "HM"
       }
@@ -684,8 +684,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/jtm.webp",
         "alt": "JTM",
         "fallbackText": "JT"
       }
@@ -724,8 +724,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/plataforma.webp",
         "alt": "Plataforma",
         "fallbackText": "PL"
       }
@@ -844,10 +844,10 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
-        "alt": "橫琴官網",
-        "fallbackText": "橫"
+        "type": "webp",
+        "src": "/assets/icons/sources/hengqin-cooperation-zone.webp",
+        "alt": "橫琴粵澳深合區",
+        "fallbackText": "深"
       }
     },
     {
@@ -884,8 +884,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/gba-action.webp",
         "alt": "灣區行動",
         "fallbackText": "行"
       }
@@ -991,9 +991,9 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
-        "alt": "gov.mo CEPA",
+        "type": "webp",
+        "src": "/assets/icons/sources/cepa.webp",
+        "alt": "CEPA",
         "fallbackText": "CEPA"
       }
     },
@@ -1031,10 +1031,10 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/caeu.webp",
         "alt": "CAEU",
-        "fallbackText": "CE"
+        "fallbackText": "CA"
       }
     },
     {
@@ -1071,8 +1071,8 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
+        "type": "webp",
+        "src": "/assets/icons/sources/cpu.webp",
         "alt": "CPU",
         "fallbackText": "CPU"
       }
@@ -1111,9 +1111,9 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
-        "alt": "CRU",
+        "type": "webp",
+        "src": "/assets/icons/sources/cr.webp",
+        "alt": "CR",
         "fallbackText": "CR"
       }
     },
@@ -1151,9 +1151,9 @@
       "oldFetchFiles": [],
       "notes": [],
       "icon": {
-        "type": "fallback",
-        "src": "",
-        "alt": "GCS 都更",
+        "type": "webp",
+        "src": "/assets/icons/sources/urban-renewal.webp",
+        "alt": "都更",
         "fallbackText": "更"
       }
     },
