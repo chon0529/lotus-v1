@@ -4,10 +4,12 @@ const navs=[...document.querySelectorAll('.nav')];
 const refreshBtn=document.querySelector('#refreshBtn');
 const themeToggle=document.querySelector('#themeToggle');
 const sidebarToggle=document.querySelector('#sidebarToggle');
+const topbarActions=document.querySelector('.topbar-actions');
 const expandedSources={};
 const homeTabs={A:'all',B:'all',C:'all'};
 const HOME_ITEM_CAP=50;
 const HOME_DOMAIN_CAPS={A:50,B:35,C:35};
+const RECENT_72H_MAX=50;
 let currentPage='sub_main';
 let recentFilter='all';
 let recentSort='priority';
@@ -69,6 +71,64 @@ const fontScaleLabel=value=>value==='normal'?'標準':value??'-';
 const fakeTimes=['10 分鐘前','28 分鐘前','45 分鐘前'];
 const fakeTitles=['最新消息一','最新消息二','最新消息三'];
 const SOURCE_CARD_CAP=22;
+const fontScaleLabels={0:'最小',1:'偏小',2:'標準',3:'偏大',4:'最大'};
+const fontScaleKey='novaLotus.fontScale';
+
+const fontControl=document.createElement('div');
+const fontMinus=document.createElement('button');
+const fontPlus=document.createElement('button');
+const fontSlider=document.createElement('div');
+const fontSteps=Object.entries(fontScaleLabels).map(([level,label])=>{
+  const step=document.createElement('button');
+  step.type='button';
+  step.className='font-scale-step';
+  step.dataset.level=level;
+  step.setAttribute('aria-label',`設定字體大小：${label}`);
+  step.title=label;
+  step.innerHTML='<span></span>';
+  return step;
+});
+fontControl.className='font-scale-control';
+fontMinus.type='button';
+fontPlus.type='button';
+fontMinus.className='font-scale-btn';
+fontPlus.className='font-scale-btn';
+fontMinus.textContent='T−';
+fontPlus.textContent='T+';
+fontMinus.setAttribute('aria-label','縮小字體');
+fontPlus.setAttribute('aria-label','放大字體');
+fontMinus.title='縮小字體';
+fontPlus.title='放大字體';
+fontSlider.className='font-scale-slider';
+fontSlider.setAttribute('role','group');
+fontSlider.setAttribute('aria-label','設定字體大小：最小 / 偏小 / 標準 / 偏大 / 最大');
+fontSteps.forEach(step=>fontSlider.append(step));
+fontControl.append(fontMinus,fontSlider,fontPlus);
+topbarActions?.insertBefore(fontControl,themeToggle);
+
+const normalizeFontScale=value=>{
+  const scale=Number.parseInt(value,10);
+  return Number.isFinite(scale)?Math.min(4,Math.max(0,scale)):2;
+};
+const getFontScale=()=>normalizeFontScale(document.body.dataset.fontScale??localStorage.getItem(fontScaleKey));
+const updateFontScaleControls=scale=>{
+  fontMinus.hidden=scale<=0;
+  fontPlus.hidden=scale>=4;
+  fontSlider.style.setProperty('--font-step',scale);
+  fontSteps.forEach(step=>{
+    const stepLevel=Number.parseInt(step.dataset.level,10);
+    step.classList.toggle('active',stepLevel===scale);
+    step.classList.toggle('filled',stepLevel<=scale);
+    step.setAttribute('aria-current',stepLevel===scale?'true':'false');
+  });
+};
+const setFontScale=value=>{
+  const scale=normalizeFontScale(value);
+  document.body.dataset.fontScale=String(scale);
+  localStorage.setItem(fontScaleKey,String(scale));
+  updateFontScaleControls(scale);
+  if(currentPage==='sub_settings')renderSettings();
+};
 
 const setTheme=theme=>{
   document.body.dataset.theme=theme;
@@ -85,6 +145,7 @@ const setSidebar=collapsed=>{
 
 setTheme(localStorage.getItem('novaLotusTheme')==='light'?'light':'dark');
 setSidebar(localStorage.getItem('novaLotusSidebar')==='collapsed');
+setFontScale(localStorage.getItem(fontScaleKey)??2);
 
 const domainBadge=domain=>`<span class="domain-badge ${h(domainClass(domain))}">${h(domain)}</span>`;
 const timeText=value=>{
@@ -568,6 +629,14 @@ const renderRecent72h=async()=>{
     tag,
     categoryFiltered.filter(item=>(item.topicTags??[]).includes(tag)).length
   ]));
+  const recentVisibleRows=filtered.length>0&&filtered.length<RECENT_72H_MAX
+    ? filtered.length+1
+    : Math.min(Math.max(filtered.length,1),RECENT_72H_MAX);
+  const recentEndMarker=filtered.length===0
+    ? '<p class="recent-list-empty">沒有資料</p>'
+    : filtered.length<RECENT_72H_MAX
+      ? '<p class="recent-list-end">沒有更多了</p>'
+      : '';
   const topicBase=topicPool.slice(0,6);
   const visibleTopicPool=recentTag!=='all'&&!topicBase.includes(recentTag)
     ? [...topicBase,recentTag]
@@ -619,7 +688,7 @@ const renderRecent72h=async()=>{
           `).join('')}
           ${hiddenTopicCount?`<span class="recent-topic-more">更多主題 ${h(hiddenTopicCount)} →</span>`:''}
         </div>
-        <div class="recent-list">
+        <div class="recent-list soft-scroll" style="--recent-visible-rows:${recentVisibleRows}">
           ${filtered.map((item,index)=>`
             <article class="recent-row">
               <span class="recent-row-no">${h(String(index+1).padStart(2,'0'))}</span>
@@ -632,7 +701,7 @@ const renderRecent72h=async()=>{
                 <div class="recent-row-meta">${h(recentMetaText(item))}</div>
               </div>
             </article>
-          `).join('')||'<p class="news-empty">暫無此分類消息</p>'}
+          `).join('')}${recentEndMarker}
         </div>
       </section>
     </div>
@@ -747,6 +816,7 @@ const renderSettings=async()=>{
   let settings;
   try{
     settings=await getJson('./data/system/settings.json');
+    if(settings.ui)settings.ui.fontScale=fontScaleLabels[getFontScale()]??'標準';
   }catch(error){
     app.innerHTML=`<section class="card"><h2>設定</h2><p class="error-text">設定檔無法載入：${h(error.message)}</p></section>`;
     return;
@@ -862,5 +932,10 @@ navs.forEach(nav=>nav.onclick=()=>runRoute(nav.dataset.page));
 refreshBtn.onclick=()=>runRoute(getActivePage());
 themeToggle.onclick=()=>setTheme(document.body.dataset.theme==='light'?'dark':'light');
 sidebarToggle.onclick=()=>setSidebar(!document.body.classList.contains('sidebar-collapsed'));
+fontMinus.onclick=()=>setFontScale(getFontScale()-1);
+fontPlus.onclick=()=>setFontScale(getFontScale()+1);
+fontSteps.forEach(step=>{
+  step.onclick=()=>setFontScale(step.dataset.level);
+});
 
 runRoute('sub_main');
