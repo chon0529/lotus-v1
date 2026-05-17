@@ -32,8 +32,35 @@ const getActivePage=()=>currentPage;
 const getExpanded=domain=>expandedSources[domain]??[];
 const sourceCountText=count=>`${count??1} 個來源`;
 const statusText=status=>statusLabels[status]??status??'待接入';
-const badgeText=source=>(source.badge??source.label?.slice(0,2)??'?').toUpperCase();
-const isLocalIconPath=path=>typeof path==='string'&&/^(?:\.\/)?assets\/source-icons\/[A-Za-z0-9._/-]+$/.test(path);
+const badgeText=source=>String(source.badge??source.label?.slice(0,2)??source.name?.slice(0,2)??'SRC').toUpperCase();
+const isLocalSourceIconPath=path=>typeof path==='string'
+  && !/^https?:\/\//i.test(path)
+  && /^(?:\.\/)?\/?assets\/icons\/sources\/[A-Za-z0-9][A-Za-z0-9._-]*\.(?:svg|webp)$/i.test(path);
+const getSourceIcon=source=>{
+  const icon=source.icon??{};
+  const fallbackText=String(icon.fallbackText??source.fallbackText??badgeText(source)).trim()||'SRC';
+  const alt=String(icon.alt??source.label??source.name??fallbackText).trim()||fallbackText;
+  const type=['svg','webp'].includes(icon.type)?icon.type:'fallback';
+  const src=isLocalSourceIconPath(icon.src)?icon.src:'';
+  return src&&type!=='fallback'
+    ? {type,src,alt,fallbackText}
+    : {type:'fallback',src:'',alt,fallbackText};
+};
+const renderSourceIcon=(source,options={})=>{
+  const icon=getSourceIcon(source);
+  const sizeClass=options.size==='sm'||options.size==='compact'
+    ? ' source-icon-sm'
+    : options.size==='lg'||options.size==='large'
+      ? ' source-icon-lg'
+      : '';
+  if(icon.src){
+    return `<span class="source-icon${sizeClass} source-icon-has-img">
+      <span class="source-icon-fallback">${h(icon.fallbackText)}</span>
+      <img class="source-icon-img" src="${h(icon.src)}" alt="${h(icon.alt)}" loading="lazy" onerror="this.parentElement.classList.remove('source-icon-has-img');this.remove()">
+    </span>`;
+  }
+  return `<span class="source-icon${sizeClass} source-icon-fallback">${h(icon.fallbackText)}</span>`;
+};
 const boolText=value=>value===true?'是':value===false?'否':'-';
 const themeLabel=value=>value==='dark'?'深色':value==='light'?'明亮':value;
 const sidebarLabel=value=>value===true?'已收合':value===false?'已展開':'-';
@@ -81,9 +108,6 @@ const ageMinutes=time=>{
   if(hourZh)return Number(hourZh[1])*60;
   return 9999;
 };
-const sourceIconInner=source=>isLocalIconPath(source.iconPath)
-  ? `<img src="${h(source.iconPath)}" alt="" loading="lazy">`
-  : `<span>${h(badgeText(source))}</span>`;
 const fakeItemsForSource=source=>fakeTitles.map((text,index)=>({
   title:`${source.label} ${text}`,
   source:source.label,
@@ -102,6 +126,7 @@ const mapRegistrySource=source=>({
   sourceKey:source.sourceKey,
   label:source.label,
   badge:source.badge,
+  icon:source.icon,
   iconPath:source.iconPath??null,
   newsBoxIds:source.newsBoxIds??[],
   sourceType:source.sourceType,
@@ -357,21 +382,21 @@ const renderAll=async()=>{
                   ${sources.map(source=>`
                     <button
                       type="button"
-                      class="source-icon ${activeKeys.includes(source.sourceKey)?'active':''}"
+                      class="source-button ${activeKeys.includes(source.sourceKey)?'active':''}"
                       data-domain="${h(domain.domain)}"
                       data-source-key="${h(source.sourceKey)}"
                       title="${h(source.label)}"
                       aria-label="${h(source.label)}"
                       ${source.disabled?'disabled aria-disabled="true"':''}
                     >
-                      ${sourceIconInner(source)}
+                      ${renderSourceIcon(source,{size:'lg'})}
                     </button>
                   `).join('')}
                 </div>
                 <div class="expanded-source-grid">
                   ${activeSources.map(source=>`
                     <article class="expanded-source-card">
-                      <h3>${h(source.label)}</h3>
+                      <h3>${renderSourceIcon(source,{size:'sm'})}<span>${h(source.label)}</span></h3>
                       <p>${h(source.description)}</p>
                       <div class="newsbox-tags">
                         ${(source.newsBoxIds??[]).map(id=>`<span>${h(id)}</span>`).join('')}
@@ -393,7 +418,7 @@ const renderAll=async()=>{
       </div>
     `;
 
-    app.querySelectorAll('.source-icon:not(:disabled)').forEach(button=>{
+  app.querySelectorAll('.source-button:not(:disabled)').forEach(button=>{
       button.onclick=()=>{
         const domain=button.dataset.domain;
         const sourceKey=button.dataset.sourceKey;
@@ -758,7 +783,7 @@ const renderSettings=async()=>{
             <span>手動刷新：${h(boolText(defaults.manualRefreshAllowed))}</span>
           </div>
           <p class="chip-label">前 10 個顯示來源</p>
-          <div class="source-chips">${visibleChips.map(source=>`<span>${h(source.badge??'')} ${h(source.label)}</span>`).join('')}</div>
+          <div class="source-chips">${visibleChips.map(source=>`<span>${renderSourceIcon(source,{size:'sm'})}${h(source.label)}</span>`).join('')}</div>
         `}
       </section>
 

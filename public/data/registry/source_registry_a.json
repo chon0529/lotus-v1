@@ -46,7 +46,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "GCS",
+        "fallbackText": "GCS"
+      }
     },
     {
       "sourceKey": "a_gcseng",
@@ -80,7 +86,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "GCS 工程房屋",
+        "fallbackText": "工"
+      }
     },
     {
       "sourceKey": "a_dsscu",
@@ -114,7 +126,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "DSSCU",
+        "fallbackText": "DS"
+      }
     },
     {
       "sourceKey": "a_al",
@@ -157,7 +175,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "立法會",
+        "fallbackText": "AL"
+      }
     },
     {
       "sourceKey": "a_tdm",
@@ -200,7 +224,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "TDM",
+        "fallbackText": "TDM"
+      }
     },
     {
       "sourceKey": "a_macau_daily",
@@ -243,7 +273,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "澳門日報",
+        "fallbackText": "澳"
+      }
     },
     {
       "sourceKey": "a_exmoo",
@@ -277,7 +313,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "力報",
+        "fallbackText": "力"
+      }
     },
     {
       "sourceKey": "a_macaucabletv",
@@ -311,7 +353,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "澳門有線",
+        "fallbackText": "有"
+      }
     },
     {
       "sourceKey": "a_chengpou",
@@ -354,7 +402,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "正報",
+        "fallbackText": "正"
+      }
     },
     {
       "sourceKey": "a_aamacau",
@@ -388,7 +442,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "論盡媒體",
+        "fallbackText": "論"
+      }
     },
     {
       "sourceKey": "a_allinmedia",
@@ -422,7 +482,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "AllinMedia",
+        "fallbackText": "AI"
+      }
     },
     {
       "sourceKey": "a_macaubusiness",
@@ -456,7 +522,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "Macao Business",
+        "fallbackText": "MB"
+      }
     },
     {
       "sourceKey": "a_macaudailytimes",
@@ -490,7 +562,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "Macao Daily Times",
+        "fallbackText": "MD"
+      }
     },
     {
       "sourceKey": "a_macaupostdaily",
@@ -524,7 +602,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "Macau Post Daily",
+        "fallbackText": "MP"
+      }
     },
     {
       "sourceKey": "a_hojemacau",
@@ -558,7 +642,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "Hoje Macau",
+        "fallbackText": "HM"
+      }
     },
     {
       "sourceKey": "a_jtm",
@@ -592,7 +682,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "JTM",
+        "fallbackText": "JT"
+      }
     },
     {
       "sourceKey": "a_plataforma",
@@ -626,7 +722,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "Plataforma",
+        "fallbackText": "PL"
+      }
     },
     {
       "sourceKey": "a_gcsgba",
@@ -660,7 +762,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "GCS 大灣區",
+        "fallbackText": "GBA"
+      }
     },
     {
       "sourceKey": "a_gcshq",
@@ -694,7 +802,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "GCS 橫琴",
+        "fallbackText": "橫"
+      }
     },
     {
       "sourceKey": "a_hengqin_gov",
@@ -728,7 +842,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "橫琴官網",
+        "fallbackText": "橫"
+      }
     },
     {
       "sourceKey": "a_cbaaction",
@@ -762,7 +882,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "灣區行動",
+        "fallbackText": "行"
+      }
     },
     {
       "sourceKey": "a_cbaoverall",
@@ -823,7 +949,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "灣區總覽",
+        "fallbackText": "GBA"
+      }
     },
     {
       "sourceKey": "a_govmo_cepa_search",
@@ -857,7 +989,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "gov.mo CEPA",
+        "fallbackText": "CEPA"
+      }
     },
     {
       "sourceKey": "a_caeu",
@@ -891,7 +1029,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "CAEU",
+        "fallbackText": "CE"
+      }
     },
     {
       "sourceKey": "a_cpu",
@@ -925,7 +1069,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "CPU",
+        "fallbackText": "CPU"
+      }
     },
     {
       "sourceKey": "a_cru",
@@ -959,7 +1109,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "CRU",
+        "fallbackText": "CR"
+      }
     },
     {
       "sourceKey": "a_gcsup",
@@ -993,7 +1149,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "GCS 都更",
+        "fallbackText": "更"
+      }
     },
     {
       "sourceKey": "a_dsop",
@@ -1027,7 +1189,13 @@
         }
       ],
       "oldFetchFiles": [],
-      "notes": []
+      "notes": [],
+      "icon": {
+        "type": "fallback",
+        "src": "",
+        "alt": "公共建設局",
+        "fallbackText": "DS"
+      }
     }
   ]
 }
