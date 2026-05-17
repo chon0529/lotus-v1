@@ -6,9 +6,16 @@ const themeToggle=document.querySelector('#themeToggle');
 const sidebarToggle=document.querySelector('#sidebarToggle');
 const expandedSources={};
 const homeTabs={A:'all',B:'all',C:'all'};
+const HOME_ITEM_CAP=50;
+const HOME_DOMAIN_CAPS={A:50,B:35,C:35};
+let currentPage='sub_main';
+let recentFilter='all';
+let recentSort='priority';
+let recentCategory='all';
+let recentTag='all';
 
 const statusLabels={success:'正常',normal:'正常',planned:'待接入',disabled:'暫停',failed:'異常',stale:'過期',fallback:'備援',empty:'無資料'};
-const pageTitles={sub_main:'總覽',sub_all:'全部新聞',sub_health:'來源健康',sub_settings:'設定'};
+const pageTitles={sub_main:'總覽',sub_all:'全部新聞',sub_health:'來源健康',sub_settings:'設定',recent_72h:'72 小時新聞'};
 const domainTitles={A:'政府政策',B:'AS Roma',C:'財經市場'};
 const domainClass=domain=>`domain-${String(domain).toLowerCase()}`;
 
@@ -21,7 +28,7 @@ const getJson=async path=>{
 
 const h=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const setActive=page=>navs.forEach(nav=>nav.classList.toggle('active',nav.dataset.page===page));
-const getActivePage=()=>document.querySelector('.nav.active')?.dataset.page??'sub_main';
+const getActivePage=()=>currentPage;
 const getExpanded=domain=>expandedSources[domain]??[];
 const sourceCountText=count=>`${count??1} 個來源`;
 const statusText=status=>statusLabels[status]??status??'待接入';
@@ -52,18 +59,28 @@ setTheme(localStorage.getItem('novaLotusTheme')==='light'?'light':'dark');
 setSidebar(localStorage.getItem('novaLotusSidebar')==='collapsed');
 
 const domainBadge=domain=>`<span class="domain-badge ${h(domainClass(domain))}">${h(domain)}</span>`;
-const newsItemLine=(item,{showDomain=false,index=0}={})=>`
-  <div class="news-row ${showDomain?'has-domain':''}">
-    <span class="news-row-no">${h(String(index+1).padStart(2,'0'))}</span>
-    ${showDomain?domainBadge(item.domain):''}
-    <div class="news-row-body">
-      <span class="news-row-title">${h(item.title)}</span>
-      <span class="news-row-sep">-</span>
-      <span class="news-row-meta">${h(item.source)} · ${h(item.time)}</span>
-    </div>
-  </div>
-`;
-const refreshText=minutes=>`下次刷新：${h(minutes??'-')} 分鐘後`;
+const timeText=value=>{
+  if(!value)return '--:--';
+  try{
+    return new Intl.DateTimeFormat('zh-HK',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Macau'}).format(new Date(value));
+  }catch(error){
+    return String(value).slice(11,16);
+  }
+};
+const refreshMeta=meta=>`更新於 ${h(timeText(meta?.lastUpdatedAt))}｜下次 ${h(timeText(meta?.nextRefreshAt))}`;
+const itemTag=item=>item.tag??'';
+const ageMinutes=time=>{
+  const text=String(time??'');
+  const minute=text.match(/^(\d+)\s*分鐘前$/);
+  if(minute)return Number(minute[1]);
+  const hour=text.match(/^(\d+)\s*小時前$/);
+  if(hour)return Number(hour[1])*60;
+  const minuteZh=text.match(/^(\d+)\s*分鐘前$/);
+  if(minuteZh)return Number(minuteZh[1]);
+  const hourZh=text.match(/^(\d+)\s*小時前$/);
+  if(hourZh)return Number(hourZh[1])*60;
+  return 9999;
+};
 const sourceIconInner=source=>isLocalIconPath(source.iconPath)
   ? `<img src="${h(source.iconPath)}" alt="" loading="lazy">`
   : `<span>${h(badgeText(source))}</span>`;
@@ -112,87 +129,128 @@ const loadARegistry=async()=>{
 
 const renderMain=async()=>{
   const data=await getJson('./data/view/view_sub_main.json');
-  const hero=data.hero??{
-    title:'今日情報',
-    subtitle:'本地政策、AS Roma、財經市場的個人情報站',
-    status:['Fake JSON mode','A registry ready','crawler not started']
-  };
   const tabs=data.focusGrid?.tabs??{};
-  const refreshMap=data.focusGrid?.nextRefreshMin??{};
+  const refreshMap=data.focusGrid?.refreshStatus??{};
+  const sectionMeta=data.focusGrid?.sections??{};
+  const system=data.systemStatus??{};
   const domains=(data.domains??[]).map(domain=>({
     ...domain,
     items:(domain.items??[]).map(item=>({...item,domain:domain.domain}))
   }));
   const hotItems=(data.hotItems?.length?data.hotItems:domains.flatMap(domain=>domain.items))
     .map(item=>({...item,domain:item.domain??''}));
+  const tabMap=Object.fromEntries(Object.entries(tabs).map(([domain,list])=>[
+    domain,
+    Object.fromEntries(list.map(tab=>[tab.id,tab.label]))
+  ]));
+  const categoryName=item=>tabMap[item.domain]?.[item.newsBox]??item.categoryName??item.newsBox??'';
+  const sectionSubtitle=domain=>sectionMeta[domain]?.subtitle??'';
+  const countsFor=(domain,items)=>Object.fromEntries((tabs[domain]??[]).map(tab=>[
+    tab.id,
+    tab.id==='all'?items.length:items.filter(item=>item.newsBox===tab.id).length
+  ]));
+  const metaFor=(domain,tab)=>refreshMap[domain]?.[tab]??refreshMap[domain]?.all??{};
+  const capForDomain=domain=>HOME_DOMAIN_CAPS[domain]??HOME_ITEM_CAP;
+  const listMarker=(rows,cap)=>rows.length===0
+    ? '<p class="list-empty">沒有資料</p>'
+    : rows.length<cap
+      ? '<p class="list-end">沒有更多了</p>'
+      : '';
 
-  const tabButton=(domain,tab)=>`
+  const tabButton=(domain,tab,counts)=>`
     <button
       type="button"
       class="news-tab ${homeTabs[domain]===tab.id?'active':''}"
       data-domain="${h(domain)}"
       data-tab="${h(tab.id)}"
       ${tab.disabled?'disabled aria-disabled="true"':''}
-    >${h(tab.label)}</button>
+    ><span>${h(tab.label)}</span><b>${h(counts[tab.id]??0)}</b></button>
   `;
 
-  const nextRefreshFor=(domain,tab)=>{
-    const map=refreshMap[domain]??{};
-    if(tab==='all'){
-      const values=Object.entries(map).filter(([key])=>key!=='all').map(([,value])=>value).filter(Number.isFinite);
-      return map.all??(values.length?Math.min(...values):'-');
-    }
-    return map[tab]??map.all??'-';
-  };
+  const newsRow=(item,index)=>`
+    <div class="news-row">
+      <span class="news-row-no">${h(String(index+1).padStart(2,'0'))}</span>
+      <div class="news-row-body">
+        <strong>${itemTag(item)?`<em>${h(itemTag(item))}</em>`:''}${h(item.title)}</strong>
+        <small>${h(item.source)} · ${h(categoryName(item))} · ${h(item.time)}</small>
+      </div>
+    </div>
+  `;
 
   const newsBox=domain=>{
     const activeTab=homeTabs[domain.domain]??'all';
     const items=activeTab==='all'
       ? domain.items
       : domain.items.filter(item=>item.newsBox===activeTab);
+    const cap=capForDomain(domain.domain);
+    const shownItems=items.slice(0,cap);
+    const listBody=`${shownItems.map(newsRow).join('')}${listMarker(shownItems,cap)}`;
+    const counts=countsFor(domain.domain,domain.items);
+    const meta=metaFor(domain.domain,activeTab);
     return `
       <article class="newsbox-card ${h(domainClass(domain.domain))} newsbox-${h(domain.domain.toLowerCase())}">
         <div class="newsbox-head">
           <div>
-            <p class="eyebrow">${h(domain.domain)} NewsBox</p>
-            <h2>${h(domain.title)}</h2>
+            <div class="section-titleline">
+              ${domainBadge(domain.domain)}
+              <h2>${h(domain.title)}</h2>
+              <button type="button" class="view-72h" data-filter="${h(domain.domain)}">72h 全部 →</button>
+            </div>
+            <p>${h(sectionSubtitle(domain.domain))}</p>
           </div>
           <div class="newsbox-tools">
-            ${domainBadge(domain.domain)}
-            <span>${refreshText(nextRefreshFor(domain.domain,activeTab))}</span>
-            <button type="button" class="newsbox-refresh" aria-label="${h(domain.title)} 立即刷新">⭮</button>
+            <div class="newsbox-time-row">
+              <span>${refreshMeta(meta)}</span>
+              <button type="button" class="newsbox-refresh" aria-label="${h(domain.title)} 立即刷新">⭮</button>
+            </div>
           </div>
         </div>
         <div class="news-tabs" aria-label="${h(domain.title)} 分類">
-          ${(tabs[domain.domain]??[{id:'all',label:'全部'}]).filter(tab=>!tab.disabled).map(tab=>tabButton(domain.domain,tab)).join('')}
+          ${(tabs[domain.domain]??[{id:'all',label:'全部'}]).filter(tab=>!tab.disabled).map(tab=>tabButton(domain.domain,tab,counts)).join('')}
         </div>
         <div class="newsbox-list soft-scroll">
-          ${items.map((item,index)=>newsItemLine(item,{index})).join('')||'<p class="news-empty">暫無此分類消息</p>'}
+          ${listBody}
         </div>
       </article>
     `;
   };
+  const cappedHotItems=hotItems.slice(0,HOME_ITEM_CAP);
+  const hotTop=cappedHotItems[0];
+  const hotMedium=cappedHotItems.slice(1,5);
+  const hotRest=cappedHotItems.slice(5);
+  const hotMeta=refreshMap.hot??{};
+  const hotTiers=sectionMeta.hot?.tiers??['優先閱讀','正在升溫','全站最新'];
+  const hotRow=(item,index)=>`
+    <div class="hot-row">
+      <span class="news-row-no">${h(String(index+6).padStart(2,'0'))}</span>
+      ${domainBadge(item.domain)}
+      <div>
+        <strong>${itemTag(item)?`<em>${h(itemTag(item))}</em>`:''}${h(item.title)}</strong>
+        <small>${h(item.source)} · ${h(item.time)}</small>
+      </div>
+    </div>
+  `;
+  const hotMarker=listMarker(cappedHotItems,HOME_ITEM_CAP);
+  const hotRestBody=`${hotRest.map(hotRow).join('')}${hotMarker}`;
 
   app.innerHTML=`
     <div class="home-dashboard">
-      <section class="home-top-grid">
-        <section class="home-hero">
-          <div>
-            <p class="eyebrow">Nova-Lotus</p>
-            <h2>${h(hero.title)}</h2>
-            <p>${h(hero.subtitle)}</p>
-          </div>
-          <div class="home-status">
-            ${(hero.status??[]).map(text=>`<span>${h(text)}</span>`).join('')}
-          </div>
-        </section>
-
-        <section class="home-stats-grid" aria-label="今日摘要">
-          <div class="tile"><b>${h(data.stats.sources)}</b><span>所有來源</span></div>
-          <div class="tile"><b>${h(data.stats.todayNew)}</b><span>今日新增</span></div>
-          <div class="tile"><b>${h(data.stats.within15)}</b><span>15 分鐘內</span></div>
-          <div class="tile"><b>${h(data.stats.normal)}</b><span>正常來源</span></div>
-        </section>
+      <section class="opsbar">
+        <div class="ops-main">
+          <b>今日情報</b>
+          <span><strong>${h(data.stats.todayNew)}</strong> 新增</span>
+          <span><strong>${h(data.stats.within15)}</strong> 條 15 分鐘內</span>
+          <span><strong>${h(data.stats.normal)}</strong> 正常源</span>
+          <span class="warn-dot"><strong>${h(data.stats.abnormal??0)}</strong> 異常</span>
+          <span>最後更新 ${h(timeText(system.lastUpdatedAt))}</span>
+        </div>
+        <div class="ops-actions">
+          <button type="button" class="ops-refresh">全局刷新</button>
+          <details class="ops-debug">
+            <summary aria-label="開發狀態">···</summary>
+            <div>${(system.debug??[]).map(text=>`<span>${h(text)}</span>`).join('')}</div>
+          </details>
+        </div>
       </section>
 
       <section class="focus-grid">
@@ -206,16 +264,44 @@ const renderMain=async()=>{
         <article class="newsbox-card hot-news-card">
           <div class="newsbox-head">
             <div>
-              <p class="eyebrow">FocusGrid</p>
-              <h2>熱點新聞</h2>
+              <div class="section-titleline hot-titleline">
+                <h2>熱點新聞</h2>
+                <button type="button" class="view-72h" data-filter="hot">72h 全部 →</button>
+              </div>
+              <p>${h(sectionMeta.hot?.subtitle??'跨域重要消息｜最新異動｜優先閱讀')}</p>
             </div>
             <div class="newsbox-tools">
-              <span>${refreshText(refreshMap.hot??5)}</span>
-              <button type="button" class="newsbox-refresh" aria-label="熱點新聞立即刷新">⭮</button>
+              <div class="newsbox-time-row">
+                <span>${refreshMeta(hotMeta)}</span>
+                <button type="button" class="newsbox-refresh" aria-label="熱點新聞立即刷新">⭮</button>
+              </div>
             </div>
           </div>
-          <div class="newsbox-list soft-scroll">
-            ${hotItems.map((item,index)=>newsItemLine(item,{showDomain:true,index})).join('')||'<p class="news-empty">暫無熱點消息</p>'}
+          <div class="hot-tier-label">${h(hotTiers[0])}</div>
+          ${hotTop?`
+            <div class="hot-lead">
+              ${domainBadge(hotTop.domain)}
+              <div>
+                <div class="hot-lead-kicker">重點｜優先閱讀</div>
+                <h3>${itemTag(hotTop)?`<em>${h(itemTag(hotTop))}</em>`:''}${h(hotTop.title)}</h3>
+                <p>${h(hotTop.whyImportant??'涉及公共服務與民生安排；建議先讀原文，再跟進公共建設局相關更新。')}</p>
+                <small>${h(hotTop.source)} · ${h(hotTop.time)}</small>
+              </div>
+            </div>
+          `:'<p class="news-empty">暫無熱點消息</p>'}
+          <div class="hot-tier-label">${h(hotTiers[1])}</div>
+          <div class="hot-medium">
+            ${hotMedium.map((item,index)=>`
+              <div>
+                <span>${h(String(index+2).padStart(2,'0'))}</span>
+                ${domainBadge(item.domain)}
+                <div><strong>${itemTag(item)?`<em>${h(itemTag(item))}</em>`:''}${h(item.title)}</strong><small>${h(item.source)} · ${h(item.time)}</small></div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="hot-tier-label">${h(hotTiers[2])}</div>
+          <div class="hot-rest soft-scroll">
+            ${hotRestBody}
           </div>
         </article>
       </section>
@@ -233,6 +319,16 @@ const renderMain=async()=>{
       button.classList.add('refreshing');
       button.textContent='更新中';
       setTimeout(()=>renderMain(),800);
+    };
+  });
+  app.querySelector('.ops-refresh')?.addEventListener('click',()=>renderMain());
+  app.querySelectorAll('.view-72h').forEach(button=>{
+    button.onclick=()=>{
+      recentFilter=button.dataset.filter??'all';
+      recentCategory='all';
+      recentTag='all';
+      recentSort='priority';
+      runRoute('recent_72h');
     };
   });
 };
@@ -311,6 +407,193 @@ const renderAll=async()=>{
   };
 
   draw();
+};
+
+const renderRecent72h=async()=>{
+  const data=await getJson('./data/view/view_sub_main.json');
+  const recentItems=Array.isArray(data.recent72h)?data.recent72h:(data.recent72h?.items??[]);
+  const recentMeta=data.recent72hMeta??(Array.isArray(data.recent72h)?{}:data.recent72h??{});
+  const topicSource=data.recent72hTopicTags??recentMeta.topicTags??{};
+  const tabs=data.focusGrid?.tabs??{};
+  const tabMap=Object.fromEntries(Object.entries(tabs).map(([domain,list])=>[
+    domain,
+    Object.fromEntries(list.map(tab=>[tab.id,tab.label]))
+  ]));
+  const domainItems=(data.domains??[]).flatMap(domain=>(domain.items??[]).map((item,index)=>({
+    id:`${domain.domain.toLowerCase()}_${String(index+1).padStart(3,'0')}`,
+    domain:domain.domain,
+    title:item.title,
+    source:item.source,
+    category:tabMap[domain.domain]?.[item.newsBox]??item.newsBox??'',
+    timeText:item.time,
+    publishedAt:data.generatedAt,
+    priority:60-index,
+    stateTag:item.tag??'',
+    topicTags:[],
+    hot:false
+  })));
+  const allItems=(recentItems.length?recentItems:domainItems).map(item=>({
+    ...item,
+    topicTags:item.topicTags??[],
+    hot:item.hot===true||item.priority>=88
+  }));
+  const counts={
+    all:allItems.length,
+    A:allItems.filter(item=>item.domain==='A').length,
+    B:allItems.filter(item=>item.domain==='B').length,
+    C:allItems.filter(item=>item.domain==='C').length,
+    hot:allItems.filter(item=>item.hot).length
+  };
+  const filters=[
+    ['all',recentMeta.filters?.[0]??'全部'],
+    ['A',recentMeta.filters?.[1]??'政府政策'],
+    ['B',recentMeta.filters?.[2]??'AS Roma'],
+    ['C',recentMeta.filters?.[3]??'財經市場'],
+    ['hot',recentMeta.filters?.[4]??'熱點']
+  ];
+  const sortOptions=[
+    ['priority','重要'],
+    ['newest','最新'],
+    ['oldest','最舊']
+  ];
+  const categoryOptions={
+    all:[['all','全部']],
+    A:[['all','全部'],['政府公布','政府公布'],['中文新聞','中文新聞'],['外語新聞','外語新聞'],['區域合作','區域合作'],['委員會工作','委員會工作']],
+    B:[['all','全部'],['新聞消息','新聞消息'],['官方','官方'],['比賽列表','比賽列表']],
+    C:[['all','全部'],['股價 Watchlist','股價 Watchlist'],['財經新聞','財經新聞'],['AI / 半導體','AI / 半導體']],
+    hot:[['all','全部'],['重點','重點'],['新','新'],['追蹤','追蹤'],['異常','異常']]
+  };
+  const baseFiltered=recentFilter==='hot'
+    ? allItems.filter(item=>item.hot)
+    : recentFilter==='all'
+      ? allItems
+      : allItems.filter(item=>item.domain===recentFilter);
+  const categoryFiltered=recentCategory==='all'
+    ? baseFiltered
+    : recentFilter==='hot'
+      ? baseFiltered.filter(item=>item.stateTag===recentCategory)
+      : baseFiltered.filter(item=>item.category===recentCategory);
+  const categoryCounts=Object.fromEntries((categoryOptions[recentFilter]??categoryOptions.all).map(([key])=>[
+    key,
+    key==='all'?baseFiltered.length:(recentFilter==='hot'
+      ? baseFiltered.filter(item=>item.stateTag===key).length
+      : baseFiltered.filter(item=>item.category===key).length)
+  ]));
+  const topicPool=[...new Set(((recentFilter==='all'||recentFilter==='hot')
+    ? topicSource.all??Object.values(topicSource).flat()
+    : topicSource[recentFilter]??[])
+    .filter(Boolean))];
+  const tagFiltered=recentTag==='all'
+    ? categoryFiltered
+    : categoryFiltered.filter(item=>(item.topicTags??[]).includes(recentTag));
+  const timeValue=item=>Date.parse(item.publishedAt??'')||0;
+  const filtered=[...tagFiltered].sort((a,b)=>{
+    if(recentSort==='newest')return timeValue(b)-timeValue(a);
+    if(recentSort==='oldest')return timeValue(a)-timeValue(b);
+    return (b.priority??0)-(a.priority??0)||timeValue(b)-timeValue(a);
+  });
+  const tagCounts=Object.fromEntries(topicPool.map(tag=>[
+    tag,
+    categoryFiltered.filter(item=>(item.topicTags??[]).includes(tag)).length
+  ]));
+  const topicBase=topicPool.slice(0,6);
+  const visibleTopicPool=recentTag!=='all'&&!topicBase.includes(recentTag)
+    ? [...topicBase,recentTag]
+    : topicBase;
+  const hiddenTopicCount=Math.max(0,topicPool.length-topicBase.length);
+  const recentMetaText=item=>[
+    item.source,
+    item.timeText,
+    item.topicTags?.[0]??item.category
+  ].filter(Boolean).join(' · ');
+  const recentStateTag=item=>['重點','異常','追蹤'].includes(item.stateTag)?item.stateTag:'';
+
+  app.innerHTML=`
+    <div class="recent-page">
+      <section class="recent-head">
+        <p class="recent-summary-line">
+          最近 72 小時：<b>${h(counts.all)}</b> 條｜政府政策 <b>${h(counts.A)}</b>｜AS Roma <b>${h(counts.B)}</b>｜財經市場 <b>${h(counts.C)}</b>｜熱點 <b>${h(counts.hot)}</b>
+        </p>
+      </section>
+      <section class="recent-panel">
+        <div class="recent-toolbar">
+          <div class="recent-filters" aria-label="72 小時篩選">
+            ${filters.map(([key,label])=>`
+              <button type="button" class="recent-chip ${recentFilter===key?'active':''}" data-filter="${h(key)}">
+                ${h(label)} <b>${h(counts[key]??0)}</b>
+              </button>
+            `).join('')}
+          </div>
+          <div class="recent-sort" aria-label="排序">
+            <span class="recent-sort-label">排序：</span>
+            ${sortOptions.map(([key,label])=>`
+              <button type="button" class="${recentSort===key?'active':''}" data-sort="${h(key)}">${h(label)}</button>
+            `).join('')}
+          </div>
+        </div>
+        <div class="recent-categorybar" aria-label="分類">
+          ${(categoryOptions[recentFilter]??categoryOptions.all).map(([key,label])=>`
+            <button type="button" class="recent-category ${recentCategory===key?'active':''}" data-category="${h(key)}">
+              ${h(label)} <b>${h(categoryCounts[key]??0)}</b>
+            </button>
+          `).join('')}
+        </div>
+        <div class="recent-topicbar" aria-label="主題標籤">
+          <button type="button" class="recent-tag ${recentTag==='all'?'active':''}" data-tag="all">全部主題</button>
+          ${visibleTopicPool.map(tag=>`
+            <button type="button" class="recent-tag ${recentTag===tag?'active':''}" data-tag="${h(tag)}">
+              ${h(tag)}${tagCounts[tag]?` <b>${h(tagCounts[tag])}</b>`:''}
+            </button>
+          `).join('')}
+          ${hiddenTopicCount?`<span class="recent-topic-more">更多主題 ${h(hiddenTopicCount)} →</span>`:''}
+        </div>
+        <div class="recent-list">
+          ${filtered.map((item,index)=>`
+            <article class="recent-row">
+              <span class="recent-row-no">${h(String(index+1).padStart(2,'0'))}</span>
+              <span class="recent-domain-mark ${h(domainClass(item.domain))}">${h(item.domain)}</span>
+              <div class="recent-row-main">
+                <div class="recent-row-title">
+                  ${recentStateTag(item)?`<em class="recent-state-tag">${h(recentStateTag(item))}</em>`:''}
+                  <strong>${h(item.title)}</strong>
+                </div>
+                <div class="recent-row-meta">${h(recentMetaText(item))}</div>
+              </div>
+            </article>
+          `).join('')||'<p class="news-empty">暫無此分類消息</p>'}
+        </div>
+      </section>
+    </div>
+  `;
+
+  app.querySelectorAll('.recent-chip').forEach(button=>{
+    button.onclick=()=>{
+      recentFilter=button.dataset.filter??'all';
+      recentCategory='all';
+      recentTag='all';
+      renderRecent72h();
+    };
+  });
+  app.querySelectorAll('.recent-sort button').forEach(button=>{
+    button.onclick=()=>{
+      recentSort=button.dataset.sort??'priority';
+      renderRecent72h();
+    };
+  });
+  app.querySelectorAll('.recent-category').forEach(button=>{
+    button.onclick=()=>{
+      recentCategory=button.dataset.category??'all';
+      recentTag='all';
+      renderRecent72h();
+    };
+  });
+  app.querySelectorAll('.recent-tag').forEach(button=>{
+    button.onclick=()=>{
+      const tag=button.dataset.tag??'all';
+      recentTag=recentTag===tag?'all':tag;
+      renderRecent72h();
+    };
+  });
 };
 
 const renderHealth=async()=>{
@@ -490,9 +773,10 @@ const renderSettings=async()=>{
   `;
 };
 
-const routes={sub_main:renderMain,sub_all:renderAll,sub_health:renderHealth,sub_settings:renderSettings};
+const routes={sub_main:renderMain,sub_all:renderAll,sub_health:renderHealth,sub_settings:renderSettings,recent_72h:renderRecent72h};
 
 const runRoute=async page=>{
+  currentPage=page;
   setActive(page);
   title.textContent=pageTitles[page]??'Nova-Lotus';
   try{

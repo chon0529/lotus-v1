@@ -2,62 +2,911 @@
   "schema": "lotus.view.sub_main.v1",
   "generatedAt": "2026-05-17T10:00:00+08:00",
   "timezone": "Asia/Macau",
+  "recent72h": [
+    {
+      "id": "a_001",
+      "domain": "A",
+      "title": "GCS 發布政府最新新聞",
+      "source": "GCS",
+      "category": "政府公布",
+      "timeText": "10 分鐘前",
+      "publishedAt": "2026-05-17T22:04:00+08:00",
+      "priority": 99,
+      "stateTag": "重點",
+      "topicTags": [
+        "#都更",
+        "#公共建設"
+      ],
+      "hot": true
+    },
+    {
+      "id": "a_002",
+      "domain": "A",
+      "title": "立法會整理口頭質詢安排",
+      "source": "立法會",
+      "category": "政府公布",
+      "timeText": "18 分鐘前",
+      "publishedAt": "2026-05-17T21:56:00+08:00",
+      "priority": 99,
+      "stateTag": "新",
+      "topicTags": [
+        "#都更",
+        "#公共建設"
+      ],
+      "hot": true
+    },
+    {
+      "id": "a_003",
+      "domain": "A",
+      "title": "公共建設局更新工程進度",
+      "source": "公共建設局",
+      "category": "委員會工作",
+      "timeText": "26 分鐘前",
+      "publishedAt": "2026-05-17T21:48:00+08:00",
+      "priority": 98,
+      "stateTag": "追蹤",
+      "topicTags": [
+        "#委員會工作",
+        "#立法會",
+        "#質詢"
+      ],
+      "hot": true
+    },
+    {
+      "id": "a_004",
+      "domain": "A",
+      "title": "TDM 跟進本地民生政策",
+      "source": "TDM",
+      "category": "中文新聞",
+      "timeText": "35 分鐘前",
+      "publishedAt": "2026-05-17T21:39:00+08:00",
+      "priority": 96,
+      "stateTag": "追蹤",
+      "topicTags": [
+        "#市容美化",
+        "#街區美化"
+      ],
+      "hot": true
+    },
+    {
+      "id": "a_005",
+      "domain": "A",
+      "title": "澳門日報整理公共服務消息",
+      "source": "澳門日報",
+      "category": "中文新聞",
+      "timeText": "42 分鐘前",
+      "publishedAt": "2026-05-17T21:32:00+08:00",
+      "priority": 94,
+      "stateTag": "追蹤",
+      "topicTags": [
+        "#市容美化",
+        "#街區美化"
+      ],
+      "hot": true
+    },
+    {
+      "id": "a_006",
+      "domain": "A",
+      "title": "力報關注社區配套安排",
+      "source": "力報",
+      "category": "中文新聞",
+      "timeText": "50 分鐘前",
+      "publishedAt": "2026-05-17T21:24:00+08:00",
+      "priority": 92,
+      "stateTag": "追蹤",
+      "topicTags": [
+        "#市容美化",
+        "#街區美化"
+      ],
+      "hot": true
+    },
+    {
+      "id": "a_007",
+      "domain": "A",
+      "title": "Macao Business 報道政策與營商環境",
+      "source": "Macao Business",
+      "category": "外語新聞",
+      "timeText": "1 小時前",
+      "publishedAt": "2026-05-17T21:14:00+08:00",
+      "priority": 82,
+      "stateTag": "",
+      "topicTags": [
+        "#公共房屋",
+        "#公共建設"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_008",
+      "domain": "A",
+      "title": "Macau Post Daily 關注城市發展",
+      "source": "Macau Post Daily",
+      "category": "外語新聞",
+      "timeText": "1 小時前",
+      "publishedAt": "2026-05-17T21:14:00+08:00",
+      "priority": 80,
+      "stateTag": "",
+      "topicTags": [
+        "#公共房屋",
+        "#公共建設"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_009",
+      "domain": "A",
+      "title": "Hoje Macau 更新葡文政策摘要",
+      "source": "Hoje Macau",
+      "category": "外語新聞",
+      "timeText": "1 小時前",
+      "publishedAt": "2026-05-17T21:14:00+08:00",
+      "priority": 78,
+      "stateTag": "",
+      "topicTags": [
+        "#公共房屋",
+        "#公共建設"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_010",
+      "domain": "A",
+      "title": "橫琴官網發布合作區消息",
+      "source": "橫琴官網",
+      "category": "區域合作",
+      "timeText": "2 小時前",
+      "publishedAt": "2026-05-17T20:14:00+08:00",
+      "priority": 76,
+      "stateTag": "",
+      "topicTags": [
+        "#橫琴",
+        "#灣區",
+        "#區域合作"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_011",
+      "domain": "A",
+      "title": "灣區總覽整理最新跨區政策",
+      "source": "灣區總覽",
+      "category": "區域合作",
+      "timeText": "2 小時前",
+      "publishedAt": "2026-05-17T20:14:00+08:00",
+      "priority": 74,
+      "stateTag": "",
+      "topicTags": [
+        "#橫琴",
+        "#灣區",
+        "#區域合作"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_012",
+      "domain": "A",
+      "title": "gov.mo CEPA 搜尋更新相關消息",
+      "source": "gov.mo CEPA",
+      "category": "區域合作",
+      "timeText": "2 小時前",
+      "publishedAt": "2026-05-17T20:14:00+08:00",
+      "priority": 72,
+      "stateTag": "",
+      "topicTags": [
+        "#橫琴",
+        "#灣區",
+        "#區域合作"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_013",
+      "domain": "A",
+      "title": "CAEU 公布城市規劃會議消息",
+      "source": "CAEU",
+      "category": "委員會工作",
+      "timeText": "3 小時前",
+      "publishedAt": "2026-05-17T19:14:00+08:00",
+      "priority": 70,
+      "stateTag": "",
+      "topicTags": [
+        "#委員會工作",
+        "#立法會",
+        "#質詢"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_014",
+      "domain": "A",
+      "title": "CRU 跟進都市更新項目",
+      "source": "CRU",
+      "category": "委員會工作",
+      "timeText": "3 小時前",
+      "publishedAt": "2026-05-17T19:14:00+08:00",
+      "priority": 68,
+      "stateTag": "",
+      "topicTags": [
+        "#委員會工作",
+        "#立法會",
+        "#質詢"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_015",
+      "domain": "A",
+      "title": "GCS 大灣區新聞補充合作內容",
+      "source": "GCS 大灣區",
+      "category": "區域合作",
+      "timeText": "3 小時前",
+      "publishedAt": "2026-05-17T19:14:00+08:00",
+      "priority": 66,
+      "stateTag": "",
+      "topicTags": [
+        "#橫琴",
+        "#灣區",
+        "#區域合作"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_016",
+      "domain": "A",
+      "title": "GCS 橫琴新聞整理通關便利",
+      "source": "GCS 橫琴",
+      "category": "區域合作",
+      "timeText": "4 小時前",
+      "publishedAt": "2026-05-17T18:14:00+08:00",
+      "priority": 64,
+      "stateTag": "",
+      "topicTags": [
+        "#橫琴",
+        "#灣區",
+        "#區域合作"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_017",
+      "domain": "A",
+      "title": "澳門有線跟進本地公共議題",
+      "source": "澳門有線",
+      "category": "中文新聞",
+      "timeText": "4 小時前",
+      "publishedAt": "2026-05-17T18:14:00+08:00",
+      "priority": 62,
+      "stateTag": "",
+      "topicTags": [
+        "#市容美化",
+        "#街區美化"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_018",
+      "domain": "A",
+      "title": "AllinMedia 關注產業政策動向",
+      "source": "AllinMedia",
+      "category": "中文新聞",
+      "timeText": "5 小時前",
+      "publishedAt": "2026-05-17T17:14:00+08:00",
+      "priority": 60,
+      "stateTag": "",
+      "topicTags": [
+        "#市容美化",
+        "#街區美化"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_019",
+      "domain": "A",
+      "title": "DSSCU 發布數字安全提醒",
+      "source": "DSSCU",
+      "category": "政府公布",
+      "timeText": "5 小時前",
+      "publishedAt": "2026-05-17T17:14:00+08:00",
+      "priority": 58,
+      "stateTag": "",
+      "topicTags": [
+        "#都更",
+        "#公共建設"
+      ],
+      "hot": false
+    },
+    {
+      "id": "a_020",
+      "domain": "A",
+      "title": "城市規劃相關消息完成整理",
+      "source": "CPU",
+      "category": "委員會工作",
+      "timeText": "6 小時前",
+      "publishedAt": "2026-05-17T16:14:00+08:00",
+      "priority": 56,
+      "stateTag": "",
+      "topicTags": [
+        "#委員會工作",
+        "#立法會",
+        "#質詢"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_001",
+      "domain": "B",
+      "title": "Roma 官方發布最新訓練消息",
+      "source": "AS Roma Official",
+      "category": "官方",
+      "timeText": "18 分鐘前",
+      "publishedAt": "2026-05-17T21:56:00+08:00",
+      "priority": 98,
+      "stateTag": "重點",
+      "topicTags": [
+        "#訓練",
+        "#賽前"
+      ],
+      "hot": true
+    },
+    {
+      "id": "b_002",
+      "domain": "B",
+      "title": "LaRoma24 跟進球隊備戰狀態",
+      "source": "LaRoma24",
+      "category": "新聞消息",
+      "timeText": "31 分鐘前",
+      "publishedAt": "2026-05-17T21:43:00+08:00",
+      "priority": 96,
+      "stateTag": "新",
+      "topicTags": [
+        "#續約",
+        "#訓練"
+      ],
+      "hot": true
+    },
+    {
+      "id": "b_003",
+      "domain": "B",
+      "title": "ForzaRoma 整理轉會傳聞摘要",
+      "source": "ForzaRoma",
+      "category": "新聞消息",
+      "timeText": "45 分鐘前",
+      "publishedAt": "2026-05-17T21:29:00+08:00",
+      "priority": 94,
+      "stateTag": "追蹤",
+      "topicTags": [
+        "#轉會",
+        "#管理層"
+      ],
+      "hot": true
+    },
+    {
+      "id": "b_004",
+      "domain": "B",
+      "title": "Il Romanista 關注賽前部署",
+      "source": "Il Romanista",
+      "category": "新聞消息",
+      "timeText": "1 小時前",
+      "publishedAt": "2026-05-17T21:14:00+08:00",
+      "priority": 84,
+      "stateTag": "",
+      "topicTags": [
+        "#傷病",
+        "#賽前"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_005",
+      "domain": "B",
+      "title": "比賽列表更新下輪賽程",
+      "source": "Fixture",
+      "category": "比賽列表",
+      "timeText": "1 小時前",
+      "publishedAt": "2026-05-17T21:14:00+08:00",
+      "priority": 82,
+      "stateTag": "",
+      "topicTags": [
+        "#比賽列表",
+        "#球場"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_006",
+      "domain": "B",
+      "title": "Roma 官方發布球員採訪",
+      "source": "AS Roma Official",
+      "category": "官方",
+      "timeText": "2 小時前",
+      "publishedAt": "2026-05-17T20:14:00+08:00",
+      "priority": 80,
+      "stateTag": "",
+      "topicTags": [
+        "#訓練",
+        "#賽前"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_007",
+      "domain": "B",
+      "title": "LaRoma24 補充傷停情況",
+      "source": "LaRoma24",
+      "category": "新聞消息",
+      "timeText": "2 小時前",
+      "publishedAt": "2026-05-17T20:14:00+08:00",
+      "priority": 78,
+      "stateTag": "",
+      "topicTags": [
+        "#傷病",
+        "#賽前"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_008",
+      "domain": "B",
+      "title": "ForzaRoma 匯整意媒觀點",
+      "source": "ForzaRoma",
+      "category": "新聞消息",
+      "timeText": "3 小時前",
+      "publishedAt": "2026-05-17T19:14:00+08:00",
+      "priority": 76,
+      "stateTag": "",
+      "topicTags": [
+        "#續約",
+        "#訓練"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_009",
+      "domain": "B",
+      "title": "Il Romanista 更新青年隊消息",
+      "source": "Il Romanista",
+      "category": "新聞消息",
+      "timeText": "3 小時前",
+      "publishedAt": "2026-05-17T19:14:00+08:00",
+      "priority": 74,
+      "stateTag": "",
+      "topicTags": [
+        "#轉會",
+        "#管理層"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_010",
+      "domain": "B",
+      "title": "比賽列表標記主客場資訊",
+      "source": "Fixture",
+      "category": "比賽列表",
+      "timeText": "4 小時前",
+      "publishedAt": "2026-05-17T18:14:00+08:00",
+      "priority": 72,
+      "stateTag": "",
+      "topicTags": [
+        "#比賽列表",
+        "#球場"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_011",
+      "domain": "B",
+      "title": "Roma 官方整理訓練圖集",
+      "source": "AS Roma Official",
+      "category": "官方",
+      "timeText": "5 小時前",
+      "publishedAt": "2026-05-17T17:14:00+08:00",
+      "priority": 70,
+      "stateTag": "",
+      "topicTags": [
+        "#訓練",
+        "#賽前"
+      ],
+      "hot": false
+    },
+    {
+      "id": "b_012",
+      "domain": "B",
+      "title": "LaRoma24 報道教練組安排",
+      "source": "LaRoma24",
+      "category": "新聞消息",
+      "timeText": "6 小時前",
+      "publishedAt": "2026-05-17T16:14:00+08:00",
+      "priority": 68,
+      "stateTag": "",
+      "topicTags": [
+        "#轉會",
+        "#管理層"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_001",
+      "domain": "C",
+      "title": "NOK / NVDA Watchlist 準備中",
+      "source": "Watchlist",
+      "category": "股價 Watchlist",
+      "timeText": "15 分鐘前",
+      "publishedAt": "2026-05-17T21:59:00+08:00",
+      "priority": 99,
+      "stateTag": "重點",
+      "topicTags": [
+        "#Watchlist",
+        "#NOK",
+        "#NVDA"
+      ],
+      "hot": true
+    },
+    {
+      "id": "c_002",
+      "domain": "C",
+      "title": "AI 半導體觀察清單更新",
+      "source": "AI / 半導體",
+      "category": "AI / 半導體",
+      "timeText": "28 分鐘前",
+      "publishedAt": "2026-05-17T21:46:00+08:00",
+      "priority": 98,
+      "stateTag": "新",
+      "topicTags": [
+        "#AI",
+        "#半導體"
+      ],
+      "hot": true
+    },
+    {
+      "id": "c_003",
+      "domain": "C",
+      "title": "財經新聞整理市場早段重點",
+      "source": "財經新聞",
+      "category": "財經新聞",
+      "timeText": "40 分鐘前",
+      "publishedAt": "2026-05-17T21:34:00+08:00",
+      "priority": 96,
+      "stateTag": "追蹤",
+      "topicTags": [
+        "#宏觀",
+        "#財報",
+        "#目標價"
+      ],
+      "hot": true
+    },
+    {
+      "id": "c_004",
+      "domain": "C",
+      "title": "Watchlist 標記價格刷新策略",
+      "source": "Watchlist",
+      "category": "股價 Watchlist",
+      "timeText": "52 分鐘前",
+      "publishedAt": "2026-05-17T21:22:00+08:00",
+      "priority": 86,
+      "stateTag": "",
+      "topicTags": [
+        "#Watchlist",
+        "#NOK",
+        "#NVDA"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_005",
+      "domain": "C",
+      "title": "科技股消息等待 M2 接入",
+      "source": "AI / 半導體",
+      "category": "AI / 半導體",
+      "timeText": "1 小時前",
+      "publishedAt": "2026-05-17T21:14:00+08:00",
+      "priority": 84,
+      "stateTag": "",
+      "topicTags": [
+        "#AI",
+        "#半導體"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_006",
+      "domain": "C",
+      "title": "財經新聞跟進美股期貨",
+      "source": "財經新聞",
+      "category": "財經新聞",
+      "timeText": "1 小時前",
+      "publishedAt": "2026-05-17T21:14:00+08:00",
+      "priority": 89,
+      "stateTag": "異常",
+      "topicTags": [
+        "#宏觀",
+        "#財報",
+        "#目標價"
+      ],
+      "hot": true
+    },
+    {
+      "id": "c_007",
+      "domain": "C",
+      "title": "NVDA Watchlist 保留觀察位",
+      "source": "Watchlist",
+      "category": "股價 Watchlist",
+      "timeText": "2 小時前",
+      "publishedAt": "2026-05-17T20:14:00+08:00",
+      "priority": 80,
+      "stateTag": "",
+      "topicTags": [
+        "#Watchlist",
+        "#NOK",
+        "#NVDA"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_008",
+      "domain": "C",
+      "title": "AMD Watchlist 更新備註",
+      "source": "Watchlist",
+      "category": "股價 Watchlist",
+      "timeText": "2 小時前",
+      "publishedAt": "2026-05-17T20:14:00+08:00",
+      "priority": 78,
+      "stateTag": "",
+      "topicTags": [
+        "#Watchlist",
+        "#NOK",
+        "#NVDA"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_009",
+      "domain": "C",
+      "title": "AI 伺服器供應鏈消息整理",
+      "source": "AI / 半導體",
+      "category": "AI / 半導體",
+      "timeText": "3 小時前",
+      "publishedAt": "2026-05-17T19:14:00+08:00",
+      "priority": 76,
+      "stateTag": "",
+      "topicTags": [
+        "#AI",
+        "#半導體"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_010",
+      "domain": "C",
+      "title": "財經新聞摘要市場波動",
+      "source": "財經新聞",
+      "category": "財經新聞",
+      "timeText": "3 小時前",
+      "publishedAt": "2026-05-17T19:14:00+08:00",
+      "priority": 74,
+      "stateTag": "",
+      "topicTags": [
+        "#宏觀",
+        "#財報",
+        "#目標價"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_011",
+      "domain": "C",
+      "title": "NOK Watchlist 準備價格欄位",
+      "source": "Watchlist",
+      "category": "股價 Watchlist",
+      "timeText": "4 小時前",
+      "publishedAt": "2026-05-17T18:14:00+08:00",
+      "priority": 72,
+      "stateTag": "",
+      "topicTags": [
+        "#Watchlist",
+        "#NOK",
+        "#NVDA"
+      ],
+      "hot": false
+    },
+    {
+      "id": "c_012",
+      "domain": "C",
+      "title": "半導體設備股消息整理",
+      "source": "AI / 半導體",
+      "category": "AI / 半導體",
+      "timeText": "4 小時前",
+      "publishedAt": "2026-05-17T18:14:00+08:00",
+      "priority": 70,
+      "stateTag": "",
+      "topicTags": [
+        "#AI",
+        "#半導體"
+      ],
+      "hot": false
+    }
+  ],
   "hero": {
     "title": "今日情報",
     "subtitle": "本地政策、AS Roma、財經市場的個人情報站",
-    "status": ["Fake JSON mode", "A registry ready", "crawler not started"]
+    "status": [
+      "Fake JSON mode",
+      "A registry ready",
+      "crawler not started"
+    ]
   },
   "stats": {
     "sources": 36,
     "todayNew": 132,
     "within15": 18,
-    "normal": 33
+    "normal": 33,
+    "abnormal": 3
+  },
+  "systemStatus": {
+    "lastUpdatedAt": "2026-05-17T22:14:00+08:00",
+    "debug": [
+      "Fake JSON mode",
+      "A registry ready",
+      "crawler not started"
+    ]
   },
   "focusGrid": {
-    "nextRefreshMin": {
+    "refreshStatus": {
       "A": {
-        "all": 12,
-        "A1": 12,
-        "A2": 18,
-        "A3": 24,
-        "A4": 16,
-        "A5": 20
+        "all": {
+          "lastUpdatedAt": "2026-05-17T22:02:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:17:00+08:00"
+        },
+        "A1": {
+          "lastUpdatedAt": "2026-05-17T22:02:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:17:00+08:00"
+        },
+        "A2": {
+          "lastUpdatedAt": "2026-05-17T22:01:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:21:00+08:00"
+        },
+        "A3": {
+          "lastUpdatedAt": "2026-05-17T21:58:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:28:00+08:00"
+        },
+        "A4": {
+          "lastUpdatedAt": "2026-05-17T22:04:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:24:00+08:00"
+        },
+        "A5": {
+          "lastUpdatedAt": "2026-05-17T22:00:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:30:00+08:00"
+        }
       },
       "B": {
-        "all": 8,
-        "B2": 8,
-        "B3": 14,
-        "B4": 22
+        "all": {
+          "lastUpdatedAt": "2026-05-17T22:06:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:21:00+08:00"
+        },
+        "B2": {
+          "lastUpdatedAt": "2026-05-17T22:06:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:21:00+08:00"
+        },
+        "B3": {
+          "lastUpdatedAt": "2026-05-17T22:04:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:24:00+08:00"
+        },
+        "B4": {
+          "lastUpdatedAt": "2026-05-17T21:58:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:38:00+08:00"
+        }
       },
       "C": {
-        "all": 5,
-        "C1": 5,
-        "C2": 15,
-        "C3": 20
+        "all": {
+          "lastUpdatedAt": "2026-05-17T22:09:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:19:00+08:00"
+        },
+        "C1": {
+          "lastUpdatedAt": "2026-05-17T22:09:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:19:00+08:00"
+        },
+        "C2": {
+          "lastUpdatedAt": "2026-05-17T22:03:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:33:00+08:00"
+        },
+        "C3": {
+          "lastUpdatedAt": "2026-05-17T22:01:00+08:00",
+          "nextRefreshAt": "2026-05-17T22:31:00+08:00"
+        }
       },
-      "hot": 5
+      "hot": {
+        "lastUpdatedAt": "2026-05-17T22:14:00+08:00",
+        "nextRefreshAt": "2026-05-17T22:19:00+08:00"
+      }
+    },
+    "sections": {
+      "A": {
+        "subtitle": "本地政策｜政府公布｜區域合作｜委員會工作",
+        "filler": []
+      },
+      "B": {
+        "subtitle": "球隊消息｜官方公告｜比賽列表",
+        "filler": []
+      },
+      "C": {
+        "subtitle": "股價觀察｜財經新聞｜AI / 半導體",
+        "filler": []
+      },
+      "hot": {
+        "subtitle": "跨域重要消息｜最新異動｜優先閱讀",
+        "tiers": [
+          "優先閱讀",
+          "正在升溫",
+          "全站最新"
+        ]
+      }
     },
     "tabs": {
       "A": [
-        { "id": "all", "label": "全部" },
-        { "id": "A1", "label": "政府公布" },
-        { "id": "A2", "label": "中文新聞" },
-        { "id": "A3", "label": "外語新聞" },
-        { "id": "A4", "label": "區域合作" },
-        { "id": "A5", "label": "委員會工作" }
+        {
+          "id": "all",
+          "label": "全部"
+        },
+        {
+          "id": "A1",
+          "label": "政府公布"
+        },
+        {
+          "id": "A2",
+          "label": "中文新聞"
+        },
+        {
+          "id": "A3",
+          "label": "外語新聞"
+        },
+        {
+          "id": "A4",
+          "label": "區域合作"
+        },
+        {
+          "id": "A5",
+          "label": "委員會工作"
+        }
       ],
       "B": [
-        { "id": "all", "label": "全部" },
-        { "id": "B2", "label": "新聞消息" },
-        { "id": "B3", "label": "官方" },
-        { "id": "B4", "label": "比賽列表" },
-        { "id": "B1", "label": "X 記者消息", "disabled": true }
+        {
+          "id": "all",
+          "label": "全部"
+        },
+        {
+          "id": "B2",
+          "label": "新聞消息"
+        },
+        {
+          "id": "B3",
+          "label": "官方"
+        },
+        {
+          "id": "B4",
+          "label": "比賽列表"
+        },
+        {
+          "id": "B1",
+          "label": "X 記者消息",
+          "disabled": true
+        }
       ],
       "C": [
-        { "id": "all", "label": "全部" },
-        { "id": "C1", "label": "股價 Watchlist" },
-        { "id": "C2", "label": "財經新聞" },
-        { "id": "C3", "label": "AI / 半導體" }
+        {
+          "id": "all",
+          "label": "全部"
+        },
+        {
+          "id": "C1",
+          "label": "股價 Watchlist"
+        },
+        {
+          "id": "C2",
+          "label": "財經新聞"
+        },
+        {
+          "id": "C3",
+          "label": "AI / 半導體"
+        }
       ]
     }
   },
@@ -66,85 +915,1164 @@
       "domain": "A",
       "title": "政府政策",
       "items": [
-        { "title": "GCS 發布政府最新新聞", "source": "GCS", "time": "10 分鐘前", "newsBox": "A1" },
-        { "title": "立法會整理口頭質詢安排", "source": "立法會", "time": "18 分鐘前", "newsBox": "A1" },
-        { "title": "公共建設局更新工程進度", "source": "公共建設局", "time": "26 分鐘前", "newsBox": "A5" },
-        { "title": "TDM 跟進本地民生政策", "source": "TDM", "time": "35 分鐘前", "newsBox": "A2" },
-        { "title": "澳門日報整理公共服務消息", "source": "澳門日報", "time": "42 分鐘前", "newsBox": "A2" },
-        { "title": "力報關注社區配套安排", "source": "力報", "time": "50 分鐘前", "newsBox": "A2" },
-        { "title": "Macao Business 報道政策與營商環境", "source": "Macao Business", "time": "1 小時前", "newsBox": "A3" },
-        { "title": "Macau Post Daily 關注城市發展", "source": "Macau Post Daily", "time": "1 小時前", "newsBox": "A3" },
-        { "title": "Hoje Macau 更新葡文政策摘要", "source": "Hoje Macau", "time": "1 小時前", "newsBox": "A3" },
-        { "title": "橫琴官網發布合作區消息", "source": "橫琴官網", "time": "2 小時前", "newsBox": "A4" },
-        { "title": "灣區總覽整理最新跨區政策", "source": "灣區總覽", "time": "2 小時前", "newsBox": "A4" },
-        { "title": "gov.mo CEPA 搜尋更新相關消息", "source": "gov.mo CEPA", "time": "2 小時前", "newsBox": "A4" },
-        { "title": "CAEU 公布城市規劃會議消息", "source": "CAEU", "time": "3 小時前", "newsBox": "A5" },
-        { "title": "CRU 跟進都市更新項目", "source": "CRU", "time": "3 小時前", "newsBox": "A5" },
-        { "title": "GCS 大灣區新聞補充合作內容", "source": "GCS 大灣區", "time": "3 小時前", "newsBox": "A4" },
-        { "title": "GCS 橫琴新聞整理通關便利", "source": "GCS 橫琴", "time": "4 小時前", "newsBox": "A4" },
-        { "title": "澳門有線跟進本地公共議題", "source": "澳門有線", "time": "4 小時前", "newsBox": "A2" },
-        { "title": "AllinMedia 關注產業政策動向", "source": "AllinMedia", "time": "5 小時前", "newsBox": "A2" },
-        { "title": "DSSCU 發布數字安全提醒", "source": "DSSCU", "time": "5 小時前", "newsBox": "A1" },
-        { "title": "城市規劃相關消息完成整理", "source": "CPU", "time": "6 小時前", "newsBox": "A5" }
+        {
+          "title": "GCS 發布政府最新新聞 01",
+          "source": "GCS",
+          "time": "10 分鐘前",
+          "newsBox": "A1",
+          "tag": "新"
+        },
+        {
+          "title": "澳門日報整理民生政策重點 02",
+          "source": "澳門日報",
+          "time": "18 分鐘前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "TDM 跟進本地公共服務安排 03",
+          "source": "TDM",
+          "time": "26 分鐘前",
+          "newsBox": "A2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "公共建設局更新工程進度 04",
+          "source": "公共建設局",
+          "time": "35 分鐘前",
+          "newsBox": "A5",
+          "tag": "重點"
+        },
+        {
+          "title": "立法會整理口頭質詢安排 05",
+          "source": "立法會",
+          "time": "42 分鐘前",
+          "newsBox": "A1"
+        },
+        {
+          "title": "橫琴官網發布合作區動態 06",
+          "source": "橫琴官網",
+          "time": "55 分鐘前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "Macao Business 關注政策與商業影響 07",
+          "source": "Macao Business",
+          "time": "1 小時前",
+          "newsBox": "A3"
+        },
+        {
+          "title": "CAEU 整理城市規劃委員會消息 08",
+          "source": "CAEU",
+          "time": "1 小時 20 分前",
+          "newsBox": "A5"
+        },
+        {
+          "title": "灣區總覽跟進區域合作議題 09",
+          "source": "灣區總覽",
+          "time": "1 小時 45 分前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "澳門有線整理本地新聞追蹤 10",
+          "source": "澳門有線",
+          "time": "2 小時前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "GCS 發布政府最新新聞 11",
+          "source": "GCS",
+          "time": "2 小時 30 分前",
+          "newsBox": "A1",
+          "tag": "新"
+        },
+        {
+          "title": "澳門日報整理民生政策重點 12",
+          "source": "澳門日報",
+          "time": "3 小時前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "TDM 跟進本地公共服務安排 13",
+          "source": "TDM",
+          "time": "3 小時 30 分前",
+          "newsBox": "A2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "公共建設局更新工程進度 14",
+          "source": "公共建設局",
+          "time": "4 小時前",
+          "newsBox": "A5",
+          "tag": "重點"
+        },
+        {
+          "title": "立法會整理口頭質詢安排 15",
+          "source": "立法會",
+          "time": "4 小時 45 分前",
+          "newsBox": "A1"
+        },
+        {
+          "title": "橫琴官網發布合作區動態 16",
+          "source": "橫琴官網",
+          "time": "5 小時前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "Macao Business 關注政策與商業影響 17",
+          "source": "Macao Business",
+          "time": "6 小時前",
+          "newsBox": "A3"
+        },
+        {
+          "title": "CAEU 整理城市規劃委員會消息 18",
+          "source": "CAEU",
+          "time": "10 分鐘前",
+          "newsBox": "A5"
+        },
+        {
+          "title": "灣區總覽跟進區域合作議題 19",
+          "source": "灣區總覽",
+          "time": "18 分鐘前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "澳門有線整理本地新聞追蹤 20",
+          "source": "澳門有線",
+          "time": "26 分鐘前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "GCS 發布政府最新新聞 21",
+          "source": "GCS",
+          "time": "35 分鐘前",
+          "newsBox": "A1",
+          "tag": "新"
+        },
+        {
+          "title": "澳門日報整理民生政策重點 22",
+          "source": "澳門日報",
+          "time": "42 分鐘前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "TDM 跟進本地公共服務安排 23",
+          "source": "TDM",
+          "time": "55 分鐘前",
+          "newsBox": "A2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "公共建設局更新工程進度 24",
+          "source": "公共建設局",
+          "time": "1 小時前",
+          "newsBox": "A5",
+          "tag": "重點"
+        },
+        {
+          "title": "立法會整理口頭質詢安排 25",
+          "source": "立法會",
+          "time": "1 小時 20 分前",
+          "newsBox": "A1"
+        },
+        {
+          "title": "橫琴官網發布合作區動態 26",
+          "source": "橫琴官網",
+          "time": "1 小時 45 分前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "Macao Business 關注政策與商業影響 27",
+          "source": "Macao Business",
+          "time": "2 小時前",
+          "newsBox": "A3"
+        },
+        {
+          "title": "CAEU 整理城市規劃委員會消息 28",
+          "source": "CAEU",
+          "time": "2 小時 30 分前",
+          "newsBox": "A5"
+        },
+        {
+          "title": "灣區總覽跟進區域合作議題 29",
+          "source": "灣區總覽",
+          "time": "3 小時前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "澳門有線整理本地新聞追蹤 30",
+          "source": "澳門有線",
+          "time": "3 小時 30 分前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "GCS 發布政府最新新聞 31",
+          "source": "GCS",
+          "time": "4 小時前",
+          "newsBox": "A1",
+          "tag": "新"
+        },
+        {
+          "title": "澳門日報整理民生政策重點 32",
+          "source": "澳門日報",
+          "time": "4 小時 45 分前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "TDM 跟進本地公共服務安排 33",
+          "source": "TDM",
+          "time": "5 小時前",
+          "newsBox": "A2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "公共建設局更新工程進度 34",
+          "source": "公共建設局",
+          "time": "6 小時前",
+          "newsBox": "A5",
+          "tag": "重點"
+        },
+        {
+          "title": "立法會整理口頭質詢安排 35",
+          "source": "立法會",
+          "time": "10 分鐘前",
+          "newsBox": "A1"
+        },
+        {
+          "title": "橫琴官網發布合作區動態 36",
+          "source": "橫琴官網",
+          "time": "18 分鐘前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "Macao Business 關注政策與商業影響 37",
+          "source": "Macao Business",
+          "time": "26 分鐘前",
+          "newsBox": "A3"
+        },
+        {
+          "title": "CAEU 整理城市規劃委員會消息 38",
+          "source": "CAEU",
+          "time": "35 分鐘前",
+          "newsBox": "A5"
+        },
+        {
+          "title": "灣區總覽跟進區域合作議題 39",
+          "source": "灣區總覽",
+          "time": "42 分鐘前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "澳門有線整理本地新聞追蹤 40",
+          "source": "澳門有線",
+          "time": "55 分鐘前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "GCS 發布政府最新新聞 41",
+          "source": "GCS",
+          "time": "1 小時前",
+          "newsBox": "A1",
+          "tag": "新"
+        },
+        {
+          "title": "澳門日報整理民生政策重點 42",
+          "source": "澳門日報",
+          "time": "1 小時 20 分前",
+          "newsBox": "A2"
+        },
+        {
+          "title": "TDM 跟進本地公共服務安排 43",
+          "source": "TDM",
+          "time": "1 小時 45 分前",
+          "newsBox": "A2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "公共建設局更新工程進度 44",
+          "source": "公共建設局",
+          "time": "2 小時前",
+          "newsBox": "A5",
+          "tag": "重點"
+        },
+        {
+          "title": "立法會整理口頭質詢安排 45",
+          "source": "立法會",
+          "time": "2 小時 30 分前",
+          "newsBox": "A1"
+        },
+        {
+          "title": "橫琴官網發布合作區動態 46",
+          "source": "橫琴官網",
+          "time": "3 小時前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "Macao Business 關注政策與商業影響 47",
+          "source": "Macao Business",
+          "time": "3 小時 30 分前",
+          "newsBox": "A3"
+        },
+        {
+          "title": "CAEU 整理城市規劃委員會消息 48",
+          "source": "CAEU",
+          "time": "4 小時前",
+          "newsBox": "A5"
+        },
+        {
+          "title": "灣區總覽跟進區域合作議題 49",
+          "source": "灣區總覽",
+          "time": "4 小時 45 分前",
+          "newsBox": "A4"
+        },
+        {
+          "title": "澳門有線整理本地新聞追蹤 50",
+          "source": "澳門有線",
+          "time": "5 小時前",
+          "newsBox": "A2"
+        }
       ]
     },
     {
       "domain": "B",
       "title": "AS Roma",
       "items": [
-        { "title": "Roma 官方發布最新訓練消息", "source": "AS Roma Official", "time": "18 分鐘前", "newsBox": "B3" },
-        { "title": "LaRoma24 跟進球隊備戰狀態", "source": "LaRoma24", "time": "31 分鐘前", "newsBox": "B2" },
-        { "title": "ForzaRoma 整理轉會傳聞摘要", "source": "ForzaRoma", "time": "45 分鐘前", "newsBox": "B2" },
-        { "title": "Il Romanista 關注賽前部署", "source": "Il Romanista", "time": "1 小時前", "newsBox": "B2" },
-        { "title": "比賽列表更新下輪賽程", "source": "Fixture", "time": "1 小時前", "newsBox": "B4" },
-        { "title": "Roma 官方發布球員採訪", "source": "AS Roma Official", "time": "2 小時前", "newsBox": "B3" },
-        { "title": "LaRoma24 補充傷停情況", "source": "LaRoma24", "time": "2 小時前", "newsBox": "B2" },
-        { "title": "ForzaRoma 匯整意媒觀點", "source": "ForzaRoma", "time": "3 小時前", "newsBox": "B2" },
-        { "title": "Il Romanista 更新青年隊消息", "source": "Il Romanista", "time": "3 小時前", "newsBox": "B2" },
-        { "title": "比賽列表標記主客場資訊", "source": "Fixture", "time": "4 小時前", "newsBox": "B4" },
-        { "title": "Roma 官方整理訓練圖集", "source": "AS Roma Official", "time": "5 小時前", "newsBox": "B3" },
-        { "title": "LaRoma24 報道教練組安排", "source": "LaRoma24", "time": "6 小時前", "newsBox": "B2" }
+        {
+          "title": "Roma 官方發布最新訓練消息 01",
+          "source": "AS Roma Official",
+          "time": "10 分鐘前",
+          "newsBox": "B3",
+          "tag": "新"
+        },
+        {
+          "title": "LaRoma24 跟進球隊備戰狀態 02",
+          "source": "LaRoma24",
+          "time": "18 分鐘前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "ForzaRoma 整理轉會傳聞摘要 03",
+          "source": "ForzaRoma",
+          "time": "26 分鐘前",
+          "newsBox": "B2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "Il Romanista 關注賽前部署 04",
+          "source": "Il Romanista",
+          "time": "35 分鐘前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "比賽列表更新下輪賽程 05",
+          "source": "Fixture",
+          "time": "42 分鐘前",
+          "newsBox": "B4"
+        },
+        {
+          "title": "傷病名單等待官方確認 06",
+          "source": "LaRoma24",
+          "time": "55 分鐘前",
+          "newsBox": "B2",
+          "tag": "傷病"
+        },
+        {
+          "title": "青年隊消息整理 07",
+          "source": "Il Romanista",
+          "time": "1 小時前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "管理層會議消息更新 08",
+          "source": "ForzaRoma",
+          "time": "1 小時 20 分前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "Roma 官方發布最新訓練消息 09",
+          "source": "AS Roma Official",
+          "time": "1 小時 45 分前",
+          "newsBox": "B3",
+          "tag": "新"
+        },
+        {
+          "title": "LaRoma24 跟進球隊備戰狀態 10",
+          "source": "LaRoma24",
+          "time": "2 小時前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "ForzaRoma 整理轉會傳聞摘要 11",
+          "source": "ForzaRoma",
+          "time": "2 小時 30 分前",
+          "newsBox": "B2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "Il Romanista 關注賽前部署 12",
+          "source": "Il Romanista",
+          "time": "3 小時前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "比賽列表更新下輪賽程 13",
+          "source": "Fixture",
+          "time": "3 小時 30 分前",
+          "newsBox": "B4"
+        },
+        {
+          "title": "傷病名單等待官方確認 14",
+          "source": "LaRoma24",
+          "time": "4 小時前",
+          "newsBox": "B2",
+          "tag": "傷病"
+        },
+        {
+          "title": "青年隊消息整理 15",
+          "source": "Il Romanista",
+          "time": "4 小時 45 分前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "管理層會議消息更新 16",
+          "source": "ForzaRoma",
+          "time": "5 小時前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "Roma 官方發布最新訓練消息 17",
+          "source": "AS Roma Official",
+          "time": "6 小時前",
+          "newsBox": "B3",
+          "tag": "新"
+        },
+        {
+          "title": "LaRoma24 跟進球隊備戰狀態 18",
+          "source": "LaRoma24",
+          "time": "10 分鐘前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "ForzaRoma 整理轉會傳聞摘要 19",
+          "source": "ForzaRoma",
+          "time": "18 分鐘前",
+          "newsBox": "B2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "Il Romanista 關注賽前部署 20",
+          "source": "Il Romanista",
+          "time": "26 分鐘前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "比賽列表更新下輪賽程 21",
+          "source": "Fixture",
+          "time": "35 分鐘前",
+          "newsBox": "B4"
+        },
+        {
+          "title": "傷病名單等待官方確認 22",
+          "source": "LaRoma24",
+          "time": "42 分鐘前",
+          "newsBox": "B2",
+          "tag": "傷病"
+        },
+        {
+          "title": "青年隊消息整理 23",
+          "source": "Il Romanista",
+          "time": "55 分鐘前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "管理層會議消息更新 24",
+          "source": "ForzaRoma",
+          "time": "1 小時前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "Roma 官方發布最新訓練消息 25",
+          "source": "AS Roma Official",
+          "time": "1 小時 20 分前",
+          "newsBox": "B3",
+          "tag": "新"
+        },
+        {
+          "title": "LaRoma24 跟進球隊備戰狀態 26",
+          "source": "LaRoma24",
+          "time": "1 小時 45 分前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "ForzaRoma 整理轉會傳聞摘要 27",
+          "source": "ForzaRoma",
+          "time": "2 小時前",
+          "newsBox": "B2",
+          "tag": "追蹤"
+        },
+        {
+          "title": "Il Romanista 關注賽前部署 28",
+          "source": "Il Romanista",
+          "time": "2 小時 30 分前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "比賽列表更新下輪賽程 29",
+          "source": "Fixture",
+          "time": "3 小時前",
+          "newsBox": "B4"
+        },
+        {
+          "title": "傷病名單等待官方確認 30",
+          "source": "LaRoma24",
+          "time": "3 小時 30 分前",
+          "newsBox": "B2",
+          "tag": "傷病"
+        },
+        {
+          "title": "青年隊消息整理 31",
+          "source": "Il Romanista",
+          "time": "4 小時前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "管理層會議消息更新 32",
+          "source": "ForzaRoma",
+          "time": "4 小時 45 分前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "Roma 官方發布最新訓練消息 33",
+          "source": "AS Roma Official",
+          "time": "5 小時前",
+          "newsBox": "B3",
+          "tag": "新"
+        },
+        {
+          "title": "LaRoma24 跟進球隊備戰狀態 34",
+          "source": "LaRoma24",
+          "time": "6 小時前",
+          "newsBox": "B2"
+        },
+        {
+          "title": "ForzaRoma 整理轉會傳聞摘要 35",
+          "source": "ForzaRoma",
+          "time": "10 分鐘前",
+          "newsBox": "B2",
+          "tag": "追蹤"
+        }
       ]
     },
     {
       "domain": "C",
       "title": "財經市場",
       "items": [
-        { "title": "NOK / NVDA Watchlist 準備中", "source": "Watchlist", "time": "15 分鐘前", "newsBox": "C1" },
-        { "title": "AI 半導體觀察清單更新", "source": "AI / 半導體", "time": "28 分鐘前", "newsBox": "C3" },
-        { "title": "財經新聞整理市場早段重點", "source": "財經新聞", "time": "40 分鐘前", "newsBox": "C2" },
-        { "title": "Watchlist 標記價格刷新策略", "source": "Watchlist", "time": "52 分鐘前", "newsBox": "C1" },
-        { "title": "科技股消息等待 M2 接入", "source": "AI / 半導體", "time": "1 小時前", "newsBox": "C3" },
-        { "title": "財經新聞跟進美股期貨", "source": "財經新聞", "time": "1 小時前", "newsBox": "C2" },
-        { "title": "NVDA Watchlist 保留觀察位", "source": "Watchlist", "time": "2 小時前", "newsBox": "C1" },
-        { "title": "AMD Watchlist 更新備註", "source": "Watchlist", "time": "2 小時前", "newsBox": "C1" },
-        { "title": "AI 伺服器供應鏈消息整理", "source": "AI / 半導體", "time": "3 小時前", "newsBox": "C3" },
-        { "title": "財經新聞摘要市場波動", "source": "財經新聞", "time": "3 小時前", "newsBox": "C2" },
-        { "title": "NOK Watchlist 準備價格欄位", "source": "Watchlist", "time": "4 小時前", "newsBox": "C1" },
-        { "title": "半導體設備股消息整理", "source": "AI / 半導體", "time": "4 小時前", "newsBox": "C3" }
+        {
+          "title": "NOK / NVDA Watchlist 準備中 01",
+          "source": "Watchlist",
+          "time": "10 分鐘前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "AI 半導體觀察清單更新 02",
+          "source": "AI / 半導體",
+          "time": "18 分鐘前",
+          "newsBox": "C3",
+          "tag": "重點"
+        },
+        {
+          "title": "財經新聞整理市場早段重點 03",
+          "source": "財經新聞",
+          "time": "26 分鐘前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "Watchlist 標記價格刷新策略 04",
+          "source": "Watchlist",
+          "time": "35 分鐘前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "科技股消息等待 M2 接入 05",
+          "source": "財經新聞",
+          "time": "42 分鐘前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "NVDA Watch 保留觀察位 06",
+          "source": "NVDA Watch",
+          "time": "55 分鐘前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "NOK Watch 更新價格節點 07",
+          "source": "NOK Watch",
+          "time": "1 小時前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "半導體股價波動整理 08",
+          "source": "AI / 半導體",
+          "time": "1 小時 20 分前",
+          "newsBox": "C3"
+        },
+        {
+          "title": "NOK / NVDA Watchlist 準備中 09",
+          "source": "Watchlist",
+          "time": "1 小時 45 分前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "AI 半導體觀察清單更新 10",
+          "source": "AI / 半導體",
+          "time": "2 小時前",
+          "newsBox": "C3",
+          "tag": "重點"
+        },
+        {
+          "title": "財經新聞整理市場早段重點 11",
+          "source": "財經新聞",
+          "time": "2 小時 30 分前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "Watchlist 標記價格刷新策略 12",
+          "source": "Watchlist",
+          "time": "3 小時前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "科技股消息等待 M2 接入 13",
+          "source": "財經新聞",
+          "time": "3 小時 30 分前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "NVDA Watch 保留觀察位 14",
+          "source": "NVDA Watch",
+          "time": "4 小時前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "NOK Watch 更新價格節點 15",
+          "source": "NOK Watch",
+          "time": "4 小時 45 分前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "半導體股價波動整理 16",
+          "source": "AI / 半導體",
+          "time": "5 小時前",
+          "newsBox": "C3"
+        },
+        {
+          "title": "NOK / NVDA Watchlist 準備中 17",
+          "source": "Watchlist",
+          "time": "6 小時前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "AI 半導體觀察清單更新 18",
+          "source": "AI / 半導體",
+          "time": "10 分鐘前",
+          "newsBox": "C3",
+          "tag": "重點"
+        },
+        {
+          "title": "財經新聞整理市場早段重點 19",
+          "source": "財經新聞",
+          "time": "18 分鐘前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "Watchlist 標記價格刷新策略 20",
+          "source": "Watchlist",
+          "time": "26 分鐘前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "科技股消息等待 M2 接入 21",
+          "source": "財經新聞",
+          "time": "35 分鐘前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "NVDA Watch 保留觀察位 22",
+          "source": "NVDA Watch",
+          "time": "42 分鐘前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "NOK Watch 更新價格節點 23",
+          "source": "NOK Watch",
+          "time": "55 分鐘前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "半導體股價波動整理 24",
+          "source": "AI / 半導體",
+          "time": "1 小時前",
+          "newsBox": "C3"
+        },
+        {
+          "title": "NOK / NVDA Watchlist 準備中 25",
+          "source": "Watchlist",
+          "time": "1 小時 20 分前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "AI 半導體觀察清單更新 26",
+          "source": "AI / 半導體",
+          "time": "1 小時 45 分前",
+          "newsBox": "C3",
+          "tag": "重點"
+        },
+        {
+          "title": "財經新聞整理市場早段重點 27",
+          "source": "財經新聞",
+          "time": "2 小時前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "Watchlist 標記價格刷新策略 28",
+          "source": "Watchlist",
+          "time": "2 小時 30 分前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "科技股消息等待 M2 接入 29",
+          "source": "財經新聞",
+          "time": "3 小時前",
+          "newsBox": "C2"
+        },
+        {
+          "title": "NVDA Watch 保留觀察位 30",
+          "source": "NVDA Watch",
+          "time": "3 小時 30 分前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "NOK Watch 更新價格節點 31",
+          "source": "NOK Watch",
+          "time": "4 小時前",
+          "newsBox": "C1"
+        },
+        {
+          "title": "半導體股價波動整理 32",
+          "source": "AI / 半導體",
+          "time": "4 小時 45 分前",
+          "newsBox": "C3"
+        },
+        {
+          "title": "NOK / NVDA Watchlist 準備中 33",
+          "source": "Watchlist",
+          "time": "5 小時前",
+          "newsBox": "C1",
+          "tag": "追蹤"
+        },
+        {
+          "title": "AI 半導體觀察清單更新 34",
+          "source": "AI / 半導體",
+          "time": "6 小時前",
+          "newsBox": "C3",
+          "tag": "重點"
+        },
+        {
+          "title": "財經新聞整理市場早段重點 35",
+          "source": "財經新聞",
+          "time": "10 分鐘前",
+          "newsBox": "C2"
+        }
       ]
     }
   ],
   "hotItems": [
-    { "domain": "A", "title": "GCS 發布政府最新新聞", "source": "GCS", "time": "10 分鐘前", "newsBox": "A1" },
-    { "domain": "C", "title": "NOK / NVDA Watchlist 準備中", "source": "Watchlist", "time": "15 分鐘前", "newsBox": "C1" },
-    { "domain": "B", "title": "Roma 官方發布最新訓練消息", "source": "AS Roma Official", "time": "18 分鐘前", "newsBox": "B3" },
-    { "domain": "A", "title": "立法會整理口頭質詢安排", "source": "立法會", "time": "18 分鐘前", "newsBox": "A1" },
-    { "domain": "A", "title": "公共建設局更新工程進度", "source": "公共建設局", "time": "26 分鐘前", "newsBox": "A5" },
-    { "domain": "C", "title": "AI 半導體觀察清單更新", "source": "AI / 半導體", "time": "28 分鐘前", "newsBox": "C3" },
-    { "domain": "B", "title": "LaRoma24 跟進球隊備戰狀態", "source": "LaRoma24", "time": "31 分鐘前", "newsBox": "B2" },
-    { "domain": "A", "title": "TDM 跟進本地民生政策", "source": "TDM", "time": "35 分鐘前", "newsBox": "A2" },
-    { "domain": "C", "title": "財經新聞整理市場早段重點", "source": "財經新聞", "time": "40 分鐘前", "newsBox": "C2" },
-    { "domain": "A", "title": "澳門日報整理公共服務消息", "source": "澳門日報", "time": "42 分鐘前", "newsBox": "A2" },
-    { "domain": "B", "title": "ForzaRoma 整理轉會傳聞摘要", "source": "ForzaRoma", "time": "45 分鐘前", "newsBox": "B2" },
-    { "domain": "A", "title": "力報關注社區配套安排", "source": "力報", "time": "50 分鐘前", "newsBox": "A2" },
-    { "domain": "C", "title": "Watchlist 標記價格刷新策略", "source": "Watchlist", "time": "52 分鐘前", "newsBox": "C1" },
-    { "domain": "A", "title": "Macao Business 報道政策與營商環境", "source": "Macao Business", "time": "1 小時前", "newsBox": "A3" },
-    { "domain": "B", "title": "Il Romanista 關注賽前部署", "source": "Il Romanista", "time": "1 小時前", "newsBox": "B2" },
-    { "domain": "C", "title": "科技股消息等待 M2 接入", "source": "AI / 半導體", "time": "1 小時前", "newsBox": "C3" },
-    { "domain": "B", "title": "比賽列表更新下輪賽程", "source": "Fixture", "time": "1 小時前", "newsBox": "B4" },
-    { "domain": "A", "title": "橫琴官網發布合作區消息", "source": "橫琴官網", "time": "2 小時前", "newsBox": "A4" },
-    { "domain": "C", "title": "財經新聞跟進美股期貨", "source": "財經新聞", "time": "1 小時前", "newsBox": "C2" },
-    { "domain": "A", "title": "灣區總覽整理最新跨區政策", "source": "灣區總覽", "time": "2 小時前", "newsBox": "A4" }
-  ]
+    {
+      "title": "GCS 發布政府最新新聞 01",
+      "source": "GCS",
+      "time": "10 分鐘前",
+      "newsBox": "A1",
+      "tag": "新",
+      "domain": "A",
+      "summary": "本地政策更新最密集，涉及公共服務與民生安排，建議優先閱讀。"
+    },
+    {
+      "title": "澳門日報整理民生政策重點 02",
+      "source": "澳門日報",
+      "time": "18 分鐘前",
+      "newsBox": "A2",
+      "domain": "A",
+      "summary": "澳門日報 相關消息延伸跟進。",
+      "tag": "追蹤"
+    },
+    {
+      "title": "TDM 跟進本地公共服務安排 03",
+      "source": "TDM",
+      "time": "26 分鐘前",
+      "newsBox": "A2",
+      "tag": "追蹤",
+      "domain": "A",
+      "summary": "TDM 相關消息延伸跟進。"
+    },
+    {
+      "title": "公共建設局更新工程進度 04",
+      "source": "公共建設局",
+      "time": "35 分鐘前",
+      "newsBox": "A5",
+      "tag": "重點",
+      "domain": "A",
+      "summary": "公共建設局 相關消息延伸跟進。"
+    },
+    {
+      "title": "立法會整理口頭質詢安排 05",
+      "source": "立法會",
+      "time": "42 分鐘前",
+      "newsBox": "A1",
+      "domain": "A",
+      "summary": "立法會 相關消息延伸跟進。",
+      "tag": "追蹤"
+    },
+    {
+      "title": "橫琴官網發布合作區動態 06",
+      "source": "橫琴官網",
+      "time": "55 分鐘前",
+      "newsBox": "A4",
+      "domain": "A",
+      "summary": "橫琴官網 相關消息延伸跟進。",
+      "tag": "追蹤"
+    },
+    {
+      "title": "Macao Business 關注政策與商業影響 07",
+      "source": "Macao Business",
+      "time": "1 小時前",
+      "newsBox": "A3",
+      "domain": "A",
+      "summary": "Macao Business 相關消息延伸跟進。",
+      "tag": "追蹤"
+    },
+    {
+      "title": "CAEU 整理城市規劃委員會消息 08",
+      "source": "CAEU",
+      "time": "1 小時 20 分前",
+      "newsBox": "A5",
+      "domain": "A",
+      "summary": "CAEU 相關消息延伸跟進。",
+      "tag": "追蹤"
+    },
+    {
+      "title": "灣區總覽跟進區域合作議題 09",
+      "source": "灣區總覽",
+      "time": "1 小時 45 分前",
+      "newsBox": "A4",
+      "domain": "A",
+      "summary": "灣區總覽 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "澳門有線整理本地新聞追蹤 10",
+      "source": "澳門有線",
+      "time": "2 小時前",
+      "newsBox": "A2",
+      "domain": "A",
+      "summary": "澳門有線 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "GCS 發布政府最新新聞 11",
+      "source": "GCS",
+      "time": "2 小時 30 分前",
+      "newsBox": "A1",
+      "tag": "新",
+      "domain": "A",
+      "summary": "GCS 相關消息延伸跟進。"
+    },
+    {
+      "title": "澳門日報整理民生政策重點 12",
+      "source": "澳門日報",
+      "time": "3 小時前",
+      "newsBox": "A2",
+      "domain": "A",
+      "summary": "澳門日報 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "TDM 跟進本地公共服務安排 13",
+      "source": "TDM",
+      "time": "3 小時 30 分前",
+      "newsBox": "A2",
+      "tag": "追蹤",
+      "domain": "A",
+      "summary": "TDM 相關消息延伸跟進。"
+    },
+    {
+      "title": "公共建設局更新工程進度 14",
+      "source": "公共建設局",
+      "time": "4 小時前",
+      "newsBox": "A5",
+      "tag": "重點",
+      "domain": "A",
+      "summary": "公共建設局 相關消息延伸跟進。"
+    },
+    {
+      "title": "立法會整理口頭質詢安排 15",
+      "source": "立法會",
+      "time": "4 小時 45 分前",
+      "newsBox": "A1",
+      "domain": "A",
+      "summary": "立法會 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "橫琴官網發布合作區動態 16",
+      "source": "橫琴官網",
+      "time": "5 小時前",
+      "newsBox": "A4",
+      "domain": "A",
+      "summary": "橫琴官網 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "Roma 官方發布最新訓練消息 01",
+      "source": "AS Roma Official",
+      "time": "10 分鐘前",
+      "newsBox": "B3",
+      "tag": "新",
+      "domain": "B",
+      "summary": "AS Roma Official 相關消息延伸跟進。"
+    },
+    {
+      "title": "LaRoma24 跟進球隊備戰狀態 02",
+      "source": "LaRoma24",
+      "time": "18 分鐘前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "LaRoma24 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "ForzaRoma 整理轉會傳聞摘要 03",
+      "source": "ForzaRoma",
+      "time": "26 分鐘前",
+      "newsBox": "B2",
+      "tag": "追蹤",
+      "domain": "B",
+      "summary": "ForzaRoma 相關消息延伸跟進。"
+    },
+    {
+      "title": "Il Romanista 關注賽前部署 04",
+      "source": "Il Romanista",
+      "time": "35 分鐘前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "Il Romanista 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "比賽列表更新下輪賽程 05",
+      "source": "Fixture",
+      "time": "42 分鐘前",
+      "newsBox": "B4",
+      "domain": "B",
+      "summary": "Fixture 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "傷病名單等待官方確認 06",
+      "source": "LaRoma24",
+      "time": "55 分鐘前",
+      "newsBox": "B2",
+      "tag": "傷病",
+      "domain": "B",
+      "summary": "LaRoma24 相關消息延伸跟進。"
+    },
+    {
+      "title": "青年隊消息整理 07",
+      "source": "Il Romanista",
+      "time": "1 小時前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "Il Romanista 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "管理層會議消息更新 08",
+      "source": "ForzaRoma",
+      "time": "1 小時 20 分前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "ForzaRoma 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "Roma 官方發布最新訓練消息 09",
+      "source": "AS Roma Official",
+      "time": "1 小時 45 分前",
+      "newsBox": "B3",
+      "tag": "新",
+      "domain": "B",
+      "summary": "AS Roma Official 相關消息延伸跟進。"
+    },
+    {
+      "title": "LaRoma24 跟進球隊備戰狀態 10",
+      "source": "LaRoma24",
+      "time": "2 小時前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "LaRoma24 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "ForzaRoma 整理轉會傳聞摘要 11",
+      "source": "ForzaRoma",
+      "time": "2 小時 30 分前",
+      "newsBox": "B2",
+      "tag": "追蹤",
+      "domain": "B",
+      "summary": "ForzaRoma 相關消息延伸跟進。"
+    },
+    {
+      "title": "Il Romanista 關注賽前部署 12",
+      "source": "Il Romanista",
+      "time": "3 小時前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "Il Romanista 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "比賽列表更新下輪賽程 13",
+      "source": "Fixture",
+      "time": "3 小時 30 分前",
+      "newsBox": "B4",
+      "domain": "B",
+      "summary": "Fixture 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "傷病名單等待官方確認 14",
+      "source": "LaRoma24",
+      "time": "4 小時前",
+      "newsBox": "B2",
+      "tag": "傷病",
+      "domain": "B",
+      "summary": "LaRoma24 相關消息延伸跟進。"
+    },
+    {
+      "title": "青年隊消息整理 15",
+      "source": "Il Romanista",
+      "time": "4 小時 45 分前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "Il Romanista 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "管理層會議消息更新 16",
+      "source": "ForzaRoma",
+      "time": "5 小時前",
+      "newsBox": "B2",
+      "domain": "B",
+      "summary": "ForzaRoma 相關消息延伸跟進。",
+      "tag": ""
+    },
+    {
+      "title": "NOK / NVDA Watchlist 準備中 01",
+      "source": "Watchlist",
+      "time": "10 分鐘前",
+      "newsBox": "C1",
+      "tag": "追蹤",
+      "domain": "C",
+      "summary": "Watchlist 相關消息延伸跟進。"
+    },
+    {
+      "title": "AI 半導體觀察清單更新 02",
+      "source": "AI / 半導體",
+      "time": "18 分鐘前",
+      "newsBox": "C3",
+      "tag": "重點",
+      "domain": "C",
+      "summary": "AI / 半導體 相關消息延伸跟進。"
+    },
+    {
+      "title": "財經新聞整理市場早段重點 03",
+      "source": "財經新聞",
+      "time": "26 分鐘前",
+      "newsBox": "C2",
+      "domain": "C",
+      "summary": "財經新聞 相關消息延伸跟進。",
+      "tag": ""
+    }
+  ],
+  "recent72hMeta": {
+    "title": "72 小時新聞",
+    "subtitle": "最近 72 小時內已收錄消息",
+    "viewAllLabel": "72h 全部 →",
+    "filters": [
+      "全部",
+      "政府政策",
+      "AS Roma",
+      "財經市場",
+      "熱點"
+    ]
+  },
+  "recent72hSorts": [
+    "重要性排序",
+    "時間由新至舊",
+    "時間由舊至新"
+  ],
+  "recent72hTopicTags": {
+    "all": [
+      "#都更",
+      "#CEPA",
+      "#橫琴",
+      "#公共房屋",
+      "#市容美化",
+      "#訓練",
+      "#轉會",
+      "#Watchlist",
+      "#AI",
+      "#半導體"
+    ],
+    "A": [
+      "#都更",
+      "#CEPA",
+      "#橫琴",
+      "#公共房屋",
+      "#市容美化",
+      "#街區美化",
+      "#公共建設",
+      "#灣區",
+      "#區域合作",
+      "#立法會",
+      "#質詢",
+      "#委員會工作"
+    ],
+    "B": [
+      "#訓練",
+      "#轉會",
+      "#賽前",
+      "#比賽列表",
+      "#傷病",
+      "#續約",
+      "#管理層",
+      "#球場"
+    ],
+    "C": [
+      "#Watchlist",
+      "#AI",
+      "#半導體",
+      "#NOK",
+      "#NVDA",
+      "#財報",
+      "#目標價",
+      "#宏觀"
+    ]
+  }
 }
