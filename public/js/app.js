@@ -68,6 +68,7 @@ const densityLabel=value=>value==='compact'?'緊湊':value??'-';
 const fontScaleLabel=value=>value==='normal'?'標準':value??'-';
 const fakeTimes=['10 分鐘前','28 分鐘前','45 分鐘前'];
 const fakeTitles=['最新消息一','最新消息二','最新消息三'];
+const SOURCE_CARD_CAP=22;
 
 const setTheme=theme=>{
   document.body.dataset.theme=theme;
@@ -132,6 +133,7 @@ const mapRegistrySource=source=>({
   sourceType:source.sourceType,
   status:source.status,
   sourceCount:registrySourceCount(source),
+  refreshMin:source.refreshMin,
   disabled:source.disabled===true,
   description:source.description,
   items:fakeItemsForSource(source)
@@ -364,6 +366,59 @@ const renderAll=async()=>{
   const domains=data.domains.map(domain=>domain.domain==='A'
     ? {...domain,title:'政府政策',sources:aRegistry.sources,registryError:aRegistry.error}
     : {...domain,title:domainTitles[domain.domain]??domain.title});
+  const addMinutes=(value,minutes)=>{
+    const base=new Date(value||data.generatedAt||Date.now());
+    base.setMinutes(base.getMinutes()+(Number(minutes)||30));
+    return base.toISOString();
+  };
+  const sourceRefresh=source=>{
+    const lastUpdatedAt=source.lastUpdatedAt??data.generatedAt;
+    return {
+      lastUpdatedAt,
+      nextRefreshAt:source.nextRefreshAt??addMinutes(lastUpdatedAt,source.refreshMin)
+    };
+  };
+  const sourceListMarker=(rows,cap)=>rows.length===0
+    ? '<p class="source-list-empty">沒有資料</p>'
+    : rows.length<cap
+      ? '<p class="source-list-end">沒有更多了</p>'
+      : '';
+  const sourceRows=source=>{
+    const rows=(source.items??[]).slice(0,SOURCE_CARD_CAP);
+    const stripSourceTitle=title=>{
+      const raw=String(title??'');
+      const label=String(source.label??'').trim();
+      return label&&raw.startsWith(`${label} `)?raw.slice(label.length+1):raw;
+    };
+    return `${rows.map((item,index)=>`
+      <div class="source-news-row">
+        <span>${h(index+1)}.</span>
+        <div><strong>${h(stripSourceTitle(item.title))}</strong><small> - ${h(item.time)}</small></div>
+      </div>
+    `).join('')}${sourceListMarker(rows,SOURCE_CARD_CAP)}`;
+  };
+  const sourceCard=source=>`
+    <article class="expanded-source-card">
+      <div class="source-card-head">
+        <div class="source-card-title">
+          ${renderSourceIcon(source,{size:'sm'})}
+          <h3>${h(source.label)}</h3>
+          <div class="source-card-tags">
+            ${(source.newsBoxIds??[]).map(id=>`<span>${h(id)}</span>`).join('')}
+          </div>
+        </div>
+        <div class="source-card-tools">
+          <span class="source-status-chip">${h(statusText(source.status))}</span>
+          <span>${refreshMeta(sourceRefresh(source))}</span>
+          <button type="button" class="source-card-refresh" aria-label="${h(source.label)} 立即刷新">⭮</button>
+        </div>
+      </div>
+      <p class="source-card-desc">${h(source.description)}</p>
+      <div class="source-news-list soft-scroll">
+        ${sourceRows(source)}
+      </div>
+    </article>
+  `;
 
   const draw=()=>{
     app.innerHTML=`
@@ -393,24 +448,9 @@ const renderAll=async()=>{
                     </button>
                   `).join('')}
                 </div>
-                <div class="expanded-source-grid">
-                  ${activeSources.map(source=>`
-                    <article class="expanded-source-card">
-                      <h3>${renderSourceIcon(source,{size:'sm'})}<span>${h(source.label)}</span></h3>
-                      <p>${h(source.description)}</p>
-                      <div class="newsbox-tags">
-                        ${(source.newsBoxIds??[]).map(id=>`<span>${h(id)}</span>`).join('')}
-                      </div>
-                      <div class="meta">${h(sourceCountText(source.sourceCount))} · ${h(statusText(source.status))}</div>
-                      ${(source.items??[]).slice(0,3).map((item,index)=>`
-                        <div class="item">
-                          <div>${index+1}. ${h(item.title)}</div>
-                          <div class="meta">${h(item.source)} · ${h(item.time)} · ${h(item.newsBox)}</div>
-                        </div>
-                      `).join('')}
-                    </article>
-                  `).join('')}
-                </div>
+                ${activeSources.length?`<div class="expanded-source-grid">
+                  ${activeSources.map(sourceCard).join('')}
+                </div>`:''}
               </div>
             </section>
           `;
@@ -427,6 +467,13 @@ const renderAll=async()=>{
           ? expanded.filter(key=>key!==sourceKey)
           : [sourceKey,...expanded.filter(key=>key!==sourceKey)].slice(0,3);
         draw();
+      };
+    });
+    app.querySelectorAll('.source-card-refresh').forEach(button=>{
+      button.onclick=()=>{
+        button.classList.add('refreshing');
+        button.textContent='更新中';
+        setTimeout(draw,800);
       };
     });
   };
