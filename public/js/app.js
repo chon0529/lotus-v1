@@ -54,6 +54,7 @@ const getOptionalJson=async(path,fallback)=>{
 };
 
 const h=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const linkAttrs=item=>item?.url?` role="link" tabindex="0" data-url="${h(item.url)}"`:'';
 const normalizePage=page=>page==='recent_72h'?'sub_72h':page;
 const setActive=page=>navs.forEach(nav=>nav.classList.toggle('active',nav.dataset.page===normalizePage(page)));
 const getActivePage=()=>currentPage;
@@ -282,7 +283,7 @@ const renderMain=async()=>{
   `;
 
   const newsRow=(item,index)=>`
-    <div class="news-row">
+    <div class="news-row"${linkAttrs(item)}>
       <span class="news-row-no">${h(String(index+1).padStart(2,'0'))}</span>
       <div class="news-row-body">
         <strong>${itemTag(item)?`<em>${h(itemTag(item))}</em>`:''}${h(item.title)}</strong>
@@ -335,7 +336,7 @@ const renderMain=async()=>{
   const hotMeta=refreshMap.hot??{};
   const hotTiers=sectionMeta.hot?.tiers??['優先閱讀','正在升溫','全站最新'];
   const hotRow=(item,index)=>`
-    <div class="hot-row">
+    <div class="hot-row"${linkAttrs(item)}>
       <span class="news-row-no">${h(String(index+6).padStart(2,'0'))}</span>
       ${domainBadge(item.domain)}
       <div>
@@ -435,6 +436,21 @@ const renderMain=async()=>{
       setTimeout(()=>renderMain(),800);
     };
   });
+  app.addEventListener('click',event=>{
+    const row=event.target.closest('[data-url]');
+    if(!row)return;
+    const url=row.dataset.url;
+    if(url)window.open(url,'_blank','noopener,noreferrer');
+  });
+  app.addEventListener('keydown',event=>{
+    if(event.key!=='Enter'&&event.key!==' ')return;
+    const row=event.target.closest('[data-url]');
+    if(!row)return;
+    event.preventDefault();
+    const url=row.dataset.url;
+    if(url)window.open(url,'_blank','noopener,noreferrer');
+  });
+
   app.querySelector('.ops-refresh')?.addEventListener('click',()=>renderMain());
   app.querySelectorAll('.view-72h').forEach(button=>{
     button.onclick=()=>{
@@ -478,7 +494,7 @@ const renderAll=async()=>{
       return label&&raw.startsWith(`${label} `)?raw.slice(label.length+1):raw;
     };
     return `${rows.map((item,index)=>`
-      <div class="source-news-row">
+      <div class="source-news-row"${linkAttrs(item)}>
         <span>${h(index+1)}.</span>
         <div><strong>${h(stripSourceTitle(item.title))}</strong><small> - ${h(item.time)}</small></div>
       </div>
@@ -930,7 +946,7 @@ const renderHealth=async()=>{
   const monitorRows=source=>{
     const rows=(source.items??[]).slice(0,HEALTH_SOURCE_CARD_CAP);
     return `${rows.map((item,index)=>`
-      <div class="monitor-news-row">
+      <div class="monitor-news-row"${linkAttrs(item)}>
         <span>${h(String(index+1).padStart(2,'0'))}.</span>
         <strong>${h(stripSourceTitle(source,item.title))}</strong>
         <small> - ${h(item.time??item.timeText??'待接入')}</small>
