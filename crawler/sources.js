@@ -166,9 +166,50 @@ const parseExmoo=async source=>{
 
 const parseMacauCableTv=async source=>{
   const text=await fetchText('https://r.jina.ai/https://www.macaucabletv.com/video/category/ALL');
-  return parseMarkdownByHost(text,'macaucabletv.com',source.maxItems,{tags:['澳門有線']})
-    .filter(item=>/\/video\//i.test(item.url)||/\/news\//i.test(item.url));
+  const items=[];
+  const seen=new Set();
+  const pad=n=>String(n).padStart(2,'0');
+  const parseDate=value=>{
+    const match=String(value??'').match(/(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日/);
+    return match?`${match[1]}-${pad(match[2])}-${pad(match[3])}T09:00:00+08:00`:'';
+  };
+  const clean=value=>decodeHtml(String(value??'')
+    .replace(/!\[[^\]]*\]\([^)]+\)/g,' ')
+    .replace(/\[[^\]]*\]\([^)]+\)/g,' ')
+    .replace(/[#*_`>]/g,' ')
+    .replace(/\s+/g,' ')
+    .trim());
+
+  const patterns=[
+    /\[!\[[^\]]*\]\([^)]+\)\s*([\s\S]*?)(\d{4}年\s*\d{1,2}月\s*\d{1,2}日)[\s\S]*?\]\((https?:\/\/(?:www\.)?macaucabletv\.com\/(?:video|news)\/[^)\s]+)\)/g,
+    /\[([\s\S]{4,260}?)(\d{4}年\s*\d{1,2}月\s*\d{1,2}日)[\s\S]*?\]\((https?:\/\/(?:www\.)?macaucabletv\.com\/(?:video|news)\/[^)\s]+)\)/g
+  ];
+
+  for(const re of patterns){
+    let match;
+    while((match=re.exec(text))&&items.length<source.maxItems){
+      const title=clean(match[1])
+        .replace(/^.*?\.jpg\)\s*/i,'')
+        .replace(/^影片\s+/,'')
+        .split(/\s+(?:由|為|作為|本澳|澳門|珠海|橫琴|銀河娛樂|郵電局|5月\d{1,2}日|\d{1,2}月\d{1,2}日)[，,]/)[0]
+        .split(/\s+(?:由|為|作為|5月\d{1,2}日|\d{1,2}月\d{1,2}日)/)[0]
+        .replace(/＆middot;/g,'·')
+        .slice(0,70)
+        .trim();
+      const publishedAt=parseDate(match[2]);
+      const url=absoluteUrl(match[3],'https://www.macaucabletv.com/');
+      if(!title||!publishedAt||!url)continue;
+      if(/^(首頁|主頁|關於我們|更多|ALL|Image)$/i.test(title))continue;
+      const key=`${title}|${url}|${publishedAt}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+      items.push({title,url,publishedAt,tags:['澳門有線']});
+    }
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
 };
+
 
 const parsePlataforma=async source=>{
   const pages=[

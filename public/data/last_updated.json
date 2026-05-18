@@ -127,12 +127,12 @@
       "sourceName": "澳門有線",
       "domain": "A",
       "category": "A2",
-      "lastRun": "2026-05-18T01:30:47+08:00",
-      "lastSuccess": null,
-      "lastFailure": "2026-05-18T01:30:47+08:00",
-      "nextRun": "2026-05-18T02:00:47+08:00",
-      "status": "empty",
-      "message": "No valid items parsed; existing fetch output preserved."
+      "lastRun": "2026-05-18T13:57:14+08:00",
+      "lastSuccess": "2026-05-18T13:57:14+08:00",
+      "lastFailure": "2026-05-18T08:16:40+08:00",
+      "nextRun": "2026-05-18T14:27:14+08:00",
+      "status": "normal",
+      "message": "30 items fetched"
     },
     "a_plataforma": {
       "sourceId": "a_plataforma",
@@ -147,5 +147,5 @@
       "message": "30 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T01:31:08+08:00"
+  "generatedAt": "2026-05-18T13:57:14+08:00"
 }

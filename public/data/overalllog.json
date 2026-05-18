@@ -1,5 +1,43 @@
 [
   {
+    "timestamp": "2026-05-18T13:57:27+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T13:57:14+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "running",
+    "message": "Starting 澳門有線"
+  },
+  {
+    "timestamp": "2026-05-18T08:37:20+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "normal",
+    "message": "29 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T08:37:18+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "running",
+    "message": "Starting 澳門有線"
+  },
+  {
+    "timestamp": "2026-05-18T08:16:45+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "empty",
+    "message": "No valid items parsed; existing fetch output preserved."
+  },
+  {
+    "timestamp": "2026-05-18T08:16:40+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "running",
+    "message": "Starting 澳門有線"
+  },
+  {
     "timestamp": "2026-05-18T01:31:24+08:00",
     "sourceId": "a_plataforma",
     "status": "normal",

@@ -1,0 +1,463 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_macaucabletv",
+  "sourceName": "澳門有線",
+  "domain": "A",
+  "category": "A2",
+  "generatedAt": "2026-05-18T13:57:14+08:00",
+  "fetchedAt": "2026-05-18T13:57:14+08:00",
+  "status": "normal",
+  "count": 30,
+  "items": [
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102850",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "第二屆粵澳流行音樂周在橫琴圓滿落幕",
+      "url": "https://www.macaucabletv.com/video/page/102850",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102849",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "【 有線直播 】國務院新聞發佈會",
+      "url": "https://www.macaucabletv.com/video/page/102849",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102848",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "珠光·光合匯5.31啓幕",
+      "url": "https://www.macaucabletv.com/video/page/102848",
+      "publishedAt": "2026-05-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102847",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "「樂施米義賣大行動2026」首日氣氛熱烈",
+      "url": "https://www.macaucabletv.com/video/page/102847",
+      "publishedAt": "2026-05-16T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102846",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "「育」見美好·家「陪」幸福啟動禮舉行",
+      "url": "https://www.macaucabletv.com/video/page/102846",
+      "publishedAt": "2026-05-16T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102845",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "銀娛嘉許近萬名長期服務團隊成員",
+      "url": "https://www.macaucabletv.com/video/page/102845",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102844",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "2026年首屆澳門低空經濟暨全空間無人體系創新發展論壇成功舉辦",
+      "url": "https://www.macaucabletv.com/video/page/102844",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102843",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "郵電局舉辦“世界電信和信息社會日”慶祝活動",
+      "url": "https://www.macaucabletv.com/video/page/102843",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102842",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門無疆界青年協會舉辦「新濠呈獻-第十二屆全澳大專院校歌唱大賽」",
+      "url": "https://www.macaucabletv.com/video/page/102842",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102841",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "旅遊局預計今年國際旅客超300萬",
+      "url": "https://www.macaucabletv.com/video/page/102841",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102840",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "亞洲國際娛樂展開幕",
+      "url": "https://www.macaucabletv.com/video/page/102840",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102839",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "橫琴口岸聯合一站式車道升級應用「智能通關」",
+      "url": "https://www.macaucabletv.com/video/page/102839",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102838",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "光影傳情：自閉症協會親子皮影戲探訪長者 暖心互動促共融 社會工作局部分贊助下，為加深大眾對自閉症人士的理解，澳門自閉症協會由孫賽敏會長帶領親",
+      "url": "https://www.macaucabletv.com/video/page/102838",
+      "publishedAt": "2026-05-11T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102837",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "「童夢工作體驗嘉年華2026」5月12日啟幕",
+      "url": "https://www.macaucabletv.com/video/page/102837",
+      "publishedAt": "2026-05-11T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102836",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "2026「廣西三月三」澳門啟幕 2026「廣西三月三」走進澳門啟動儀式暨「遇見廣西」文旅推介會5月9日舉行。活動以「歌傳桂澳情 非遺潤同心」",
+      "url": "https://www.macaucabletv.com/video/page/102836",
+      "publishedAt": "2026-05-09T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102835",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "母親會《讓愛常在》 母親會5月4日舉辦「頌親恩」探訪慶祝活動，會長賀定一等理監事走進三間長者院舍，送上關懷與母親節節日祝福。",
+      "url": "https://www.macaucabletv.com/video/page/102835",
+      "publishedAt": "2026-05-09T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102834",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門小戰士障礙挑戰賽5月31日漁人碼頭開賽",
+      "url": "https://www.macaucabletv.com/video/page/102834",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102833",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "霸王茶姬澳門首店正式開業",
+      "url": "https://www.macaucabletv.com/video/page/102833",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102832",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門青年就業配對會一連三日舉行 提供逾1300職缺",
+      "url": "https://www.macaucabletv.com/video/page/102832",
+      "publishedAt": "2026-05-07T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102831",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "全澳首家啤牌工廠Bee Macau正式營運",
+      "url": "https://www.macaucabletv.com/video/page/102831",
+      "publishedAt": "2026-05-07T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102830",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "五一珠海文旅火出圈 格旅承包山海城歡樂 「五一」假期圓滿收官，大灣區文旅消費市場持續升溫、活力迸發。面對假期客流高峰與多變的天氣考驗，格力集",
+      "url": "https://www.macaucabletv.com/video/page/102830",
+      "publishedAt": "2026-05-07T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102829",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "【澳琴聯遊 · 一站式假期】多元套票組合 x 橫琴伍號酒店｜睇Show食玩瞓，一票搞掂！ 今期流行！「 帶媽咪去旅行」享受會員與母親節雙重溫",
+      "url": "https://www.macaucabletv.com/video/page/102829",
+      "publishedAt": "2026-05-05T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102828",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳大本科內地招生",
+      "url": "https://www.macaucabletv.com/video/page/102828",
+      "publishedAt": "2026-05-04T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102827",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "「同風共韻，和美澳門」宗教文藝匯演盛大舉行",
+      "url": "https://www.macaucabletv.com/video/page/102827",
+      "publishedAt": "2026-05-04T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102826",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門自閉症協會組織架構成員及會員參觀全民國家安全教育展 配合國家發展新征程，澳門自閉症協會由會長孫賽敏及理事長許朝妍帶領，組織三十多名會員及",
+      "url": "https://www.macaucabletv.com/video/page/102826",
+      "publishedAt": "2026-05-04T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102824",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "「福隆微醺週末」5月22日登場 跨界融合活化社區經濟",
+      "url": "https://www.macaucabletv.com/video/page/102824",
+      "publishedAt": "2026-05-04T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102822",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "金沙中國啟動「草堆街片區活化項目2.0」 金沙中國有限公司4月29日正式啟動新一輪「草堆街片區活化項目 2.0」，招募本地中小企進駐草堆街，",
+      "url": "https://www.macaucabletv.com/video/page/102822",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102821",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門科學館科幻文學講堂走進教業中學",
+      "url": "https://www.macaucabletv.com/video/page/102821",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102820",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "樂施米義賣大行動5月中舉行 樂施會年度旗艦籌款活動「樂施米義賣大行動2026」將於5月16日至17日一連兩天於澳門多個地點舉行。今年是本活動",
+      "url": "https://www.macaucabletv.com/video/page/102820",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaucabletv_https-www-macaucabletv-com-video-page-102825",
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "title": "海來阿木「不如見一面」巡迴演唱會澳門站二度開唱",
+      "url": "https://www.macaucabletv.com/video/page/102825",
+      "publishedAt": "2024-12-21T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T13:57:27+08:00",
+      "tags": [
+        "澳門有線"
+      ],
+      "status": "normal"
+    }
+  ]
+}
