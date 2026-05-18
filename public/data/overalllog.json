@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-05-18T23:29:17+08:00",
+    "sourceId": "a_gcsgba",
+    "status": "normal",
+    "message": "9 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T23:29:11+08:00",
+    "sourceId": "a_gcsgba",
+    "status": "running",
+    "message": "Starting GCS 粵港澳大灣區"
+  },
+  {
+    "timestamp": "2026-05-18T23:29:07+08:00",
+    "sourceId": "a_gcsgba",
+    "status": "normal",
+    "message": "9 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T23:28:28+08:00",
+    "sourceId": "a_gcsgba",
+    "status": "running",
+    "message": "Starting GCS 粵港澳大灣區"
+  },
+  {
     "timestamp": "2026-05-18T23:26:00+08:00",
     "sourceId": "a_gcs_housing",
     "status": "normal",

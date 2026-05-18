@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T23:25:45+08:00",
+  "generatedAt": "2026-05-18T23:29:11+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -321,6 +321,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "14 小時前",
       "oldestItemAgeText": "27 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_gcsgba",
+      "sourceKey": "a_gcsgba",
+      "name": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "newsBox": "A4",
+      "status": "normal",
+      "lastRun": "2026-05-18T23:29:11+08:00",
+      "lastSuccess": "2026-05-18T23:29:11+08:00",
+      "nextRefresh": "2026-05-18T23:59:11+08:00",
+      "failCount": 0,
+      "latestCount": 9,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "5 日前",
+      "oldestItemAgeText": "39 日前",
       "relevanceStatus": "matched",
       "lastError": null
     }

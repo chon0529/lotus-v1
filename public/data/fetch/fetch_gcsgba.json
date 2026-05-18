@@ -1,0 +1,157 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_gcsgba",
+  "sourceName": "GCS 粵港澳大灣區",
+  "domain": "A",
+  "category": "A4",
+  "generatedAt": "2026-05-18T23:29:11+08:00",
+  "fetchedAt": "2026-05-18T23:29:11+08:00",
+  "status": "normal",
+  "count": 9,
+  "items": [
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26engxeqc-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "“琴澳家庭醫學聯合培訓中心”於橫琴揭牌 致力提升兩地家庭醫學培訓、基層服務能力和社區健康管理水平",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26ENGXEqC?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26ekzf3a2-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "澳大校長於粵港澳大灣區論壇作主旨演講",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EKzF3A2?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-05-11T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26ehdsnre-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "粵港澳赴長三角聯合招商 賦能半導體及集成電路產業協同發展",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EHDSnre?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26ehft33w-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "澳門高校就業日推廣“澳門青年大灣區職業之路資助計劃",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EHft33W?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26ehkb2fa-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "教青局組織高校走進大灣區展示澳門高等教育優勢特色",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EHKB2fa?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26ehgdoop-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "粵港澳聯辦六五環境日國家主場活動 藉大灣區環保合作共推構建美麗中國",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EHgDOop?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26dr92rj9-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "澳門招商局與南沙區商務局達成合作協議 共建汽車出海新通道",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26DR92rj9?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-04-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26dodtewj-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "行政長官岑浩輝會見全國政協常委、港澳台僑委員會主任劉賜貴率領的粵港澳大灣區調研組",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26DOdTeWj?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-04-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcsgba_https-www-gcs-gov-mo-detail-zh-hant-n26dj6e3xv-topic-e7-b2-b5-e6-b8-af",
+      "sourceId": "a_gcsgba",
+      "sourceName": "GCS 粵港澳大灣區",
+      "domain": "A",
+      "category": "A4",
+      "title": "市政署獲粵港澳大灣區花園大賽金獎及最佳特色獎",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26DJ6e3xv?topic=%E7%B2%B5%E6%B8%AF%E6%BE%B3%E5%A4%A7%E7%81%A3%E5%8D%80",
+      "publishedAt": "2026-04-10T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:29:17+08:00",
+      "tags": [
+        "GCS",
+        "粵港澳大灣區"
+      ],
+      "status": "normal"
+    }
+  ]
+}
