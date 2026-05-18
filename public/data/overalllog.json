@@ -1,5 +1,81 @@
 [
   {
+    "timestamp": "2026-05-18T01:31:24+08:00",
+    "sourceId": "a_plataforma",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T01:31:08+08:00",
+    "sourceId": "a_plataforma",
+    "status": "running",
+    "message": "Starting Plataforma"
+  },
+  {
+    "timestamp": "2026-05-18T01:31:00+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "empty",
+    "message": "No valid items parsed; existing fetch output preserved."
+  },
+  {
+    "timestamp": "2026-05-18T01:30:47+08:00",
+    "sourceId": "a_macaucabletv",
+    "status": "running",
+    "message": "Starting 澳門有線"
+  },
+  {
+    "timestamp": "2026-05-18T01:30:39+08:00",
+    "sourceId": "a_exmoo",
+    "status": "normal",
+    "message": "24 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T01:30:29+08:00",
+    "sourceId": "a_exmoo",
+    "status": "running",
+    "message": "Starting 力報"
+  },
+  {
+    "timestamp": "2026-05-18T01:30:18+08:00",
+    "sourceId": "a_chengpou",
+    "status": "normal",
+    "message": "2 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T01:29:58+08:00",
+    "sourceId": "a_chengpou",
+    "status": "running",
+    "message": "Starting 正報"
+  },
+  {
+    "timestamp": "2026-05-18T01:29:26+08:00",
+    "sourceId": "a_allinmedia",
+    "status": "empty",
+    "message": "No valid items parsed; existing fetch output preserved."
+  },
+  {
+    "timestamp": "2026-05-18T01:29:22+08:00",
+    "sourceId": "a_allinmedia",
+    "status": "running",
+    "message": "Starting AllinMedia"
+  },
+  {
+    "timestamp": "2026-05-18T01:28:14+08:00",
+    "sourceId": "a_aamacau",
+    "status": "normal",
+    "message": "12 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T01:28:10+08:00",
+    "sourceId": "a_aamacau",
+    "status": "running",
+    "message": "Starting 論盡媒體"
+  },
+  {
     "timestamp": "2026-05-17T23:10:47+08:00",
     "sourceId": "a_caeu",
     "status": "normal",

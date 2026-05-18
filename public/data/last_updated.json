@@ -73,7 +73,79 @@
       "nextRun": "2026-05-17T23:36:51+08:00",
       "status": "normal",
       "message": "30 items fetched"
+    },
+    "a_aamacau": {
+      "sourceId": "a_aamacau",
+      "sourceName": "論盡媒體",
+      "domain": "A",
+      "category": "A2",
+      "lastRun": "2026-05-18T01:28:10+08:00",
+      "lastSuccess": "2026-05-18T01:28:10+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-18T01:58:10+08:00",
+      "status": "normal",
+      "message": "12 items fetched"
+    },
+    "a_allinmedia": {
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "lastRun": "2026-05-18T01:29:22+08:00",
+      "lastSuccess": null,
+      "lastFailure": "2026-05-18T01:29:22+08:00",
+      "nextRun": "2026-05-18T01:59:22+08:00",
+      "status": "empty",
+      "message": "No valid items parsed; existing fetch output preserved."
+    },
+    "a_chengpou": {
+      "sourceId": "a_chengpou",
+      "sourceName": "正報",
+      "domain": "A",
+      "category": "A2",
+      "lastRun": "2026-05-18T01:29:58+08:00",
+      "lastSuccess": "2026-05-18T01:29:58+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-18T01:59:58+08:00",
+      "status": "normal",
+      "message": "2 items fetched"
+    },
+    "a_exmoo": {
+      "sourceId": "a_exmoo",
+      "sourceName": "力報",
+      "domain": "A",
+      "category": "A2",
+      "lastRun": "2026-05-18T01:30:29+08:00",
+      "lastSuccess": "2026-05-18T01:30:29+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-18T02:00:29+08:00",
+      "status": "normal",
+      "message": "24 items fetched"
+    },
+    "a_macaucabletv": {
+      "sourceId": "a_macaucabletv",
+      "sourceName": "澳門有線",
+      "domain": "A",
+      "category": "A2",
+      "lastRun": "2026-05-18T01:30:47+08:00",
+      "lastSuccess": null,
+      "lastFailure": "2026-05-18T01:30:47+08:00",
+      "nextRun": "2026-05-18T02:00:47+08:00",
+      "status": "empty",
+      "message": "No valid items parsed; existing fetch output preserved."
+    },
+    "a_plataforma": {
+      "sourceId": "a_plataforma",
+      "sourceName": "Plataforma",
+      "domain": "A",
+      "category": "A3",
+      "lastRun": "2026-05-18T01:31:08+08:00",
+      "lastSuccess": "2026-05-18T01:31:08+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-18T02:01:08+08:00",
+      "status": "normal",
+      "message": "30 items fetched"
     }
   },
-  "generatedAt": "2026-05-17T23:10:45+08:00"
+  "generatedAt": "2026-05-18T01:31:08+08:00"
 }
