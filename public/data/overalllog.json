@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-18T21:15:35+08:00",
+    "sourceId": "a_plataforma",
+    "status": "normal",
+    "message": "8 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T21:15:34+08:00",
+    "sourceId": "a_plataforma",
+    "status": "running",
+    "message": "Starting Plataforma"
+  },
+  {
     "timestamp": "2026-05-18T20:47:39+08:00",
     "sourceId": "a_chengpou",
     "status": "normal",

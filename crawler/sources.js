@@ -258,20 +258,65 @@ const parseMacauCableTv=async source=>{
 
 
 const parsePlataforma=async source=>{
-  const pages=[
-    'https://r.jina.ai/https://www.plataformamedia.com/zh-hant/seccao/%e6%be%b3%e9%96%80/',
-    'https://r.jina.ai/https://www.plataformamedia.com/zh-hant/seccao/%e6%be%b3%e9%96%80/page/2/'
-  ];
-  const all=[];
-  for(const url of pages){
-    if(all.length>=source.maxItems)break;
-    const text=await fetchText(url);
-    all.push(...parseMarkdownByHost(text,'plataformamedia.com',source.maxItems,{tags:['Plataforma']}));
+  const text=await fetchText('https://r.jina.ai/https://www.plataformamedia.com/seccao/marcas-plataforma/');
+  const section=(text.split('# Marcas Plataforma')[1]??'').split('### Últimas Notícias')[0]??'';
+  const lines=section.split('\n');
+  const items=[];
+  const seen=new Set();
+
+  const toDate=value=>{
+    const m=String(value??'').match(/20\d{2}-\d{2}-\d{2}/);
+    return m?`${m[0]}T09:00:00+08:00`:'';
+  };
+
+  const clean=value=>decodeHtml(String(value??'')
+    .replace(/[#*_`>]/g,' ')
+    .replace(/\s+/g,' ')
+    .trim());
+
+  const linkFromLine=line=>{
+    const key='## [';
+    const a=line.indexOf(key);
+    if(a<0)return null;
+    const titleStart=a+key.length;
+    const titleEnd=line.indexOf('](',titleStart);
+    if(titleEnd<0)return null;
+    const urlStart=titleEnd+2;
+    const urlEnd=line.indexOf(')',urlStart);
+    if(urlEnd<0)return null;
+    return {
+      title:clean(line.slice(titleStart,titleEnd)).slice(0,160),
+      url:line.slice(urlStart,urlEnd)
+    };
+  };
+
+  for(let i=0;i<lines.length&&items.length<source.maxItems;i++){
+    const line=lines[i];
+    if(!line.includes('## [')||!line.includes('plataformamedia.com/20'))continue;
+
+    const link=linkFromLine(line);
+    if(!link||!link.title||!link.url)continue;
+    if(!link.url.startsWith('https://www.plataformamedia.com/20'))continue;
+
+    const near=[line,lines[i+1]??'',lines[i+2]??'',lines[i+3]??''].join(' ');
+    const publishedAt=toDate(near);
+    if(!publishedAt)continue;
+
+    const key=`${link.title}|${link.url}|${publishedAt}`;
+    if(seen.has(key))continue;
+    seen.add(key);
+
+    items.push({
+      title:link.title,
+      url:link.url,
+      publishedAt,
+      tags:['Marcas Plataforma']
+    });
   }
-  return uniqueCandidates(all)
-    .filter(item=>!/seccao|category|author|tag|wp-content|uploads/i.test(item.url))
-    .slice(0,source.maxItems);
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
 };
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},

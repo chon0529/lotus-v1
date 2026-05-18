@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T20:47:38+08:00",
+  "generatedAt": "2026-05-18T21:15:34+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -259,19 +259,19 @@
       "name": "Plataforma",
       "domain": "A",
       "newsBox": "A3",
-      "status": "stale",
-      "lastRun": "2026-05-18T01:31:08+08:00",
-      "lastSuccess": "2026-05-18T01:31:08+08:00",
-      "nextRefresh": "2026-05-18T02:01:08+08:00",
+      "status": "normal",
+      "lastRun": "2026-05-18T21:15:34+08:00",
+      "lastSuccess": "2026-05-18T21:15:34+08:00",
+      "nextRefresh": "2026-05-18T21:45:34+08:00",
       "failCount": 0,
-      "latestCount": 30,
+      "latestCount": 8,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
-      "newestItemAgeText": "1 分鐘前",
-      "oldestItemAgeText": "2313 日前",
-      "relevanceStatus": "needs_fix",
-      "lastError": "target section should be marcas-plataforma; parser needs verification"
+      "newestItemAgeText": "12 小時前",
+      "oldestItemAgeText": "26 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
     }
   ]
 }
