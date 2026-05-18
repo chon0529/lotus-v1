@@ -169,7 +169,19 @@
       "nextRun": "2026-05-18T22:42:56+08:00",
       "status": "normal",
       "message": "19 items fetched"
+    },
+    "a_gcs_housing": {
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-18T23:25:45+08:00",
+      "lastSuccess": "2026-05-18T23:25:45+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-18T23:55:45+08:00",
+      "status": "normal",
+      "message": "8 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T22:27:56+08:00"
+  "generatedAt": "2026-05-18T23:25:45+08:00"
 }

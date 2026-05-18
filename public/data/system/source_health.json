@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T22:27:56+08:00",
+  "generatedAt": "2026-05-18T23:25:45+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -301,6 +301,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "184 日前",
       "oldestItemAgeText": "229 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_gcs_housing",
+      "sourceKey": "a_gcs_housing",
+      "name": "GCS 工程房屋",
+      "domain": "A",
+      "newsBox": "A4",
+      "status": "normal",
+      "lastRun": "2026-05-18T23:25:45+08:00",
+      "lastSuccess": "2026-05-18T23:25:45+08:00",
+      "nextRefresh": "2026-05-18T23:55:45+08:00",
+      "failCount": 0,
+      "latestCount": 8,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "14 小時前",
+      "oldestItemAgeText": "27 日前",
       "relevanceStatus": "matched",
       "lastError": null
     }

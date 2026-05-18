@@ -1,0 +1,141 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_gcs_housing",
+  "sourceName": "GCS 工程房屋",
+  "domain": "A",
+  "category": "A4",
+  "generatedAt": "2026-05-18T23:25:45+08:00",
+  "fetchedAt": "2026-05-18T23:25:45+08:00",
+  "status": "normal",
+  "count": 8,
+  "items": [
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26er727xb-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "氹仔隧道及松山隧道5月20日至22日凌晨分階段封閉交通",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26ER727Xb?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26eruh0ar-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "房地產中介業務網上申請即日起可經一戶通或商社通申辦 線上查閱數碼准照便捷營商",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26ERuH0AR?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26epanwzc-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "公共建設局走進社區 就路環西側防洪排澇工程與居民深入交流並聽取意見",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EPAnWzC?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-05-16T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26eme6oif-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "按揭上限放寬帶動新批核住宅按揭貸款增",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EME6oIf?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26ehynvyy-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "2026年第一季住宅樓價指數",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EHYnvYY?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26egbpksy-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "譚偉文：做好做實Ａ區各項民生配套 多措並舉便利居民生活",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EGbpKsy?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-05-07T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26edgxjub-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "配合施工 東北大馬路臨時禁右轉入勞動節大馬路",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26EDGxjub?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-05-04T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcs_housing_https-www-gcs-gov-mo-detail-zh-hant-n26dvon9wr-category-e5-b7-a5-e7-a8",
+      "sourceId": "a_gcs_housing",
+      "sourceName": "GCS 工程房屋",
+      "domain": "A",
+      "category": "A4",
+      "title": "房屋局開展23間公屋商舖租賃之公開招標 設3個月免租優惠",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N26DVon9wr?category=%E5%B7%A5%E7%A8%8B%E6%88%BF%E5%B1%8B",
+      "publishedAt": "2026-04-22T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:26:00+08:00",
+      "tags": [
+        "GCS",
+        "工程房屋"
+      ],
+      "status": "normal"
+    }
+  ]
+}

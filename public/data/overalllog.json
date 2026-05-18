@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-18T23:26:00+08:00",
+    "sourceId": "a_gcs_housing",
+    "status": "normal",
+    "message": "8 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T23:25:45+08:00",
+    "sourceId": "a_gcs_housing",
+    "status": "running",
+    "message": "Starting GCS 工程房屋"
+  },
+  {
     "timestamp": "2026-05-18T22:27:59+08:00",
     "sourceId": "a_gcs",
     "status": "normal",
