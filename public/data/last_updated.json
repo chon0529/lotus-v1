@@ -253,7 +253,19 @@
       "nextRun": "2026-05-19T01:08:33+08:00",
       "status": "normal",
       "message": "30 items fetched"
+    },
+    "a_cpu": {
+      "sourceId": "a_cpu",
+      "sourceName": "城市規劃委員會",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-19T00:43:35+08:00",
+      "lastSuccess": "2026-05-19T00:43:35+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-19T01:13:35+08:00",
+      "status": "normal",
+      "message": "10 items fetched"
     }
   },
-  "generatedAt": "2026-05-19T00:38:33+08:00"
+  "generatedAt": "2026-05-19T00:43:35+08:00"
 }

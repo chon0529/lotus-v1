@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-19T00:43:37+08:00",
+    "sourceId": "a_cpu",
+    "status": "normal",
+    "message": "10 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-19T00:43:35+08:00",
+    "sourceId": "a_cpu",
+    "status": "running",
+    "message": "Starting 城市規劃委員會"
+  },
+  {
     "timestamp": "2026-05-19T00:39:09+08:00",
     "sourceId": "a_cru",
     "status": "normal",

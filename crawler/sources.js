@@ -1092,6 +1092,78 @@ const parseCru=async source=>{
   return uniqueCandidates(items).slice(0,source.maxItems);
 };
 
+const parseCpu=async source=>{
+  const page='https://r.jina.ai/https://www.cpu.gov.mo/zh/news/press-release';
+  const text=await fetchText(page);
+  const items=[];
+  const seen=new Set();
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const readItems=line=>{
+    const out=[];
+    let pos=0;
+    while(pos<line.length){
+      const a=line.indexOf('[20',pos);
+      if(a<0)break;
+      const b=line.indexOf('](',a);
+      const c=line.indexOf(')',b+2);
+      if(b<0||c<0)break;
+
+      const raw=line.slice(a+1,b);
+      const href=line.slice(b+2,c).split(' ')[0].trim();
+      const date=raw.slice(0,10);
+      let title=raw;
+
+      const marker='上載日期 '+date;
+      const mi=title.indexOf(marker);
+      if(mi>=0)title=title.slice(10,mi);
+      else title=title.slice(10);
+
+      title=clean(title);
+
+      if(/^20[0-9]{2}-[0-9]{2}-[0-9]{2}$/.test(date)&&title){
+        out.push({
+          title:title.slice(0,180),
+          url:absoluteUrl(href,'https://www.cpu.gov.mo/'),
+          publishedAt:`${date}T09:00:00+08:00`,
+          tags:['城市規劃委員會','CPU']
+        });
+      }
+
+      pos=c+1;
+    }
+    return out;
+  };
+
+  for(const line of text.split('\n')){
+    if(items.length>=source.maxItems)break;
+    if(!line.includes('上載日期'))continue;
+
+    for(const item of readItems(line)){
+      if(items.length>=source.maxItems)break;
+      if(!item.title||item.title.includes('網站地圖'))continue;
+
+      const key=`${item.title}|${item.publishedAt}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+      items.push(item);
+    }
+  }
+
+  return uniqueCandidates(items)
+    .sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt)))
+    .slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
@@ -1100,6 +1172,7 @@ export const sources=[
   {sourceId:'a_dsop',shortId:'dsop',sourceName:'公共建設局',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseDsop},
   {sourceId:'a_dsscu',shortId:'dsscu',sourceName:'土地工務局',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseDsscu},
   {sourceId:'a_cru',shortId:'cru',sourceName:'都市更新委員會',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseCru},
+  {sourceId:'a_cpu',shortId:'cpu',sourceName:'城市規劃委員會',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseCpu},
   {sourceId:'a_macaupostdaily',shortId:'macaupostdaily',sourceName:'Macau Post Daily',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauPostDaily},
   {sourceId:'a_macaubusiness',shortId:'macaubusiness',sourceName:'Macao Business',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacaoBusiness},
   {sourceId:'a_caeu',shortId:'caeu',sourceName:'CAEU',domain:'A',category:'A5',refreshMinutes:30,maxItems:22,fetcher:parseCaeu},
