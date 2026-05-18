@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T13:57:14+08:00",
+  "generatedAt": "2026-05-18T20:47:38+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -199,19 +199,19 @@
       "name": "正報",
       "domain": "A",
       "newsBox": "A2",
-      "status": "stale",
-      "lastRun": "2026-05-18T01:29:58+08:00",
-      "lastSuccess": "2026-05-18T01:29:58+08:00",
-      "nextRefresh": "2026-05-18T01:59:58+08:00",
+      "status": "normal",
+      "lastRun": "2026-05-18T20:47:38+08:00",
+      "lastSuccess": "2026-05-18T20:47:38+08:00",
+      "nextRefresh": "2026-05-18T21:17:38+08:00",
       "failCount": 0,
-      "latestCount": 2,
+      "latestCount": 15,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
-      "newestItemAgeText": "1 分鐘前",
-      "oldestItemAgeText": "1 分鐘前",
-      "relevanceStatus": "needs_fix",
-      "lastError": "parser produced numeric/junk titles"
+      "newestItemAgeText": "12 小時前",
+      "oldestItemAgeText": "3 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
     },
     {
       "sourceId": "a_exmoo",

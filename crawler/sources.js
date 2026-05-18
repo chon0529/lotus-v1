@@ -148,10 +148,56 @@ const parseAllinMedia=async source=>{
 };
 
 const parseChengpou=async source=>{
-  const text=await fetchText('https://r.jina.ai/https://chengpou.com.mo/newstag/Macao.html');
-  return parseMarkdownByHost(text,'chengpou.com.mo',source.maxItems,{tags:['正報']})
-    .filter(item=>/chengpou\.com\.mo\/.+/.test(item.url)&&!/newstag\/Macao\.html$/.test(item.url));
+  const text=await fetchText('https://r.jina.ai/http://chengpou.com.mo/news.html');
+  const items=[];
+  const seen=new Set();
+  const toDate=value=>{
+    const m=String(value??'').match(/20\d{2}-\d{2}-\d{2}/);
+    return m?`${m[0]}T09:00:00+08:00`:'';
+  };
+  const clean=value=>decodeHtml(String(value??'')
+    .replace(/[#*_`>]/g,' ')
+    .replace(/\s+/g,' ')
+    .trim());
+
+  for(const line of text.split(/\n+/)){
+    if(items.length>=source.maxItems)break;
+    if(!line.includes('chengpou.com.mo/dailynews/'))continue;
+
+    const date=toDate(line);
+    const urlMatch=line.match(/https?:\/\/(?:www\.)?chengpou\.com\.mo\/dailynews\/\d+\.html/);
+    if(!date||!urlMatch)continue;
+
+    let title=line;
+    const imageEnd=title.indexOf(') ');
+    if(title.startsWith('[![')&&imageEnd>0)title=title.slice(imageEnd+2);
+    title=title.split(date.slice(0,10))[0];
+    title=title.split('【本報訊】')[0];
+    title=title.split('【特訊】')[0];
+    title=title.split('【正視聽】')[0];
+    title=title.split('【特稿】')[0];
+    title=title
+      .replace(/\s+△[\s\S]*$/,'')
+      .replace(/\s+▲[\s\S]*$/,'')
+      .replace(/\s+【[\s\S]*$/,'')
+      .replace(/\s+（圖文包）[\s\S]*$/,'')
+      .replace(/\s*\.\.\.$/,'')
+      .replace(/\s+/g,' ');
+    title=clean(title).slice(0,90).trim();
+
+    if(!title||/^\d+$/.test(title)||title.length<4)continue;
+    if(/^(首頁|主頁|新聞|正報|廣告)$/.test(title))continue;
+
+    const url=urlMatch[0];
+    const key=`${title}|${url}|${date}`;
+    if(seen.has(key))continue;
+    seen.add(key);
+    items.push({title,url,publishedAt:date,tags:['正報']});
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
 };
+
 
 const parseExmoo=async source=>{
   const text=await fetchText('https://r.jina.ai/https://www.exmoo.com/hot');

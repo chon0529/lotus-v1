@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-05-18T20:47:39+08:00",
+    "sourceId": "a_chengpou",
+    "status": "normal",
+    "message": "15 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T20:47:38+08:00",
+    "sourceId": "a_chengpou",
+    "status": "running",
+    "message": "Starting 正報"
+  },
+  {
+    "timestamp": "2026-05-18T20:44:53+08:00",
+    "sourceId": "a_chengpou",
+    "status": "normal",
+    "message": "15 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T20:44:51+08:00",
+    "sourceId": "a_chengpou",
+    "status": "running",
+    "message": "Starting 正報"
+  },
+  {
     "timestamp": "2026-05-18T13:57:27+08:00",
     "sourceId": "a_macaucabletv",
     "status": "normal",

@@ -103,12 +103,12 @@
       "sourceName": "正報",
       "domain": "A",
       "category": "A2",
-      "lastRun": "2026-05-18T01:29:58+08:00",
-      "lastSuccess": "2026-05-18T01:29:58+08:00",
+      "lastRun": "2026-05-18T20:47:38+08:00",
+      "lastSuccess": "2026-05-18T20:47:38+08:00",
       "lastFailure": null,
-      "nextRun": "2026-05-18T01:59:58+08:00",
+      "nextRun": "2026-05-18T21:17:38+08:00",
       "status": "normal",
-      "message": "2 items fetched"
+      "message": "15 items fetched"
     },
     "a_exmoo": {
       "sourceId": "a_exmoo",
@@ -147,5 +147,5 @@
       "message": "30 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T13:57:14+08:00"
+  "generatedAt": "2026-05-18T20:47:38+08:00"
 }
