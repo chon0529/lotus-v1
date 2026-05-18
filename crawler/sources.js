@@ -790,6 +790,81 @@ const parseCbaAction=async source=>{
   return uniqueCandidates(items).slice(0,source.maxItems);
 };
 
+const parseCbaOverall=async source=>{
+  const pages=[
+    ['高層關注','https://r.jina.ai/https://www.cnbayarea.org.cn/news/news1/index.html'],
+    ['最新動態','https://r.jina.ai/https://www.cnbayarea.org.cn/news/focus/index.html'],
+    ['最新政策','https://r.jina.ai/https://www.cnbayarea.org.cn/policy/policy%20release/policies/index.html']
+  ];
+  const items=[];
+  const seen=new Set();
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const toDate=value=>{
+    const s=String(value??'');
+    for(const part of s.split(/\s+/)){
+      if(/^20[0-9]{2}-[0-9]{2}-[0-9]{2}$/.test(part))return `${part}T09:00:00+08:00`;
+    }
+    return '';
+  };
+
+  const readLink=line=>{
+    const mark=line.indexOf('[');
+    if(mark<0)return null;
+    const titleEnd=line.indexOf('](',mark+1);
+    if(titleEnd<0)return null;
+    const urlStart=titleEnd+2;
+    let urlEnd=line.indexOf(')',urlStart);
+    const quote=line.indexOf(' "',urlStart);
+    if(quote>0&&(urlEnd<0||quote<urlEnd))urlEnd=quote;
+    if(urlEnd<0)return null;
+    return {
+      title:clean(line.slice(mark+1,titleEnd)).slice(0,160),
+      url:absoluteUrl(line.slice(urlStart,urlEnd).trim(),'https://www.cnbayarea.org.cn/')
+    };
+  };
+
+  for(const [label,page] of pages){
+    if(items.length>=source.maxItems)break;
+    const text=await fetchText(page);
+    const lines=text.split('\n');
+
+    for(let i=0;i<lines.length&&items.length<source.maxItems;i++){
+      const line=lines[i];
+      if(!line.includes('](')||!line.includes('cnbayarea.org.cn'))continue;
+
+      const link=readLink(line);
+      if(!link||!link.title||!link.url)continue;
+      if(!link.url.includes('cnbayarea.org.cn'))continue;
+      if(link.url.includes('/index.html'))continue;
+
+      const near=[lines[i],lines[i+1]??'',lines[i+2]??'',lines[i+3]??''].join(' ');
+      const publishedAt=toDate(near);
+      if(!publishedAt)continue;
+
+      const title=`(${label}) ${link.title}`;
+      const key=`${title}|${link.url}|${publishedAt}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+
+      items.push({title,url:link.url,publishedAt,tags:['CBA',label]});
+    }
+  }
+
+  return uniqueCandidates(items)
+    .sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt)))
+    .slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
@@ -803,6 +878,7 @@ export const sources=[
   {sourceId:'a_gcshq',shortId:'gcshq',sourceName:'GCS 橫琴合作區',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseGcshq},
   {sourceId:'a_gcsgba',shortId:'gcsgba',sourceName:'GCS 粵港澳大灣區',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseGcsgba},
   {sourceId:'a_cbaaction',shortId:'cbaaction',sourceName:'CBA 灣區行動',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseCbaAction},
+  {sourceId:'a_cbaoverall',shortId:'cbaoverall',sourceName:'CBA 綜合',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseCbaOverall},
   {sourceId:'a_aamacau',shortId:'aamacau',sourceName:'論盡媒體',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseAamacau},
   {sourceId:'a_allinmedia',shortId:'allinmedia',sourceName:'AllinMedia',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseAllinMedia},
   {sourceId:'a_chengpou',shortId:'chengpou',sourceName:'正報',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseChengpou},

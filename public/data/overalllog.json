@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-18T23:41:41+08:00",
+    "sourceId": "a_cbaoverall",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T23:41:27+08:00",
+    "sourceId": "a_cbaoverall",
+    "status": "running",
+    "message": "Starting CBA 綜合"
+  },
+  {
     "timestamp": "2026-05-18T23:35:44+08:00",
     "sourceId": "a_cbaaction",
     "status": "normal",

@@ -1,0 +1,493 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_cbaoverall",
+  "sourceName": "CBA 綜合",
+  "domain": "A",
+  "category": "A4",
+  "generatedAt": "2026-05-18T23:41:27+08:00",
+  "fetchedAt": "2026-05-18T23:41:27+08:00",
+  "status": "normal",
+  "count": 30,
+  "items": [
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1327085-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 全球每10台消费级无人机，有7台带着“广东基因” 广东低空经济发展指数居全国首位",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1327085.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1327083-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 广东铁塔持续深耕13万个韧性数字基座 筑牢全域数字生命线",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1327083.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1327079-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) “澳车北上”累计突破500万辆次今年前4个月达54.4万辆次",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1327079.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1327072-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 前海“基本法”将再度修改！市人大常委会今年立法工作计划出炉",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1327072.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1327065-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 大湾区百亿级项目动工 加速打造世界级港口群 南沙港五期总投资超144亿元，可停靠世界最大级别集装箱船",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1327065.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1327054-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 重磅！南沙适飞空域扩容超1倍，不需“扫码”也能飞",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1327054.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1327048-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 亚洲最大耙吸式挖泥船“浚广”轮在广州南沙入列启用",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1327048.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326874-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 深耕科创策源 粤港澳大湾区打造世界级创新高地",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326874.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326873-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 广州以南沙为“棋眼” 扎实推进粤港澳大湾区建设",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326873.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326870-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 湾区枢纽升级 深圳机场新建 T1 航站楼打造“空铁联运”枢纽",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326870.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326787-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 广东打造制造业赋能“超级枢纽”“粤智赋”平台上线 推资源到企业",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326787.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326784-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 2026年“广东服务”品牌提升推广行动媒体行收官 服务业助实体经济跃见未来",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326784.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326783-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 广深港高铁香港段今年客流持续攀升 前4月日均客流超9万人次",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326783.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326780-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 香港运输及物流局：“粤车南下”累计预约进港约5000辆次",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326780.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-focus-content-post-1326643-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(最新動態) 增量超去年全年，1—4月广东进出口均保持两位数增长",
+      "url": "https://www.cnbayarea.org.cn/news/focus/content/post_1326643.html",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "最新動態"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1321367-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 两会受权发布｜政府工作报告",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1321367.html",
+      "publishedAt": "2026-03-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1321321-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 十四届全国人大四次会议在京闭幕",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1321321.html",
+      "publishedAt": "2026-03-12T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1320716-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 王毅谈深圳APEC：为亚太合作重新明确方向",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1320716.html",
+      "publishedAt": "2026-03-09T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1320463-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 十四届全国人大四次会议在京开幕",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1320463.html",
+      "publishedAt": "2026-03-06T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1320355-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 全国政协十四届四次会议在京开幕",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1320355.html",
+      "publishedAt": "2026-03-05T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1319022-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 王毅出席2026年亚太经合组织第一次高官会开幕式",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1319022.html",
+      "publishedAt": "2026-02-10T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1318953-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 王毅将出席2026年亚太经合组织第一次高官会",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1318953.html",
+      "publishedAt": "2026-02-09T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1315736-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 李强在广东调研时强调 厚植创新发展优势 勇立改革开放潮头 只争朝夕做好“十五五”开局之年工作",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1315736.html",
+      "publishedAt": "2026-01-06T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1314357-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 谌贻琴在广东调研时强调 加快建设足球青训体系 着力提升残疾人民生保障水平",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1314357.html",
+      "publishedAt": "2025-12-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1314207-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 习近平听取李家超述职报告",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1314207.html",
+      "publishedAt": "2025-12-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1314205-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 习近平听取岑浩辉述职报告",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1314205.html",
+      "publishedAt": "2025-12-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1313715-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 中央经济工作会议在北京举行 习近平发表重要讲话",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1313715.html",
+      "publishedAt": "2025-12-11T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1311823-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 王沪宁在广东调研时强调 深入贯彻落实党的二十届四中全会精神 为推进中国式现代化凝心聚力",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1311823.html",
+      "publishedAt": "2025-11-23T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1311820-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 谌贻琴出席2025年家庭主题中外妇女交流暨粤港澳大湾区妇女融合协同发展活动",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1311820.html",
+      "publishedAt": "2025-11-23T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaoverall_https-www-cnbayarea-org-cn-news-news1-content-post-1311765-html",
+      "sourceId": "a_cbaoverall",
+      "sourceName": "CBA 綜合",
+      "domain": "A",
+      "category": "A4",
+      "title": "(高層關注) 第十五届全国运动会在深圳闭幕，王沪宁出席闭幕式",
+      "url": "https://www.cnbayarea.org.cn/news/news1/content/post_1311765.html",
+      "publishedAt": "2025-11-22T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:41:41+08:00",
+      "tags": [
+        "CBA",
+        "高層關注"
+      ],
+      "status": "normal"
+    }
+  ]
+}
