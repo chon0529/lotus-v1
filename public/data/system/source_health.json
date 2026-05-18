@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T23:41:27+08:00",
+  "generatedAt": "2026-05-19T00:06:15+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -381,6 +381,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "15 小時前",
       "oldestItemAgeText": "178 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_dsop",
+      "sourceKey": "a_dsop",
+      "name": "公共建設局",
+      "domain": "A",
+      "newsBox": "A4",
+      "status": "normal",
+      "lastRun": "2026-05-19T00:06:15+08:00",
+      "lastSuccess": "2026-05-19T00:06:15+08:00",
+      "nextRefresh": "2026-05-19T00:36:15+08:00",
+      "failCount": 0,
+      "latestCount": 25,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "15 小時前",
+      "oldestItemAgeText": "110 日前",
       "relevanceStatus": "matched",
       "lastError": null
     }

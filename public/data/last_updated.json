@@ -217,7 +217,19 @@
       "nextRun": "2026-05-19T00:11:27+08:00",
       "status": "normal",
       "message": "30 items fetched"
+    },
+    "a_dsop": {
+      "sourceId": "a_dsop",
+      "sourceName": "公共建設局",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-19T00:06:15+08:00",
+      "lastSuccess": "2026-05-19T00:06:15+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-19T00:36:15+08:00",
+      "status": "normal",
+      "message": "25 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T23:41:27+08:00"
+  "generatedAt": "2026-05-19T00:06:15+08:00"
 }

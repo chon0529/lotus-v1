@@ -865,11 +865,92 @@ const parseCbaOverall=async source=>{
     .slice(0,source.maxItems);
 };
 
+const parseDsop=async source=>{
+  const pages=[
+    'https://r.jina.ai/https://www.dsop.gov.mo/newslist/',
+    'https://r.jina.ai/https://www.dsop.gov.mo/newslist/index_2.html',
+    'https://r.jina.ai/https://www.dsop.gov.mo/newslist/index_3.html'
+  ];
+  const items=[];
+  const seen=new Set();
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const dayFromLine=line=>{
+    const m=String(line??'').match(/\b(\d{1,2})\b/);
+    return m?String(m[1]).padStart(2,'0'):'';
+  };
+
+  const monthYearFromLine=line=>{
+    const m=String(line??'').match(/(\d{2})-(20\d{2})/);
+    return m?{month:m[1],year:m[2]}:null;
+  };
+
+  const readLink=line=>{
+    const a=line.indexOf('[');
+    const b=line.indexOf('](',a+1);
+    const c=line.indexOf(')',b+2);
+    if(a<0||b<0||c<0)return null;
+    return {
+      title:clean(line.slice(a+1,b)).slice(0,180),
+      url:absoluteUrl(line.slice(b+2,c).trim(),'https://www.dsop.gov.mo/')
+    };
+  };
+
+  for(const page of pages){
+    if(items.length>=source.maxItems)break;
+    const lines=(await fetchText(page)).split('\n');
+
+    for(let i=0;i<lines.length&&items.length<source.maxItems;i++){
+      const line=lines[i];
+      if(!line.includes('dsop.gov.mo/')||!line.includes(']('))continue;
+      if(!line.includes('/news/news/')&&!line.includes('/public/traffic/'))continue;
+
+      const link=readLink(line);
+      if(!link||!link.title||!link.url)continue;
+
+      const my=monthYearFromLine(line);
+      if(!my)continue;
+
+      let day='';
+      for(let j=i-1;j>=Math.max(0,i-8);j--){
+        day=dayFromLine(lines[j]);
+        if(day)break;
+      }
+      if(!day)continue;
+
+      const publishedAt=`${my.year}-${my.month}-${day}T09:00:00+08:00`;
+
+      const key=`${link.title}|${link.url}|${publishedAt}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+
+      items.push({
+        title:link.title,
+        url:link.url,
+        publishedAt,
+        tags:['公共建設局','DSOP']
+      });
+    }
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
   {sourceId:'a_gcs',shortId:'gcs',sourceName:'GCS',domain:'A',category:'A1',refreshMinutes:15,maxItems:35,fetcher:parseGcs},
   {sourceId:'a_gcs_housing',shortId:'gcs_housing',sourceName:'GCS 工程房屋',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseGcsHousing},
+  {sourceId:'a_dsop',shortId:'dsop',sourceName:'公共建設局',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseDsop},
   {sourceId:'a_macaupostdaily',shortId:'macaupostdaily',sourceName:'Macau Post Daily',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauPostDaily},
   {sourceId:'a_macaubusiness',shortId:'macaubusiness',sourceName:'Macao Business',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacaoBusiness},
   {sourceId:'a_caeu',shortId:'caeu',sourceName:'CAEU',domain:'A',category:'A5',refreshMinutes:30,maxItems:22,fetcher:parseCaeu},
