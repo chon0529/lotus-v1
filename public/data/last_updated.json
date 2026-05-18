@@ -157,7 +157,19 @@
       "nextRun": "2026-05-18T22:54:21+08:00",
       "status": "normal",
       "message": "6 items fetched"
+    },
+    "a_gcs": {
+      "sourceId": "a_gcs",
+      "sourceName": "GCS",
+      "domain": "A",
+      "category": "A1",
+      "lastRun": "2026-05-18T22:27:56+08:00",
+      "lastSuccess": "2026-05-18T22:27:56+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-18T22:42:56+08:00",
+      "status": "normal",
+      "message": "19 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T22:24:21+08:00"
+  "generatedAt": "2026-05-18T22:27:56+08:00"
 }

@@ -1,16 +1,27 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T22:24:21+08:00",
+  "generatedAt": "2026-05-18T22:27:56+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
       "sourceKey": "a_gcs",
-      "name": "GCS 新聞局",
+      "name": "GCS",
       "domain": "A",
       "newsBox": "A1",
       "status": "normal",
-      "lastSuccess": "10 分鐘前",
-      "nextRefresh": "20 分鐘"
+      "lastSuccess": "2026-05-18T22:27:56+08:00",
+      "nextRefresh": "2026-05-18T22:42:56+08:00",
+      "sourceId": "a_gcs",
+      "lastRun": "2026-05-18T22:27:56+08:00",
+      "failCount": 0,
+      "latestCount": 19,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "13 小時前",
+      "oldestItemAgeText": "37 小時前",
+      "relevanceStatus": "matched",
+      "lastError": null
     },
     {
       "sourceKey": "a_caeu",

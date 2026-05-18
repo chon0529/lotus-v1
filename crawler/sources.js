@@ -473,9 +473,52 @@ const parseGcshq=async source=>{
   return uniqueCandidates(items).slice(0,source.maxItems);
 };
 
+const parseGcs=async source=>{
+  const xml=await fetchText('https://govinfohub.gcs.gov.mo/api/rss/n/zh-hant');
+  const items=[];
+  const seen=new Set();
+  const getTag=(block,tag)=>{
+    const a=block.indexOf(`<${tag}>`);
+    const b=block.indexOf(`</${tag}>`,a);
+    if(a<0||b<0)return '';
+    return decodeHtml(block.slice(a+tag.length+2,b).replace(/<!\[CDATA\[|\]\]>/g,'').trim());
+  };
+  const toDate=value=>{
+    const d=new Date(value);
+    if(Number.isNaN(d.getTime()))return '';
+    const parts=new Intl.DateTimeFormat('en-CA',{
+      timeZone:'Asia/Macau',
+      year:'numeric',
+      month:'2-digit',
+      day:'2-digit',
+      hour:'2-digit',
+      minute:'2-digit',
+      hour12:false
+    }).formatToParts(d).reduce((a,p)=>(a[p.type]=p.value,a),{});
+    return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:00+08:00`;
+  };
+
+  for(const m of xml.matchAll(/<item>[\s\S]*?<\/item>/g)){
+    if(items.length>=source.maxItems)break;
+    const block=m[0];
+    const title=getTag(block,'title');
+    const url=getTag(block,'link');
+    const publishedAt=toDate(getTag(block,'pubDate'));
+    const summary=getTag(block,'description');
+    if(!title||!url||!publishedAt)continue;
+    const key=`${title}|${url}|${publishedAt}`;
+    if(seen.has(key))continue;
+    seen.add(key);
+    items.push({title,url,publishedAt,summary,tags:['GCS']});
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
+  {sourceId:'a_gcs',shortId:'gcs',sourceName:'GCS',domain:'A',category:'A1',refreshMinutes:15,maxItems:35,fetcher:parseGcs},
   {sourceId:'a_macaupostdaily',shortId:'macaupostdaily',sourceName:'Macau Post Daily',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauPostDaily},
   {sourceId:'a_macaubusiness',shortId:'macaubusiness',sourceName:'Macao Business',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacaoBusiness},
   {sourceId:'a_caeu',shortId:'caeu',sourceName:'CAEU',domain:'A',category:'A5',refreshMinutes:30,maxItems:22,fetcher:parseCaeu},
