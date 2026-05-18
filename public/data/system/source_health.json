@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T21:23:06+08:00",
+  "generatedAt": "2026-05-18T22:24:21+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -270,6 +270,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "12 小時前",
       "oldestItemAgeText": "26 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_gcshq",
+      "sourceKey": "a_gcshq",
+      "name": "GCS 橫琴合作區",
+      "domain": "A",
+      "newsBox": "A4",
+      "status": "normal",
+      "lastRun": "2026-05-18T22:24:21+08:00",
+      "lastSuccess": "2026-05-18T22:24:21+08:00",
+      "nextRefresh": "2026-05-18T22:54:21+08:00",
+      "failCount": 0,
+      "latestCount": 6,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "184 日前",
+      "oldestItemAgeText": "229 日前",
       "relevanceStatus": "matched",
       "lastError": null
     }

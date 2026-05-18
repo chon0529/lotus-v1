@@ -145,7 +145,19 @@
       "nextRun": "2026-05-18T21:45:34+08:00",
       "status": "normal",
       "message": "8 items fetched"
+    },
+    "a_gcshq": {
+      "sourceId": "a_gcshq",
+      "sourceName": "GCS 橫琴合作區",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-18T22:24:21+08:00",
+      "lastSuccess": "2026-05-18T22:24:21+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-18T22:54:21+08:00",
+      "status": "normal",
+      "message": "6 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T21:23:06+08:00"
+  "generatedAt": "2026-05-18T22:24:21+08:00"
 }

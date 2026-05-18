@@ -1,0 +1,109 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_gcshq",
+  "sourceName": "GCS 橫琴合作區",
+  "domain": "A",
+  "category": "A4",
+  "generatedAt": "2026-05-18T22:24:21+08:00",
+  "fetchedAt": "2026-05-18T22:24:21+08:00",
+  "status": "normal",
+  "count": 6,
+  "items": [
+    {
+      "id": "a_gcshq_https-www-gcs-gov-mo-detail-zh-hant-n25kpqfxtd-topic-e6-a9-ab-e7-90-b4",
+      "sourceId": "a_gcshq",
+      "sourceName": "GCS 橫琴合作區",
+      "domain": "A",
+      "category": "A4",
+      "title": "第三屆“粵澳共此時”花海歡樂季盛大啟幕 ——藝文漫遊開啟琴澳活力之旅",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N25KPqfxTd?topic=%E6%A9%AB%E7%90%B4%E7%B2%B5%E6%BE%B3%E6%B7%B1%E5%BA%A6%E5%90%88%E4%BD%9C%E5%8D%80",
+      "publishedAt": "2025-11-16T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T22:24:40+08:00",
+      "tags": [
+        "GCS",
+        "橫琴合作區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcshq_https-www-gcs-gov-mo-detail-zh-hant-n25jisl3po-topic-e6-a9-ab-e7-90-b4",
+      "sourceId": "a_gcshq",
+      "sourceName": "GCS 橫琴合作區",
+      "domain": "A",
+      "category": "A4",
+      "title": "遊玩攻略來啦！“葡風琴韻嘉年華”與你相約活力周末",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N25JIsL3po?topic=%E6%A9%AB%E7%90%B4%E7%B2%B5%E6%BE%B3%E6%B7%B1%E5%BA%A6%E5%90%88%E4%BD%9C%E5%8D%80",
+      "publishedAt": "2025-10-09T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T22:24:40+08:00",
+      "tags": [
+        "GCS",
+        "橫琴合作區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcshq_https-www-gcs-gov-mo-detail-zh-hant-n25jihm2kd-topic-e6-a9-ab-e7-90-b4",
+      "sourceId": "a_gcshq",
+      "sourceName": "GCS 橫琴合作區",
+      "domain": "A",
+      "category": "A4",
+      "title": "“華為數字化人才基礎研修計劃” 開班儀式順利舉行",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N25JIHm2kD?topic=%E6%A9%AB%E7%90%B4%E7%B2%B5%E6%BE%B3%E6%B7%B1%E5%BA%A6%E5%90%88%E4%BD%9C%E5%8D%80",
+      "publishedAt": "2025-10-09T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T22:24:40+08:00",
+      "tags": [
+        "GCS",
+        "橫琴合作區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcshq_https-www-gcs-gov-mo-detail-zh-hant-n25jhcvfsu-topic-e6-a9-ab-e7-90-b4",
+      "sourceId": "a_gcshq",
+      "sourceName": "GCS 橫琴合作區",
+      "domain": "A",
+      "category": "A4",
+      "title": "三天狂歡，免費預約入場，2025橫琴音樂光影秀明天12點開啟預約！",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N25JHCVfsU?topic=%E6%A9%AB%E7%90%B4%E7%B2%B5%E6%BE%B3%E6%B7%B1%E5%BA%A6%E5%90%88%E4%BD%9C%E5%8D%80",
+      "publishedAt": "2025-10-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T22:24:40+08:00",
+      "tags": [
+        "GCS",
+        "橫琴合作區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcshq_https-www-gcs-gov-mo-detail-zh-hant-n25jc4wo7r-topic-e6-a9-ab-e7-90-b4",
+      "sourceId": "a_gcshq",
+      "sourceName": "GCS 橫琴合作區",
+      "domain": "A",
+      "category": "A4",
+      "title": "“澳門青年大灣區職業之路資助計劃”10月起接受申請",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N25JC4wo7R?topic=%E6%A9%AB%E7%90%B4%E7%B2%B5%E6%BE%B3%E6%B7%B1%E5%BA%A6%E5%90%88%E4%BD%9C%E5%8D%80",
+      "publishedAt": "2025-10-03T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T22:24:40+08:00",
+      "tags": [
+        "GCS",
+        "橫琴合作區"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_gcshq_https-www-gcs-gov-mo-detail-zh-hant-n25jbm9psq-topic-e6-a9-ab-e7-90-b4",
+      "sourceId": "a_gcshq",
+      "sourceName": "GCS 橫琴合作區",
+      "domain": "A",
+      "category": "A4",
+      "title": "“2025琴澳家宴”嘉年華活動開幕 氣模裝置、無人機、音樂演出嗨翻假期",
+      "url": "https://www.gcs.gov.mo/detail/zh-hant/N25JBm9pSQ?topic=%E6%A9%AB%E7%90%B4%E7%B2%B5%E6%BE%B3%E6%B7%B1%E5%BA%A6%E5%90%88%E4%BD%9C%E5%8D%80",
+      "publishedAt": "2025-10-02T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T22:24:40+08:00",
+      "tags": [
+        "GCS",
+        "橫琴合作區"
+      ],
+      "status": "normal"
+    }
+  ]
+}

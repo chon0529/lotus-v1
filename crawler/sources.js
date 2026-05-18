@@ -379,6 +379,100 @@ const parsePlataforma=async source=>{
   return uniqueCandidates(items).slice(0,source.maxItems);
 };
 
+const parseGcshq=async source=>{
+  const topic='%E6%A9%AB%E7%90%B4%E7%B2%B5%E6%BE%B3%E6%B7%B1%E5%BA%A6%E5%90%88%E4%BD%9C%E5%8D%80';
+  const base=`https://r.jina.ai/https://www.gcs.gov.mo/list/zh-hant/topics/${topic}`;
+  const pages=[base,`${base}?page=2`,`${base}?page=3`,`${base}?page=4`,`${base}?page=5`];
+  const items=[];
+  const seen=new Set();
+  const month=' ABCDEFGHIJKL';
+  const day=' ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  const dateFromUrl=url=>{
+    const n=url.indexOf('/N');
+    if(n<0||n+5>=url.length)return '';
+    const yy=url.slice(n+2,n+4);
+    const mo=month.indexOf(url[n+4]);
+    const dd=day.indexOf(url[n+5]);
+    if(mo<1||dd<1)return '';
+    return `20${yy}-${String(mo).padStart(2,'0')}-${String(dd).padStart(2,'0')}T09:00:00+08:00`;
+  };
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const urlFromLine=line=>{
+    const key='https://www.gcs.gov.mo/detail/zh-hant/N';
+    const a=line.indexOf(key);
+    if(a<0)return '';
+    let b=line.indexOf(')',a);
+    const c=line.indexOf(' ',a);
+    if(c>0&&(b<0||c<b))b=c;
+    if(b<0)b=line.length;
+    return line.slice(a,b);
+  };
+
+  const titleFromLine=line=>{
+    if(line.startsWith('[![')){
+      const a=line.indexOf(': ');
+      const b=line.indexOf(']',a+2);
+      if(a>=0&&b>a)return line.slice(a+2,b);
+    }
+    const a=line.indexOf('[');
+    const b=line.indexOf('](',a+1);
+    if(a>=0&&b>a)return line.slice(a+1,b);
+    return '';
+  };
+
+  const pushLine=line=>{
+    if(items.length>=source.maxItems)return;
+    if(!line.includes(`topic=${topic}`))return;
+    if(!line.includes('https://www.gcs.gov.mo/detail/zh-hant/N'))return;
+    if(line.includes('/list/'))return;
+
+    const rawUrl=urlFromLine(line);
+    const baseUrl=rawUrl.split('?')[0];
+    const url=`${baseUrl}?topic=${topic}`;
+    let title=clean(titleFromLine(line));
+
+    const cutWords=[' 橫琴粵澳深度合作區',' 行政事務局',' 民生事務局',' 勞工事務局',' 教育及青年發展局',' 藥物監督管理局',' 7月前',' 6月前',' 5月前'];
+    for(const w of cutWords){
+      const i=title.indexOf(w);
+      if(i>0)title=title.slice(0,i).trim();
+    }
+
+    const publishedAt=dateFromUrl(url);
+    if(!title||!url||!publishedAt)return;
+    if(title.includes('+ 更多'))return;
+    if(title.includes('施政特寫'))return;
+    if(title.includes('施政報告'))return;
+    if(title.includes('保安司'))return;
+    if(title.includes('審計署'))return;
+    if(title.includes('警情通告'))return;
+    if(title.includes('行政會'))return;
+
+    const key=`${title}|${url}|${publishedAt}`;
+    if(seen.has(key))return;
+    seen.add(key);
+    items.push({title:title.slice(0,160),url,publishedAt,tags:['GCS','橫琴合作區']});
+  };
+
+  for(const page of pages){
+    if(items.length>=source.maxItems)break;
+    const text=await fetchText(page);
+    for(const line of text.split('\n'))pushLine(line);
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
@@ -387,6 +481,7 @@ export const sources=[
   {sourceId:'a_caeu',shortId:'caeu',sourceName:'CAEU',domain:'A',category:'A5',refreshMinutes:30,maxItems:22,fetcher:parseCaeu},
   {sourceId:'a_govmo_cepa_search',shortId:'govmo_cepa_search',sourceName:'DSEDT CEPA news',domain:'A',category:'A4',refreshMinutes:30,maxItems:20,fetcher:parseCepa},
   {sourceId:'a_hengqin_gov',shortId:'hengqin_gov',sourceName:'橫琴官網',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseHengqin},
+  {sourceId:'a_gcshq',shortId:'gcshq',sourceName:'GCS 橫琴合作區',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseGcshq},
   {sourceId:'a_aamacau',shortId:'aamacau',sourceName:'論盡媒體',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseAamacau},
   {sourceId:'a_allinmedia',shortId:'allinmedia',sourceName:'AllinMedia',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseAllinMedia},
   {sourceId:'a_chengpou',shortId:'chengpou',sourceName:'正報',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseChengpou},

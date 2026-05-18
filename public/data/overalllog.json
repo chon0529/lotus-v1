@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-18T22:24:40+08:00",
+    "sourceId": "a_gcshq",
+    "status": "normal",
+    "message": "6 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T22:24:21+08:00",
+    "sourceId": "a_gcshq",
+    "status": "running",
+    "message": "Starting GCS 橫琴合作區"
+  },
+  {
     "timestamp": "2026-05-18T21:23:07+08:00",
     "sourceId": "a_allinmedia",
     "status": "normal",
