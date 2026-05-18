@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-18T21:23:07+08:00",
+    "sourceId": "a_allinmedia",
+    "status": "normal",
+    "message": "22 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T21:23:06+08:00",
+    "sourceId": "a_allinmedia",
+    "status": "running",
+    "message": "Starting AllinMedia"
+  },
+  {
     "timestamp": "2026-05-18T21:15:35+08:00",
     "sourceId": "a_plataforma",
     "status": "normal",

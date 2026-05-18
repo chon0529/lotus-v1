@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-18T21:15:34+08:00",
+  "generatedAt": "2026-05-18T21:23:06+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -179,19 +179,19 @@
       "name": "AllinMedia",
       "domain": "A",
       "newsBox": "A2",
-      "status": "stale",
-      "lastRun": "2026-05-18T01:29:22+08:00",
-      "lastSuccess": null,
-      "nextRefresh": "2026-05-18T01:59:22+08:00",
+      "status": "normal",
+      "lastRun": "2026-05-18T21:23:06+08:00",
+      "lastSuccess": "2026-05-18T21:23:06+08:00",
+      "nextRefresh": "2026-05-18T21:53:06+08:00",
       "failCount": 0,
-      "latestCount": 0,
+      "latestCount": 22,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
-      "newestItemAgeText": "沒有資料",
-      "oldestItemAgeText": "沒有資料",
-      "relevanceStatus": "needs_fix",
-      "lastError": "empty parse; source kept but parser needs fix"
+      "newestItemAgeText": "12 小時前",
+      "oldestItemAgeText": "169 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
     },
     {
       "sourceId": "a_chengpou",

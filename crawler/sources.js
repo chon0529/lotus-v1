@@ -143,9 +143,71 @@ const parseAamacau=async source=>{
 
 const parseAllinMedia=async source=>{
   const text=await fetchText('https://r.jina.ai/https://www.allinmedia.com.hk/category/%e5%8d%9a%e5%bd%a9%e6%96%b0%e8%81%9e/');
-  return parseMarkdownByHost(text,'allinmedia.com.hk',source.maxItems,{tags:['AllinMedia']})
-    .filter(item=>!/category|tag|author|wp-content|uploads/i.test(item.url));
+  const lines=text.split('\n');
+  const items=[];
+  const seen=new Set();
+
+  const toDate=value=>{
+    const m=String(value??'').match(/(\d{1,2})\s+(\d{1,2})\s+月,\s*(20\d{2})/);
+    if(!m)return '';
+    return `${m[3]}-${String(m[2]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}T09:00:00+08:00`;
+  };
+
+  const clean=value=>decodeHtml(String(value??'')
+    .replace(/[#*_`>]/g,' ')
+    .replace(/\s+/g,' ')
+    .trim());
+
+  const readPost=line=>{
+    const key='### [';
+    const a=line.indexOf(key);
+    if(a<0)return null;
+
+    const titleStart=a+key.length;
+    const titleEnd=line.indexOf('](',titleStart);
+    if(titleEnd<0)return null;
+
+    const urlStart=titleEnd+2;
+    let urlEnd=line.indexOf(' ',urlStart);
+    const closeEnd=line.indexOf(')',urlStart);
+    if(urlEnd<0||(closeEnd>=0&&closeEnd<urlEnd))urlEnd=closeEnd;
+    if(urlEnd<0)return null;
+
+    const title=clean(line.slice(titleStart,titleEnd)).slice(0,160);
+    const url=line.slice(urlStart,urlEnd).replace(/^['"]|['"]$/g,'');
+
+    if(!title||!url.includes('allinmedia.com.hk/20'))return null;
+    return {title,url};
+  };
+
+  for(let i=0;i<lines.length&&items.length<source.maxItems;i++){
+    const line=lines[i];
+    if(!line.includes('### [')||!line.includes('allinmedia.com.hk/20'))continue;
+
+    const post=readPost(line);
+    if(!post)continue;
+
+    const near=[lines[i],lines[i+1]??'',lines[i+2]??'',lines[i+3]??'',lines[i+4]??''].join(' ');
+    const publishedAt=toDate(near);
+    if(!publishedAt)continue;
+
+    if(/^博彩新聞$/.test(post.title)||/^Gambling News$/i.test(post.title))continue;
+
+    const key=`${post.title}|${post.url}|${publishedAt}`;
+    if(seen.has(key))continue;
+    seen.add(key);
+
+    items.push({
+      title:post.title,
+      url:post.url,
+      publishedAt,
+      tags:['AllinMedia','博彩新聞']
+    });
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
 };
+
 
 const parseChengpou=async source=>{
   const text=await fetchText('https://r.jina.ai/http://chengpou.com.mo/news.html');

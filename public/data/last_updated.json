@@ -91,12 +91,12 @@
       "sourceName": "AllinMedia",
       "domain": "A",
       "category": "A2",
-      "lastRun": "2026-05-18T01:29:22+08:00",
-      "lastSuccess": null,
+      "lastRun": "2026-05-18T21:23:06+08:00",
+      "lastSuccess": "2026-05-18T21:23:06+08:00",
       "lastFailure": "2026-05-18T01:29:22+08:00",
-      "nextRun": "2026-05-18T01:59:22+08:00",
-      "status": "empty",
-      "message": "No valid items parsed; existing fetch output preserved."
+      "nextRun": "2026-05-18T21:53:06+08:00",
+      "status": "normal",
+      "message": "22 items fetched"
     },
     "a_chengpou": {
       "sourceId": "a_chengpou",
@@ -147,5 +147,5 @@
       "message": "8 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T21:15:34+08:00"
+  "generatedAt": "2026-05-18T21:23:06+08:00"
 }

@@ -1,0 +1,365 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_allinmedia",
+  "sourceName": "AllinMedia",
+  "domain": "A",
+  "category": "A2",
+  "generatedAt": "2026-05-18T21:23:06+08:00",
+  "fetchedAt": "2026-05-18T21:23:06+08:00",
+  "status": "normal",
+  "count": 22,
+  "items": [
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-18-e6-be-b3-e9-96-80-e9-87-91-e6-b",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門金沙慶祝開業22周年 延續傳統向本地的士司機派特色心意午餐",
+      "url": "https://www.allinmedia.com.hk/2026/05/18/%e6%be%b3%e9%96%80%e9%87%91%e6%b2%99%e6%85%b6%e7%a5%9d%e9%96%8b%e6%a5%ad22%e5%91%a8%e5%b9%b4-%e5%bb%b6%e7%ba%8c%e5%82%b3%e7%b5%b1%e5%90%91%e6%9c%ac%e5%9c%b0%e7%9a%84%e5%a3%ab%e5%8f%b8%e6%a9%9f/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-18-e5-8f-97-e9-9b-bb-e5-ad-90-e5-8",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "受電子博彩表現疲弱拖累 菲律賓首季賭收按年跌近16%",
+      "url": "https://www.allinmedia.com.hk/2026/05/18/%e5%8f%97%e9%9b%bb%e5%ad%90%e5%8d%9a%e5%bd%a9%e8%a1%a8%e7%8f%be%e7%96%b2%e5%bc%b1%e6%8b%96%e7%b4%af-%e8%8f%b2%e5%be%8b%e8%b3%93%e9%a6%96%e5%ad%a3%e8%b3%ad%e6%94%b6%e6%8c%89%e5%b9%b4%e8%b7%8c%e8%bf%911/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-18-e6-b0-b8-e5-88-a9-e8-86-ba-e4-b",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "永利膺亞洲最佳企業僱主獎雙殊榮 服務滿十年員工比例升至逾5成",
+      "url": "https://www.allinmedia.com.hk/2026/05/18/%e6%b0%b8%e5%88%a9%e8%86%ba%e4%ba%9e%e6%b4%b2%e6%9c%80%e4%bd%b3%e4%bc%81%e6%a5%ad%e5%83%b1%e4%b8%bb%e7%8d%8e%e9%9b%99%e6%ae%8a%e6%a6%ae-%e6%9c%8d%e5%8b%99%e6%bb%bf%e5%8d%81%e5%b9%b4%e5%93%a1%e5%b7%a5/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-15-e7-af-80-e6-85-b6-e5-b8-b6-e5-8",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "節慶帶動客量澳門首季GDP實質增長7.1% 博彩服務出口升13%",
+      "url": "https://www.allinmedia.com.hk/2026/05/15/%e7%af%80%e6%85%b6%e5%b8%b6%e5%8b%95%e5%ae%a2%e9%87%8f%e6%be%b3%e9%96%80%e9%a6%96%e5%ad%a3gdp%e5%af%a6%e8%b3%aa%e5%a2%9e%e9%95%b77-1-%e5%8d%9a%e5%bd%a9%e6%9c%8d%e5%8b%99%e5%87%ba%e5%8f%a3%e5%8d%8713/",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-15-e6-be-b3-e9-96-80-e9-8a-80-e6-b",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門銀河開幕15周年 銀娛嘉許逾9500名長期服務員工",
+      "url": "https://www.allinmedia.com.hk/2026/05/15/%e6%be%b3%e9%96%80%e9%8a%80%e6%b2%b3%e9%96%8b%e5%b9%9515%e5%91%a8%e5%b9%b4-%e9%8a%80%e5%a8%9b%e5%98%89%e8%a8%b1%e9%80%be9500%e5%90%8d%e9%95%b7%e6%9c%9f%e6%9c%8d%e5%8b%99%e5%93%a1%e5%b7%a5/",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-14-g2e-asia-e5-b1-95-e6-9c-9f-e5-a",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "G2E Asia展期完結人流遜往年 展商指推廣新產品仍達預期效果",
+      "url": "https://www.allinmedia.com.hk/2026/05/14/g2e-asia%e5%b1%95%e6%9c%9f%e5%ae%8c%e7%b5%90%e4%ba%ba%e6%b5%81%e9%81%9c%e5%be%80%e5%b9%b4-%e5%b1%95%e5%95%86%e6%8c%87%e6%8e%a8%e5%bb%a3%e6%96%b0%e7%94%a2%e5%93%81%e4%bb%8d%e9%81%94%e9%a0%90%e6%9c%9f/",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-13-e5-85-ad-e5-8d-9a-e4-bc-81-e8-b",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "六博企近年積極推動非博彩業務 馮小峰：提高盈利能力須同步",
+      "url": "https://www.allinmedia.com.hk/2026/05/13/%e5%85%ad%e5%8d%9a%e4%bc%81%e8%bf%91%e5%b9%b4%e7%a9%8d%e6%a5%b5%e6%8e%a8%e5%8b%95%e9%9d%9e%e5%8d%9a%e5%bd%a9%e6%a5%ad%e5%8b%99-%e9%a6%ae%e5%b0%8f%e5%b3%b0%ef%bc%9a%e6%8f%90%e9%ab%98%e7%9b%88%e5%88%a9/",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-12-g2e-asia-e9-96-8b-e5-b9-95-e5-8",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "G2E Asia開幕共121展商150品牌參展 料吸8000業者探索商機",
+      "url": "https://www.allinmedia.com.hk/2026/05/12/g2e-asia%e9%96%8b%e5%b9%95%e5%85%b1121%e5%b1%95%e5%95%86150%e5%93%81%e7%89%8c%e5%8f%83%e5%b1%95-%e6%96%99%e5%90%b88000%e6%a5%ad%e8%80%85%e6%8e%a2%e7%b4%a2%e5%95%86%e6%a9%9f/",
+      "publishedAt": "2026-05-12T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-11-e6-be-b3-e9-96-80-e9-a6-964-e6-",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門首4月賭稅348.7億佔經常性收入八成六 單計上月錄90.7億",
+      "url": "https://www.allinmedia.com.hk/2026/05/11/%e6%be%b3%e9%96%80%e9%a6%964%e6%9c%88%e8%b3%ad%e7%a8%85348-7%e5%84%84%e4%bd%94%e7%b6%93%e5%b8%b8%e6%80%a7%e6%94%b6%e5%85%a5%e5%85%ab%e6%88%90%e5%85%ad-%e5%96%ae%e8%a8%88%e4%b8%8a%e6%9c%88%e9%8c%8490/",
+      "publishedAt": "2026-05-11T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-08-e4-ba-94-e4-b8-80-e9-bb-83-e9-8",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "五一黃金周5天訪澳旅客日均17.5萬按年增2.7% 酒店入住率92.7%",
+      "url": "https://www.allinmedia.com.hk/2026/05/08/%e4%ba%94%e4%b8%80%e9%bb%83%e9%87%91%e5%91%a85%e5%a4%a9%e8%a8%aa%e6%be%b3%e6%97%85%e5%ae%a2%e6%97%a5%e5%9d%8717-5%e8%90%ac%e6%8c%89%e5%b9%b4%e5%a2%9e2-7-%e9%85%92%e5%ba%97%e5%85%a5%e4%bd%8f%e7%8e%8792/",
+      "publishedAt": "2026-05-08T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-05-01-e6-be-b3-e9-96-804-e6-9c-88-e8-",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門4月賭收按年升5.5%至198.9億遜預期 首4月錄近858億",
+      "url": "https://www.allinmedia.com.hk/2026/05/01/%e6%be%b3%e9%96%804%e6%9c%88%e8%b3%ad%e6%94%b6%e6%8c%89%e5%b9%b4%e5%8d%875-5%e8%87%b3198-9%e5%84%84%e9%81%9c%e9%a0%90%e6%9c%9f-%e9%a6%964%e6%9c%88%e9%8c%84%e8%bf%91858%e5%84%84/",
+      "publishedAt": "2026-05-01T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-04-30-e6-be-b3-e9-96-80-e9-a6-96-e5-a",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門首季酒店入住率升至92.3% 訪澳團客按年跌14%至47.5萬",
+      "url": "https://www.allinmedia.com.hk/2026/04/30/%e6%be%b3%e9%96%80%e9%a6%96%e5%ad%a3%e9%85%92%e5%ba%97%e5%85%a5%e4%bd%8f%e7%8e%87%e5%8d%87%e8%87%b392-3-%e8%a8%aa%e6%be%b3%e5%9c%98%e5%ae%a2%e6%8c%89%e5%b9%b4%e8%b7%8c14%e8%87%b347-5%e8%90%ac/",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-04-30-e4-ba-94-e4-b8-80-e9-bb-83-e9-8",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "五一黃金周訪澳旅客日均料錄16萬人次 酒店預訂率達九成",
+      "url": "https://www.allinmedia.com.hk/2026/04/30/%e4%ba%94%e4%b8%80%e9%bb%83%e9%87%91%e5%91%a8%e8%a8%aa%e6%be%b3%e6%97%85%e5%ae%a2%e6%97%a5%e5%9d%87%e6%96%99%e9%8c%8416%e8%90%ac%e4%ba%ba%e6%ac%a1-%e9%85%92%e5%ba%97%e9%a0%90%e8%a8%82%e7%8e%87/",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-04-29-e6-be-b3-e9-96-80-e5-8d-9a-e7-9",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門博監局兩副局長獲分派職權 廖志聰李錫樵各領導三廳",
+      "url": "https://www.allinmedia.com.hk/2026/04/29/%e6%be%b3%e9%96%80%e5%8d%9a%e7%9b%a3%e5%b1%80%e5%85%a9%e5%89%af%e5%b1%80%e9%95%b7%e7%8d%b2%e5%88%86%e6%b4%be%e8%81%b7%e6%ac%8a-%e5%bb%96%e5%bf%97%e8%81%b0%e6%9d%8e%e9%8c%ab%e6%a8%b5%e5%90%84%e9%a0%98/",
+      "publishedAt": "2026-04-29T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-04-28-e4-ba-94-e4-b8-80-e9-bb-83-e9-8",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "五一黃金周澳門出入境料達370萬人次 周六高峰迎最多22萬旅客",
+      "url": "https://www.allinmedia.com.hk/2026/04/28/%e4%ba%94%e4%b8%80%e9%bb%83%e9%87%91%e5%91%a8%e6%be%b3%e9%96%80%e5%87%ba%e5%85%a5%e5%a2%83%e6%96%99%e9%81%94370%e8%90%ac%e4%ba%ba%e6%ac%a1-%e5%91%a8%e5%85%ad%e9%ab%98%e5%b3%b0%e8%bf%8e%e6%9c%80/",
+      "publishedAt": "2026-04-28T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-04-24-e6-be-b3-e9-96-803-e6-9c-88-e9-",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "澳門3月酒店入住率微跌至92.9% 五星級房價平均1540元升4.2%",
+      "url": "https://www.allinmedia.com.hk/2026/04/24/%e6%be%b3%e9%96%803%e6%9c%88%e9%85%92%e5%ba%97%e5%85%a5%e4%bd%8f%e7%8e%87%e5%be%ae%e8%b7%8c%e8%87%b392-9-%e4%ba%94%e6%98%9f%e7%b4%9a%e6%88%bf%e5%83%b9%e5%b9%b3%e5%9d%871540%e5%85%83%e5%8d%874-2/",
+      "publishedAt": "2026-04-24T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-04-24-3-e6-9c-88-e8-a8-aa-e6-be-b3-e6",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "3月訪澳旅客按年升一成 首季總客量1121萬國際客佔6.7%",
+      "url": "https://www.allinmedia.com.hk/2026/04/24/3%e6%9c%88%e8%a8%aa%e6%be%b3%e6%97%85%e5%ae%a2%e6%8c%89%e5%b9%b4%e5%8d%87%e4%b8%80%e6%88%90-%e9%a6%96%e5%ad%a3%e7%b8%bd%e5%ae%a2%e9%87%8f1121%e8%90%ac%e5%9c%8b%e9%9a%9b%e5%ae%a2%e4%bd%946-7/",
+      "publishedAt": "2026-04-24T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-01-31-12-e6-9c-88-e8-a1-9e-e6-98-9f-e",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "12月衞星場派最後成績表殺數僅3.47億 置地讓賽一天仍勝凱旋門",
+      "url": "https://www.allinmedia.com.hk/2026/01/31/12%e6%9c%88%e8%a1%9e%e6%98%9f%e5%a0%b4%e6%b4%be%e6%9c%80%e5%be%8c%e6%88%90%e7%b8%be%e8%a1%a8%e6%ae%ba%e6%95%b8%e5%83%853-47%e5%84%84-%e7%bd%ae%e5%9c%b0%e8%ae%93%e8%b3%bd%e4%b8%80%e5%a4%a9%e4%bb%8d/",
+      "publishedAt": "2026-01-31T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2026-01-29-e6-b0-b8-e5-88-a9-e7-9a-87-e5-a",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "永利皇宮上月中場殺數力壓威記奪季 銀河再創全年新高穩坐第一",
+      "url": "https://www.allinmedia.com.hk/2026/01/29/%e6%b0%b8%e5%88%a9%e7%9a%87%e5%ae%ae%e4%b8%8a%e6%9c%88%e4%b8%ad%e5%a0%b4%e6%ae%ba%e6%95%b8%e5%8a%9b%e5%a3%93%e5%a8%81%e8%a8%98%e5%a5%aa%e5%ad%a3-%e9%8a%80%e6%b2%b3%e5%86%8d%e5%89%b5%e5%85%a8%e5%b9%b4/",
+      "publishedAt": "2026-01-29T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2025-12-30-e9-8a-80-e6-b2-b311-e6-9c-88-e4",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "銀河11月中場殺數穩居第一 美獅創今年新高反超威記重奪亞席",
+      "url": "https://www.allinmedia.com.hk/2025/12/30/%e9%8a%80%e6%b2%b311%e6%9c%88%e4%b8%ad%e5%a0%b4%e6%ae%ba%e6%95%b8%e7%a9%a9%e5%b1%85%e7%ac%ac%e4%b8%80-%e7%be%8e%e7%8d%85%e5%89%b5%e4%bb%8a%e5%b9%b4%e6%96%b0%e9%ab%98%e5%8f%8d%e8%b6%85%e5%a8%81/",
+      "publishedAt": "2025-12-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2025-12-30-11-e6-9c-88-e6-be-b3-e5-8d-9a-e",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "11月澳博衞星場僅剩7間殺數跌至6.5億 置地凱旋門財神佔據三甲",
+      "url": "https://www.allinmedia.com.hk/2025/12/30/11%e6%9c%88%e6%be%b3%e5%8d%9a%e8%a1%9e%e6%98%9f%e5%a0%b4%e5%83%85%e5%89%a97%e9%96%93%e6%ae%ba%e6%95%b8%e8%b7%8c%e8%87%b36-5%e5%84%84-%e7%bd%ae%e5%9c%b0%e5%87%b1%e6%97%8b%e9%96%80%e8%b2%a1%e7%a5%9e/",
+      "publishedAt": "2025-12-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_allinmedia_https-www-allinmedia-com-hk-2025-12-01-e9-87-91-e6-b2-99-e4-b8-ad-e5-9",
+      "sourceId": "a_allinmedia",
+      "sourceName": "AllinMedia",
+      "domain": "A",
+      "category": "A2",
+      "title": "金沙中國上季全澳中場博彩毛收市佔25%居首 銀娛美高梅列亞季",
+      "url": "https://www.allinmedia.com.hk/2025/12/01/%e9%87%91%e6%b2%99%e4%b8%ad%e5%9c%8b%e4%b8%8a%e5%ad%a3%e5%85%a8%e6%be%b3%e4%b8%ad%e5%a0%b4%e5%8d%9a%e5%bd%a9%e6%af%9b%e6%94%b6%e5%b8%82%e4%bd%9425%e5%b1%85%e9%a6%96-%e9%8a%80%e5%a8%9b%e7%be%8e/",
+      "publishedAt": "2025-12-01T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T21:23:07+08:00",
+      "tags": [
+        "AllinMedia",
+        "博彩新聞"
+      ],
+      "status": "normal"
+    }
+  ]
+}
