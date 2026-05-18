@@ -1018,6 +1018,80 @@ const parseDsscu=async source=>{
     .slice(0,source.maxItems);
 };
 
+const parseCru=async source=>{
+  const pages=[
+    'https://r.jina.ai/https://www.cru.gov.mo/news/',
+    'https://r.jina.ai/https://www.cru.gov.mo/news/?page=2',
+    'https://r.jina.ai/https://www.cru.gov.mo/news/?page=3',
+    'https://r.jina.ai/https://www.cru.gov.mo/news/?page=4',
+    'https://r.jina.ai/https://www.cru.gov.mo/news/?page=5'
+  ];
+  const items=[];
+  const seen=new Set();
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const dateFromLine=line=>{
+    const s=String(line??'');
+    for(const part of s.split(/\s+/)){
+      if(/^20[0-9]{2}-[0-9]{2}-[0-9]{2}$/.test(part))return `${part}T09:00:00+08:00`;
+    }
+    return '';
+  };
+
+  const readLink=line=>{
+    const a=line.indexOf('[');
+    const b=line.indexOf('](',a+1);
+    const c=line.indexOf(')',b+2);
+    if(a<0||b<0||c<0)return null;
+    return {
+      title:clean(line.slice(a+1,b)).slice(0,180),
+      url:absoluteUrl(line.slice(b+2,c).trim(),'https://www.cru.gov.mo/')
+    };
+  };
+
+  for(const page of pages){
+    if(items.length>=source.maxItems)break;
+    const lines=(await fetchText(page)).split('\n');
+
+    for(let i=0;i<lines.length&&items.length<source.maxItems;i++){
+      const line=lines[i];
+      if(!line.includes('cru.gov.mo/news/info/')||!line.includes(']('))continue;
+
+      const link=readLink(line);
+      if(!link||!link.title||!link.url)continue;
+
+      let publishedAt='';
+      for(let j=i-1;j>=Math.max(0,i-4);j--){
+        publishedAt=dateFromLine(lines[j]);
+        if(publishedAt)break;
+      }
+      if(!publishedAt)continue;
+
+      const key=`${link.title}|${link.url}|${publishedAt}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+
+      items.push({
+        title:link.title,
+        url:link.url,
+        publishedAt,
+        tags:['都市更新委員會','CRU']
+      });
+    }
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
@@ -1025,6 +1099,7 @@ export const sources=[
   {sourceId:'a_gcs_housing',shortId:'gcs_housing',sourceName:'GCS 工程房屋',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseGcsHousing},
   {sourceId:'a_dsop',shortId:'dsop',sourceName:'公共建設局',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseDsop},
   {sourceId:'a_dsscu',shortId:'dsscu',sourceName:'土地工務局',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseDsscu},
+  {sourceId:'a_cru',shortId:'cru',sourceName:'都市更新委員會',domain:'A',category:'A4',refreshMinutes:30,maxItems:30,fetcher:parseCru},
   {sourceId:'a_macaupostdaily',shortId:'macaupostdaily',sourceName:'Macau Post Daily',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauPostDaily},
   {sourceId:'a_macaubusiness',shortId:'macaubusiness',sourceName:'Macao Business',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacaoBusiness},
   {sourceId:'a_caeu',shortId:'caeu',sourceName:'CAEU',domain:'A',category:'A5',refreshMinutes:30,maxItems:22,fetcher:parseCaeu},

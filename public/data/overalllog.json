@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-19T00:39:09+08:00",
+    "sourceId": "a_cru",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-19T00:38:33+08:00",
+    "sourceId": "a_cru",
+    "status": "running",
+    "message": "Starting 都市更新委員會"
+  },
+  {
     "timestamp": "2026-05-19T00:32:33+08:00",
     "sourceId": "a_dsscu",
     "status": "normal",

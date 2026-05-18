@@ -241,7 +241,19 @@
       "nextRun": "2026-05-19T01:02:30+08:00",
       "status": "normal",
       "message": "20 items fetched"
+    },
+    "a_cru": {
+      "sourceId": "a_cru",
+      "sourceName": "都市更新委員會",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-19T00:38:33+08:00",
+      "lastSuccess": "2026-05-19T00:38:33+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-19T01:08:33+08:00",
+      "status": "normal",
+      "message": "30 items fetched"
     }
   },
-  "generatedAt": "2026-05-19T00:32:30+08:00"
+  "generatedAt": "2026-05-19T00:38:33+08:00"
 }

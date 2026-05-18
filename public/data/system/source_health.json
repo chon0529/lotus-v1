@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-19T00:32:30+08:00",
+  "generatedAt": "2026-05-19T00:38:33+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -421,6 +421,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "4 日前",
       "oldestItemAgeText": "529 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_cru",
+      "sourceKey": "a_cru",
+      "name": "都市更新委員會",
+      "domain": "A",
+      "newsBox": "A4",
+      "status": "normal",
+      "lastRun": "2026-05-19T00:38:33+08:00",
+      "lastSuccess": "2026-05-19T00:38:33+08:00",
+      "nextRefresh": "2026-05-19T01:08:33+08:00",
+      "failCount": 0,
+      "latestCount": 30,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "15 日前",
+      "oldestItemAgeText": "3350 日前",
       "relevanceStatus": "matched",
       "lastError": null
     }
