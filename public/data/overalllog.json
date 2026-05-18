@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-18T23:35:44+08:00",
+    "sourceId": "a_cbaaction",
+    "status": "normal",
+    "message": "15 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-18T23:35:35+08:00",
+    "sourceId": "a_cbaaction",
+    "status": "running",
+    "message": "Starting CBA 灣區行動"
+  },
+  {
     "timestamp": "2026-05-18T23:29:17+08:00",
     "sourceId": "a_gcsgba",
     "status": "normal",

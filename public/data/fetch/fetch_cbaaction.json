@@ -1,0 +1,253 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_cbaaction",
+  "sourceName": "CBA 灣區行動",
+  "domain": "A",
+  "category": "A4",
+  "generatedAt": "2026-05-18T23:35:35+08:00",
+  "fetchedAt": "2026-05-18T23:35:35+08:00",
+  "status": "normal",
+  "count": 15,
+  "items": [
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1327087-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "孟凡利主持召开省政府常务会议强调 以更大力度更实举措 全力做好上半年经济工作",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1327087.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1326860-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "省委全面依法治省工作会议召开 深入学习贯彻习近平法治思想 守正创新稳中求进做好全面依法治省工作 努力建设更高水平的法治广东 黄坤明讲话 孟凡利主持 黄楚平出席",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1326860.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1326645-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "黄楚平到深圳开展人大经济工作监督调研 以人大履职助推持续巩固经济向好基础",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1326645.html",
+      "publishedAt": "2026-05-13T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1326424-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "李家超：推动香港建设世界品牌中心",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1326424.html",
+      "publishedAt": "2026-05-11T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1326257-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "黄楚平在广州开展基础教育扩优提质工作调研 以高质量法治助力办好人民满意的基础教育",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1326257.html",
+      "publishedAt": "2026-05-09T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1326126-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "省委常委会召开会议 认真学习贯彻习近平总书记重要讲话重要指示精神 分析研究当前我省经济形势和经济工作 部署做好基础研究、县域经济发展、安全生产等事项 黄坤明主持会议",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1326126.html",
+      "publishedAt": "2026-05-07T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1325964-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "香港与东莞共建，李家超：为国家绿色转型贡献“湾区方案”",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1325964.html",
+      "publishedAt": "2026-05-05T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1325785-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "孟凡利到农业高校和科研院所调研时强调 强化科技赋能 加强人才培养 为把农业建成现代化大产业提供扎实支撑",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1325785.html",
+      "publishedAt": "2026-04-30T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1325522-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "孟凡利会见沃尔玛中国总裁朱晓静",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1325522.html",
+      "publishedAt": "2026-04-29T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1325395-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "广东省人工智能应用对接大会举行 孟凡利出席并讲话",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1325395.html",
+      "publishedAt": "2026-04-27T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1325102-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "咸辉率全国政协调研组来粤调研，崔玉英王荣林克庆参加调研活动 助力粤港澳大湾区高质量协同发展见行见效",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1325102.html",
+      "publishedAt": "2026-04-24T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1325016-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "“中国共产党的故事——习近平新时代中国特色社会主义思想在粤港澳大湾区的实践”专题宣介会举行 黄坤明刘海星出席并致辞",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1325016.html",
+      "publishedAt": "2026-04-24T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1324938-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "孟凡利到广州调研时强调 充分发挥工业对高质量发展的支撑和牵引作用 加快打造先进制造业强市和新型工业化典范城市",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1324938.html",
+      "publishedAt": "2026-04-23T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1324875-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "广东省与中国融通集团签署战略合作框架协议，黄坤明孟凡利李文清李世宏见证签约",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1324875.html",
+      "publishedAt": "2026-04-21T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_cbaaction_https-www-cnbayarea-org-cn-news-action-content-post-1324662-html",
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "title": "全省市县乡领导班子换届工作会议召开 认真学习贯彻习近平总书记重要指示精神 高标准高质量完成好换届各项任务 为推进中国式现代化的广东实践提供坚强组织保证 黄坤明出席并讲话",
+      "url": "https://www.cnbayarea.org.cn/news/action/content/post_1324662.html",
+      "publishedAt": "2026-04-17T09:00:00+08:00",
+      "fetchedAt": "2026-05-18T23:35:44+08:00",
+      "tags": [
+        "灣區行動",
+        "CBA"
+      ],
+      "status": "normal"
+    }
+  ]
+}

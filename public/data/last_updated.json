@@ -193,7 +193,19 @@
       "nextRun": "2026-05-18T23:59:11+08:00",
       "status": "normal",
       "message": "9 items fetched"
+    },
+    "a_cbaaction": {
+      "sourceId": "a_cbaaction",
+      "sourceName": "CBA 灣區行動",
+      "domain": "A",
+      "category": "A4",
+      "lastRun": "2026-05-18T23:35:35+08:00",
+      "lastSuccess": "2026-05-18T23:35:35+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-19T00:05:35+08:00",
+      "status": "normal",
+      "message": "15 items fetched"
     }
   },
-  "generatedAt": "2026-05-18T23:29:11+08:00"
+  "generatedAt": "2026-05-18T23:35:35+08:00"
 }
