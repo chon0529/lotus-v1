@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-20T00:47:06+08:00",
+    "sourceId": "a_macaodaily",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-20T00:46:59+08:00",
+    "sourceId": "a_macaodaily",
+    "status": "running",
+    "message": "Starting 澳門日報"
+  },
+  {
     "timestamp": "2026-05-19T08:19:18+08:00",
     "sourceId": "a_hojemacau",
     "status": "normal",

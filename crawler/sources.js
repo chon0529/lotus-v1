@@ -1395,6 +1395,90 @@ const parseHojeMacau=async source=>{
     .slice(0,source.maxItems);
 };
 
+const parseMacauDaily=async source=>{
+  const macauDateOffset=daysBack=>{
+    const now=new Date();
+    const macauNow=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Macau'}));
+    macauNow.setDate(macauNow.getDate()-daysBack);
+    const y=macauNow.getFullYear();
+    const m=String(macauNow.getMonth()+1).padStart(2,'0');
+    const d=String(macauNow.getDate()).padStart(2,'0');
+    return {date:`${y}-${m}-${d}`,path:`${y}-${m}/${d}`};
+  };
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .replace(/!\$begin:math:display$\[\^\$end:math:display$]*\]\$begin:math:text$\[\^\)\]\*\$end:math:text$/g,' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const dateFromUrl=url=>{
+    const m=String(url??'').match(/\/html\/(20\d{2}-\d{2})\/(\d{2})\//);
+    return m?`${m[1]}-${m[2]}T09:00:00+08:00`:'';
+  };
+
+  const linksFromBlock=block=>{
+    const out=[];
+    let pos=0;
+    while(pos<block.length){
+      const a=block.indexOf('* [',pos);
+      if(a<0)break;
+      const titleStart=a+3;
+      const titleEnd=block.indexOf('](',titleStart);
+      const urlStart=titleEnd+2;
+      const urlEnd=block.indexOf(')',urlStart);
+      if(titleEnd<0||urlEnd<0)break;
+      const title=clean(block.slice(titleStart,titleEnd)).slice(0,180);
+      const url=block.slice(urlStart,urlEnd).trim();
+      if(title&&url.includes('macaodaily.com/html/')&&url.includes('/content_'))out.push({title,url});
+      pos=urlEnd+1;
+    }
+    return out;
+  };
+
+  const parsePage=text=>{
+    const items=[];
+    const seen=new Set();
+    const chunks=text.split('#### ');
+    for(const chunk of chunks){
+      if(items.length>=source.maxItems)break;
+      const head=chunk.slice(0,260);
+      if(!head.includes('：澳聞'))continue;
+      if(head.includes('：港聞')||head.includes('：廣告')||head.includes('：體育')||head.includes('：經濟')||head.includes('：學生報'))continue;
+
+      for(const link of linksFromBlock(chunk)){
+        if(items.length>=source.maxItems)break;
+        const publishedAt=dateFromUrl(link.url);
+        if(!publishedAt)continue;
+        if(!link.title||link.title.length<2)continue;
+        if(['新聞特搜','視事關心','節目表'].includes(link.title))continue;
+
+        const key=`${link.title}|${link.url}|${publishedAt}`;
+        if(seen.has(key))continue;
+        seen.add(key);
+
+        items.push({title:link.title,url:link.url,publishedAt,tags:['澳門日報','澳聞']});
+      }
+    }
+    return items;
+  };
+
+  for(let back=0;back<5;back++){
+    const day=macauDateOffset(back);
+    const url=`https://r.jina.ai/https://www.macaodaily.com/html/${day.path}/node_1.htm`;
+    const text=await fetchText(url);
+    const items=parsePage(text);
+    if(items.length)return uniqueCandidates(items).slice(0,source.maxItems);
+  }
+
+  return [];
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
@@ -1421,7 +1505,8 @@ export const sources=[
   {sourceId:'a_plataforma',shortId:'plataforma',sourceName:'Plataforma',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parsePlataforma},
   {sourceId:'a_macaudailytimes',shortId:'macaudailytimes',sourceName:'Macau Daily Times',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauDailyTimes},
   {sourceId:'a_jtm',shortId:'jtm',sourceName:'Jornal Tribuna de Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseJtm},
-  {sourceId:'a_hojemacau',shortId:'hojemacau',sourceName:'Hoje Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseHojeMacau}
+  {sourceId:'a_hojemacau',shortId:'hojemacau',sourceName:'Hoje Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseHojeMacau},
+  {sourceId:'a_macaodaily',shortId:'macaodaily',sourceName:'澳門日報',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseMacauDaily}
 ];
 
 export const sourceById=id=>sources.find(source=>source.sourceId===id||source.shortId===id);
