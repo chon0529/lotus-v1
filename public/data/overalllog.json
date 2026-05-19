@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-05-19T08:19:18+08:00",
+    "sourceId": "a_hojemacau",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-19T08:19:18+08:00",
+    "sourceId": "a_hojemacau",
+    "status": "running",
+    "message": "Starting Hoje Macau"
+  },
+  {
+    "timestamp": "2026-05-19T08:18:25+08:00",
+    "sourceId": "a_hojemacau",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-19T08:18:24+08:00",
+    "sourceId": "a_hojemacau",
+    "status": "running",
+    "message": "Starting Hoje Macau"
+  },
+  {
     "timestamp": "2026-05-19T08:11:45+08:00",
     "sourceId": "a_jtm",
     "status": "normal",

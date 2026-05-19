@@ -1323,6 +1323,78 @@ const parseJtm=async source=>{
   return uniqueCandidates(items).slice(0,source.maxItems);
 };
 
+const parseHojeMacau=async source=>{
+  const pages=[
+    ['Política',15,'https://hojemacau.com.mo/wp-json/wp/v2/posts?categories=15&per_page=30&_fields=id,date,link,title,categories'],
+    ['Sociedade',17,'https://hojemacau.com.mo/wp-json/wp/v2/posts?categories=17&per_page=30&_fields=id,date,link,title,categories']
+  ];
+  const items=[];
+  const seen=new Set();
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .replace(/&\s*8220;/g,'“')
+    .replace(/&\s*8221;/g,'”')
+    .replace(/&\s*8216;/g,'‘')
+    .replace(/&\s*8217;/g,'’')
+    .replace(/&\s*8211;/g,'–')
+    .replace(/&\s*8212;/g,'—')
+    .replace(/<[^>]+>/g,' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const toMacauDate=value=>{
+    const d=new Date(value);
+    if(Number.isNaN(d.getTime()))return '';
+    const parts=new Intl.DateTimeFormat('en-CA',{
+      timeZone:'Asia/Macau',
+      year:'numeric',
+      month:'2-digit',
+      day:'2-digit',
+      hour:'2-digit',
+      minute:'2-digit',
+      hour12:false
+    }).formatToParts(d).reduce((a,p)=>(a[p.type]=p.value,a),{});
+    return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:00+08:00`;
+  };
+
+  for(const [label,categoryId,page] of pages){
+    if(items.length>=source.maxItems)break;
+    const posts=JSON.parse(await fetchText(page));
+    if(!Array.isArray(posts))continue;
+
+    for(const post of posts){
+      if(items.length>=source.maxItems)break;
+      if(!Array.isArray(post.categories)||!post.categories.includes(categoryId))continue;
+
+      const title=clean(post.title?.rendered).slice(0,180);
+      const url=post.link;
+      const publishedAt=toMacauDate(post.date);
+      if(!title||!url||!publishedAt)continue;
+
+      const key=`${title}|${url}|${publishedAt}`;
+      if(seen.has(key))continue;
+      seen.add(key);
+
+      items.push({
+        title:`(${label}) ${title}`,
+        url,
+        publishedAt,
+        tags:['Hoje Macau',label]
+      });
+    }
+  }
+
+  return uniqueCandidates(items)
+    .sort((a,b)=>String(b.publishedAt).localeCompare(String(a.publishedAt)))
+    .slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
@@ -1348,7 +1420,8 @@ export const sources=[
   {sourceId:'a_macaucabletv',shortId:'macaucabletv',sourceName:'澳門有線',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseMacauCableTv},
   {sourceId:'a_plataforma',shortId:'plataforma',sourceName:'Plataforma',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parsePlataforma},
   {sourceId:'a_macaudailytimes',shortId:'macaudailytimes',sourceName:'Macau Daily Times',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauDailyTimes},
-  {sourceId:'a_jtm',shortId:'jtm',sourceName:'Jornal Tribuna de Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseJtm}
+  {sourceId:'a_jtm',shortId:'jtm',sourceName:'Jornal Tribuna de Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseJtm},
+  {sourceId:'a_hojemacau',shortId:'hojemacau',sourceName:'Hoje Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseHojeMacau}
 ];
 
 export const sourceById=id=>sources.find(source=>source.sourceId===id||source.shortId===id);

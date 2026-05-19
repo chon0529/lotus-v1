@@ -289,7 +289,19 @@
       "nextRun": "2026-05-19T08:41:44+08:00",
       "status": "normal",
       "message": "8 items fetched"
+    },
+    "a_hojemacau": {
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "lastRun": "2026-05-19T08:19:18+08:00",
+      "lastSuccess": "2026-05-19T08:19:18+08:00",
+      "lastFailure": null,
+      "nextRun": "2026-05-19T08:49:18+08:00",
+      "status": "normal",
+      "message": "30 items fetched"
     }
   },
-  "generatedAt": "2026-05-19T08:11:44+08:00"
+  "generatedAt": "2026-05-19T08:19:18+08:00"
 }

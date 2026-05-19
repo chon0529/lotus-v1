@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-19T08:11:44+08:00",
+  "generatedAt": "2026-05-19T08:19:18+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -501,6 +501,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "23 小時前",
       "oldestItemAgeText": "23 小時前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_hojemacau",
+      "sourceKey": "a_hojemacau",
+      "name": "Hoje Macau",
+      "domain": "A",
+      "newsBox": "A3",
+      "status": "normal",
+      "lastRun": "2026-05-19T08:19:18+08:00",
+      "lastSuccess": "2026-05-19T08:19:18+08:00",
+      "nextRefresh": "2026-05-19T08:49:18+08:00",
+      "failCount": 0,
+      "latestCount": 30,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "1 分鐘前",
+      "oldestItemAgeText": "8 日前",
       "relevanceStatus": "matched",
       "lastError": null
     }
