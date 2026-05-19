@@ -1,0 +1,328 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_macaudailytimes",
+  "sourceName": "Macau Daily Times",
+  "domain": "A",
+  "category": "A3",
+  "generatedAt": "2026-05-19T08:09:44+08:00",
+  "fetchedAt": "2026-05-19T08:09:44+08:00",
+  "status": "normal",
+  "count": 21,
+  "items": [
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-215296-html",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Audit finds senior civil servants underutilized",
+      "url": "https://macaudailytimes.com.mo/215296.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-govt-rejects-claims-of-invisible-overtime",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Gov’t rejects claims of ‘invisible overtime’ in civil service",
+      "url": "https://macaudailytimes.com.mo/govt-rejects-claims-of-invisible-overtime-in-civil-service.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-pj-receives-219-fraud-tips-in-eight-days-",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "PJ receives 219 fraud tips in eight days",
+      "url": "https://macaudailytimes.com.mo/pj-receives-219-fraud-tips-in-eight-days.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-new-continuing-education-scheme-to-launch",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "New continuing education scheme to launch mid-June",
+      "url": "https://macaudailytimes.com.mo/new-continuing-education-scheme-to-launch-mid-june.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-unstable-weather-suspends-sunday-events-i",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Unstable weather suspends Sunday events in",
+      "url": "https://macaudailytimes.com.mo/unstable-weather-suspends-sunday-events-in.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-gdp-grows-7-in-q1-to-90-of-2019-html",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "GDP grows 7% in Q1 to 90% of 2019",
+      "url": "https://macaudailytimes.com.mo/gdp-grows-7-in-q1-to-90-of-2019.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-over-70000-visit-national-security-exhibi",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Over 70,000 visit national security exhibition",
+      "url": "https://macaudailytimes.com.mo/over-70000-visit-national-security-exhibition.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-is-healthcare-the-modern-day-goliath-for-",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Is healthcare the modern-day goliath for migrant workers?",
+      "url": "https://macaudailytimes.com.mo/is-healthcare-the-modern-day-goliath-for-migrant-workers.html",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-lrt-ridership-grows-steadily-with-80-jump",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "LRT ridership ‘grows steadily’ with 80% jump in passengers",
+      "url": "https://macaudailytimes.com.mo/lrt-ridership-grows-steadily-with-80-jump-in-passengers.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-two-time-macau-winner-at-risk-of-missing-",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Two-time Macau winner at risk of missing GP",
+      "url": "https://macaudailytimes.com.mo/two-time-macau-winner-at-risk-of-missing-gp.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-mgto-receives-long-standing-membership-aw",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "MGTO receives long-standing membership award at PATA summit",
+      "url": "https://macaudailytimes.com.mo/mgto-receives-long-standing-membership-award-at-pata-summit.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-security-guard-investigated-for-damaging-",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Security guard investigated for damaging shop light fixture",
+      "url": "https://macaudailytimes.com.mo/security-guard-investigated-for-damaging-shop-light-fixture.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-macao-water-warns-public-over-fake-bill-p",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Macao Water warns public over fake bill payment SMS scam links",
+      "url": "https://macaudailytimes.com.mo/macao-water-warns-public-over-fake-bill-payment-sms-scam-links.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-38-outdoor-cafe-permits-approved-since-la",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "38 outdoor café permits approved since last August",
+      "url": "https://macaudailytimes.com.mo/38-outdoor-cafe-permits-approved-since-last-august.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-elderly-loses-rmb44000-in-suspected-onlin",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Elderly loses RMB44,000 in suspected online dating scam",
+      "url": "https://macaudailytimes.com.mo/elderly-loses-rmb44000-in-suspected-online-dating-scam.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-qualifying-races-kick-off-for-roadsport-a",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Qualifying races kick off for Roadsport and GT Challenge",
+      "url": "https://macaudailytimes.com.mo/qualifying-races-kick-off-for-roadsport-and-gt-challenge.html",
+      "publishedAt": "2026-05-15T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-dsal-rejects-claims-tnrs-are-distorting-l",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "DSAL rejects claims TNRs are distorting labor market",
+      "url": "https://macaudailytimes.com.mo/dsal-rejects-claims-tnrs-are-distorting-labor-market.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-illegal-construction-complaints-surge-nea",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Illegal construction complaints surge nearly 33%",
+      "url": "https://macaudailytimes.com.mo/illegal-construction-complaints-surge-nearly-33.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-man-arrested-for-alleged-drug-trafficking",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Man arrested for alleged drug trafficking and use",
+      "url": "https://macaudailytimes.com.mo/man-arrested-for-alleged-drug-trafficking-and-use.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-seasonal-15t-bus-service-to-resume-for-ha",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "Seasonal 15T bus service to resume for Hac Sa Beach trips",
+      "url": "https://macaudailytimes.com.mo/seasonal-15t-bus-service-to-resume-for-hac-sa-beach-trips.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_macaudailytimes_https-macaudailytimes-com-mo-cem-warns-public-over-fake-electricity-bi",
+      "sourceId": "a_macaudailytimes",
+      "sourceName": "Macau Daily Times",
+      "domain": "A",
+      "category": "A3",
+      "title": "CEM warns public over fake electricity bill scam texts",
+      "url": "https://macaudailytimes.com.mo/cem-warns-public-over-fake-electricity-bill-scam-texts.html",
+      "publishedAt": "2026-05-14T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:09:46+08:00",
+      "tags": [
+        "Macau Daily Times"
+      ],
+      "status": "normal"
+    }
+  ]
+}

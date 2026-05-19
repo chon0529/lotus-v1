@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-19T00:43:35+08:00",
+  "generatedAt": "2026-05-19T08:09:44+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -461,6 +461,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "13 日前",
       "oldestItemAgeText": "172 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_macaudailytimes",
+      "sourceKey": "a_macaudailytimes",
+      "name": "Macau Daily Times",
+      "domain": "A",
+      "newsBox": "A3",
+      "status": "normal",
+      "lastRun": "2026-05-19T08:09:44+08:00",
+      "lastSuccess": "2026-05-19T08:09:44+08:00",
+      "nextRefresh": "2026-05-19T08:39:44+08:00",
+      "failCount": 0,
+      "latestCount": 21,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "23 小時前",
+      "oldestItemAgeText": "5 日前",
       "relevanceStatus": "matched",
       "lastError": null
     }

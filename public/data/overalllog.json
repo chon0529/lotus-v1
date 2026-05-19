@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-19T08:09:46+08:00",
+    "sourceId": "a_macaudailytimes",
+    "status": "normal",
+    "message": "21 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-19T08:09:44+08:00",
+    "sourceId": "a_macaudailytimes",
+    "status": "running",
+    "message": "Starting Macau Daily Times"
+  },
+  {
     "timestamp": "2026-05-19T00:43:37+08:00",
     "sourceId": "a_cpu",
     "status": "normal",
