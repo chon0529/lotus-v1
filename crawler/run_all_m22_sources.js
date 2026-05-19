@@ -8,6 +8,7 @@
  */
 
 import {spawn} from 'node:child_process';
+import fs from 'node:fs';
 
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 
@@ -47,6 +48,17 @@ const runJob=file=>new Promise(resolve=>{
   child.on('error',err=>resolve({file,code:1,error:err.message,ms:Date.now()-started}));
 });
 
+const jobSourceId=file=>`a_${file.replace(/^fetch_/,'').replace(/\.js$/,'')}`;
+const readHealth=()=>{
+  try{
+    const data=JSON.parse(fs.readFileSync('public/data/system/source_health.json','utf8'));
+    const arr=Array.isArray(data)?data:data.sources??[];
+    return new Map(arr.map(item=>[item.sourceId??item.id??item.sourceKey,item]));
+  }catch{
+    return new Map();
+  }
+};
+
 const summary=[];
 console.log('\n=== Nova-Lotus M2.4A run_all_m22_sources start ===');
 console.log(`jobs=${jobs.length}`);
@@ -54,19 +66,25 @@ console.log(`jobs=${jobs.length}`);
 for(const file of jobs){
   console.log(`\n=== RUN ${file} ===`);
   const result=await runJob(file);
+  const health=readHealth().get(jobSourceId(file));
+  result.healthStatus=health?.status??'missing';
+  result.healthCount=health?.latestCount??0;
+  result.healthRel=health?.relevanceStatus??'';
+  result.healthError=health?.lastError??'';
+  result.healthOk=result.code===0&&result.healthStatus==='normal'&&result.healthRel==='matched';
   summary.push(result);
-  console.log(`=== DONE ${file} code=${result.code} ms=${result.ms}${result.error?` error=${result.error}`:''} ===`);
+  console.log(`=== DONE ${file} code=${result.code} health=${result.healthStatus} count=${result.healthCount} rel=${result.healthRel} ms=${result.ms}${result.error?` error=${result.error}`:''} ===`);
   await sleep(1500);
 }
 
-const ok=summary.filter(x=>x.code===0);
-const failed=summary.filter(x=>x.code!==0);
+const ok=summary.filter(x=>x.healthOk);
+const failed=summary.filter(x=>!x.healthOk);
 
 console.log('\n=== SUMMARY ===');
 console.log(`success=${ok.length}`);
 console.log(`failed=${failed.length}`);
 for(const item of summary){
-  console.log(`${item.code===0?'OK':'FAIL'} ${item.file} ${item.ms}ms${item.error?` ${item.error}`:''}`);
+  console.log(`${item.healthOk?'OK':'HEALTH_FAIL'} ${item.file} code=${item.code} health=${item.healthStatus} count=${item.healthCount} rel=${item.healthRel} ${item.ms}ms${item.healthError?` err=${item.healthError}`:''}${item.error?` ${item.error}`:''}`);
 }
 
 if(failed.length)process.exitCode=1;
