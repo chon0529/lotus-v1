@@ -1239,6 +1239,90 @@ const parseMacauDailyTimes=async source=>{
   return uniqueCandidates(items).slice(0,source.maxItems);
 };
 
+const parseJtm=async source=>{
+  const text=await fetchText('https://r.jina.ai/https://jtm.com.mo/');
+  const lines=text.split('\n');
+  const items=[];
+  const seen=new Set();
+  const monthMap={
+    Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',
+    Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12',
+    Janeiro:'01',Fevereiro:'02',Março:'03',Marco:'03',Abril:'04',Maio:'05',Junho:'06',
+    Julho:'07',Agosto:'08',Setembro:'09',Outubro:'10',Novembro:'11',Dezembro:'12'
+  };
+
+  const clean=value=>decodeHtml(String(value??''))
+    .replaceAll('#',' ')
+    .replaceAll('*',' ')
+    .replaceAll('_',' ')
+    .replaceAll('`',' ')
+    .replaceAll('>',' ')
+    .split(/\s+/)
+    .join(' ')
+    .trim();
+
+  const toDate=value=>{
+    const s=clean(value).replaceAll(',','');
+    const parts=s.split(/\s+/);
+    for(let i=0;i<parts.length-2;i++){
+      const day=parts[i];
+      const month=monthMap[parts[i+1]];
+      const year=parts[i+2];
+      if(/^\d{1,2}$/.test(day)&&month&&/^20\d{2}$/.test(year)){
+        return `${year}-${month}-${day.padStart(2,'0')}T09:00:00+08:00`;
+      }
+    }
+    return '';
+  };
+
+  const readLink=line=>{
+    const key='### [';
+    const a=line.indexOf(key);
+    if(a<0)return null;
+    const titleStart=a+key.length;
+    const titleEnd=line.indexOf('](',titleStart);
+    const urlStart=titleEnd+2;
+    const urlEnd=line.indexOf(')',urlStart);
+    if(titleEnd<0||urlEnd<0)return null;
+    return {
+      title:clean(line.slice(titleStart,titleEnd)).slice(0,180),
+      url:line.slice(urlStart,urlEnd).trim()
+    };
+  };
+
+  for(let i=0;i<lines.length&&items.length<source.maxItems;i++){
+    const line=lines[i];
+    if(!line.includes('### [')||!line.includes('jtm.com.mo/'))continue;
+
+    const link=readLink(line);
+    if(!link||!link.title||!link.url)continue;
+    if(!link.url.includes('jtm.com.mo/'))continue;
+    if(link.url.endsWith('.pdf'))continue;
+    if(link.url.includes('/opinia'))continue;
+    if(link.url.includes('/desporto/'))continue;
+    if(link.url.includes('/lazer/'))continue;
+    if(link.url.includes('/actual/'))continue;
+    if(link.title==='CAPA DO DIA'||link.title==='ESPECIAL')continue;
+
+    const near=[lines[i+1]??'',lines[i+2]??'',lines[i+3]??''].join(' ');
+    const publishedAt=toDate(near);
+    if(!publishedAt)continue;
+
+    const key=`${link.title}|${link.url}|${publishedAt}`;
+    if(seen.has(key))continue;
+    seen.add(key);
+
+    items.push({
+      title:link.title,
+      url:link.url,
+      publishedAt,
+      tags:['JTM','Local']
+    });
+  }
+
+  return uniqueCandidates(items).slice(0,source.maxItems);
+};
+
 
 export const sources=[
   {sourceId:'a_tdm',shortId:'tdm',sourceName:'TDM',domain:'A',category:'A2',refreshMinutes:15,maxItems:30,fetcher:parseTdm},
@@ -1263,7 +1347,8 @@ export const sources=[
   {sourceId:'a_exmoo',shortId:'exmoo',sourceName:'力報',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseExmoo},
   {sourceId:'a_macaucabletv',shortId:'macaucabletv',sourceName:'澳門有線',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseMacauCableTv},
   {sourceId:'a_plataforma',shortId:'plataforma',sourceName:'Plataforma',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parsePlataforma},
-  {sourceId:'a_macaudailytimes',shortId:'macaudailytimes',sourceName:'Macau Daily Times',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauDailyTimes}
+  {sourceId:'a_macaudailytimes',shortId:'macaudailytimes',sourceName:'Macau Daily Times',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauDailyTimes},
+  {sourceId:'a_jtm',shortId:'jtm',sourceName:'Jornal Tribuna de Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseJtm}
 ];
 
 export const sourceById=id=>sources.find(source=>source.sourceId===id||source.shortId===id);

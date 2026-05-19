@@ -1,0 +1,141 @@
+{
+  "schema": "nova.fetch.v1",
+  "sourceId": "a_jtm",
+  "sourceName": "Jornal Tribuna de Macau",
+  "domain": "A",
+  "category": "A3",
+  "generatedAt": "2026-05-19T08:11:44+08:00",
+  "fetchedAt": "2026-05-19T08:11:44+08:00",
+  "status": "normal",
+  "count": 8,
+  "items": [
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-novas-regras-para-emprestimos-elevaram-confianc",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "Novas regras para empréstimos elevaram “confiança” no imobiliário",
+      "url": "https://jtm.com.mo/local/novas-regras-para-emprestimos-elevaram-confianca-imobiliario/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-malparado-nos-cartoes-de-credito-atinge-70-milh",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "Malparado nos cartões de crédito atinge 70 milhões",
+      "url": "https://jtm.com.mo/local/malparado-nos-cartoes-de-credito-atinge-70-milhoes/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-222-propostas-para-sete-bancas-tamagnini-barbos",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "222 propostas para sete bancas no Tamagnini Barbosa",
+      "url": "https://jtm.com.mo/local/222-propostas-para-sete-bancas-tamagnini-barbosa/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-mice-gerou-receitas-de-841-milhoes",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "MICE gerou receitas de 841 milhões",
+      "url": "https://jtm.com.mo/local/mice-gerou-receitas-de-841-milhoes/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-visitas-guiadas-workshops-dia-da-crianca",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "Visitas guiadas e workshops no Dia da Criança",
+      "url": "https://jtm.com.mo/local/visitas-guiadas-workshops-dia-da-crianca/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-ensino-catolico-ajusta-se-a-realidade-das-rae",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "Ensino católico ajusta-se à realidade das RAE",
+      "url": "https://jtm.com.mo/local/ensino-catolico-ajusta-se-a-realidade-das-rae/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-parceria-entre-advogados-alarga-cobertura-jurid",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "Parceria entre advogados alarga cobertura jurídica na Ásia",
+      "url": "https://jtm.com.mo/local/parceria-entre-advogados-alarga-cobertura-juridica-na-asia/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_jtm_https-jtm-com-mo-local-seguranca-nacional-atraiu-mais-de-70-mil-visita",
+      "sourceId": "a_jtm",
+      "sourceName": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "Segurança nacional atraiu mais de 70 mil visitantes",
+      "url": "https://jtm.com.mo/local/seguranca-nacional-atraiu-mais-de-70-mil-visitantes/",
+      "publishedAt": "2026-05-18T09:00:00+08:00",
+      "fetchedAt": "2026-05-19T08:11:45+08:00",
+      "tags": [
+        "JTM",
+        "Local"
+      ],
+      "status": "normal"
+    }
+  ]
+}

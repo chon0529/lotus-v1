@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-19T08:09:44+08:00",
+  "generatedAt": "2026-05-19T08:11:44+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -481,6 +481,26 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "23 小時前",
       "oldestItemAgeText": "5 日前",
+      "relevanceStatus": "matched",
+      "lastError": null
+    },
+    {
+      "sourceId": "a_jtm",
+      "sourceKey": "a_jtm",
+      "name": "Jornal Tribuna de Macau",
+      "domain": "A",
+      "newsBox": "A3",
+      "status": "normal",
+      "lastRun": "2026-05-19T08:11:44+08:00",
+      "lastSuccess": "2026-05-19T08:11:44+08:00",
+      "nextRefresh": "2026-05-19T08:41:44+08:00",
+      "failCount": 0,
+      "latestCount": 8,
+      "duplicateCount": 0,
+      "missingDateCount": 0,
+      "emptyTitleCount": 0,
+      "newestItemAgeText": "23 小時前",
+      "oldestItemAgeText": "23 小時前",
       "relevanceStatus": "matched",
       "lastError": null
     }

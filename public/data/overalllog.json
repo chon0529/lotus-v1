@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-19T08:11:45+08:00",
+    "sourceId": "a_jtm",
+    "status": "normal",
+    "message": "8 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-19T08:11:44+08:00",
+    "sourceId": "a_jtm",
+    "status": "running",
+    "message": "Starting Jornal Tribuna de Macau"
+  },
+  {
     "timestamp": "2026-05-19T08:09:46+08:00",
     "sourceId": "a_macaudailytimes",
     "status": "normal",
