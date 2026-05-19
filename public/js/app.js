@@ -29,6 +29,7 @@ const HOME_DOMAIN_CAPS={A:50,B:35,C:35};
 const RECENT_72H_MAX=50;
 const RECENT_WINDOW_HOURS=73;
 const HEALTH_SOURCE_CARD_CAP=22;
+const DISPLAY_TARGET_COUNT=22;
 let currentPage='sub_main';
 let recentFilter='all';
 let recentSort='priority';
@@ -804,12 +805,31 @@ const renderHealth=async()=>{
     });
   });
   const sourceShortId=sourceKey=>String(sourceKey??'').replace(/^[abc]_?/,'');
-  const fetchOutputEntries=await Promise.all((registry.sources??[]).map(async source=>{
+  const sourceFileIds=source=>[source.sourceKey,source.shortId,source.id,source.sourceId]
+    .filter(Boolean)
+    .flatMap(id=>[id,sourceShortId(id)])
+    .filter((id,index,arr)=>id&&arr.indexOf(id)===index);
+  const outputSourceRefs=[...(registry.sources??[]),...(health.sources??[])]
+    .filter((source,index,arr)=>source?.sourceKey&&arr.findIndex(item=>item?.sourceKey===source.sourceKey)===index);
+  const getFirstSourceJson=async(type,source)=>{
+    for(const id of sourceFileIds(source)){
+      const data=await getOptionalJson(`./data/${type}/${type==='fetch'?'fetch':'his'}_${id}.json`,null);
+      if(data)return data;
+    }
+    return null;
+  };
+  const fetchOutputEntries=await Promise.all(outputSourceRefs.map(async source=>{
     const key=source.sourceKey;
     if(!key)return [key,null];
-    return [key,await getOptionalJson(`./data/fetch/fetch_${sourceShortId(key)}.json`,null)];
+    return [key,await getFirstSourceJson('fetch',source)];
   }));
   const fetchOutputMap=new Map(fetchOutputEntries);
+  const historyOutputEntries=await Promise.all(outputSourceRefs.map(async source=>{
+    const key=source.sourceKey;
+    if(!key)return [key,null];
+    return [key,await getFirstSourceJson('history',source)];
+  }));
+  const historyOutputMap=new Map(historyOutputEntries);
   const macauDateKey=date=>{
     const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Macau',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date);
     const data=Object.fromEntries(parts.map(part=>[part.type,part.value]));
@@ -830,13 +850,82 @@ const renderHealth=async()=>{
     return match[1];
   };
   const healthDisplayTime=item=>item.timeText||dateOnlyDisplayTime(item.publishedAt)||(item.publishedAt?timeText(item.publishedAt):'');
-  const rowsFromFetchOutput=output=>Array.isArray(output?.items)
-    ? output.items.map(item=>({
+  const cleanDisplayTitle=value=>String(value??'')
+    .replace(/#+/g,' ')
+    .replace(/[*_`>]+/g,' ')
+    .replace(/&\s*8220;/g,'“')
+    .replace(/&\s*8221;/g,'”')
+    .replace(/&\s*8216;/g,'‘')
+    .replace(/&\s*8217;/g,'’')
+    .replace(/\s+/g,' ')
+    .trim();
+  const displayNavTitles=new Set([
+    'about us','china','international','gaming','finance','opinion','editorial',
+    'contact','contacts','privacy','terms','previous','next','more','home',
+    'facebook','twitter','instagram','subscribe','search','menu'
+  ]);
+  const isDisplayNewsRow=item=>{
+    if(!item||item.type==='divider')return false;
+    const title=cleanDisplayTitle(item.title);
+    const url=String(item.url??'').trim();
+    if(!title||!url)return false;
+    if(title.length<4)return false;
+    if(displayNavTitles.has(title.toLowerCase()))return false;
+    const pathOnly=url.split('?')[0].split('#')[0];
+    if(/\/(category|tag|author|about|contact|privacy|terms)(\/|$)/i.test(pathOnly))return false;
+    if(/\/page\/?$/i.test(pathOnly))return false;
+    return true;
+  };
+  const rowsFromFetchOutput=output=>{
+    const raw=Array.isArray(output)
+      ? output
+      : Array.isArray(output?.items)
+        ? output.items
+        : Array.isArray(output?.data)
+          ? output.data
+          : Array.isArray(output?.records)
+            ? output.records
+            : Array.isArray(output?.history)
+              ? output.history
+              : [];
+    return raw.map(item=>({
       ...item,
+      title:cleanDisplayTitle(item.title),
+      type:item.type??'news',
       time:healthDisplayTime(item),
       newsBox:item.category??''
-    }))
-    : [];
+    })).filter(isDisplayNewsRow);
+  };
+  const displayKey=item=>{
+    const url=String(item?.url??'').trim();
+    if(url)return `url:${url}`;
+    return `title:${String(item?.title??'').trim()}|date:${String(item?.publishedAt??item?.date??'').trim()}`;
+  };
+  const buildDisplayRows=(currentRows,historyRows,target=DISPLAY_TARGET_COUNT)=>{
+    const current=(currentRows??[]).filter(isDisplayNewsRow).slice(0,target)
+      .map(item=>({...item,title:cleanDisplayTitle(item.title),type:'news',fromHistory:false}));
+    if(current.length>=target)return current;
+    const seen=new Set(current.map(displayKey));
+    const supplement=[];
+    for(const item of historyRows??[]){
+      if(current.length+supplement.length>=target)break;
+      if(!isDisplayNewsRow(item))continue;
+      const key=displayKey(item);
+      if(!key||seen.has(key))continue;
+      seen.add(key);
+      supplement.push({
+        ...item,
+        title:cleanDisplayTitle(item.title),
+        type:'news',
+        fromHistory:true,
+        time:healthDisplayTime(item),
+        newsBox:item.category??''
+      });
+    }
+    return supplement.length
+      ? [...current,{type:'divider',title:'-以下為早前消息-'},...supplement]
+      : current;
+  };
   const normalizeHealthStatus=source=>{
     const status=source.status??'planned';
     if(status==='normal')return 'success';
@@ -858,7 +947,9 @@ const renderHealth=async()=>{
       status:healthInfo.status??(source.enabled===false?'disabled':source.status??'planned')
     });
     const fetchRows=rowsFromFetchOutput(fetchOutputMap.get(source.sourceKey));
-    const rows=fetchRows.length?fetchRows:(sourceRowsFromView.get(source.sourceKey)??fakeItemsForSource(source));
+    const historyRows=rowsFromFetchOutput(historyOutputMap.get(source.sourceKey));
+    const baseRows=fetchRows.length?fetchRows:(sourceRowsFromView.get(source.sourceKey)??fakeItemsForSource(source));
+    const rows=fetchRows.length?buildDisplayRows(fetchRows,historyRows,DISPLAY_TARGET_COUNT):baseRows;
     const lastUpdatedAt=healthInfo.lastSuccess??healthInfo.lastUpdatedAt??source.lastUpdatedAt??health.generatedAt??viewAll.generatedAt??nowIso;
     return {
       ...source,
@@ -886,7 +977,13 @@ const renderHealth=async()=>{
         description:'待接入 real fetch。',
         lastUpdatedAt:health.generatedAt??nowIso,
         nextRefreshAt:addMinutes(health.generatedAt??nowIso,30),
-        items:sourceRowsFromView.get(source.sourceKey)??[]
+        items:(()=>{
+          const fetchRows=rowsFromFetchOutput(fetchOutputMap.get(source.sourceKey));
+          const historyRows=rowsFromFetchOutput(historyOutputMap.get(source.sourceKey));
+          return fetchRows.length
+            ? buildDisplayRows(fetchRows,historyRows,DISPLAY_TARGET_COUNT)
+            : sourceRowsFromView.get(source.sourceKey)??[];
+        })()
       });
     }
   });
@@ -944,14 +1041,19 @@ const renderHealth=async()=>{
     return label&&raw.startsWith(`${label} `)?raw.slice(label.length+1):raw;
   };
   const monitorRows=source=>{
-    const rows=(source.items??[]).slice(0,HEALTH_SOURCE_CARD_CAP);
-    return `${rows.map((item,index)=>`
-      <div class="monitor-news-row"${linkAttrs(item)}>
-        <span>${h(String(index+1).padStart(2,'0'))}.</span>
+    const rows=(source.items??[]).slice(0,HEALTH_SOURCE_CARD_CAP+1);
+    let newsIndex=0;
+    return `${rows.map(item=>{
+      if(item.type==='divider'){
+        return `<div class="monitor-news-row monitor-news-divider"><span></span><strong>${h(item.title)}</strong><small></small></div>`;
+      }
+      newsIndex+=1;
+      return `<div class="monitor-news-row"${linkAttrs(item)}>
+        <span>${h(String(newsIndex).padStart(2,'0'))}.</span>
         <strong>${h(stripSourceTitle(source,item.title))}</strong>
         <small> - ${h(item.time??item.timeText??'待接入')}</small>
-      </div>
-    `).join('')}${sourceListMarker(rows,HEALTH_SOURCE_CARD_CAP)}`;
+      </div>`;
+    }).join('')}${sourceListMarker(rows.filter(item=>item.type!=='divider'),HEALTH_SOURCE_CARD_CAP)}`;
   };
   const monitorCard=source=>`
     <article class="monitor-card status-${h(source.status)} ${h(domainClass(source.domain))}">
