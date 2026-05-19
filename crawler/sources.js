@@ -1506,7 +1506,7 @@ export const sources=[
   {sourceId:'a_macaudailytimes',shortId:'macaudailytimes',sourceName:'Macau Daily Times',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseMacauDailyTimes},
   {sourceId:'a_jtm',shortId:'jtm',sourceName:'Jornal Tribuna de Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseJtm},
   {sourceId:'a_hojemacau',shortId:'hojemacau',sourceName:'Hoje Macau',domain:'A',category:'A3',refreshMinutes:30,maxItems:30,fetcher:parseHojeMacau},
-  {sourceId:'a_macaodaily',shortId:'macaodaily',sourceName:'澳門日報',domain:'A',category:'A2',refreshMinutes:30,maxItems:30,fetcher:parseMacauDaily}
+  {sourceId:'a_macaodaily',shortId:'macaodaily',sourceName:'澳門日報',domain:'A',category:'A2',refreshMinutes:5,maxItems:30,fetcher:parseMacauDaily}
 ];
 
 export const sourceById=id=>sources.find(source=>source.sourceId===id||source.shortId===id);
