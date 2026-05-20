@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-20T00:46:59+08:00",
+  "generatedAt": "2026-05-20T19:32:45+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -511,15 +511,15 @@
       "domain": "A",
       "newsBox": "A3",
       "status": "normal",
-      "lastRun": "2026-05-19T08:19:18+08:00",
-      "lastSuccess": "2026-05-19T08:19:18+08:00",
-      "nextRefresh": "2026-05-19T08:49:18+08:00",
+      "lastRun": "2026-05-20T19:32:45+08:00",
+      "lastSuccess": "2026-05-20T19:32:45+08:00",
+      "nextRefresh": "2026-05-20T20:02:45+08:00",
       "failCount": 0,
       "latestCount": 30,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
-      "newestItemAgeText": "1 分鐘前",
+      "newestItemAgeText": "11 小時前",
       "oldestItemAgeText": "8 日前",
       "relevanceStatus": "matched",
       "lastError": null

@@ -1,5 +1,18 @@
 [
   {
+    "timestamp": "2026-05-20T19:32:47+08:00",
+    "sourceId": "a_hojemacau",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-20T19:32:45+08:00",
+    "sourceId": "a_hojemacau",
+    "status": "running",
+    "message": "Starting Hoje Macau"
+  },
+  {
     "timestamp": "2026-05-20T00:47:06+08:00",
     "sourceId": "a_macaodaily",
     "status": "normal",

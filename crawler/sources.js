@@ -1325,8 +1325,8 @@ const parseJtm=async source=>{
 
 const parseHojeMacau=async source=>{
   const pages=[
-    ['Política',15,'https://hojemacau.com.mo/wp-json/wp/v2/posts?categories=15&per_page=30&_fields=id,date,link,title,categories'],
-    ['Sociedade',17,'https://hojemacau.com.mo/wp-json/wp/v2/posts?categories=17&per_page=30&_fields=id,date,link,title,categories']
+    ['Política',15,'https://r.jina.ai/https://hojemacau.com.mo/wp-json/wp/v2/posts?categories=15&per_page=30&_fields=id,date,link,title,categories'],
+    ['Sociedade',17,'https://r.jina.ai/https://hojemacau.com.mo/wp-json/wp/v2/posts?categories=17&per_page=30&_fields=id,date,link,title,categories']
   ];
   const items=[];
   const seen=new Set();
@@ -1363,9 +1363,20 @@ const parseHojeMacau=async source=>{
     return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:00+08:00`;
   };
 
+  const parseJinaJson=text=>{
+    const marker='Markdown Content:';
+    const body=String(text??'').includes(marker)
+      ? String(text).split(marker).slice(1).join(marker).trim()
+      : String(text??'').trim();
+    const start=body.indexOf('[');
+    const end=body.lastIndexOf(']');
+    if(start<0||end<start)return [];
+    return JSON.parse(body.slice(start,end+1));
+  };
+
   for(const [label,categoryId,page] of pages){
     if(items.length>=source.maxItems)break;
-    const posts=JSON.parse(await fetchText(page));
+    const posts=parseJinaJson(await fetchText(page));
     if(!Array.isArray(posts))continue;
 
     for(const post of posts){
@@ -1373,7 +1384,7 @@ const parseHojeMacau=async source=>{
       if(!Array.isArray(post.categories)||!post.categories.includes(categoryId))continue;
 
       const title=clean(post.title?.rendered).slice(0,180);
-      const url=post.link;
+      const url=String(post.link??'').replace(/\\\//g,'/');
       const publishedAt=toMacauDate(post.date);
       if(!title||!url||!publishedAt)continue;
 

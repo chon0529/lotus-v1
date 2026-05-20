@@ -4,11 +4,139 @@
   "sourceName": "Hoje Macau",
   "domain": "A",
   "category": "A3",
-  "generatedAt": "2026-05-19T08:19:18+08:00",
-  "fetchedAt": "2026-05-19T08:19:18+08:00",
+  "generatedAt": "2026-05-20T19:32:45+08:00",
+  "fetchedAt": "2026-05-20T19:32:45+08:00",
   "status": "normal",
   "count": 30,
   "items": [
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-autocarros-de-lazer-deputados-defend",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) “Autocarros de lazer” | Deputados defendem medida permanente",
+      "url": "https://hojemacau.com.mo/2026/05/20/autocarros-de-lazer-deputados-defendem-medida-permanente/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-plano-quinquenal-consulta-publica-ar",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) Plano quinquenal | Consulta pública arranca hoje",
+      "url": "https://hojemacau.com.mo/2026/05/20/plano-quinquenal-consulta-publica-arranca-hoje/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-ia-leong-pou-u-pede-orientacoes-e-di",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) IA | Leong Pou U pede orientações e diálogo com trabalhadores",
+      "url": "https://hojemacau.com.mo/2026/05/20/ia-leong-pou-u-pede-orientacoes-e-dialogo-com-trabalhadores/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-saude-wong-kit-cheng-pede-estudo-sob",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) Saúde | Wong Kit Cheng pede estudo sobre recursos humanos",
+      "url": "https://hojemacau.com.mo/2026/05/20/saude-wong-kit-cheng-pede-estudo-sobre-recursos-humanos/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-ponte-de-amizade-conselheiro-pede-me",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) Ponte de Amizade | Conselheiro pede medidas para evitar impacto de obras",
+      "url": "https://hojemacau.com.mo/2026/05/20/ponte-de-amizade-conselheiro-pede-medidas-para-evitar-impacto-de-obras/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-deputados-exigem-elevacao-da-eficien",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) Deputados exigem elevação da eficiência da Função Pública",
+      "url": "https://hojemacau.com.mo/2026/05/20/deputados-exigem-elevacao-da-eficiencia-da-funcao-publica/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-nova-lei-possibilita-criacao-de-hosp",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) Nova lei possibilita criação de hospitais de dia para turistas",
+      "url": "https://hojemacau.com.mo/2026/05/20/nova-lei-possibilita-criacao-de-hospitais-de-dia-para-turistas/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
+    {
+      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-20-tecnologia-chui-sai-peng-defende-cri",
+      "sourceId": "a_hojemacau",
+      "sourceName": "Hoje Macau",
+      "domain": "A",
+      "category": "A3",
+      "title": "(Política) Tecnologia | Chui Sai Peng defende criação local de “robô polícia”",
+      "url": "https://hojemacau.com.mo/2026/05/20/tecnologia-chui-sai-peng-defende-criacao-local-de-robo-policia/",
+      "publishedAt": "2026-05-20T09:00:00+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
+      "tags": [
+        "Hoje Macau",
+        "Política"
+      ],
+      "status": "normal"
+    },
     {
       "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-19-funcao-publica-governo-diz-que-horas",
       "sourceId": "a_hojemacau",
@@ -18,7 +146,7 @@
       "title": "(Política) Função Pública | Governo diz que horas extra estão regulamentadas",
       "url": "https://hojemacau.com.mo/2026/05/19/funcao-publica-governo-diz-que-horas-extra-estao-regulamentadas/",
       "publishedAt": "2026-05-19T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -34,7 +162,7 @@
       "title": "(Política) Corrupção | Ex-presidente de Macau do Banco da China expulso do PCC",
       "url": "https://hojemacau.com.mo/2026/05/19/corrupcao-ex-presidente-de-macau-do-banco-da-china-expulso-do-pcc/",
       "publishedAt": "2026-05-19T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -50,7 +178,7 @@
       "title": "(Política) SS | Afastadas cabines fechadas para fumadores",
       "url": "https://hojemacau.com.mo/2026/05/18/ss-afastadas-cabines-fechadas-para-fumadores/",
       "publishedAt": "2026-05-18T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -66,7 +194,7 @@
       "title": "(Política) HK | Adrian Ho recua e admite que bifanas de Macau são superiores",
       "url": "https://hojemacau.com.mo/2026/05/18/hk-adrian-ho-recua-e-admite-que-bifanas-de-macau-sao-superiores/",
       "publishedAt": "2026-05-18T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -82,7 +210,7 @@
       "title": "(Política) PIB | Crescimento de 7,1% entre Janeiro e Março",
       "url": "https://hojemacau.com.mo/2026/05/18/pib-crescimento-de-71-entre-janeiro-e-marco/",
       "publishedAt": "2026-05-18T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -98,7 +226,7 @@
       "title": "(Política) Assembleia Legislativa | Dia aberto com actuações musicais",
       "url": "https://hojemacau.com.mo/2026/05/18/assembleia-legislativa-dia-aberto-com-actuacoes-musicais/",
       "publishedAt": "2026-05-18T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -114,7 +242,7 @@
       "title": "(Política) Auditoria | Sugerida fiscalização de prédios devolutos de Macau",
       "url": "https://hojemacau.com.mo/2026/05/18/auditoria-sugerida-fiscalizacao-de-predios-devolutos-de-macau/",
       "publishedAt": "2026-05-18T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -130,7 +258,7 @@
       "title": "(Política) UPM | Zhou Zhongrong é o novo reitor",
       "url": "https://hojemacau.com.mo/2026/05/15/upm-zhou-zhongrong-e-o-novo-reitor/",
       "publishedAt": "2026-05-15T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -146,7 +274,7 @@
       "title": "(Política) Saúde | Pedida supervisão do uso de apoios em Guangdong",
       "url": "https://hojemacau.com.mo/2026/05/15/saude-pedida-supervisao-do-uso-de-apoios-em-guangdong/",
       "publishedAt": "2026-05-15T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -162,7 +290,7 @@
       "title": "(Política) Áreas marítimas | Seis projectos de aprovados à espera da lei",
       "url": "https://hojemacau.com.mo/2026/05/15/areas-maritimas-seis-projectos-de-aprovados-a-espera-da-lei/",
       "publishedAt": "2026-05-15T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -178,7 +306,7 @@
       "title": "(Política) Inundações | Deputado pede medidas temporárias",
       "url": "https://hojemacau.com.mo/2026/05/15/inundacoes-deputado-pede-medidas-temporarias/",
       "publishedAt": "2026-05-15T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -194,7 +322,7 @@
       "title": "(Política) Cotai | Wong Ka Lon quer melhores condições contra incêndios",
       "url": "https://hojemacau.com.mo/2026/05/15/cotai-wong-ka-lon-quer-melhores-condicoes-contra-incendios/",
       "publishedAt": "2026-05-15T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -210,7 +338,7 @@
       "title": "(Política) Taipa | FAOM elogia plano urbanístico para zona norte",
       "url": "https://hojemacau.com.mo/2026/05/14/taipa-faom-elogia-plano-urbanistico-para-zona-norte/",
       "publishedAt": "2026-05-14T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -226,7 +354,7 @@
       "title": "(Política) AL | André Cheong reúne com delegação da APN",
       "url": "https://hojemacau.com.mo/2026/05/14/al-andre-cheong-reune-com-delegacao-da-apn/",
       "publishedAt": "2026-05-14T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -242,7 +370,7 @@
       "title": "(Política) Vales de saúde | Apoios vão poder ser usados em Guangdong",
       "url": "https://hojemacau.com.mo/2026/05/14/vales-de-saude-apoios-vao-poder-ser-usados-em-guangdong/",
       "publishedAt": "2026-05-14T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -258,7 +386,7 @@
       "title": "(Política) Economia | Escolha de secretário está “em curso”",
       "url": "https://hojemacau.com.mo/2026/05/14/economia-escolha-de-secretario-esta-em-curso/",
       "publishedAt": "2026-05-14T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -274,7 +402,7 @@
       "title": "(Política) IAS | Mais de 5.600 famílias carenciadas vão receber 24,7 milhões",
       "url": "https://hojemacau.com.mo/2026/05/14/ias-mais-de-5-600-familias-carenciadas-vao-receber-247-milhoes/",
       "publishedAt": "2026-05-14T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -290,7 +418,7 @@
       "title": "(Política) Hengqin | Kou Hoi In critica falta de leis específicas",
       "url": "https://hojemacau.com.mo/2026/05/13/hengqin-kou-hoi-in-critica-falta-de-leis-especificas/",
       "publishedAt": "2026-05-13T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -306,7 +434,7 @@
       "title": "(Política) San Kio | Pedidas mais informações em autocarros de turismo",
       "url": "https://hojemacau.com.mo/2026/05/13/san-kio-pedidas-mais-informacoes-em-autocarros-de-turismo/",
       "publishedAt": "2026-05-13T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -322,7 +450,7 @@
       "title": "(Política) Cartão de consumo | Executivo recusa nova ronda de 10 mil patacas",
       "url": "https://hojemacau.com.mo/2026/05/13/cartao-de-consumo-executivo-recusa-nova-ronda-de-10-mil-patacas/",
       "publishedAt": "2026-05-13T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -338,7 +466,7 @@
       "title": "(Política) Patriotismo | Instituição do Povo celebra 18 anos de existência",
       "url": "https://hojemacau.com.mo/2026/05/12/patriotismo-instituicao-do-povo-celebra-18-anos-de-existencia/",
       "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
@@ -354,135 +482,7 @@
       "title": "(Política) Jogo | Impostos rendem mais de 9 mil milhões",
       "url": "https://hojemacau.com.mo/2026/05/12/jogo-impostos-rendem-mais-de-9-mil-milhoes/",
       "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-12-seguradoras-amcm-afasta-cobranca-por",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Seguradoras | AMCM afasta cobrança por serviços em Hong Kong",
-      "url": "https://hojemacau.com.mo/2026/05/12/seguradoras-amcm-afasta-cobranca-por-servicos-em-hong-kong/",
-      "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-12-angola-camara-de-comercio-diz-que-fe",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Angola | Câmara de Comércio diz que fecho de consulado “é retrocesso”",
-      "url": "https://hojemacau.com.mo/2026/05/12/angola-camara-de-comercio-diz-que-fecho-de-consulado-e-retrocesso/",
-      "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-12-associacao-quer-ligar-empreendedores",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Associação quer ligar empreendedores lusófonos, hispanófonos e de Macau",
-      "url": "https://hojemacau.com.mo/2026/05/12/associacao-quer-ligar-empreendedores-lusofonos-hispanofonos-e-de-macau/",
-      "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-12-combustiveis-ormuz-e-alerta-para-div",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Combustíveis | Ormuz é alerta para diversificar fontes de energia",
-      "url": "https://hojemacau.com.mo/2026/05/12/combustiveis-ormuz-e-alerta-para-diversificar-fontes-de-energia/",
-      "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-12-zona-a-sugeridos-apoios-ao-comercio-",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Zona A | Sugeridos apoios ao comércio em fase inicial",
-      "url": "https://hojemacau.com.mo/2026/05/12/zona-a-sugeridos-apoios-ao-comercio-em-fase-inicial/",
-      "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-12-maternidade-patronato-concorda-com-a",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Maternidade | Patronato concorda com aumento de licença e férias",
-      "url": "https://hojemacau.com.mo/2026/05/12/maternidade-patronato-concorda-com-aumento-de-licenca-e-ferias/",
-      "publishedAt": "2026-05-12T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-11-praias-chan-lai-kei-quer-mais-flexib",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Praias | Chan Lai Kei quer mais flexibilidade de utilização",
-      "url": "https://hojemacau.com.mo/2026/05/11/praias-chan-lai-kei-quer-mais-flexibilidade-de-utilizacao/",
-      "publishedAt": "2026-05-11T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
-      "tags": [
-        "Hoje Macau",
-        "Política"
-      ],
-      "status": "normal"
-    },
-    {
-      "id": "a_hojemacau_https-hojemacau-com-mo-2026-05-11-turismo-sobrinho-de-edmundo-ho-diz-q",
-      "sourceId": "a_hojemacau",
-      "sourceName": "Hoje Macau",
-      "domain": "A",
-      "category": "A3",
-      "title": "(Política) Turismo | Sobrinho de Edmundo Ho diz que bifana é melhor em Hong Kong",
-      "url": "https://hojemacau.com.mo/2026/05/11/turismo-sobrinho-de-edmundo-ho-diz-que-bifana-e-melhor-em-hong-kong/",
-      "publishedAt": "2026-05-11T09:00:00+08:00",
-      "fetchedAt": "2026-05-19T08:19:18+08:00",
+      "fetchedAt": "2026-05-20T19:32:47+08:00",
       "tags": [
         "Hoje Macau",
         "Política"
