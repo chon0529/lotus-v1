@@ -196,7 +196,7 @@
       "name": "AllinMedia",
       "domain": "A",
       "newsBox": "A2",
-      "status": "normal",
+      "status": "skipped",
       "lastRun": "2026-05-18T21:23:06+08:00",
       "lastSuccess": "2026-05-18T21:23:06+08:00",
       "nextRefresh": "2026-05-18T21:53:06+08:00",
@@ -207,8 +207,8 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "12 小時前",
       "oldestItemAgeText": "169 日前",
-      "relevanceStatus": "matched",
-      "lastError": null
+      "relevanceStatus": "skipped",
+      "lastError": "Skipped in strict M2.4 runner: source currently returns no valid items; parser retained for manual checking."
     },
     {
       "sourceId": "a_chengpou",
@@ -276,7 +276,7 @@
       "name": "Plataforma",
       "domain": "A",
       "newsBox": "A3",
-      "status": "normal",
+      "status": "skipped",
       "lastRun": "2026-05-18T21:15:34+08:00",
       "lastSuccess": "2026-05-18T21:15:34+08:00",
       "nextRefresh": "2026-05-18T21:45:34+08:00",
@@ -287,8 +287,8 @@
       "emptyTitleCount": 0,
       "newestItemAgeText": "12 小時前",
       "oldestItemAgeText": "26 日前",
-      "relevanceStatus": "matched",
-      "lastError": null
+      "relevanceStatus": "skipped",
+      "lastError": "Skipped in strict M2.4 runner: source unstable/timeout; parser retained for manual checking."
     },
     {
       "sourceId": "a_gcshq",

@@ -1,5 +1,5 @@
 /**
- * Version: M2.4A
+ * Version: M2.4A-1
  * Date: 2026-05-20
  * Author: GPT / Nova-Lotus
  * Purpose: Run all M2.2 normal health fetch sources sequentially.
@@ -30,11 +30,9 @@ const jobs=[
   'fetch_cbaaction.js',
   'fetch_cbaoverall.js',
   'fetch_aamacau.js',
-  'fetch_allinmedia.js',
   'fetch_chengpou.js',
   'fetch_exmoo.js',
   'fetch_macaucabletv.js',
-  'fetch_plataforma.js',
   'fetch_macaudailytimes.js',
   'fetch_jtm.js',
   'fetch_hojemacau.js',
@@ -74,7 +72,7 @@ for(const file of jobs){
   result.healthOk=result.code===0&&result.healthStatus==='normal'&&result.healthRel==='matched';
   summary.push(result);
   console.log(`=== DONE ${file} code=${result.code} health=${result.healthStatus} count=${result.healthCount} rel=${result.healthRel} ms=${result.ms}${result.error?` error=${result.error}`:''} ===`);
-  await sleep(1500);
+  await sleep(6000);
 }
 
 const ok=summary.filter(x=>x.healthOk);
@@ -89,4 +87,4 @@ for(const item of summary){
 
 if(failed.length)process.exitCode=1;
 
-// GPT-M2.4A
+// GPT-M2.4A-1
