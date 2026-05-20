@@ -1,5 +1,44 @@
 [
   {
+    "timestamp": "2026-05-20T19:46:57+08:00",
+    "sourceId": "a_macaubusiness",
+    "status": "normal",
+    "message": "7 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-20T19:46:55+08:00",
+    "sourceId": "a_macaubusiness",
+    "status": "running",
+    "message": "Starting Macao Business"
+  },
+  {
+    "timestamp": "2026-05-20T19:46:55+08:00",
+    "sourceId": "a_macaupostdaily",
+    "status": "normal",
+    "message": "14 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-20T19:46:53+08:00",
+    "sourceId": "a_macaupostdaily",
+    "status": "running",
+    "message": "Starting Macau Post Daily"
+  },
+  {
+    "timestamp": "2026-05-20T19:46:53+08:00",
+    "sourceId": "a_tdm",
+    "status": "normal",
+    "message": "30 items fetched",
+    "relevanceStatus": "matched"
+  },
+  {
+    "timestamp": "2026-05-20T19:46:51+08:00",
+    "sourceId": "a_tdm",
+    "status": "running",
+    "message": "Starting TDM"
+  },
+  {
     "timestamp": "2026-05-20T19:32:47+08:00",
     "sourceId": "a_hojemacau",
     "status": "normal",

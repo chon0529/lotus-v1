@@ -1,6 +1,6 @@
 {
   "schema": "lotus.health.v1",
-  "generatedAt": "2026-05-20T19:32:45+08:00",
+  "generatedAt": "2026-05-20T19:46:55+08:00",
   "timezone": "Asia/Macau",
   "sources": [
     {
@@ -77,16 +77,18 @@
       "domain": "A",
       "newsBox": "A2",
       "status": "normal",
-      "lastRun": "2026-05-17T20:41:58+08:00",
-      "lastSuccess": "2026-05-17T20:41:58+08:00",
-      "nextRefresh": "2026-05-17T20:56:58+08:00",
+      "lastRun": "2026-05-20T19:46:51+08:00",
+      "lastSuccess": "2026-05-20T19:46:51+08:00",
+      "nextRefresh": "2026-05-20T20:01:51+08:00",
       "failCount": 0,
       "latestCount": 30,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
-      "oldestItemAgeText": "6 日前",
-      "lastError": null
+      "oldestItemAgeText": "2 日前",
+      "lastError": null,
+      "newestItemAgeText": "49 分鐘前",
+      "relevanceStatus": "matched"
     },
     {
       "sourceId": "a_macaupostdaily",
@@ -95,16 +97,18 @@
       "domain": "A",
       "newsBox": "A3",
       "status": "normal",
-      "lastRun": "2026-05-17T20:42:00+08:00",
-      "lastSuccess": "2026-05-17T20:42:00+08:00",
-      "nextRefresh": "2026-05-17T21:12:00+08:00",
+      "lastRun": "2026-05-20T19:46:53+08:00",
+      "lastSuccess": "2026-05-20T19:46:53+08:00",
+      "nextRefresh": "2026-05-20T20:16:53+08:00",
       "failCount": 0,
       "latestCount": 14,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
-      "oldestItemAgeText": "3 日前",
-      "lastError": null
+      "oldestItemAgeText": "44 小時前",
+      "lastError": null,
+      "newestItemAgeText": "20 小時前",
+      "relevanceStatus": "matched"
     },
     {
       "sourceId": "a_macaubusiness",
@@ -113,16 +117,18 @@
       "domain": "A",
       "newsBox": "A3",
       "status": "normal",
-      "lastRun": "2026-05-17T20:42:01+08:00",
-      "lastSuccess": "2026-05-17T20:42:01+08:00",
-      "nextRefresh": "2026-05-17T21:12:01+08:00",
+      "lastRun": "2026-05-20T19:46:55+08:00",
+      "lastSuccess": "2026-05-20T19:46:55+08:00",
+      "nextRefresh": "2026-05-20T20:16:55+08:00",
       "failCount": 0,
-      "latestCount": 9,
+      "latestCount": 7,
       "duplicateCount": 0,
       "missingDateCount": 0,
       "emptyTitleCount": 0,
       "oldestItemAgeText": "3 日前",
-      "lastError": null
+      "lastError": null,
+      "newestItemAgeText": "20 小時前",
+      "relevanceStatus": "matched"
     },
     {
       "sourceId": "a_govmo_cepa_search",

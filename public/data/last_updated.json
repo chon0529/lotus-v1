@@ -7,10 +7,10 @@
       "sourceName": "TDM",
       "domain": "A",
       "category": "A2",
-      "lastRun": "2026-05-17T20:41:58+08:00",
-      "lastSuccess": "2026-05-17T20:41:58+08:00",
+      "lastRun": "2026-05-20T19:46:51+08:00",
+      "lastSuccess": "2026-05-20T19:46:51+08:00",
       "lastFailure": null,
-      "nextRun": "2026-05-17T20:56:58+08:00",
+      "nextRun": "2026-05-20T20:01:51+08:00",
       "status": "normal",
       "message": "30 items fetched"
     },
@@ -19,10 +19,10 @@
       "sourceName": "Macau Post Daily",
       "domain": "A",
       "category": "A3",
-      "lastRun": "2026-05-17T20:42:00+08:00",
-      "lastSuccess": "2026-05-17T20:42:00+08:00",
+      "lastRun": "2026-05-20T19:46:53+08:00",
+      "lastSuccess": "2026-05-20T19:46:53+08:00",
       "lastFailure": "2026-05-17T20:28:02+08:00",
-      "nextRun": "2026-05-17T21:12:00+08:00",
+      "nextRun": "2026-05-20T20:16:53+08:00",
       "status": "normal",
       "message": "14 items fetched"
     },
@@ -31,12 +31,12 @@
       "sourceName": "Macao Business",
       "domain": "A",
       "category": "A3",
-      "lastRun": "2026-05-17T20:42:01+08:00",
-      "lastSuccess": "2026-05-17T20:42:01+08:00",
+      "lastRun": "2026-05-20T19:46:55+08:00",
+      "lastSuccess": "2026-05-20T19:46:55+08:00",
       "lastFailure": null,
-      "nextRun": "2026-05-17T21:12:01+08:00",
+      "nextRun": "2026-05-20T20:16:55+08:00",
       "status": "normal",
-      "message": "9 items fetched"
+      "message": "7 items fetched"
     },
     "a_caeu": {
       "sourceId": "a_caeu",
@@ -315,5 +315,5 @@
       "message": "30 items fetched"
     }
   },
-  "generatedAt": "2026-05-20T19:32:45+08:00"
+  "generatedAt": "2026-05-20T19:46:55+08:00"
 }
