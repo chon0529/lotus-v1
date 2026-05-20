@@ -29,7 +29,6 @@ const jobs=[
   'fetch_gcsgba.js',
   'fetch_cbaaction.js',
   'fetch_cbaoverall.js',
-  'fetch_aamacau.js',
   'fetch_chengpou.js',
   'fetch_exmoo.js',
   'fetch_macaucabletv.js',

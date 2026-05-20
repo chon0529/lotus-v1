@@ -949,7 +949,11 @@ const renderHealth=async()=>{
     const fetchRows=rowsFromFetchOutput(fetchOutputMap.get(source.sourceKey));
     const historyRows=rowsFromFetchOutput(historyOutputMap.get(source.sourceKey));
     const baseRows=fetchRows.length?fetchRows:(sourceRowsFromView.get(source.sourceKey)??fakeItemsForSource(source));
-    const rows=fetchRows.length?buildDisplayRows(fetchRows,historyRows,DISPLAY_TARGET_COUNT):baseRows;
+    const rows=fetchRows.length
+      ? buildDisplayRows(fetchRows,historyRows,DISPLAY_TARGET_COUNT)
+      : historyRows.length
+        ? buildDisplayRows([],historyRows,DISPLAY_TARGET_COUNT)
+        : baseRows;
     const lastUpdatedAt=healthInfo.lastSuccess??healthInfo.lastUpdatedAt??source.lastUpdatedAt??health.generatedAt??viewAll.generatedAt??nowIso;
     return {
       ...source,
